@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.31" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Getting Started &middot; BMEG</title>
+  
+
+  
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/poole.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/darcula.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/syntax.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/theme.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/funnel.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bmeg.io/docs/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://bmeg.io/docs/favicon.png">
+
+  <script src="https://bmeg.io/docs/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+  <div class="global-header">
+    <div class="global-header-container">
+      <div class="global-header-home">
+        <a href="https://bmeg.io/docs/"><h1>BMEG</h1></a>
+      </div>
+      <ul class="global-header-nav">
+          <li><a href="https://bmeg.io/docs/queries/">Make Queries</a></li>
+          <li><a href="https://bmeg.io/docs/building/">Build Graph</a></li>
+          <li><a href="https://github.com/bmeg/">GitHub</a></li>
+          <li><a href="https://gitter.im/bmeg/bmeg">Chat</a></li>
+        </ul>
+      <div class="global-header-ohsucb">
+        <a href="https://www.ohsu.edu/compbio/"><h2>OHSU Comp Bio</h2></a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="content section group">
+
+  <div class="sidebar col span_3_of_12">
+    <ul class="sidebar-nav">
+      
+      
+        
+        <li>
+          
+          <span class="intermediate"><a href="https://bmeg.io/docs/queries/"
+             class="sidebar-nav-item "
+          >Queries</a></span></li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/install/"
+                   class="sidebar-nav-item "
+                >Install</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/getting_started/"
+                   class="sidebar-nav-item  active"
+                >Getting Started</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/traversal/"
+                   class="sidebar-nav-item "
+                >Traversal</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/matrix/"
+                   class="sidebar-nav-item "
+                >Matrix</a></li>
+            </ul>
+          </li>
+          
+          
+        
+        <li>
+          
+          <span class="intermediate"><a href="https://bmeg.io/docs/building/"
+             class="sidebar-nav-item "
+          >Building Graph</a></span></li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/building/schema/"
+                   class="sidebar-nav-item "
+                >Schema</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/building/protograph/"
+                   class="sidebar-nav-item "
+                >Protograph</a></li>
+            </ul>
+          </li>
+          
+          
+        
+      
+    </ul>
+  </div>
+
+  <div class="main col span_8_of_12">
+    
+
+<h1 id="usage">Usage</h1>
+
+<p>Ophion is an API for making graph queries using structured data. Queries are defined using a series of step operations provided by Ophion. The python client wraps the construction of these queries in an intuitive python interface.</p>
+
+<p>Let&rsquo;s go through the features currently supported in the Ophion python client.</p>
+
+<h2 id="import">import</h2>
+
+<p>First, import the Ophion client and create a connection to an existing Ophion API (here we use the BMEG at OHSU):</p>
+
+<pre><code class="language-python">import ophion
+O = ophion.Ophion('http://bmeg.io')
+</code></pre>
+
+<p>Now that we have an Ophion instance, we can use this to make all of our queries.</p>
+
+<h2 id="finding-a-vertex">finding a vertex</h2>
+
+<p>One of the first things you probably want to do is find some vertex out of all of the vertexes available in the system. In order to do this, we need to know something about the vertex we are looking for. To start, let&rsquo;s see if we can find a specific gene:</p>
+
+<pre><code class="language-python">O.query().has(&quot;symbol&quot;, &quot;TP53&quot;).execute()
+</code></pre>
+
+<p>A couple things about this first and simplest query. We start with <code>O</code>, our Ophion instance connected to the BMEG, and create a new query with <code>.query()</code>. This query is now being constructed. You can chain along as many operations as you want, and nothing will actually get sent to the server until you call <code>.execute()</code>.</p>
+
+<p>Once we make this query, we get a result:</p>
+
+<pre><code>[{u'gid': u'gene:TP53',
+  u'label': u'Gene',
+  u'properties': {u'accession': u'AF307851',
+   u'chromosome': u'17p13.1',
+   u'description': u'tumor protein p53',
+   u'refseq': u'NM_000546',
+   u'symbol': u'TP53',
+   u'type': u'Gene'}}]
+</code></pre>
+
+<p>This represents the vertex we queried for above. All vertexes in the system will have a similar structure, basically:</p>
+
+<ul>
+<li><em>gid</em>: This represents the global identifier for this vertex. In order to draw edges between different vertexes from different data sets we need an identifier that can be constructed from available data. Often, the <code>gid</code> will be the field that you query on as a starting point for a traversal.</li>
+<li><em>label</em>: The label represents the type of the vertex. All vertexes with a given label will share many property keys and edge labels, and form a logical group within the system.</li>
+<li><em>properties</em>: This is where all the data goes. <code>properties</code> can be an arbitrary map, and these properties can be referenced during traversals.</li>
+</ul>
+
+<p>You can also do a <code>has</code> query with a list of items using <code>O.within([...])</code> (other conditions exist, see the <code>Conditions</code> section below):</p>
+
+<pre><code class="language-python">O.query().has(&quot;symbol&quot;, O.within([&quot;TP53&quot;, &quot;BRCA1&quot;])).execute()
+</code></pre>
+
+<p>This returns both Gene vertexes:</p>
+
+<pre><code>[{u'gid': u'gene:TP53',
+  u'label': u'Gene',
+  u'properties': {u'accession': u'AF307851',
+   u'chromosome': u'17p13.1',
+   u'description': u'tumor protein p53',
+   u'refseq': u'NM_000546',
+   u'symbol': u'TP53',
+   u'type': u'Gene'}},
+ {u'gid': u'gene:BRCA1',
+  u'label': u'Gene',
+  u'properties': {u'accession': u'U14680',
+   u'chromosome': u'17q21.31',
+   u'description': u'BRCA1, DNA repair associated',
+   u'refseq': u'NM_007294',
+   u'symbol': u'BRCA1',
+   u'type': u'Gene'}}]
+</code></pre>
+
+  </div>
+
+</div>
+</body>
+</html>

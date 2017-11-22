@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://bmeg.io/docs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/building/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/building/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/getting_started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/matrix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/building/protograph/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/building/schema/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bmeg.io/docs/queries/traversal/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.31" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Protograph &middot; BMEG</title>
+  
+
+  
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/poole.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/darcula.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/syntax.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/theme.css">
+  <link rel="stylesheet" href="https://bmeg.io/docs/css/funnel.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bmeg.io/docs/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://bmeg.io/docs/favicon.png">
+
+  <script src="https://bmeg.io/docs/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+  <div class="global-header">
+    <div class="global-header-container">
+      <div class="global-header-home">
+        <a href="https://bmeg.io/docs/"><h1>BMEG</h1></a>
+      </div>
+      <ul class="global-header-nav">
+          <li><a href="https://bmeg.io/docs/queries/">Make Queries</a></li>
+          <li><a href="https://bmeg.io/docs/building/">Build Graph</a></li>
+          <li><a href="https://github.com/bmeg/">GitHub</a></li>
+          <li><a href="https://gitter.im/bmeg/bmeg">Chat</a></li>
+        </ul>
+      <div class="global-header-ohsucb">
+        <a href="https://www.ohsu.edu/compbio/"><h2>OHSU Comp Bio</h2></a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="content section group">
+
+  <div class="sidebar col span_3_of_12">
+    <ul class="sidebar-nav">
+      
+      
+        
+        <li>
+          
+          <span class="intermediate"><a href="https://bmeg.io/docs/queries/"
+             class="sidebar-nav-item "
+          >Queries</a></span></li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/install/"
+                   class="sidebar-nav-item "
+                >Install</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/getting_started/"
+                   class="sidebar-nav-item "
+                >Getting Started</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/traversal/"
+                   class="sidebar-nav-item "
+                >Traversal</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/queries/matrix/"
+                   class="sidebar-nav-item "
+                >Matrix</a></li>
+            </ul>
+          </li>
+          
+          
+        
+        <li>
+          
+          <span class="intermediate"><a href="https://bmeg.io/docs/building/"
+             class="sidebar-nav-item "
+          >Building Graph</a></span></li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/building/schema/"
+                   class="sidebar-nav-item "
+                >Schema</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="sidebar-nav sidebar-nav-nested">
+              <li>
+                <a href="https://bmeg.io/docs/building/protograph/"
+                   class="sidebar-nav-item  active"
+                >Protograph</a></li>
+            </ul>
+          </li>
+          
+          
+        
+      
+    </ul>
+  </div>
+
+  <div class="main col span_8_of_12">
+    
+
+<h1 id="protograph">protograph</h1>
+
+<p>Transform a stream of messages into a graph</p>
+
+<p><img src="https://github.com/bmeg/protograph/blob/master/resources/public/connections.jpg" alt="PROTOGRAPH" /></p>
+
+<h1 id="what-is-protograph">what is protograph?</h1>
+
+<p>Protograph is a protocol for transforming messages from any given schema into a set of graph vertexes and edges.</p>
+
+<p>To do this, you compose a <code>protograph.yml</code> describing how to create vertexes and edges given a message of a variety of shapes (called <em>labels</em> in Protograph).</p>
+
+<p>Given a well-constructed <code>protograph.yml</code>, input for Protograph is a stream of messages described in a <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers schema</a>, and the output is a list of vertexes and edges, in a schema of their own.</p>
+
+<h2 id="protograph-describes-a-property-graph">protograph describes a property graph</h2>
+
+<p>To Protograph, vertexes and edges contain properties: ie, key/value pairs which are associated to a given vertex or edge. These properties are arbitrary structures containing one of these types:</p>
+
+<ul>
+<li>string</li>
+<li>number (integers or doubles)</li>
+<li>list of any mixed values</li>
+<li>map of strings to any value (string, number, list or map)</li>
+</ul>
+
+<p>A vertex contains three keys:</p>
+
+<ul>
+<li><strong>label</strong> (a string declaring the type of vertex)</li>
+<li><strong>gid</strong> (a globally unique identifier constructed from the data contained in the message</li>
+<li><strong>properties</strong> (containing all of the other data)</li>
+</ul>
+
+<p>An edge has two terminals, a <code>from</code> and <code>to</code>, each with their own labels:</p>
+
+<ul>
+<li><strong>fromLabel</strong> (the label of the <em>from</em> vertex for the edge)</li>
+<li><strong>toLabel</strong> (the label of the <em>to</em> vertex for the edge)</li>
+<li><strong>label</strong> (the label of the edge itself).</li>
+<li><strong>from</strong> (the gid of the <em>from</em> vertex for the edge)</li>
+<li><strong>to</strong> (the gid of the <em>to</em> vertex for the edge)</li>
+<li><strong>properties</strong> (once again, the rest of the data is here).</li>
+</ul>
+
+<h2 id="a-basic-example">A basic example</h2>
+
+<h4 id="input-to-protograph-representing-a-single-variant">input to Protograph representing a single Variant</h4>
+
+<pre><code>{&quot;sample&quot;: &quot;biosample:CCLE:1321N1_CENTRAL_NERVOUS_SYSTEM&quot;,
+ &quot;referenceName&quot;: &quot;1&quot;,
+ &quot;start&quot;: 10521380,
+ &quot;end&quot;: 10521380,
+ &quot;referenceBases&quot;: &quot;A&quot;,
+ &quot;alternateBases&quot;: [&quot;-&quot;]}
+</code></pre>
+
+<h4 id="protograph-yml-representing-the-transformation">protograph.yml representing the transformation</h4>
+
+<pre><code>- label: Variant
+  gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+  vertexes:
+    - label: Variant
+      merge: true
+      filter:
+        - sample
+  edges:
+    - fromLabel: Variant
+      toLabel: Biosample
+      label: variantInBiosample
+      from: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+      to: &quot;{{sample}}&quot;
+</code></pre>
+
+<h4 id="output-from-protograph-both-a-vertex-and-an-edge">output from Protograph (both a vertex and an edge)</h4>
+
+<pre><code>{&quot;label&quot;: &quot;Variant&quot;
+ &quot;gid&quot;: &quot;variant:1:10521380:10521380:A:-&quot;
+ &quot;properties&quot;: {
+   &quot;referenceName&quot;: &quot;1&quot;,
+   &quot;start&quot;: 10521380,
+   &quot;end&quot;: 10521380,
+   &quot;referenceBases&quot;: &quot;A&quot;,
+   &quot;alternateBases&quot;: [&quot;-&quot;]}}}
+
+{&quot;label&quot;: &quot;variantInBiosample&quot;,
+ &quot;fromLabel&quot;: &quot;Variant&quot;,
+ &quot;from&quot;: &quot;variant:1:10521380:10521380:A:-&quot;
+ &quot;toLabel&quot;: &quot;Biosample&quot;,
+ &quot;to&quot;: &quot;biosample:CCLE:1321N1_CENTRAL_NERVOUS_SYSTEM&quot;,
+ &quot;gid&quot;: &quot;(variant:1:10521380:10521380:A:-)--variantInBiosample-&gt;(biosample:CCLE:1321N1_CENTRAL_NERVOUS_SYSTEM)&quot;,
+ &quot;properties&quot;: {}}
+</code></pre>
+
+<p>To see a larger example, check out the <a href="https://github.com/bmeg/protograph/blob/master/resources/config/protograph.yml"><code>protograph.yml</code> that comes with this repository</a>.</p>
+
+<h2 id="protograph-works-with-typed-messages">protograph works with typed messages</h2>
+
+<p>Protograph directives are partitioned by type. When creating a protobuffer schema you declare a series of message types, and in <code>protograph.yml</code> you refer to these type names when declaring how each message will be processed. This lives under the <code>label</code> key:</p>
+
+<pre><code># a typed message
+- label: Variant
+</code></pre>
+
+<h2 id="each-message-type-has-a-gid">each message type has a gid</h2>
+
+<p>Gids are one of the key concepts of Protograph. A <code>gid</code> (global identifier) refers to an identifier that can be entirely constructed <em>from the message itself</em>. Each message type declares a gid template that accepts the message as an argument and constructs the gid from values found within.</p>
+
+<pre><code># this gid is composed of several properties
+gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+</code></pre>
+
+<h2 id="messages-reference-one-another-through-gids">messages reference one another through gids</h2>
+
+<p>Gids are used to link messages together. Typically a message will contain a gid for another message under some property in a string (for a single link) or list (for a multitude of links). Sometimes these references will be embedded inside an inner map, or list of maps. Protograph enables you to specify references anywhere they may live.</p>
+
+<pre><code># this variant came from a sample
+&quot;sample&quot;: &quot;biosample:CCLE:1321N1_CENTRAL_NERVOUS_SYSTEM&quot;
+</code></pre>
+
+<h2 id="protograph-transformations-describe-the-construction-of-vertexes-and-edges">protograph transformations describe the construction of vertexes and edges</h2>
+
+<p>In general, you specify a transformation for a given message type by describing what the output is going to look like in terms of the input map. This way you can transform messages of any shape or schema into graph elements.</p>
+
+<p>To specify the transformations, you declare what vertexes and edges are generated from a given message label. Each message type can generate any number of vertexes and edges:</p>
+
+<pre><code>label: Variant
+vertexes:
+  - label: Variant
+    gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+    merge: true
+    filter:
+      - sample
+edges:
+  - fromLabel: Variant
+    toLabel: Biosample
+    label: variantInBiosample
+    from: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+    to: &quot;{{sample}}&quot;
+</code></pre>
+
+<h2 id="protograph-fields-are-constructed-using-selmer-templates">protograph fields are constructed using selmer templates</h2>
+
+<p>Each field in protograph uses a template to construct its final value out of fields in the provided input message. These templates use the double curly brace paradigm to splice values into a larger string. In its simplest form this can literally be splicing a value from the input map directly in:</p>
+
+<pre><code># this input
+{value: 5}
+
+# through this template
+&quot;{{value}}&quot;
+
+# creates this output
+5
+</code></pre>
+
+<p>These templates can use dot notation to access into a nested structure:</p>
+
+<pre><code># this input
+{outer: {inner: {container: [{jewel: 88888}]}}}
+
+# through this template
+&quot;extracting the {{outer.inner.container.0.jewel}}&quot;
+
+# creates this output
+extracting the 88888
+</code></pre>
+
+<p>There are even simple filters you can trigger using the <code>|</code> operator:</p>
+
+<pre><code># this input
+{piles: [1, 2, 3, 5, 4, 5, 2, 3, 4, 1]}
+
+# through this template
+&quot;{{piles|join:!}}&quot;
+
+# creates this output
+1!2!3!5!4!5!2!3!4!1
+</code></pre>
+
+<p>There are a variety of filters available. For more information check out the <a href="https://github.com/yogthos/Selmer#filters">Selmer documentation</a>.</p>
+
+<h2 id="protograph-has-a-protobuffer-schema">protograph has a protobuffer schema</h2>
+
+<p>There is a protobuffer schema for Protograph defined here: <a href="https://github.com/bmeg/protograph/blob/master/schema/protograph.proto">Protograph schema</a>.</p>
+
+<h1 id="how-to-write-protograph">how to write protograph</h1>
+
+<p>The overall structure of a <code>protograph.yml</code> is a list of transforms indexed by label:</p>
+
+<pre><code>- label: Variant
+  ....
+
+- label: Gene
+  ....
+
+- label: Biosample
+  ....
+</code></pre>
+
+<p>Everything living under one of these labels pertains to input messages with the given label. You can provide this label in two ways. One of which is to put the label under the <code>_label</code> key in your input messages (making them self-describing). The other is to use an input stream with a certain naming convention (the label is the last element in the name of the stream). In the latter case all messages in the stream are assumed to have the same label.</p>
+
+<p>When messages are processed, the first thing that happens is the label of the incoming message is matched to one of the protograph transforms. Once a label is chosen, each transform under that label is run on the given message.</p>
+
+<p>Transforms are of two types: transforms that produce vertexes and transforms that produce edges. These live under the <code>vertexes</code> and <code>edges</code> keys respectively.</p>
+
+<pre><code>- label: Variant
+  vertexes:
+    ....
+  edges:
+    ....
+</code></pre>
+
+<p>There are many commonalities between creating vertexes and edges, but minor differences as well. As said in the beginning, a vertex has three keys:</p>
+
+<ul>
+<li><strong>label</strong> (a string declaring the type of vertex)</li>
+<li><strong>gid</strong> (a globally unique identifier constructed from the data contained in the message</li>
+<li><strong>properties</strong> (containing all of the other data)</li>
+</ul>
+
+<p>An edge has six keys: two terminals, a <code>from</code> and <code>to</code>, each with their own labels:</p>
+
+<ul>
+<li><strong>fromLabel</strong> (the label of the <em>from</em> vertex for the edge)</li>
+<li><strong>toLabel</strong> (the label of the <em>to</em> vertex for the edge)</li>
+<li><strong>label</strong> (the label of the edge itself).</li>
+<li><strong>from</strong> (the gid of the <em>from</em> vertex for the edge)</li>
+<li><strong>to</strong> (the gid of the <em>to</em> vertex for the edge)</li>
+<li><strong>properties</strong> (once again, the rest of the data is here).</li>
+</ul>
+
+<p>As you can see, both have a <code>label</code> and <code>properties</code>, but the vertex also defines a unique <code>gid</code> while the edge specifies the vertexes it is connected to through <code>from</code> and <code>to</code>, and the labels of those vertexes with <code>fromLabel</code> and <code>toLabel</code>.</p>
+
+<p>Each of these fields is constructed from a template as described in the section above <code>protograph fields are constructed using selmer templates</code>. Therefore, a vertex transform may look like this:</p>
+
+<pre><code>- label: Variant
+  vertexes:
+    - label: Mutation
+      gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+      properties:
+        alternateBases: &quot;{{alternateBases|join:,}}&quot;
+</code></pre>
+
+<h3 id="merge-filter">merge/filter</h3>
+
+<p>Sometimes you want all (or most) of the fields present in the input message to appear in the output message, and you don&rsquo;t want to make an entry under <code>properties</code> for each one (or maybe you don&rsquo;t even know what all of them are beforehand). This is where <code>merge</code> comes in:</p>
+
+<pre><code>- label: Variant
+  gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+  merge: true
+</code></pre>
+
+<p>Saying <code>merge: true</code> will merge all fields from the input message into the output message. If you want all of them <em>except</em> for certain ones, you can add a <code>filter</code> entry under the <code>merge</code>:</p>
+
+<pre><code>- label: Variant
+  gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+  merge: true
+  filter:
+    - sample
+</code></pre>
+
+<p>The <code>filter</code> is a list of fields to <em>exclude</em> from the merge.</p>
+
+<h3 id="splice">splice</h3>
+
+<p><code>splice</code> is similar to merge, but this time you are splicing in some nested object into the top level. During a <code>splice</code> there is no filter step, you just get the whole map at the top level. Like the <code>filter</code> directive, <code>splice</code> takes a list of paths:</p>
+
+<pre><code>- label: Variant
+  gid: &quot;variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}&quot;
+  splice:
+    - info
+    - center.source
+</code></pre>
+
+<h3 id="index">index</h3>
+
+<p>Many times you have an array of things in the incoming message that entail an output of many edges, for instance. Take this example:</p>
+
+<pre><code>{&quot;name&quot;: &quot;azacitidine&quot;,
+ &quot;smiles&quot;: &quot;Nc1ncn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1&quot;,
+ &quot;targets&quot;: [&quot;DNMT1&quot;, &quot;BRAF&quot;],
+ ....}
+</code></pre>
+
+<p>We want to turn everything in the <code>targets</code> array into an edge. In cases like these, we can use <code>_index</code>!</p>
+
+<pre><code>vertexes:
+  - label: Compound
+    gid: &quot;compound:{{name}}&quot;
+    merge: true
+    filter:
+      - targets
+edges:
+  - index: targets
+    fromLabel: Compound
+    toLabel: Gene
+    label: targetsGene
+    from: &quot;compound:{{name}}&quot;
+    to: &quot;gene:{{_index}}&quot;
+</code></pre>
+
+<p>Notice for the edges, we declare the <code>index</code> to be the <code>targets</code> field, then later in the <code>to</code> field we can reference each item in the <code>targets</code> array using <code>_index</code>.</p>
+
+<p>The <code>index</code> field can also use filters, so say you don&rsquo;t have an array but a comma-separated string:</p>
+
+<pre><code>{&quot;name&quot;: &quot;azacitidine&quot;,
+ &quot;smiles&quot;: &quot;Nc1ncn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1&quot;,
+ &quot;targets&quot;: &quot;DNMT1,BRAF&quot;,
+ ....}
+</code></pre>
+
+<p>Insidious! Yet, we can handle this as well using the <code>split</code> filter:</p>
+
+<pre><code>- index: targets|split:,
+</code></pre>
+
+<p>This makes the edges identical to the previous ones.</p>
+
+<h1 id="running-protograph">running protograph</h1>
+
+<p>You can run Protograph either by transforming a directory containing input messages into Vertex and Edge output files, or by consuming a Kafka topic and emitting to another pair of Kafka topics (one for Vertex and one for Edge).</p>
+
+<p>Either way, start by downloading the <a href="https://github.com/bmeg/protograph/releases">latest release</a>.</p>
+
+<h2 id="protograph-transform-with-files">protograph transform with files</h2>
+
+<p>To run Protograph on a directory of input files, use the <code>--input</code> and <code>--output</code> options, along with the path to your <code>protograph.yml</code> under <code>--protograph</code>:</p>
+
+<pre><code>java -jar protograph.jar --protograph path/to/protograph.yml --input /path/to/input/messages.Label.json --output /path/to/output/with/file.prefix
+</code></pre>
+
+<p>Input files must follow a naming convention where the key into the Protograph description is the penultimate element in the file path, so something like</p>
+
+<pre><code>we.got.these.from.somewhere.Gene.json
+</code></pre>
+
+<p>This will trigger processing using the Protograph directives under the <code>label: Gene</code> heading. Support for multiple path elements or namespaced messages is not currently supported.</p>
+
+<p>Once processing is complete, it will output two files of the form:</p>
+
+<pre><code>/path/to/output/with/file.prefix.Vertex.json
+/path/to/output/with/file.prefix.Edge.json
+</code></pre>
+
+<p>depending on what you passed to <code>--output</code>.</p>
+
+<h2 id="protograph-transform-using-kafka">protograph transform using kafka</h2>
+
+<p>To run Protograph in Kafka mode you must have access to a Kafka node with some topics to import.</p>
+
+<pre><code>java -jar protograph.jar --protograph path/to/protograph.yml --topic &quot;topic1 topic2 topic3&quot;
+</code></pre>
+
+<p>This will by default output to the Kafka topics <code>protograph.Vertex</code> and <code>protograph.Edge</code>. To change the prefix for these topics pass in something under the <code>--prefix</code> key:</p>
+
+<pre><code># this will output to the topics inspired.project.Vertex and inspired.project.Edge
+java -jar protograph.jar --protograph path/to/protograph.yml --topic &quot;topic1 topic2 topic3&quot; --prefix inspired.project
+</code></pre>
+
+<p>If you need to change the kafka host, pass it in under <code>--kafka</code>:</p>
+
+<pre><code>java -jar protograph.jar --protograph path/to/protograph.yml --kafka 10.96.11.82:9092 --topic &quot;topic1 topic2 topic3&quot;
+</code></pre>
+
+  </div>
+
+</div>
+</body>
+</html>

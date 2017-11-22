@@ -1,0 +1,4 @@
+baseURL: https://bmeg.io/docs/
+canonifyURLs: true
+languageCode: en-us
+title: BMEG

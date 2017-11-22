@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BMEG</title>
+    <link>https://bmeg.io/docs/</link>
+    <description>Recent content on BMEG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://bmeg.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building Graph</title>
+      <link>https://bmeg.io/docs/building/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/building/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://bmeg.io/docs/queries/getting_started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/queries/getting_started/</guid>
+      <description>Usage Ophion is an API for making graph queries using structured data. Queries are defined using a series of step operations provided by Ophion. The python client wraps the construction of these queries in an intuitive python interface.
+Let&amp;rsquo;s go through the features currently supported in the Ophion python client.
+import First, import the Ophion client and create a connection to an existing Ophion API (here we use the BMEG at OHSU):</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>https://bmeg.io/docs/queries/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/queries/install/</guid>
+      <description> Ophion </description>
+    </item>
+    
+    <item>
+      <title>Matrix</title>
+      <link>https://bmeg.io/docs/queries/matrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/queries/matrix/</guid>
+      <description> Using BMEG to get matrix data
+import ophion import pandas import json import sys from bmeg.ml_schema_pb2 import Model from google.protobuf import json_format import pandas from scipy import stats from sklearn.linear_model import LinearRegression, LogisticRegression import numpy as np  Download RNA-Seq for cohort:TCGA-READ data = {} for i in O.query().has(&amp;quot;gid&amp;quot;, &amp;quot;cohort:TCGA-READ&amp;quot;).outgoing(&amp;quot;hasSample&amp;quot;).incoming(&amp;quot;expressionFor&amp;quot;).execute(): if &#39;properties&#39; in i and &#39;expressions&#39; in i[&#39;properties&#39;]: data[i[&#39;gid&#39;]] = json.loads(i[&#39;properties&#39;][&#39;expressions&#39;]) expression_matrix = pandas.DataFrame(data).transpose().fillna(0.0)  </description>
+    </item>
+    
+    <item>
+      <title>Protograph</title>
+      <link>https://bmeg.io/docs/building/protograph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/building/protograph/</guid>
+      <description>protograph Transform a stream of messages into a graph
+what is protograph? Protograph is a protocol for transforming messages from any given schema into a set of graph vertexes and edges.
+To do this, you compose a protograph.yml describing how to create vertexes and edges given a message of a variety of shapes (called labels in Protograph).
+Given a well-constructed protograph.yml, input for Protograph is a stream of messages described in a Protocol Buffers schema, and the output is a list of vertexes and edges, in a schema of their own.</description>
+    </item>
+    
+    <item>
+      <title>Queries</title>
+      <link>https://bmeg.io/docs/queries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/queries/</guid>
+      <description> Queries </description>
+    </item>
+    
+    <item>
+      <title>Schema</title>
+      <link>https://bmeg.io/docs/building/schema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/building/schema/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traversal</title>
+      <link>https://bmeg.io/docs/queries/traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bmeg.io/docs/queries/traversal/</guid>
+      <description>traversing the graph Once you are on a vertex, you can travel through that vertex&amp;rsquo;s edges to find the vertexes it is connected to. Sometimes you don&amp;rsquo;t even need to go all the way to the next vertex, the information on the edge between them may be sufficient.
+Edges in the graph are directional, so there are both incoming and outgoing edges from each vertex, leading to other vertexes in the graph.</description>
+    </item>
+    
+  </channel>
+</rss>
