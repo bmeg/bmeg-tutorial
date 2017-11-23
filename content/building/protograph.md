@@ -3,7 +3,7 @@ title: Protograph
 menu:
   main:
     parent: Building Graph
-    weight: 2
+    weight: 3
 ---
 
 
