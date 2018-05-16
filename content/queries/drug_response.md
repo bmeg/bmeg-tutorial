@@ -9,7 +9,7 @@ menu:
 
 # Get all CCLE samples
 ```
-all_samples = O.query().has("gid", "cohort:CCLE").outgoing("hasSample").values(["gid"]).execute()
+all_samples = O.query().V().where(aql.eq("_gid", "cohort:CCLE")).out("hasSample").render(["_gid"])
 ```
 
 # Genes we'll be looking at
@@ -17,18 +17,24 @@ all_samples = O.query().has("gid", "cohort:CCLE").outgoing("hasSample").values([
 GENES = ["CDKN2A", "PTEN", "TP53", "SMAD4"]
 ```
 
+```
+for g in GENES:
+  for i in O.query().V().where(aql.eq("$.label", "Gene")).where(aql.eq("symbol", g)):
+    gene_ids[g] = i
+```
+
 # Scan CCLE cell lines based on mutation status
 ```
 mut_samples = {}
 norm_samples = {}
-for g in GENES:
+for g, i in gene_ids.items():
     #get CCLE samples with mutation
-    mut_samples[g] = list(set(O.query().has("gid", "gene:%s" % (g)).incoming("variantInGene").outgoing("variantInBiosample").mark("a")\
-    .incoming("hasSample").has("gid", "cohort:CCLE").select("a").values(["gid"]).execute()))
+    mut_samples[g] = list(set(O.query().V(i).in_("variantInGene").out("variantInBiosample").mark("a")\
+    .in_("hasSample").where("gid", "cohort:CCLE").select("a").values(["gid"]).execute()))
 
     #get CCLE samples without mutation
     norm_samples[g] = list(set(all_samples).difference(mut_samples[g]))
-    
+
     print "%s Positive Set: %d" % (g, len(mut_samples[g]))
     print "%s Negative Set: %d" % (g, len(norm_samples[g]))
 ```
@@ -88,4 +94,3 @@ for drug in drugs:
 ```
 pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a-statistic", "a-pvalue"]).sort_values("a-pvalue")
 ```
-

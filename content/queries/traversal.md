@@ -16,10 +16,10 @@ Edges in the graph are directional, so there are both incoming and outgoing edge
 Starting with gene TP53, and see what kind of other vertexes it is connected to.
 
 ```python
-O.query().has("symbol", "TP53").outgoing().label().groupCount().execute()
+O.query().V().where(aql.eq("$.label", "Gene")).where(aql.eq("symbol", "TP53")).both()
 ```
 
-Here we have introduced a couple of new steps. The first is `.outgoing()`. This starts from wherever you are in the graph at the moment and travels out along all the outgoing edges.
+Here we have introduced a couple of new steps. The first is `.out()`. This starts from wherever you are in the graph at the moment and travels out along all the outgoing edges.
 
 By the time we call `.label()`, we are on these associated vertexes. `label` just gets the label of the vertex and ignores all the other properties.
 
@@ -32,7 +32,7 @@ At this point we have a bunch of labels. Now we call `.groupCount()` on these la
 In the other direction:
 
 ```python
-O.query().has("symbol", "TP53").incoming().label().groupCount().execute()
+O.query().has("symbol", "TP53").incoming().label().groupCount()
 ```
 
 Here we have swapped out `outgoing` for `incoming`, and it turns out that there are a lot more things pointing at TP53 than there are pointing away:
