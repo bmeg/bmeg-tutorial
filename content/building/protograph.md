@@ -11,11 +11,11 @@ menu:
 
 Transform a stream of messages into a graph
 
-![PROTOGRAPH](https://github.com/bmeg/protograph/blob/master/resources/public/connections.jpg)
+![PROTOGRAPH](https://raw.githubusercontent.com/bmeg/protograph/master/resources/public/connections.jpg)
 
 # what is protograph?
 
-Protograph is a protocol for transforming messages from any given schema into a set of graph vertexes and edges. 
+Protograph is a protocol for transforming messages from any given schema into a set of graph vertexes and edges.
 
 To do this, you compose a `protograph.yml` describing how to create vertexes and edges given a message of a variety of shapes (called _labels_ in Protograph).
 
@@ -133,7 +133,7 @@ To specify the transformations, you declare what vertexes and edges are generate
         label: variantInBiosample
         from: "variant:{{referenceName}}:{{start}}:{{end}}:{{referenceBases}}:{{alternateBases}}"
         to: "{{sample}}"
-  
+
 ## protograph fields are constructed using selmer templates
 
 Each field in protograph uses a template to construct its final value out of fields in the provided input message. These templates use the double curly brace paradigm to splice values into a larger string. In its simplest form this can literally be splicing a value from the input map directly in:
@@ -282,7 +282,7 @@ We want to turn everything in the `targets` array into an edge. In cases like th
 Notice for the edges, we declare the `index` to be the `targets` field, then later in the `to` field we can reference each item in the `targets` array using `_index`.
 
 The `index` field can also use filters, so say you don't have an array but a comma-separated string:
-    
+
     {"name": "azacitidine",
      "smiles": "Nc1ncn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1",
      "targets": "DNMT1,BRAF",
@@ -321,7 +321,7 @@ depending on what you passed to `--output`.
 
 ## protograph transform using kafka
 
-To run Protograph in Kafka mode you must have access to a Kafka node with some topics to import. 
+To run Protograph in Kafka mode you must have access to a Kafka node with some topics to import.
 
     java -jar protograph.jar --protograph path/to/protograph.yml --topic "topic1 topic2 topic3"
 

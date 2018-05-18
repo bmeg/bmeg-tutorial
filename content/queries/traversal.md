@@ -6,44 +6,143 @@ menu:
     weight: 3
 ---
 
-
-## Traversing the Graph
-
-Once you are on a vertex, you can travel through that vertex's edges to find the vertexes it is connected to. Sometimes you don't even need to go all the way to the next vertex, the information on the edge between them may be sufficient.
-
-Edges in the graph are directional, so there are both incoming and outgoing edges from each vertex, leading to other vertexes in the graph. Edges also have a _label_, which distinguishes the kind of connections different vertexes can have with one another.
-
-Starting with gene TP53, and see what kind of other vertexes it is connected to.
+# Starting Traversal
+## .V([ids])
+Start query from Vertex
 
 ```python
-O.query().V().where(aql.eq("$.label", "Gene")).where(aql.eq("symbol", "TP53")).both()
+O.query().V()
 ```
-
-Here we have introduced a couple of new steps. The first is `.out()`. This starts from wherever you are in the graph at the moment and travels out along all the outgoing edges.
-
-By the time we call `.label()`, we are on these associated vertexes. `label` just gets the label of the vertex and ignores all the other properties.
-
-At this point we have a bunch of labels. Now we call `.groupCount()` on these labels to get a tally of what kinds of vertexes our original TP53 gene is connected to.
-
-```
-[{u'Pubmed': 3}]
-```
-
-In the other direction:
+Returns all vertices in graph
 
 ```python
-O.query().has("symbol", "TP53").incoming().label().groupCount()
+O.query().V("vertex1")
+```
+Returns:
+```json
+{"gid" : "vertex1", "label":"TestVertex", "data":{}}
 ```
 
-Here we have swapped out `outgoing` for `incoming`, and it turns out that there are a lot more things pointing at TP53 than there are pointing away:
+## .E()
+Start query from Edge
 
+```python
+O.query().E()
 ```
-[{u'CNASegment': 708,
-  u'GeneDatabase': 12,
-  u'Variant': 8245,
-  u'type': 1}]
+Returns all edges in graph
+
+# Filtering
+## .where()
+Filter elements using conditional statements
+
+```python
+O.query().V().where(aql.eq("_label", "Gene")).where(aql.eq("symbol", "TP53"))
 ```
 
-So, there are 708 copy number segments, 12 gene databases, and 8245 variants. Also, one thing called "type".
+## Conditions
+Conditions are arguments to `.where()` that define selection conditions
+### aql.eq(variable, value)
+Returns rows where variable == value
+```python
+.where(aql.eq("symbol", "TP53"))
+```
 
-As you can see, this is a good way to explore the graph and construct a good traversal as you go along.
+### aql.neq(variable, value)
+Returns rows where variable != value
+```python
+.where(aql.neq("symbol", "TP53"))
+```
+
+### aql.gt(variable, value)
+Returns rows where variable > value
+```python
+.where(aql.gt("age", 45))
+```
+
+### aql.lt(variable, value)
+Returns rows where variable < value
+```python
+.where(aql.lt("age", 45))
+```
+
+### aql.gte(variable, value)
+Returns rows where variable >= value
+```python
+.where(aql.gte("age", 45))
+```
+
+### aql.lte(variable, value)
+Returns rows where variable <= value
+```python
+.where(aql.lte("age", 45))
+```
+
+### aql.in_(variable, value)
+Returns rows where variable in value
+```python
+.where(aql.in_("symbol", ["TP53", "BRCA1"]))
+```
+
+### aql.contains(variable, value)
+Returns rows where variable contains value
+```python
+.where(aql.in_("groups", "group1"))
+```
+
+Returns:
+```
+{"data" : {"groups" : ["group1", "group2"]}}
+```
+
+### aql.and_([conditions])
+```python
+.where(aql.and_( [aql.lte("age", 45), aql.gte("age", 35)] ))
+```
+
+### aql.or_([conditions])
+```python
+.where(aql.or_( [...] ))
+```
+
+### aql.not_(condition)
+
+# Output
+## .mark(name)
+Store current row for future reference
+```python
+O.query().V().mark("a").out().mark("b")
+```
+
+## .select([names])
+Output previously marked elements
+
+## .limit(count)
+Limit number of total output rows
+
+## .offset(count)
+Start return after offset
+
+## .render(template)
+Render current selection into arbitrary data structure
+
+# Traversing the graph
+
+## .in_()
+
+## .out()
+
+## .both()
+
+## .inEdge()
+
+## .outEdge()
+
+## .bothEdge()
+
+# Aggregation
+
+## .aggregate()
+
+## .count()
+
+## .distinct()

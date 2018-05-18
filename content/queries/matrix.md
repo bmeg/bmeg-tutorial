@@ -6,31 +6,27 @@ menu:
     weight: 4
 ---
 
+# Using BMEG to get matrix data
 
-Using BMEG to get matrix data
+Many vertices in the BMEG contain complex data that can be collected and
+converted into matrix data.
 
+## Download RNA-Seq for cohort:TCGA-READ
 
-```
-import ophion
+```python
 import pandas
-import json
-import sys
-from bmeg.ml_schema_pb2 import Model
-from google.protobuf import json_format
-import pandas
-from scipy import stats
-from sklearn.linear_model import LinearRegression, LogisticRegression
-import numpy as np
-```
+import aql
 
+conn = aql.Connection("http://bmeg.io")
+O = conn.graph("bmeg")
 
-# Download RNA-Seq for cohort:TCGA-READ
+c = O.query().V().where(aql.eq("_label", "Individual"))
+c = c.where(aql.and_(aql.eq("source", "tcga"), aql.eq("disease_code", "READ")))
+c = c.in_("sampleOf").in_("expressionFor")
+c = c.render(["$.biosampleId", "$.expressions"])
 
-```
 data = {}
-for i in O.query().has("gid", "cohort:TCGA-READ").outgoing("hasSample").incoming("expressionFor").execute():
-    if 'properties' in i and 'expressions' in i['properties']:
-        data[i['gid']] = json.loads(i['properties']['expressions'])
-
-expression_matrix = pandas.DataFrame(data).transpose().fillna(0.0)
+for row in c:
+    data[row[0]] = row[1]
+samples = pandas.DataFrame(data).transpose().fillna(0.0)
 ```

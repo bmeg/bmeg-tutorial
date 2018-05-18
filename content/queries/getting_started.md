@@ -57,9 +57,9 @@ This represents the vertex we queried for above. All vertexes in the system will
 
 * _gid_: This represents the global identifier for this vertex. In order to draw edges between different vertexes from different data sets we need an identifier that can be constructed from available data. Often, the `gid` will be the field that you query on as a starting point for a traversal.
 * _label_: The label represents the type of the vertex. All vertexes with a given label will share many property keys and edge labels, and form a logical group within the system.
-* _properties_: This is where all the data goes. `properties` can be an arbitrary map, and these properties can be referenced during traversals.
+* _data_: This is where all the data goes. `data` can be an arbitrary map, and these properties can be referenced during traversals.
 
-You can also do a `has` query with a list of items using `O.within([...])` (other conditions exist, see the `Conditions` section below):
+You can also do a `where` query with a list of items using `aql.in_([...])` (other conditions exist, see the `Conditions` section below):
 
 ```python
 print list(O.query().V().where(aql.eq("_label", "Gene")).where(aql.in_("symbol", ["TP53", "BRCA1"])).render({"gid": "_gid", "symbol":"symbol"}))
@@ -73,3 +73,15 @@ This returns both Gene vertexes:
   <AttrDict({u'symbol': u'BRCA1', u'gid': u'gene:ENSG00000012048'})>
 ]
 ```
+
+Once you are on a vertex, you can travel through that vertex's edges to find the vertexes it is connected to. Sometimes you don't even need to go all the way to the next vertex, the information on the edge between them may be sufficient.
+
+Edges in the graph are directional, so there are both incoming and outgoing edges from each vertex, leading to other vertexes in the graph. Edges also have a _label_, which distinguishes the kind of connections different vertexes can have with one another.
+
+Starting with gene TP53, and see what kind of other vertexes it is connected to.
+
+```python
+O.query().V().where(aql.eq("_label", "Gene")).where(aql.eq("symbol", "TP53"))
+```
+
+Here we have introduced a couple of new steps. The first is `.out()`. This starts from wherever you are in the graph at the moment and travels out along all the outgoing edges.
