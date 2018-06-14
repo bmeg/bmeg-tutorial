@@ -5,6 +5,14 @@ menu:
     weight: 4
 ---
 
+June 14th, 2018
+---------------
+- Updated Database engine [Arachne](https://github.com/bmeg/arachne) v0.2
+- Updated client install instructions
+- Updated query language instructions
+- Released new [iPython Analysis notebook examples](https://github.com/bmeg/analysis)
+- New Schema
+- Bulk Data [download](http://data.bmeg.io/bmeg-data.20180614.tar.gz)
 
 December 5th, 2017
 ------------------
@@ -84,4 +92,3 @@ Oct 15th 2013
 June 17th 2013
 --------------
 [Major grant funds UCSC researchers using big data to predict cancer outcomes](https://news.ucsc.edu/2013/06/cancer-big-data.html)
-
