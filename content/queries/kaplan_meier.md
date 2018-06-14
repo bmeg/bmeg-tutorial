@@ -12,7 +12,7 @@ menu:
 from lifelines import KaplanMeierFitter
 import pandas
 import aql
-conn = aql.Connection("http://arachne.compbio.ohsu.edu")
+conn = aql.Connection("http://bmeg.io")
 O = conn.graph("bmeg")
 
 q = O.query().V().where(aql.eq("_label", "Individual"))

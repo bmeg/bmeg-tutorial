@@ -128,21 +128,40 @@ Render current selection into arbitrary data structure
 # Traversing the graph
 
 ## .in_()
+Following incoming edges. Optional argument is the edge label (or list of labels) that should be followed. If no argument is provided, all incoming edges.
 
 ## .out()
+Following outgoing edges. Optional argument is the edge label (or list of labels) that should be followed. If no argument is provided, all outgoing edges.
 
 ## .both()
+Following all edges (both in and out). Optional argument is the edge label (or list of labels) that should be followed.
 
 ## .inEdge()
+Following incoming edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
 
 ## .outEdge()
+Following outgoing edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
 
 ## .bothEdge()
+Following all edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
+
 
 # Aggregation
 
 ## .aggregate()
+Return aggregate counts of field. This can be run at the graph level, without using the `.query()` method to start a traversal, ie
+```
+O.aggregate(aql.term("test-agg", "Person", "name"))
+```
+Where `test-agg` is the name of the aggrigation, `Person` is the vertex label type and `name` is the field.
+
+```
+O.query().V("1").out().aggregate(aql.histogram("traversal-agg", "Person", "age", 5))
+```
+Starts on vertex `1`, goes out and then creates a histogram named `traversal-agg` across the `age` field in the `Person` vertices.
 
 ## .count()
+Return the total count of elements
 
 ## .distinct()
+Only return distinct elements. Argument can JSON path to define what elements are used to identify uniqueness.
