@@ -1,3 +1,12 @@
+---
+title: Data Sources
+menu:
+  main:
+    parent: Building Graph
+    weight: 2
+---
+
+
 # Data Sources Summary
 | path                     | publications                                                                                                     |
 |:-------------------------|:-----------------------------------------------------------------------------------------------------------------|
