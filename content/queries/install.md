@@ -7,10 +7,10 @@ menu:
 ---
 
 
-# Ophion
+# GRIP
 
 ## Python Client
 
 ```python
-pip install "git+https://github.com/bmeg/arachne.git#subdirectory=aql/python"
+pip install "git+https://github.com/bmeg/grip.git#subdirectory=gripql/python"
 ```

@@ -5,9 +5,14 @@ menu:
     weight: 4
 ---
 
+December 1st, 2018
+------------------
+- Updated Database Engine [GRIP](https://github.com/bmeg/grip) v0.3
+
+
 June 14th, 2018
 ---------------
-- Updated Database engine [Arachne](https://github.com/bmeg/arachne) v0.2
+- Updated Database engine [GRIP](https://github.com/bmeg/grip) v0.2
 - Updated client install instructions
 - Updated query language instructions
 - Released new [iPython Analysis notebook examples](https://github.com/bmeg/analysis)

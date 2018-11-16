@@ -15,13 +15,13 @@ converted into matrix data.
 
 ```python
 import pandas
-import aql
+import gripql
 
-conn = aql.Connection("http://bmeg.io")
+conn = gripql.Connection("http://bmeg.io")
 O = conn.graph("bmeg")
 
-c = O.query().V().where(aql.eq("_label", "Individual"))
-c = c.where(aql.and_(aql.eq("source", "tcga"), aql.eq("disease_code", "READ")))
+c = O.query().V().where(gripql.eq("_label", "Individual"))
+c = c.where(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "READ")))
 c = c.in_("sampleOf").in_("expressionFor")
 c = c.render(["$.biosampleId", "$.expressions"])
 

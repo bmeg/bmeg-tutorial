@@ -36,57 +36,57 @@ Returns all edges in graph
 Filter elements using conditional statements
 
 ```python
-O.query().V().where(aql.eq("_label", "Gene")).where(aql.eq("symbol", "TP53"))
+O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", "TP53"))
 ```
 
 ## Conditions
 Conditions are arguments to `.where()` that define selection conditions
-### aql.eq(variable, value)
+### gripql.eq(variable, value)
 Returns rows where variable == value
 ```python
-.where(aql.eq("symbol", "TP53"))
+.where(gripql.eq("symbol", "TP53"))
 ```
 
-### aql.neq(variable, value)
+### gripql.neq(variable, value)
 Returns rows where variable != value
 ```python
-.where(aql.neq("symbol", "TP53"))
+.where(gripql.neq("symbol", "TP53"))
 ```
 
-### aql.gt(variable, value)
+### gripql.gt(variable, value)
 Returns rows where variable > value
 ```python
-.where(aql.gt("age", 45))
+.where(gripql.gt("age", 45))
 ```
 
-### aql.lt(variable, value)
+### gripql.lt(variable, value)
 Returns rows where variable < value
 ```python
-.where(aql.lt("age", 45))
+.where(gripql.lt("age", 45))
 ```
 
-### aql.gte(variable, value)
+### gripql.gte(variable, value)
 Returns rows where variable >= value
 ```python
-.where(aql.gte("age", 45))
+.where(gripql.gte("age", 45))
 ```
 
-### aql.lte(variable, value)
+### gripql.lte(variable, value)
 Returns rows where variable <= value
 ```python
-.where(aql.lte("age", 45))
+.where(gripql.lte("age", 45))
 ```
 
-### aql.in_(variable, value)
+### gripql.in_(variable, value)
 Returns rows where variable in value
 ```python
-.where(aql.in_("symbol", ["TP53", "BRCA1"]))
+.where(gripql.in_("symbol", ["TP53", "BRCA1"]))
 ```
 
-### aql.contains(variable, value)
+### gripql.contains(variable, value)
 Returns rows where variable contains value
 ```python
-.where(aql.in_("groups", "group1"))
+.where(gripql.in_("groups", "group1"))
 ```
 
 Returns:
@@ -94,17 +94,17 @@ Returns:
 {"data" : {"groups" : ["group1", "group2"]}}
 ```
 
-### aql.and_([conditions])
+### gripql.and_([conditions])
 ```python
-.where(aql.and_( [aql.lte("age", 45), aql.gte("age", 35)] ))
+.where(gripql.and_( [gripql.lte("age", 45), gripql.gte("age", 35)] ))
 ```
 
-### aql.or_([conditions])
+### gripql.or_([conditions])
 ```python
-.where(aql.or_( [...] ))
+.where(gripql.or_( [...] ))
 ```
 
-### aql.not_(condition)
+### gripql.not_(condition)
 
 # Output
 ## .mark(name)
@@ -151,12 +151,12 @@ Following all edges, but return the edge as the next element. This can be used t
 ## .aggregate()
 Return aggregate counts of field. This can be run at the graph level, without using the `.query()` method to start a traversal, ie
 ```
-O.aggregate(aql.term("test-agg", "Person", "name"))
+O.aggregate(gripql.term("test-agg", "Person", "name"))
 ```
 Where `test-agg` is the name of the aggrigation, `Person` is the vertex label type and `name` is the field.
 
 ```
-O.query().V("1").out().aggregate(aql.histogram("traversal-agg", "Person", "age", 5))
+O.query().V("1").out().aggregate(gripql.histogram("traversal-agg", "Person", "age", 5))
 ```
 Starts on vertex `1`, goes out and then creates a histogram named `traversal-agg` across the `age` field in the `Person` vertices.
 
