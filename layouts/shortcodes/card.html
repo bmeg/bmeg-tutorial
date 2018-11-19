@@ -1,0 +1,10 @@
+<div class="row container">
+  <div class="col s3 m8">
+    <div class="card blue darken-1">
+      <span class="card-title">{{.Get "title" }}</span>
+      <div class="card-content white">
+        <p>{{ .Inner | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</div>
