@@ -11,16 +11,17 @@ menu:
 ```python
 from lifelines import KaplanMeierFitter
 import pandas
-import aql
-conn = aql.Connection("http://bmeg.io")
+import gripql
+
+conn = gripql.Connection("http://bmeg.io")
 O = conn.graph("bmeg")
 
-q = O.query().V().where(aql.eq("_label", "Individual"))
-q = q.where(aql.and_(aql.eq("source", "tcga"), aql.eq("disease_code", "BRCA")))
-q = q.where(aql.eq("vital_status", "Dead"))
+q = O.query().V().where(gripql.eq("_label", "Individual"))
+q = q.where(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "BRCA")))
+q = q.where(gripql.eq("vital_status", "Dead"))
 
-q1 = q.where(aql.eq('her2_status_by_ihc', 'Positive')).render(["death_days_to"])
-q2 = q.where(aql.eq('her2_status_by_ihc', 'Negative')).render(["death_days_to"])
+q1 = q.where(gripql.eq('her2_status_by_ihc', 'Positive')).render(["death_days_to"])
+q2 = q.where(gripql.eq('her2_status_by_ihc', 'Negative')).render(["death_days_to"])
 
 days_a = list(int(a[0]) for a in q1)
 days_b = list(int(a[0]) for a in q2)

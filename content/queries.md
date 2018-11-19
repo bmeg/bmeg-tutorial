@@ -8,4 +8,8 @@ menu:
 # Queries
 
 
-![Example image](/img/bmeg_schema.png)
+{{% schema %}}
+
+{{% card title="How to do stuff" %}}
+You can use the graph
+{{% /card %}}

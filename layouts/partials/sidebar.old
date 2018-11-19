@@ -5,10 +5,10 @@
     {{ range $i, $menu := .Site.Menus }}
       {{ range $menu }}
       <li>
-        <a href="{{ .URL }}"
-           class="sidebar-nav-item {{ if $page.IsMenuCurrent "main" . }} active{{end}}"
-        >{{ .Pre }}{{ .Name }}</a>
         {{ if .HasChildren }}
+        <span class="intermediate"><a href="{{ .URL }}"
+           class="sidebar-nav-item {{ if $page.IsMenuCurrent "main" . }} active{{end}}"
+        >{{ .Pre }}{{ .Name }}</a></span></li>
         {{ range .Children }}
         <li>
           <ul class="collapsible-header">
@@ -19,7 +19,11 @@
           </ul>
         </li>
         {{ end }}
+        {{ else }}
+        <a href="{{ .URL }}"
+           class="sidebar-nav-item {{ if $page.IsMenuCurrent "main" . }} active{{end}}"
+        >{{ .Pre }}{{ .Name }}</a></li>
         {{ end }}
       {{ end }}
-    {{ end }}
+    {{end}}
 </ul>

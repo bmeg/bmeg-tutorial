@@ -9,8 +9,8 @@ menu:
 
 # Get all CCLE samples
 ```
-q = O.query().V().where(aql.eq("_label", "Biosample"))
-q = q.where(aql.and_(aql.eq("source", "ccle"))).render({"id":"_gid"})
+q = O.query().V().where(gripql.eq("_label", "Biosample"))
+q = q.where(gripql.and_(gripql.eq("source", "ccle"))).render({"id":"_gid"})
 all_samples = []
 for row in q:
     all_samples.append(row.id)
@@ -21,7 +21,7 @@ for row in q:
 GENES = ["CDKN2A", "PTEN", "TP53", "SMAD4"]
 gene_ids = {}
 for g in GENES:
-    for i in O.query().V().where(aql.eq("_label", "Gene")).where(aql.eq("symbol", g)):
+    for i in O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", g)):
         gene_ids[g] = i.gid
 ```
 
@@ -31,7 +31,7 @@ mut_samples = {}
 norm_samples = {}
 for g, i in gene_ids.items():
     #get CCLE samples with mutation
-    mut_samples[g] = set(k['gid'] for k in O.query().V(i).in_("variantIn").out("variantCall").out("callSetOf").where(aql.in_("_gid", all_samples)).render({"gid":"_gid"}))
+    mut_samples[g] = set(k['gid'] for k in O.query().V(i).in_("variantIn").out("variantCall").out("callSetOf").where(gripql.in_("_gid", all_samples)).render({"gid":"_gid"}))
 
     #get CCLE samples without mutation
     norm_samples[g] = list(set(all_samples).difference(mut_samples[g]))
@@ -101,6 +101,6 @@ pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a
 # Traversal direction optimization
 Note, there is a slower version of this query:
 ```
-q = O.query().V(all_samples).in_("callSetOf").in_("variantCall").out("variantIn").where(aql.eq("gene:ENSG00000141510", "_gid")).count()
+q = O.query().V(all_samples).in_("callSetOf").in_("variantCall").out("variantIn").where(gripql.eq("gene:ENSG00000141510", "_gid")).count()
 #print list(q)
 ```
