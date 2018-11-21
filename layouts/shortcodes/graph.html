@@ -1,0 +1,8 @@
+<!--
+  Create div for graph, set parameters and defaults.
+  See provenance/src/index.js for entrypoint into react
+--->
+<div id="graph"
+     data-layout="{{.Get "layout" | default "cose" }}"
+     data-url="{{.Get "url" | default "/meta/cytoscape.json" }}"
+/>
