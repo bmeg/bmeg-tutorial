@@ -1,0 +1,1068 @@
+{"data": {"id": "33f9ceef9a09fa8f34e9a371bf25768d", "cmd": "python3 transform/allele/transform.py"}}
+{"data": {"id": "9fe7ab68a0e77600875c264c5bd12873", "path": "outputs/ccle/Allele.Vertex.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "9fe7ab68a0e77600875c264c5bd12873", "label": "READS"}}
+{"data": {"id": "866543f77eebca9e1eae9c465f917daa", "path": "outputs/g2p/Allele.Vertex.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "866543f77eebca9e1eae9c465f917daa", "label": "READS"}}
+{"data": {"id": "b0e1593ede53579826eb96dab4148165", "path": "outputs/g2p/MinimalAllele.Vertex.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "b0e1593ede53579826eb96dab4148165", "label": "READS"}}
+{"data": {"id": "377bf2c736ad8d1f0a7f71ee48149bad", "path": "outputs/mc3/Allele.Vertex.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "377bf2c736ad8d1f0a7f71ee48149bad", "label": "READS"}}
+{"data": {"id": "862a4fbfdda7010f6f87f31eaed0a1c1", "path": "outputs/myvariant.info/myvariant.info.Allele.Vertex.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "862a4fbfdda7010f6f87f31eaed0a1c1", "label": "READS"}}
+{"data": {"id": "c390251bd07b4220eb4bf824a5240b08", "path": "source/myvariant.info/biothings_current_old_hg19.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "c390251bd07b4220eb4bf824a5240b08", "label": "READS"}}
+{"data": {"id": "08ec6eb40ad76b48210aa0e939ae7aa1", "path": "source/myvariant.info/harvested_myvariantinfo.json.gz"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "08ec6eb40ad76b48210aa0e939ae7aa1", "label": "READS"}}
+{"data": {"id": "a9468ae548c1f99ebaeb3d25a961fddd", "path": "source/myvariant.info/metadata.fields.json"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "a9468ae548c1f99ebaeb3d25a961fddd", "label": "READS"}}
+{"data": {"id": "e684d344d13e70a33a5605327a789360", "path": "source/myvariant.info/metadata.json"}}
+{"data": {"target": "33f9ceef9a09fa8f34e9a371bf25768d", "source": "e684d344d13e70a33a5605327a789360", "label": "READS"}}
+{"data": {"id": "2ed09d4c4237d298a69941c5722b72f1", "path": "outputs/allele/Allele.Vertex.json.gz"}}
+{"data": {"target": "2ed09d4c4237d298a69941c5722b72f1", "source": "33f9ceef9a09fa8f34e9a371bf25768d", "edge": "WRITES"}}
+{"data": {"id": "eb9d7ebcf0fc097776d75f2a0a3bba39", "cmd": "python3 transform/dvc/bmeg_file_manifest.py"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2ed09d4c4237d298a69941c5722b72f1", "label": "READS"}}
+{"data": {"id": "561324844c53077551083b941982728c", "path": "outputs/ccle/Aliquot.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "561324844c53077551083b941982728c", "label": "READS"}}
+{"data": {"id": "801a6ec57b66194d5270cc0fb901a243", "path": "outputs/ccle/AliquotFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "801a6ec57b66194d5270cc0fb901a243", "label": "READS"}}
+{"data": {"id": "c4e81c8a7796a7b84da82d79860e20dc", "path": "outputs/ccle/AlleleCall.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c4e81c8a7796a7b84da82d79860e20dc", "label": "READS"}}
+{"data": {"id": "bb38a605fe4326766a0e1bbcc4c10741", "path": "outputs/ccle/AlleleIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "bb38a605fe4326766a0e1bbcc4c10741", "label": "READS"}}
+{"data": {"id": "9ccf83393276d56191a88c3d54ef6a5d", "path": "outputs/ccle/Biosample.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9ccf83393276d56191a88c3d54ef6a5d", "label": "READS"}}
+{"data": {"id": "548ea9afe67678a2fd1ba618476715a2", "path": "outputs/ccle/BiosampleFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "548ea9afe67678a2fd1ba618476715a2", "label": "READS"}}
+{"data": {"id": "d4af39103d738ff5f1cf6b192cc14fcb", "path": "outputs/ccle/Callset.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d4af39103d738ff5f1cf6b192cc14fcb", "label": "READS"}}
+{"data": {"id": "4f927e03ecc7f02fb7062e27d7393ce1", "path": "outputs/ccle/CallsetFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4f927e03ecc7f02fb7062e27d7393ce1", "label": "READS"}}
+{"data": {"id": "ec4b589e6e13a5d74094be8a1c4604a1", "path": "outputs/ccle/Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ec4b589e6e13a5d74094be8a1c4604a1", "label": "READS"}}
+{"data": {"id": "d8b12d571587e9010179bfc99091eb0b", "path": "outputs/ccle/ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d8b12d571587e9010179bfc99091eb0b", "label": "READS"}}
+{"data": {"id": "2496362e88b12d1c014c76142b9d88ac", "path": "outputs/ccle/InProject.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2496362e88b12d1c014c76142b9d88ac", "label": "READS"}}
+{"data": {"id": "035c9602cfa22fa60954175beba44dc4", "path": "outputs/ccle/Individual.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "035c9602cfa22fa60954175beba44dc4", "label": "READS"}}
+{"data": {"id": "8b4407d6a9450a49b782b63141f08f42", "path": "outputs/ccle/Project.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "8b4407d6a9450a49b782b63141f08f42", "label": "READS"}}
+{"data": {"id": "968e423960ecd5dd66ea1d34b27bfe2d", "path": "outputs/ccle/drug_response.Aliquot.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "968e423960ecd5dd66ea1d34b27bfe2d", "label": "READS"}}
+{"data": {"id": "63c2fa88c29a2bca107a85519d732bf3", "path": "outputs/ccle/drug_response.AliquotFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "63c2fa88c29a2bca107a85519d732bf3", "label": "READS"}}
+{"data": {"id": "db5816ddc5cb86dc60b3f319f92751dc", "path": "outputs/ccle/drug_response.Biosample.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "db5816ddc5cb86dc60b3f319f92751dc", "label": "READS"}}
+{"data": {"id": "b513792dd9e9f10a4b38ff689a1e6d38", "path": "outputs/ccle/drug_response.BiosampleFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b513792dd9e9f10a4b38ff689a1e6d38", "label": "READS"}}
+{"data": {"id": "de38dedf7d138a34f55b6755d1dba90a", "path": "outputs/ccle/drug_response.InProject.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "de38dedf7d138a34f55b6755d1dba90a", "label": "READS"}}
+{"data": {"id": "f0677cb2ebb2f14c8ae18484ca8c6076", "path": "outputs/ccle/drug_response.Individual.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f0677cb2ebb2f14c8ae18484ca8c6076", "label": "READS"}}
+{"data": {"id": "59ad12f6216f4b48a21f5605a160f255", "path": "outputs/ccle/drug_response.ParamacalogicalProfile.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "59ad12f6216f4b48a21f5605a160f255", "label": "READS"}}
+{"data": {"id": "33dd700b0cee7d666df2f7af9f26e149", "path": "outputs/ccle/drug_response.ParamacalogicalProfileIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "33dd700b0cee7d666df2f7af9f26e149", "label": "READS"}}
+{"data": {"id": "53c61c8641724985fd1ddfb580a463ea", "path": "outputs/ccle/drug_response.Project.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "53c61c8641724985fd1ddfb580a463ea", "label": "READS"}}
+{"data": {"id": "7adb9cf76899d31b3d31b495c1321cb8", "path": "outputs/ccle/tatlow.Aliquot.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7adb9cf76899d31b3d31b495c1321cb8", "label": "READS"}}
+{"data": {"id": "d0332a458de6513a130cf57f4febebc7", "path": "outputs/ccle/tatlow.AliquotFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d0332a458de6513a130cf57f4febebc7", "label": "READS"}}
+{"data": {"id": "1c294bacc62ff6ba4ba34811e889ff17", "path": "outputs/ccle/tatlow.Biosample.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1c294bacc62ff6ba4ba34811e889ff17", "label": "READS"}}
+{"data": {"id": "67baebc9b8406ec9d6d1bebb60bc4d35", "path": "outputs/ccle/tatlow.BiosampleFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "67baebc9b8406ec9d6d1bebb60bc4d35", "label": "READS"}}
+{"data": {"id": "fc0ed0d017d2d5fcb2d3a5ff18c9dca5", "path": "outputs/ccle/tatlow.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "fc0ed0d017d2d5fcb2d3a5ff18c9dca5", "label": "READS"}}
+{"data": {"id": "4f3249327e430a7ca08365cbdc4dca73", "path": "outputs/ccle/tatlow.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4f3249327e430a7ca08365cbdc4dca73", "label": "READS"}}
+{"data": {"id": "a5a1d10cc19067836c8f473fa7a93ad5", "path": "outputs/ccle/tatlow.InProject.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a5a1d10cc19067836c8f473fa7a93ad5", "label": "READS"}}
+{"data": {"id": "e12b1cc3bbb5bd9cb21fe38c1beafc9b", "path": "outputs/ccle/tatlow.Individual.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e12b1cc3bbb5bd9cb21fe38c1beafc9b", "label": "READS"}}
+{"data": {"id": "b7cf54d28fe8a7892ce504dfa7c8abde", "path": "outputs/ccle/tatlow.Project.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b7cf54d28fe8a7892ce504dfa7c8abde", "label": "READS"}}
+{"data": {"id": "83212aa781060c245f5ef2b8b20c8f00", "path": "outputs/compound/normalized.Compound.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "83212aa781060c245f5ef2b8b20c8f00", "label": "READS"}}
+{"data": {"id": "4fd4268a2a746cf44a1dbbb7fd940302", "path": "outputs/compound/normalized.HasEnvironment.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4fd4268a2a746cf44a1dbbb7fd940302", "label": "READS"}}
+{"data": {"id": "3cedc4289f9aaf3881ed87ce7d49e396", "path": "outputs/compound/normalized.ResponseTo.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "3cedc4289f9aaf3881ed87ce7d49e396", "label": "READS"}}
+{"data": {"id": "a68b265e6c749514a00f707d6e383e7d", "path": "outputs/compound/normalized.TreatedWith.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a68b265e6c749514a00f707d6e383e7d", "label": "READS"}}
+{"data": {"id": "1c734e6b59897e6960913a3cf7151c38", "path": "outputs/ensembl-protein/PFAMAlignment.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1c734e6b59897e6960913a3cf7151c38", "label": "READS"}}
+{"data": {"id": "e153fdaf3cc4455e57aa76a41a44f3f8", "path": "outputs/ensembl-protein/Protein.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e153fdaf3cc4455e57aa76a41a44f3f8", "label": "READS"}}
+{"data": {"id": "4f2a939d0763ee24d44e1ec0acab80d6", "path": "outputs/ensembl-protein/ProteinFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4f2a939d0763ee24d44e1ec0acab80d6", "label": "READS"}}
+{"data": {"id": "ce6d426b7857350c2a132a8e9a402501", "path": "outputs/ensembl-protein/ProteinStructure.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ce6d426b7857350c2a132a8e9a402501", "label": "READS"}}
+{"data": {"id": "2eb979497fa030b9c99132f4e2848cc9", "path": "outputs/ensembl-protein/StructureFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2eb979497fa030b9c99132f4e2848cc9", "label": "READS"}}
+{"data": {"id": "cc64ec09bd2189807e1d0274693440aa", "path": "outputs/ensembl/Exon.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "cc64ec09bd2189807e1d0274693440aa", "label": "READS"}}
+{"data": {"id": "73d6896c013c48e95ea29927cb4272a1", "path": "outputs/ensembl/ExonFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "73d6896c013c48e95ea29927cb4272a1", "label": "READS"}}
+{"data": {"id": "0650d978aaaf94fb524c242a3d627269", "path": "outputs/ensembl/Gene.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "0650d978aaaf94fb524c242a3d627269", "label": "READS"}}
+{"data": {"id": "76c71521056904148416c9a1ac742631", "path": "outputs/ensembl/Transcript.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "76c71521056904148416c9a1ac742631", "label": "READS"}}
+{"data": {"id": "c60f5a6f1ca8f2c26bfe2447b6997cf1", "path": "outputs/ensembl/TranscriptFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c60f5a6f1ca8f2c26bfe2447b6997cf1", "label": "READS"}}
+{"data": {"id": "a4a4b5c4208110cbbf82498a5e37321d", "path": "outputs/ensembl/missing.Transcript.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a4a4b5c4208110cbbf82498a5e37321d", "label": "READS"}}
+{"data": {"id": "89700656fdf36045c3e67c54e315ebf1", "path": "outputs/g2p/AlleleIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "89700656fdf36045c3e67c54e315ebf1", "label": "READS"}}
+{"data": {"id": "70d71bc441dd7f2aaceab8923dfebe4e", "path": "outputs/g2p/G2PAssociation.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "70d71bc441dd7f2aaceab8923dfebe4e", "label": "READS"}}
+{"data": {"id": "798cad69b4fe6729232986e27c3dc725", "path": "outputs/g2p/HasAlleleFeature.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "798cad69b4fe6729232986e27c3dc725", "label": "READS"}}
+{"data": {"id": "27ad577ae71817be9fd50f67c8bd9a87", "path": "outputs/g2p/HasGeneFeature.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "27ad577ae71817be9fd50f67c8bd9a87", "label": "READS"}}
+{"data": {"id": "9aa53699b3383b7f548c60a679eec26d", "path": "outputs/g2p/HasMinimalAlleleFeature.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9aa53699b3383b7f548c60a679eec26d", "label": "READS"}}
+{"data": {"id": "0ac0aa7e8fac312e99cd635aeafc7395", "path": "outputs/g2p/HasSupportingReference.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "0ac0aa7e8fac312e99cd635aeafc7395", "label": "READS"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b0e1593ede53579826eb96dab4148165", "label": "READS"}}
+{"data": {"id": "1f7696d0e6f6f47908d5f89e9938765a", "path": "outputs/g2p/MinimalAlleleIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1f7696d0e6f6f47908d5f89e9938765a", "label": "READS"}}
+{"data": {"id": "4610cfe31a6d1b220ed51701e8d267a3", "path": "outputs/gdc/Aliquot.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4610cfe31a6d1b220ed51701e8d267a3", "label": "READS"}}
+{"data": {"id": "196b52eede87107aec6ac082a89a5ee5", "path": "outputs/gdc/AliquotFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "196b52eede87107aec6ac082a89a5ee5", "label": "READS"}}
+{"data": {"id": "28640d448942d20f7b55c5ed7950b7ab", "path": "outputs/gdc/Biosample.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "28640d448942d20f7b55c5ed7950b7ab", "label": "READS"}}
+{"data": {"id": "8bd4910568626084014eac0e753102a7", "path": "outputs/gdc/BiosampleFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "8bd4910568626084014eac0e753102a7", "label": "READS"}}
+{"data": {"id": "b7f79e0be47dfd678d887305ac342f26", "path": "outputs/gdc/InProject.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b7f79e0be47dfd678d887305ac342f26", "label": "READS"}}
+{"data": {"id": "66ac6d68825daeba311b526975ea258d", "path": "outputs/gdc/Individual.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "66ac6d68825daeba311b526975ea258d", "label": "READS"}}
+{"data": {"id": "80c8b7eaa88a02cf13be1c247e5cdb69", "path": "outputs/gdc/Project.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "80c8b7eaa88a02cf13be1c247e5cdb69", "label": "READS"}}
+{"data": {"id": "d4a217e546b97d5d72a96cfc91ef3e6c", "path": "outputs/gdsc/gdsc.DrugResponse.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d4a217e546b97d5d72a96cfc91ef3e6c", "label": "READS"}}
+{"data": {"id": "ba4c0afdefbd64c9da24579bb6189fa0", "path": "outputs/gdsc/gdsc.DrugResponseIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ba4c0afdefbd64c9da24579bb6189fa0", "label": "READS"}}
+{"data": {"id": "05da2102439aed93ffcd61264a9ffeb2", "path": "outputs/go/GeneOntologyAnnotation.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "05da2102439aed93ffcd61264a9ffeb2", "label": "READS"}}
+{"data": {"id": "1c6050b2f013ade7fbc317856d505b94", "path": "outputs/go/GeneOntologyIsA.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1c6050b2f013ade7fbc317856d505b94", "label": "READS"}}
+{"data": {"id": "cbf1a74319e4c51dd3548bba0869bbb2", "path": "outputs/go/GeneOntologyTerm.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "cbf1a74319e4c51dd3548bba0869bbb2", "label": "READS"}}
+{"data": {"id": "2dab8135b44ea8bc00efdf1b629525a1", "path": "outputs/gtex/gtex.Aliquot.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2dab8135b44ea8bc00efdf1b629525a1", "label": "READS"}}
+{"data": {"id": "f72ece189dfab1259576608467c013f7", "path": "outputs/gtex/gtex.AliquotFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f72ece189dfab1259576608467c013f7", "label": "READS"}}
+{"data": {"id": "2cafdd08901116e9fa97f45d7934d43c", "path": "outputs/gtex/gtex.Biosample.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2cafdd08901116e9fa97f45d7934d43c", "label": "READS"}}
+{"data": {"id": "2eb47fa2221008f74906e83f8ab80e9f", "path": "outputs/gtex/gtex.BiosampleFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2eb47fa2221008f74906e83f8ab80e9f", "label": "READS"}}
+{"data": {"id": "5d974c1dd90ca8d3152fcfa8b7c83954", "path": "outputs/gtex/gtex.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "5d974c1dd90ca8d3152fcfa8b7c83954", "label": "READS"}}
+{"data": {"id": "d865d032eeccaac3d8b97c8f5e7cf97d", "path": "outputs/gtex/gtex.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d865d032eeccaac3d8b97c8f5e7cf97d", "label": "READS"}}
+{"data": {"id": "567b8a854dc25d8426f6761d4c1bee53", "path": "outputs/gtex/gtex.InProject.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "567b8a854dc25d8426f6761d4c1bee53", "label": "READS"}}
+{"data": {"id": "61c3584162f576794c6a15ea33ae718d", "path": "outputs/gtex/gtex.Individual.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "61c3584162f576794c6a15ea33ae718d", "label": "READS"}}
+{"data": {"id": "7ecbf01d1b4b0427a3c3334aeb354c5d", "path": "outputs/gtex/gtex.Project.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7ecbf01d1b4b0427a3c3334aeb354c5d", "label": "READS"}}
+{"data": {"id": "e2fa564cc0e08f89e46c8f7ae5a6df37", "path": "outputs/mc3/AlleleCall.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e2fa564cc0e08f89e46c8f7ae5a6df37", "label": "READS"}}
+{"data": {"id": "012137b2c69d2ff642c9a62273ba0c06", "path": "outputs/mc3/AlleleIn.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "012137b2c69d2ff642c9a62273ba0c06", "label": "READS"}}
+{"data": {"id": "14168e016f3d7dcc978db5db266f3fac", "path": "outputs/mc3/Callset.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "14168e016f3d7dcc978db5db266f3fac", "label": "READS"}}
+{"data": {"id": "30ef5d18a330065222f2501667fad155", "path": "outputs/mc3/CallsetFor.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "30ef5d18a330065222f2501667fad155", "label": "READS"}}
+{"data": {"id": "e055d958444eafb0e490a91e98aa8185", "path": "outputs/pfam/GeneOntologyAnnotation.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e055d958444eafb0e490a91e98aa8185", "label": "READS"}}
+{"data": {"id": "5159a63bf175571ef397c19d2c7cb47a", "path": "outputs/pfam/PFAMClan.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "5159a63bf175571ef397c19d2c7cb47a", "label": "READS"}}
+{"data": {"id": "7f767b31371e5ceee1d17897a45e3e4a", "path": "outputs/pfam/PFAMClanMember.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7f767b31371e5ceee1d17897a45e3e4a", "label": "READS"}}
+{"data": {"id": "2b181f45b6e94dc996cf4d940bb8963f", "path": "outputs/pfam/PFAMFamily.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2b181f45b6e94dc996cf4d940bb8963f", "label": "READS"}}
+{"data": {"id": "ea81a22e82b387771e1865c8d2c11c54", "path": "outputs/phenotype/normalized.HasPhenotype.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ea81a22e82b387771e1865c8d2c11c54", "label": "READS"}}
+{"data": {"id": "2fcd2596e6ed3d7ac3a76ec41e7e2862", "path": "outputs/phenotype/normalized.Phenotype.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2fcd2596e6ed3d7ac3a76ec41e7e2862", "label": "READS"}}
+{"data": {"id": "7be5b042ff9a96967ffaa52c0ed40075", "path": "outputs/phenotype/normalized.PhenotypeOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7be5b042ff9a96967ffaa52c0ed40075", "label": "READS"}}
+{"data": {"id": "9f94953b500cd10963ec39b08f3626fb", "path": "outputs/publication/stub.Publication.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9f94953b500cd10963ec39b08f3626fb", "label": "READS"}}
+{"data": {"id": "d52ce08b355b2a2a9bf228e11569e795", "path": "outputs/tcga/ACC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d52ce08b355b2a2a9bf228e11569e795", "label": "READS"}}
+{"data": {"id": "d6a46b9cfb1207b364ca705a0bf1f21a", "path": "outputs/tcga/ACC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d6a46b9cfb1207b364ca705a0bf1f21a", "label": "READS"}}
+{"data": {"id": "e55eb2be59f1a637096d78610469a5ff", "path": "outputs/tcga/BLCA.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e55eb2be59f1a637096d78610469a5ff", "label": "READS"}}
+{"data": {"id": "f32cb29a9e35923c346d8becb8b02997", "path": "outputs/tcga/BLCA.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f32cb29a9e35923c346d8becb8b02997", "label": "READS"}}
+{"data": {"id": "9100856550e0e2be45e503cca901bd6c", "path": "outputs/tcga/BRCA.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9100856550e0e2be45e503cca901bd6c", "label": "READS"}}
+{"data": {"id": "8e58399bc17fdf7fc186ada856d3a6bc", "path": "outputs/tcga/BRCA.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "8e58399bc17fdf7fc186ada856d3a6bc", "label": "READS"}}
+{"data": {"id": "09a1798534b5a3bee1ab9dcf07a1005e", "path": "outputs/tcga/CESC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "09a1798534b5a3bee1ab9dcf07a1005e", "label": "READS"}}
+{"data": {"id": "fb9fee1d538f5a3e53eacdd7f92908bf", "path": "outputs/tcga/CESC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "fb9fee1d538f5a3e53eacdd7f92908bf", "label": "READS"}}
+{"data": {"id": "4711ee769f43917f784a55f074044042", "path": "outputs/tcga/CHOL.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4711ee769f43917f784a55f074044042", "label": "READS"}}
+{"data": {"id": "d537bda33d8c1ee9eb28a7cc6afa37b4", "path": "outputs/tcga/CHOL.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d537bda33d8c1ee9eb28a7cc6afa37b4", "label": "READS"}}
+{"data": {"id": "4e990638e7dd7c3bb89ecc064fb70b53", "path": "outputs/tcga/COAD.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4e990638e7dd7c3bb89ecc064fb70b53", "label": "READS"}}
+{"data": {"id": "a2aaac76357ebadb797f47d0e69855c8", "path": "outputs/tcga/COAD.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a2aaac76357ebadb797f47d0e69855c8", "label": "READS"}}
+{"data": {"id": "7da798407b622c01ea5286323e284a92", "path": "outputs/tcga/DLBC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7da798407b622c01ea5286323e284a92", "label": "READS"}}
+{"data": {"id": "17c15929ba2af4747453f9cef54e10ea", "path": "outputs/tcga/DLBC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "17c15929ba2af4747453f9cef54e10ea", "label": "READS"}}
+{"data": {"id": "436abfc635655ea71f7e30dc552d562e", "path": "outputs/tcga/ESCA.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "436abfc635655ea71f7e30dc552d562e", "label": "READS"}}
+{"data": {"id": "c8f46d650102d58753754c4645fee4fb", "path": "outputs/tcga/ESCA.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c8f46d650102d58753754c4645fee4fb", "label": "READS"}}
+{"data": {"id": "96336e5a7a33d619bb72963ee0119f54", "path": "outputs/tcga/GBM.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "96336e5a7a33d619bb72963ee0119f54", "label": "READS"}}
+{"data": {"id": "ca7ef926b3f388602c7c97446737f605", "path": "outputs/tcga/GBM.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ca7ef926b3f388602c7c97446737f605", "label": "READS"}}
+{"data": {"id": "77b3cd6f707acba6ab8b3adf981cf2b5", "path": "outputs/tcga/HNSC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "77b3cd6f707acba6ab8b3adf981cf2b5", "label": "READS"}}
+{"data": {"id": "cd4fdacbabb32456c1ed38559711cb2e", "path": "outputs/tcga/HNSC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "cd4fdacbabb32456c1ed38559711cb2e", "label": "READS"}}
+{"data": {"id": "ecf8b744ebba847b939140ad2d99f53c", "path": "outputs/tcga/KICH.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ecf8b744ebba847b939140ad2d99f53c", "label": "READS"}}
+{"data": {"id": "e638638c60d88f2eadbe16d20da59f47", "path": "outputs/tcga/KICH.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e638638c60d88f2eadbe16d20da59f47", "label": "READS"}}
+{"data": {"id": "0be653aec580cfab7d8bbd7f8ea906fa", "path": "outputs/tcga/KIRC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "0be653aec580cfab7d8bbd7f8ea906fa", "label": "READS"}}
+{"data": {"id": "76173ee809d1f17620f6b91bc5aec203", "path": "outputs/tcga/KIRC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "76173ee809d1f17620f6b91bc5aec203", "label": "READS"}}
+{"data": {"id": "ffb98f27e2b35201ad3a68ebf2e72d5c", "path": "outputs/tcga/KIRP.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ffb98f27e2b35201ad3a68ebf2e72d5c", "label": "READS"}}
+{"data": {"id": "e2688b360bba99db64ca5a892df89fc2", "path": "outputs/tcga/KIRP.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e2688b360bba99db64ca5a892df89fc2", "label": "READS"}}
+{"data": {"id": "14159ce41fa48fa59e9ee239c887bcf2", "path": "outputs/tcga/LAML.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "14159ce41fa48fa59e9ee239c887bcf2", "label": "READS"}}
+{"data": {"id": "b9271d1c8f1401733ebb4ad668dfdfc2", "path": "outputs/tcga/LAML.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b9271d1c8f1401733ebb4ad668dfdfc2", "label": "READS"}}
+{"data": {"id": "1d3371b64d125bdb127144f036b7bd32", "path": "outputs/tcga/LGG.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1d3371b64d125bdb127144f036b7bd32", "label": "READS"}}
+{"data": {"id": "76ac56f59983f9375992f3526b7aa0bd", "path": "outputs/tcga/LGG.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "76ac56f59983f9375992f3526b7aa0bd", "label": "READS"}}
+{"data": {"id": "2b1a51119bcbb686ac72c64a38a7b44f", "path": "outputs/tcga/LIHC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2b1a51119bcbb686ac72c64a38a7b44f", "label": "READS"}}
+{"data": {"id": "405d110c23333c8ef9ad5335f0eda33b", "path": "outputs/tcga/LIHC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "405d110c23333c8ef9ad5335f0eda33b", "label": "READS"}}
+{"data": {"id": "4f638690f1aacc7a163455eede9dfed7", "path": "outputs/tcga/LUAD.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4f638690f1aacc7a163455eede9dfed7", "label": "READS"}}
+{"data": {"id": "a0713c1270b5c8d7433c2947a8dcc9fb", "path": "outputs/tcga/LUAD.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a0713c1270b5c8d7433c2947a8dcc9fb", "label": "READS"}}
+{"data": {"id": "12b37446dccd6202ad01c5829653b98a", "path": "outputs/tcga/LUSC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "12b37446dccd6202ad01c5829653b98a", "label": "READS"}}
+{"data": {"id": "10d5b99b1987a2208a84d12eb67261a0", "path": "outputs/tcga/LUSC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "10d5b99b1987a2208a84d12eb67261a0", "label": "READS"}}
+{"data": {"id": "779951120643a3ab33a1ee78e4796722", "path": "outputs/tcga/MESO.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "779951120643a3ab33a1ee78e4796722", "label": "READS"}}
+{"data": {"id": "ebd98af5e260c1d38a773b5c873397c9", "path": "outputs/tcga/MESO.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ebd98af5e260c1d38a773b5c873397c9", "label": "READS"}}
+{"data": {"id": "fe622a99ffe26db1eb793e38e7499a2f", "path": "outputs/tcga/OV.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "fe622a99ffe26db1eb793e38e7499a2f", "label": "READS"}}
+{"data": {"id": "9d9eb1c1cfff96aff026d713daaa8a29", "path": "outputs/tcga/OV.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9d9eb1c1cfff96aff026d713daaa8a29", "label": "READS"}}
+{"data": {"id": "9f3c0f6fd402a56c06ff8691e309ebcc", "path": "outputs/tcga/PAAD.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9f3c0f6fd402a56c06ff8691e309ebcc", "label": "READS"}}
+{"data": {"id": "dbfcbcc3ee4fbe02d0f6b0dbe1163c73", "path": "outputs/tcga/PAAD.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "dbfcbcc3ee4fbe02d0f6b0dbe1163c73", "label": "READS"}}
+{"data": {"id": "c795f3af4efe8e085845f06e30301fb9", "path": "outputs/tcga/PCPG.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c795f3af4efe8e085845f06e30301fb9", "label": "READS"}}
+{"data": {"id": "bfac44ab27ba4eaaa7cd7ab97f202f28", "path": "outputs/tcga/PCPG.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "bfac44ab27ba4eaaa7cd7ab97f202f28", "label": "READS"}}
+{"data": {"id": "0126facf60cd766d3dabba165c01741b", "path": "outputs/tcga/PRAD.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "0126facf60cd766d3dabba165c01741b", "label": "READS"}}
+{"data": {"id": "f39c2e234ba030129ddf5696abdb83ad", "path": "outputs/tcga/PRAD.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f39c2e234ba030129ddf5696abdb83ad", "label": "READS"}}
+{"data": {"id": "4a01e390da36ee2821f4f669aee4c1d2", "path": "outputs/tcga/READ.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4a01e390da36ee2821f4f669aee4c1d2", "label": "READS"}}
+{"data": {"id": "53f9a1e2be9ebf95d98a5ac5ad8f6ca5", "path": "outputs/tcga/READ.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "53f9a1e2be9ebf95d98a5ac5ad8f6ca5", "label": "READS"}}
+{"data": {"id": "b1bfdc61de815e8652e4a7694ec060ad", "path": "outputs/tcga/SARC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b1bfdc61de815e8652e4a7694ec060ad", "label": "READS"}}
+{"data": {"id": "44706d063bcace394e27939da742878c", "path": "outputs/tcga/SARC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "44706d063bcace394e27939da742878c", "label": "READS"}}
+{"data": {"id": "b2bed51362fc48bdc57adf1214bdb1d0", "path": "outputs/tcga/SKCM.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b2bed51362fc48bdc57adf1214bdb1d0", "label": "READS"}}
+{"data": {"id": "ccfc89e2c885ab3b88c0b0203d8d640b", "path": "outputs/tcga/SKCM.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ccfc89e2c885ab3b88c0b0203d8d640b", "label": "READS"}}
+{"data": {"id": "88a82a0c58cb8f0446bb3a8dd4bcde68", "path": "outputs/tcga/STAD.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "88a82a0c58cb8f0446bb3a8dd4bcde68", "label": "READS"}}
+{"data": {"id": "4a8b83a64a8020a2f1e270206b52991a", "path": "outputs/tcga/STAD.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4a8b83a64a8020a2f1e270206b52991a", "label": "READS"}}
+{"data": {"id": "751c9abd455b5611dc244a068a63133d", "path": "outputs/tcga/TGCT.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "751c9abd455b5611dc244a068a63133d", "label": "READS"}}
+{"data": {"id": "f6be608d604698e3c0c7f49126a43d0b", "path": "outputs/tcga/TGCT.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f6be608d604698e3c0c7f49126a43d0b", "label": "READS"}}
+{"data": {"id": "ede67c81144eb2aafe6a0fc0c04d282b", "path": "outputs/tcga/THCA.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ede67c81144eb2aafe6a0fc0c04d282b", "label": "READS"}}
+{"data": {"id": "435810608e87d4fc8e711636e5b66783", "path": "outputs/tcga/THCA.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "435810608e87d4fc8e711636e5b66783", "label": "READS"}}
+{"data": {"id": "c053a7ccda2d31a19b63f451897bcaf4", "path": "outputs/tcga/THYM.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c053a7ccda2d31a19b63f451897bcaf4", "label": "READS"}}
+{"data": {"id": "8a585e93d318ac4bb85bf143e64f0da7", "path": "outputs/tcga/THYM.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "8a585e93d318ac4bb85bf143e64f0da7", "label": "READS"}}
+{"data": {"id": "84758e017ed09560d00f74916ff69c12", "path": "outputs/tcga/UCEC.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "84758e017ed09560d00f74916ff69c12", "label": "READS"}}
+{"data": {"id": "e2d3d4e03791d2fc16445895c405b535", "path": "outputs/tcga/UCEC.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e2d3d4e03791d2fc16445895c405b535", "label": "READS"}}
+{"data": {"id": "ab1df9ab8bedcc6f830cf14cd2479bc0", "path": "outputs/tcga/UCS.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ab1df9ab8bedcc6f830cf14cd2479bc0", "label": "READS"}}
+{"data": {"id": "f7d1b093a932ff3995defba163ee291c", "path": "outputs/tcga/UCS.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f7d1b093a932ff3995defba163ee291c", "label": "READS"}}
+{"data": {"id": "4118c8abf3181a11b851539dedf2d3ba", "path": "outputs/tcga/UVM.Expression.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4118c8abf3181a11b851539dedf2d3ba", "label": "READS"}}
+{"data": {"id": "0abcb1595fab9c96d58d6baccd9ed65a", "path": "outputs/tcga/UVM.ExpressionOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "0abcb1595fab9c96d58d6baccd9ed65a", "label": "READS"}}
+{"data": {"id": "351b7225441a45a88dc2b89b9be94c2c", "path": "outputs/tcga/TCGA-ACC.CopyNumberAlteration.Vertex.json"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "351b7225441a45a88dc2b89b9be94c2c", "label": "READS"}}
+{"data": {"id": "d99490356b48d72e62556fd7c3471cb7", "path": "outputs/tcga/TCGA-ACC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d99490356b48d72e62556fd7c3471cb7", "label": "READS"}}
+{"data": {"id": "1dc3ddcebd7185200844e8fc980a40c8", "path": "outputs/tcga/TCGA-ACC.CopyNumberAlterationOf.Edge.json"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1dc3ddcebd7185200844e8fc980a40c8", "label": "READS"}}
+{"data": {"id": "5bf0299eee8488abb12188abe419c5f8", "path": "outputs/tcga/TCGA-ACC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "5bf0299eee8488abb12188abe419c5f8", "label": "READS"}}
+{"data": {"id": "b27e006e080d38763b179521d0b1ede9", "path": "outputs/tcga/TCGA-BLCA.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b27e006e080d38763b179521d0b1ede9", "label": "READS"}}
+{"data": {"id": "c357445f5d9547c57ba6a50fb8211243", "path": "outputs/tcga/TCGA-BLCA.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c357445f5d9547c57ba6a50fb8211243", "label": "READS"}}
+{"data": {"id": "f4d0869d2d80e0cd5e9d6e31ec426850", "path": "outputs/tcga/TCGA-BRCA.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f4d0869d2d80e0cd5e9d6e31ec426850", "label": "READS"}}
+{"data": {"id": "a4052b9072c9c1e94c86715e2a043554", "path": "outputs/tcga/TCGA-BRCA.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a4052b9072c9c1e94c86715e2a043554", "label": "READS"}}
+{"data": {"id": "5d2bd62c3f8b55af437bddc3815e4431", "path": "outputs/tcga/TCGA-CESC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "5d2bd62c3f8b55af437bddc3815e4431", "label": "READS"}}
+{"data": {"id": "b450e99d5a16e2c330003d63910fa19a", "path": "outputs/tcga/TCGA-CESC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b450e99d5a16e2c330003d63910fa19a", "label": "READS"}}
+{"data": {"id": "711fdaa35b812b01f4dd238f44607526", "path": "outputs/tcga/TCGA-CHOL.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "711fdaa35b812b01f4dd238f44607526", "label": "READS"}}
+{"data": {"id": "9a016c35e68da7b1b68a9a4723c44525", "path": "outputs/tcga/TCGA-CHOL.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9a016c35e68da7b1b68a9a4723c44525", "label": "READS"}}
+{"data": {"id": "66f420f54a0a10157efc03023c56006f", "path": "outputs/tcga/TCGA-COAD.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "66f420f54a0a10157efc03023c56006f", "label": "READS"}}
+{"data": {"id": "4abccc837d68dbd857aebb54bf74f4f0", "path": "outputs/tcga/TCGA-COAD.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4abccc837d68dbd857aebb54bf74f4f0", "label": "READS"}}
+{"data": {"id": "e62e2271c3b99d6f4de88593d76c6237", "path": "outputs/tcga/TCGA-DLBC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e62e2271c3b99d6f4de88593d76c6237", "label": "READS"}}
+{"data": {"id": "c0e44c7a477d4e4e2361eef25e824585", "path": "outputs/tcga/TCGA-DLBC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c0e44c7a477d4e4e2361eef25e824585", "label": "READS"}}
+{"data": {"id": "485f4b470f6b20ee26250b31489c4bcf", "path": "outputs/tcga/TCGA-ESCA.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "485f4b470f6b20ee26250b31489c4bcf", "label": "READS"}}
+{"data": {"id": "9bdc0f37441834e8cef04c524b4bc6f3", "path": "outputs/tcga/TCGA-ESCA.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9bdc0f37441834e8cef04c524b4bc6f3", "label": "READS"}}
+{"data": {"id": "01bdfd7abc2d18abe6b3b0bc4e329a83", "path": "outputs/tcga/TCGA-GBM.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "01bdfd7abc2d18abe6b3b0bc4e329a83", "label": "READS"}}
+{"data": {"id": "c78085c560e44ccad95331a058a7587d", "path": "outputs/tcga/TCGA-GBM.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c78085c560e44ccad95331a058a7587d", "label": "READS"}}
+{"data": {"id": "4467d2330a7df882c336e080883413e6", "path": "outputs/tcga/TCGA-HNSC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4467d2330a7df882c336e080883413e6", "label": "READS"}}
+{"data": {"id": "969bf9088cc569d37d954e4dd596383b", "path": "outputs/tcga/TCGA-HNSC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "969bf9088cc569d37d954e4dd596383b", "label": "READS"}}
+{"data": {"id": "9264946d39f9887d65f70c1f0e486392", "path": "outputs/tcga/TCGA-KICH.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9264946d39f9887d65f70c1f0e486392", "label": "READS"}}
+{"data": {"id": "2264729030607eb6c4132c8c6ce05dd0", "path": "outputs/tcga/TCGA-KICH.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2264729030607eb6c4132c8c6ce05dd0", "label": "READS"}}
+{"data": {"id": "ebc9dfe45053b4e76ca90b7eed2a9528", "path": "outputs/tcga/TCGA-KIRC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "ebc9dfe45053b4e76ca90b7eed2a9528", "label": "READS"}}
+{"data": {"id": "c20499fd00bf6a4c7da6209775d94601", "path": "outputs/tcga/TCGA-KIRC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c20499fd00bf6a4c7da6209775d94601", "label": "READS"}}
+{"data": {"id": "f90b4976cc11511fe47ae5f7a7ad0b42", "path": "outputs/tcga/TCGA-KIRP.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f90b4976cc11511fe47ae5f7a7ad0b42", "label": "READS"}}
+{"data": {"id": "eb21f1e7da8bc65e443ea74da6573b4a", "path": "outputs/tcga/TCGA-KIRP.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "eb21f1e7da8bc65e443ea74da6573b4a", "label": "READS"}}
+{"data": {"id": "4768cb7e994a62f8cb35ed8223f5eecf", "path": "outputs/tcga/TCGA-LAML.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4768cb7e994a62f8cb35ed8223f5eecf", "label": "READS"}}
+{"data": {"id": "59b6b7e586c139c7d718b64fa277e698", "path": "outputs/tcga/TCGA-LAML.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "59b6b7e586c139c7d718b64fa277e698", "label": "READS"}}
+{"data": {"id": "43761100d3219f3ef0d6b6f485d2f272", "path": "outputs/tcga/TCGA-LGG.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "43761100d3219f3ef0d6b6f485d2f272", "label": "READS"}}
+{"data": {"id": "8e4d224e1d7ab00bcba1b2b9ef03fa81", "path": "outputs/tcga/TCGA-LGG.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "8e4d224e1d7ab00bcba1b2b9ef03fa81", "label": "READS"}}
+{"data": {"id": "2d3a2d470e585f57ae4d0a1359c63295", "path": "outputs/tcga/TCGA-LIHC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "2d3a2d470e585f57ae4d0a1359c63295", "label": "READS"}}
+{"data": {"id": "114a22a5b7e9cf047bf53c04d7b74963", "path": "outputs/tcga/TCGA-LIHC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "114a22a5b7e9cf047bf53c04d7b74963", "label": "READS"}}
+{"data": {"id": "650ae5a0f213c6c1f510d783b4089eca", "path": "outputs/tcga/TCGA-LUAD.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "650ae5a0f213c6c1f510d783b4089eca", "label": "READS"}}
+{"data": {"id": "7a24c023523f05b1c9af54cf5f111630", "path": "outputs/tcga/TCGA-LUAD.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7a24c023523f05b1c9af54cf5f111630", "label": "READS"}}
+{"data": {"id": "1d5707b1f2c7f20a146c69134ea5c220", "path": "outputs/tcga/TCGA-LUSC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1d5707b1f2c7f20a146c69134ea5c220", "label": "READS"}}
+{"data": {"id": "acd08c6546d5ebb8ddcd909e15241fa5", "path": "outputs/tcga/TCGA-LUSC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "acd08c6546d5ebb8ddcd909e15241fa5", "label": "READS"}}
+{"data": {"id": "5e837416e77b030fb0a337c652f8b736", "path": "outputs/tcga/TCGA-MESO.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "5e837416e77b030fb0a337c652f8b736", "label": "READS"}}
+{"data": {"id": "6ca1895c73593be802db1fee8ba7f5a0", "path": "outputs/tcga/TCGA-MESO.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "6ca1895c73593be802db1fee8ba7f5a0", "label": "READS"}}
+{"data": {"id": "fa86325035e9e638b88b803039e4b79a", "path": "outputs/tcga/TCGA-OV.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "fa86325035e9e638b88b803039e4b79a", "label": "READS"}}
+{"data": {"id": "e80bd2342bc31dd4b47e472a86d37909", "path": "outputs/tcga/TCGA-OV.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "e80bd2342bc31dd4b47e472a86d37909", "label": "READS"}}
+{"data": {"id": "88fe1d8ce143d11284ed66a54a921084", "path": "outputs/tcga/TCGA-PAAD.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "88fe1d8ce143d11284ed66a54a921084", "label": "READS"}}
+{"data": {"id": "45656c7274c67aedd12ad7dde21e77eb", "path": "outputs/tcga/TCGA-PAAD.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "45656c7274c67aedd12ad7dde21e77eb", "label": "READS"}}
+{"data": {"id": "926a2710aa6ddcaaeb0a047e607712da", "path": "outputs/tcga/TCGA-PCPG.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "926a2710aa6ddcaaeb0a047e607712da", "label": "READS"}}
+{"data": {"id": "881a082adf9e76b6986bbf6b71e0b032", "path": "outputs/tcga/TCGA-PCPG.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "881a082adf9e76b6986bbf6b71e0b032", "label": "READS"}}
+{"data": {"id": "704f2a6786730e6e82dd1250af67ac8a", "path": "outputs/tcga/TCGA-PRAD.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "704f2a6786730e6e82dd1250af67ac8a", "label": "READS"}}
+{"data": {"id": "d9781a7eb978ab39ba26dfd0610b1624", "path": "outputs/tcga/TCGA-PRAD.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d9781a7eb978ab39ba26dfd0610b1624", "label": "READS"}}
+{"data": {"id": "f6e4560ececfa5c2972e631dfd2291a3", "path": "outputs/tcga/TCGA-READ.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "f6e4560ececfa5c2972e631dfd2291a3", "label": "READS"}}
+{"data": {"id": "7079539ca1515bcc1a552cfed9668d1b", "path": "outputs/tcga/TCGA-READ.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "7079539ca1515bcc1a552cfed9668d1b", "label": "READS"}}
+{"data": {"id": "c4ef009182c7dbf18327b6c79b7d3737", "path": "outputs/tcga/TCGA-SARC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "c4ef009182c7dbf18327b6c79b7d3737", "label": "READS"}}
+{"data": {"id": "1be2a4306d0384087c61f11dd035b359", "path": "outputs/tcga/TCGA-SARC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "1be2a4306d0384087c61f11dd035b359", "label": "READS"}}
+{"data": {"id": "6bead8d4d303172e13b9bc261dc8d8a8", "path": "outputs/tcga/TCGA-SKCM.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "6bead8d4d303172e13b9bc261dc8d8a8", "label": "READS"}}
+{"data": {"id": "13aaee5509b61d68c6788eb38b6e6991", "path": "outputs/tcga/TCGA-SKCM.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "13aaee5509b61d68c6788eb38b6e6991", "label": "READS"}}
+{"data": {"id": "4f206898eefc4cea3fa3c50ae6cac408", "path": "outputs/tcga/TCGA-STAD.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "4f206898eefc4cea3fa3c50ae6cac408", "label": "READS"}}
+{"data": {"id": "eaad9c0df4e738af57177788b4c2c0c1", "path": "outputs/tcga/TCGA-STAD.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "eaad9c0df4e738af57177788b4c2c0c1", "label": "READS"}}
+{"data": {"id": "df9b04424c458edb28d22c6965b7889c", "path": "outputs/tcga/TCGA-TGCT.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "df9b04424c458edb28d22c6965b7889c", "label": "READS"}}
+{"data": {"id": "be6f80931095406013d02ce8040a6ef2", "path": "outputs/tcga/TCGA-TGCT.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "be6f80931095406013d02ce8040a6ef2", "label": "READS"}}
+{"data": {"id": "9da2378b0ad1c2ee53e5622dca741d0a", "path": "outputs/tcga/TCGA-THCA.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "9da2378b0ad1c2ee53e5622dca741d0a", "label": "READS"}}
+{"data": {"id": "08dbed6cfc9edc090981c5bacd6ed4fc", "path": "outputs/tcga/TCGA-THCA.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "08dbed6cfc9edc090981c5bacd6ed4fc", "label": "READS"}}
+{"data": {"id": "b8c8c283e4c3e66f9c91c40c6a6e28de", "path": "outputs/tcga/TCGA-THYM.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "b8c8c283e4c3e66f9c91c40c6a6e28de", "label": "READS"}}
+{"data": {"id": "a8cca462a301ff0263f79d6580ce801a", "path": "outputs/tcga/TCGA-THYM.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "a8cca462a301ff0263f79d6580ce801a", "label": "READS"}}
+{"data": {"id": "d9f2d5eea279bff925118b0e4ef7c32c", "path": "outputs/tcga/TCGA-UCEC.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "d9f2d5eea279bff925118b0e4ef7c32c", "label": "READS"}}
+{"data": {"id": "47d8e05bb5b536a7900f598b91fbc874", "path": "outputs/tcga/TCGA-UCEC.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "47d8e05bb5b536a7900f598b91fbc874", "label": "READS"}}
+{"data": {"id": "021586708f8702c1ab13d7fdf3b28235", "path": "outputs/tcga/TCGA-UCS.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "021586708f8702c1ab13d7fdf3b28235", "label": "READS"}}
+{"data": {"id": "86e2d201717bf9a7e025cd4f587ab467", "path": "outputs/tcga/TCGA-UCS.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "86e2d201717bf9a7e025cd4f587ab467", "label": "READS"}}
+{"data": {"id": "3ba733eb0e3a17a8b6676f6486a23d3c", "path": "outputs/tcga/TCGA-UVM.CopyNumberAlteration.Vertex.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "3ba733eb0e3a17a8b6676f6486a23d3c", "label": "READS"}}
+{"data": {"id": "961e411146c0574719f39de9e223f48d", "path": "outputs/tcga/TCGA-UVM.CopyNumberAlterationOf.Edge.json.gz"}}
+{"data": {"target": "eb9d7ebcf0fc097776d75f2a0a3bba39", "source": "961e411146c0574719f39de9e223f48d", "label": "READS"}}
+{"data": {"id": "d84db1036a2d1ced7b43dd81f4a1b8fa", "cmd": "python3 transform/ccle/drug_response.py"}}
+{"data": {"id": "917f411573d5e68f9d61234e9e1bb539", "path": "source/ccle/CCLE_NP24.2009_Drug_data_2015.02.24.csv"}}
+{"data": {"target": "d84db1036a2d1ced7b43dd81f4a1b8fa", "source": "917f411573d5e68f9d61234e9e1bb539", "label": "READS"}}
+{"data": {"target": "d84db1036a2d1ced7b43dd81f4a1b8fa", "source": "9ccf83393276d56191a88c3d54ef6a5d", "label": "READS"}}
+{"data": {"target": "968e423960ecd5dd66ea1d34b27bfe2d", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "63c2fa88c29a2bca107a85519d732bf3", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "db5816ddc5cb86dc60b3f319f92751dc", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "b513792dd9e9f10a4b38ff689a1e6d38", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"id": "8d3ee56bd71150f3e6ee34bf4386659c", "path": "outputs/ccle/drug_response.Compound.Vertex.json.gz"}}
+{"data": {"target": "8d3ee56bd71150f3e6ee34bf4386659c", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "de38dedf7d138a34f55b6755d1dba90a", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "f0677cb2ebb2f14c8ae18484ca8c6076", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "59ad12f6216f4b48a21f5605a160f255", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "33dd700b0cee7d666df2f7af9f26e149", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"target": "53c61c8641724985fd1ddfb580a463ea", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"id": "5edd13746945c4353cb74fac0d1fcd07", "path": "outputs/ccle/drug_response.ResponseTo.Edge.json.gz"}}
+{"data": {"target": "5edd13746945c4353cb74fac0d1fcd07", "source": "d84db1036a2d1ced7b43dd81f4a1b8fa", "edge": "WRITES"}}
+{"data": {"id": "76042047046a2e32ecd8d15007a1000c", "cmd": "python3 transform/ccle/samples.py"}}
+{"data": {"id": "3434f25021354ddd60df6307ad29ea79", "path": "source/ccle/DepMap-2018q3-celllines.csv"}}
+{"data": {"target": "76042047046a2e32ecd8d15007a1000c", "source": "3434f25021354ddd60df6307ad29ea79", "label": "READS"}}
+{"data": {"target": "561324844c53077551083b941982728c", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "801a6ec57b66194d5270cc0fb901a243", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "9ccf83393276d56191a88c3d54ef6a5d", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "548ea9afe67678a2fd1ba618476715a2", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "2496362e88b12d1c014c76142b9d88ac", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "035c9602cfa22fa60954175beba44dc4", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"id": "981503cd52ba41f16ab85fcf716b1bee", "path": "outputs/ccle/Phenotype.Vertex.json.gz"}}
+{"data": {"target": "981503cd52ba41f16ab85fcf716b1bee", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"id": "f90311eb69fe6574396bdca36c33cfb1", "path": "outputs/ccle/PhenotypeOf.Edge.json.gz"}}
+{"data": {"target": "f90311eb69fe6574396bdca36c33cfb1", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"target": "8b4407d6a9450a49b782b63141f08f42", "source": "76042047046a2e32ecd8d15007a1000c", "edge": "WRITES"}}
+{"data": {"id": "f90e9bc8e501f2ef834ff5c0f5613ebf", "cmd": "python3 transform/ccle/expression.py"}}
+{"data": {"id": "1c4711bb30e668d5f387e1819bae99ef", "path": "source/ccle/CCLE_DepMap_18q3_RNAseq_RPKM_20180718.gct"}}
+{"data": {"target": "f90e9bc8e501f2ef834ff5c0f5613ebf", "source": "1c4711bb30e668d5f387e1819bae99ef", "label": "READS"}}
+{"data": {"target": "ec4b589e6e13a5d74094be8a1c4604a1", "source": "f90e9bc8e501f2ef834ff5c0f5613ebf", "edge": "WRITES"}}
+{"data": {"target": "d8b12d571587e9010179bfc99091eb0b", "source": "f90e9bc8e501f2ef834ff5c0f5613ebf", "edge": "WRITES"}}
+{"data": {"id": "eb0fc383ea1151c160b3156428331336", "cmd": "python3 transform/ccle/expression_tatlow.py"}}
+{"data": {"id": "4fadc5ed3b8008b390fca93278b06b23", "path": "source/ccle/expression/CCLE_tpm.tsv.gz"}}
+{"data": {"target": "eb0fc383ea1151c160b3156428331336", "source": "4fadc5ed3b8008b390fca93278b06b23", "label": "READS"}}
+{"data": {"target": "eb0fc383ea1151c160b3156428331336", "source": "9ccf83393276d56191a88c3d54ef6a5d", "label": "READS"}}
+{"data": {"id": "07b930da26e4a06dcf8c9a0faff57be1", "path": "source/tcga/expression/transcript-level/TCGA_ID_MAP.csv"}}
+{"data": {"target": "eb0fc383ea1151c160b3156428331336", "source": "07b930da26e4a06dcf8c9a0faff57be1", "label": "READS"}}
+{"data": {"target": "7adb9cf76899d31b3d31b495c1321cb8", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "d0332a458de6513a130cf57f4febebc7", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "1c294bacc62ff6ba4ba34811e889ff17", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "67baebc9b8406ec9d6d1bebb60bc4d35", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "fc0ed0d017d2d5fcb2d3a5ff18c9dca5", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "4f3249327e430a7ca08365cbdc4dca73", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "a5a1d10cc19067836c8f473fa7a93ad5", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "e12b1cc3bbb5bd9cb21fe38c1beafc9b", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"target": "b7cf54d28fe8a7892ce504dfa7c8abde", "source": "eb0fc383ea1151c160b3156428331336", "edge": "WRITES"}}
+{"data": {"id": "f4c8bbed827865e208f29f625a5da302", "cmd": "python3 transform/ccle/ccle_maf_transform.py"}}
+{"data": {"id": "ce843abcbc98fc858559718dc67a34ce", "path": "source/ccle/CCLE_DepMap_18q3_maf_20180718.txt"}}
+{"data": {"target": "f4c8bbed827865e208f29f625a5da302", "source": "ce843abcbc98fc858559718dc67a34ce", "label": "READS"}}
+{"data": {"id": "cc3abedb40a6795c34b739a6df2b140e", "path": "source/gene_enricher/hgnc_complete_set.json"}}
+{"data": {"target": "f4c8bbed827865e208f29f625a5da302", "source": "cc3abedb40a6795c34b739a6df2b140e", "label": "READS"}}
+{"data": {"target": "9fe7ab68a0e77600875c264c5bd12873", "source": "f4c8bbed827865e208f29f625a5da302", "edge": "WRITES"}}
+{"data": {"target": "c4e81c8a7796a7b84da82d79860e20dc", "source": "f4c8bbed827865e208f29f625a5da302", "edge": "WRITES"}}
+{"data": {"target": "bb38a605fe4326766a0e1bbcc4c10741", "source": "f4c8bbed827865e208f29f625a5da302", "edge": "WRITES"}}
+{"data": {"target": "d4af39103d738ff5f1cf6b192cc14fcb", "source": "f4c8bbed827865e208f29f625a5da302", "edge": "WRITES"}}
+{"data": {"target": "4f927e03ecc7f02fb7062e27d7393ce1", "source": "f4c8bbed827865e208f29f625a5da302", "edge": "WRITES"}}
+{"data": {"id": "3eff3ceb03df034de0bf1b8320938583", "cmd": "python3 transform/compound/transform.py"}}
+{"data": {"id": "f271b3ede58fb0f563cd9a6a397c63db", "path": "source/compound/sqlite.db"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "f271b3ede58fb0f563cd9a6a397c63db", "label": "READS"}}
+{"data": {"id": "43eb1673c4caa0d190a0e2f526c6e9ff", "path": "outputs/ccle/Compound.Vertex.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "43eb1673c4caa0d190a0e2f526c6e9ff", "label": "READS"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "8d3ee56bd71150f3e6ee34bf4386659c", "label": "READS"}}
+{"data": {"id": "f8ecad8ac9f6defbd6ef7281836f4987", "path": "outputs/g2p/Compound.Vertex.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "f8ecad8ac9f6defbd6ef7281836f4987", "label": "READS"}}
+{"data": {"id": "74152804c381c4d7e8088459dda6397f", "path": "outputs/gdc/Compound.Vertex.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "74152804c381c4d7e8088459dda6397f", "label": "READS"}}
+{"data": {"id": "ab6de1610d49d2abfdcfd9f86e2abc42", "path": "outputs/gdsc/gdsc.Compound.Vertex.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "ab6de1610d49d2abfdcfd9f86e2abc42", "label": "READS"}}
+{"data": {"id": "c4a1e42885baf2f3313f58da0684f504", "path": "outputs/g2p/HasEnvironment.Edge.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "c4a1e42885baf2f3313f58da0684f504", "label": "READS"}}
+{"data": {"id": "704673c076ab59666a9f1232f99a097b", "path": "outputs/ccle/ResponseTo.Edge.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "704673c076ab59666a9f1232f99a097b", "label": "READS"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "5edd13746945c4353cb74fac0d1fcd07", "label": "READS"}}
+{"data": {"id": "8765c9b5a4393ee8a157e40db07f44c5", "path": "outputs/gdsc/gdsc.ResponseTo.Edge.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "8765c9b5a4393ee8a157e40db07f44c5", "label": "READS"}}
+{"data": {"id": "408258d91483d415f703a3c612828c6a", "path": "outputs/gdc/TreatedWith.Edge.json.gz"}}
+{"data": {"target": "3eff3ceb03df034de0bf1b8320938583", "source": "408258d91483d415f703a3c612828c6a", "label": "READS"}}
+{"data": {"target": "83212aa781060c245f5ef2b8b20c8f00", "source": "3eff3ceb03df034de0bf1b8320938583", "edge": "WRITES"}}
+{"data": {"target": "4fd4268a2a746cf44a1dbbb7fd940302", "source": "3eff3ceb03df034de0bf1b8320938583", "edge": "WRITES"}}
+{"data": {"target": "3cedc4289f9aaf3881ed87ce7d49e396", "source": "3eff3ceb03df034de0bf1b8320938583", "edge": "WRITES"}}
+{"data": {"target": "a68b265e6c749514a00f707d6e383e7d", "source": "3eff3ceb03df034de0bf1b8320938583", "edge": "WRITES"}}
+{"data": {"id": "86ce6f5914824788d860d8aae9ce8430", "cmd": "python3 transform/ensembl/transform.py"}}
+{"data": {"id": "24cfb0003e76c88c0df30f512fa3c148", "path": "source/ensembl/Homo_sapiens.GRCh37.87.chr_patch_hapl_scaff.gff3.gz"}}
+{"data": {"target": "86ce6f5914824788d860d8aae9ce8430", "source": "24cfb0003e76c88c0df30f512fa3c148", "label": "READS"}}
+{"data": {"target": "cc64ec09bd2189807e1d0274693440aa", "source": "86ce6f5914824788d860d8aae9ce8430", "edge": "WRITES"}}
+{"data": {"target": "73d6896c013c48e95ea29927cb4272a1", "source": "86ce6f5914824788d860d8aae9ce8430", "edge": "WRITES"}}
+{"data": {"target": "0650d978aaaf94fb524c242a3d627269", "source": "86ce6f5914824788d860d8aae9ce8430", "edge": "WRITES"}}
+{"data": {"target": "76c71521056904148416c9a1ac742631", "source": "86ce6f5914824788d860d8aae9ce8430", "edge": "WRITES"}}
+{"data": {"target": "c60f5a6f1ca8f2c26bfe2447b6997cf1", "source": "86ce6f5914824788d860d8aae9ce8430", "edge": "WRITES"}}
+{"data": {"id": "812e6f9ef5290fb70ad6528d707dddca", "cmd": "python3 transform/ensembl/missing_transcripts.py"}}
+{"data": {"id": "53e66aa923260719fae7d478ca212087", "path": "source/ensembl/missing_transcript_ids.txt"}}
+{"data": {"target": "812e6f9ef5290fb70ad6528d707dddca", "source": "53e66aa923260719fae7d478ca212087", "label": "READS"}}
+{"data": {"target": "a4a4b5c4208110cbbf82498a5e37321d", "source": "812e6f9ef5290fb70ad6528d707dddca", "edge": "WRITES"}}
+{"data": {"id": "dda1d43853cfaf93fd3692a6ca6b94c0", "cmd": "python3 -m transform.g2p.transform"}}
+{"data": {"id": "3c0d06dafbb4c9c4a18abd750d1e810a", "path": "source/g2p/all.json"}}
+{"data": {"target": "dda1d43853cfaf93fd3692a6ca6b94c0", "source": "3c0d06dafbb4c9c4a18abd750d1e810a", "label": "READS"}}
+{"data": {"target": "dda1d43853cfaf93fd3692a6ca6b94c0", "source": "cc3abedb40a6795c34b739a6df2b140e", "label": "READS"}}
+{"data": {"target": "866543f77eebca9e1eae9c465f917daa", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "89700656fdf36045c3e67c54e315ebf1", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "f8ecad8ac9f6defbd6ef7281836f4987", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"id": "75f31726b36d49b57be547ba4102085b", "path": "outputs/g2p/Deadletter.Vertex.json.gz"}}
+{"data": {"target": "75f31726b36d49b57be547ba4102085b", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "70d71bc441dd7f2aaceab8923dfebe4e", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "798cad69b4fe6729232986e27c3dc725", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "c4a1e42885baf2f3313f58da0684f504", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "27ad577ae71817be9fd50f67c8bd9a87", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "9aa53699b3383b7f548c60a679eec26d", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"id": "63f9a6f3d859f5fe36fc5065a3fb0ec8", "path": "outputs/g2p/HasPhenotype.Edge.json.gz"}}
+{"data": {"target": "63f9a6f3d859f5fe36fc5065a3fb0ec8", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "0ac0aa7e8fac312e99cd635aeafc7395", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "b0e1593ede53579826eb96dab4148165", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"target": "1f7696d0e6f6f47908d5f89e9938765a", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"id": "799b68145e9dd93df86aeca6fe0a38e7", "path": "outputs/g2p/Phenotype.Vertex.json.gz"}}
+{"data": {"target": "799b68145e9dd93df86aeca6fe0a38e7", "source": "dda1d43853cfaf93fd3692a6ca6b94c0", "edge": "WRITES"}}
+{"data": {"id": "5965177d8a73d788878e9ff505d4d387", "cmd": "python3 -m transform.gdc.cases"}}
+{"data": {"id": "6808ca805661622ad65ae014a4b2a094", "path": "source/gdc/version.txt"}}
+{"data": {"target": "5965177d8a73d788878e9ff505d4d387", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "4610cfe31a6d1b220ed51701e8d267a3", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "196b52eede87107aec6ac082a89a5ee5", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "28640d448942d20f7b55c5ed7950b7ab", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "8bd4910568626084014eac0e753102a7", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "74152804c381c4d7e8088459dda6397f", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "b7f79e0be47dfd678d887305ac342f26", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "66ac6d68825daeba311b526975ea258d", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"target": "408258d91483d415f703a3c612828c6a", "source": "5965177d8a73d788878e9ff505d4d387", "edge": "WRITES"}}
+{"data": {"id": "47c0e86a4d29fd7339313afaf439acc7", "cmd": "python3 transform/gdc/projects.py"}}
+{"data": {"target": "47c0e86a4d29fd7339313afaf439acc7", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "80c8b7eaa88a02cf13be1c247e5cdb69", "source": "47c0e86a4d29fd7339313afaf439acc7", "edge": "WRITES"}}
+{"data": {"id": "90f30688bafa7e5524e6f377711a3742", "cmd": "python3 transform/gdsc/response.py"}}
+{"data": {"id": "eef91774a6b4ef37e3a8f341b1a48d0d", "path": "source/gdsc/GDSC_AUC.csv"}}
+{"data": {"target": "90f30688bafa7e5524e6f377711a3742", "source": "eef91774a6b4ef37e3a8f341b1a48d0d", "label": "READS"}}
+{"data": {"target": "ab6de1610d49d2abfdcfd9f86e2abc42", "source": "90f30688bafa7e5524e6f377711a3742", "edge": "WRITES"}}
+{"data": {"target": "d4a217e546b97d5d72a96cfc91ef3e6c", "source": "90f30688bafa7e5524e6f377711a3742", "edge": "WRITES"}}
+{"data": {"target": "ba4c0afdefbd64c9da24579bb6189fa0", "source": "90f30688bafa7e5524e6f377711a3742", "edge": "WRITES"}}
+{"data": {"target": "8765c9b5a4393ee8a157e40db07f44c5", "source": "90f30688bafa7e5524e6f377711a3742", "edge": "WRITES"}}
+{"data": {"id": "c0e77f2a2679fe478fca1af617b86671", "cmd": "python3 transform/go/go_obo2schema.py source/go/go.obo go"}}
+{"data": {"id": "0f006ae77ea311550c6df2054096927b", "path": "source/go/go.obo"}}
+{"data": {"target": "c0e77f2a2679fe478fca1af617b86671", "source": "0f006ae77ea311550c6df2054096927b", "label": "READS"}}
+{"data": {"target": "1c6050b2f013ade7fbc317856d505b94", "source": "c0e77f2a2679fe478fca1af617b86671", "edge": "WRITES"}}
+{"data": {"target": "cbf1a74319e4c51dd3548bba0869bbb2", "source": "c0e77f2a2679fe478fca1af617b86671", "edge": "WRITES"}}
+{"data": {"id": "f50a96465ba8e3d1f558ba39110442f0", "cmd": "python3 transform/go/go_gaf2schema.py source/go/goa_human.gaf.gz source/go/HUMAN_9606_idmapping.dat.gz go"}}
+{"data": {"id": "0916a032e2215fec5503ba20a627c62a", "path": "source/go/goa_human.gaf.gz"}}
+{"data": {"target": "f50a96465ba8e3d1f558ba39110442f0", "source": "0916a032e2215fec5503ba20a627c62a", "label": "READS"}}
+{"data": {"id": "de194db0e7e5f01c29732c9f23dd603c", "path": "source/go/HUMAN_9606_idmapping.dat.gz"}}
+{"data": {"target": "f50a96465ba8e3d1f558ba39110442f0", "source": "de194db0e7e5f01c29732c9f23dd603c", "label": "READS"}}
+{"data": {"target": "05da2102439aed93ffcd61264a9ffeb2", "source": "f50a96465ba8e3d1f558ba39110442f0", "edge": "WRITES"}}
+{"data": {"id": "28ee4055d93661110bea392193349f0a", "cmd": "python3 transform/gtex/samples.py"}}
+{"data": {"id": "80f2b89d45843abb0a0dc39d5054530c", "path": "source/gtex/GTEx_v7_Annotations_SampleAttributesDS.txt"}}
+{"data": {"target": "28ee4055d93661110bea392193349f0a", "source": "80f2b89d45843abb0a0dc39d5054530c", "label": "READS"}}
+{"data": {"id": "73d9180f604c17e6c211ca1694dc9ff7", "path": "source/gtex/GTEx_v7_Annotations_SubjectPhenotypesDS.txt"}}
+{"data": {"target": "28ee4055d93661110bea392193349f0a", "source": "73d9180f604c17e6c211ca1694dc9ff7", "label": "READS"}}
+{"data": {"target": "2dab8135b44ea8bc00efdf1b629525a1", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "f72ece189dfab1259576608467c013f7", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "2cafdd08901116e9fa97f45d7934d43c", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "2eb47fa2221008f74906e83f8ab80e9f", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "567b8a854dc25d8426f6761d4c1bee53", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "61c3584162f576794c6a15ea33ae718d", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"target": "7ecbf01d1b4b0427a3c3334aeb354c5d", "source": "28ee4055d93661110bea392193349f0a", "edge": "WRITES"}}
+{"data": {"id": "56045238548024d13dc060fdc67d0497", "cmd": "python3 transform/gtex/expression.py"}}
+{"data": {"id": "e027506deca6a62f50e316561c6cb8cb", "path": "source/gtex/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct"}}
+{"data": {"target": "56045238548024d13dc060fdc67d0497", "source": "e027506deca6a62f50e316561c6cb8cb", "label": "READS"}}
+{"data": {"target": "5d974c1dd90ca8d3152fcfa8b7c83954", "source": "56045238548024d13dc060fdc67d0497", "edge": "WRITES"}}
+{"data": {"target": "d865d032eeccaac3d8b97c8f5e7cf97d", "source": "56045238548024d13dc060fdc67d0497", "edge": "WRITES"}}
+{"data": {"id": "7def4c60fb220531aff6ff19590fd434", "cmd": "python3 transform/mc3/mc3_maf_transform.py"}}
+{"data": {"target": "7def4c60fb220531aff6ff19590fd434", "source": "4610cfe31a6d1b220ed51701e8d267a3", "label": "READS"}}
+{"data": {"id": "639ad8f8386e98dacc22e439188aa8fa", "path": "source/mc3/mc3.v0.2.8.PUBLIC.maf.gz"}}
+{"data": {"target": "7def4c60fb220531aff6ff19590fd434", "source": "639ad8f8386e98dacc22e439188aa8fa", "label": "READS"}}
+{"data": {"target": "377bf2c736ad8d1f0a7f71ee48149bad", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"target": "e2fa564cc0e08f89e46c8f7ae5a6df37", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"target": "012137b2c69d2ff642c9a62273ba0c06", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"target": "14168e016f3d7dcc978db5db266f3fac", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"target": "30ef5d18a330065222f2501667fad155", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"id": "84cee74fba2ea0085e02d8daca7598d1", "path": "outputs/mc3/Deadletter.Vertex.json.gz"}}
+{"data": {"target": "84cee74fba2ea0085e02d8daca7598d1", "source": "7def4c60fb220531aff6ff19590fd434", "edge": "WRITES"}}
+{"data": {"id": "74471d67d2d1f2b2520c5a19c0fda299", "cmd": "python3 transform/dvc/transform.py"}}
+{"data": {"id": "5183b5a7a078392637030f5a8876cbf7", "path": "dvc-graph.zip"}}
+{"data": {"target": "74471d67d2d1f2b2520c5a19c0fda299", "source": "5183b5a7a078392637030f5a8876cbf7", "label": "READS"}}
+{"data": {"id": "0643d229d123e34674746be0add36ba8", "path": "outputs/meta/Command.Vertex.json.gz"}}
+{"data": {"target": "0643d229d123e34674746be0add36ba8", "source": "74471d67d2d1f2b2520c5a19c0fda299", "edge": "WRITES"}}
+{"data": {"id": "a3819fae30f519094ad56aae610ae360", "path": "outputs/meta/File.Vertex.json.gz"}}
+{"data": {"target": "a3819fae30f519094ad56aae610ae360", "source": "74471d67d2d1f2b2520c5a19c0fda299", "edge": "WRITES"}}
+{"data": {"id": "6034d830de4e390c791d7d89d64531c7", "path": "outputs/meta/Reads.Edge.json.gz"}}
+{"data": {"target": "6034d830de4e390c791d7d89d64531c7", "source": "74471d67d2d1f2b2520c5a19c0fda299", "edge": "WRITES"}}
+{"data": {"id": "f26aa388f6c2a06fb5bb05472dc6dfc2", "path": "outputs/meta/Writes.Edge.json.gz"}}
+{"data": {"target": "f26aa388f6c2a06fb5bb05472dc6dfc2", "source": "74471d67d2d1f2b2520c5a19c0fda299", "edge": "WRITES"}}
+{"data": {"id": "49ea2372c7c76f9fe2f8638a6253fe50", "cmd": "python3 transform/dvc/dvc2md.py"}}
+{"data": {"id": "f54a29c5d47a10a257aac6b8253eb007", "path": "dvc-graph.zip"}}
+{"data": {"target": "49ea2372c7c76f9fe2f8638a6253fe50", "source": "f54a29c5d47a10a257aac6b8253eb007", "label": "READS"}}
+{"data": {"id": "b97e36b2354df540698d02fe20497a8e", "path": "outputs/meta/dvc.md"}}
+{"data": {"target": "b97e36b2354df540698d02fe20497a8e", "source": "49ea2372c7c76f9fe2f8638a6253fe50", "edge": "WRITES"}}
+{"data": {"id": "2ae2ef21122f1796b406772e4a2691ff", "cmd": "python3 transform/pfam/transform.py"}}
+{"data": {"id": "9f57d29531c058ad641ed81cbea0723d", "path": "source/pfam/clans.tsv"}}
+{"data": {"target": "2ae2ef21122f1796b406772e4a2691ff", "source": "9f57d29531c058ad641ed81cbea0723d", "label": "READS"}}
+{"data": {"id": "a53d9ebefc301f232e345c167e9627cf", "path": "source/pfam/pfam.tar.gz"}}
+{"data": {"target": "2ae2ef21122f1796b406772e4a2691ff", "source": "a53d9ebefc301f232e345c167e9627cf", "label": "READS"}}
+{"data": {"id": "54c1197d01d28013bcde897528626688", "path": "source/pfam/id_list.txt"}}
+{"data": {"target": "2ae2ef21122f1796b406772e4a2691ff", "source": "54c1197d01d28013bcde897528626688", "label": "READS"}}
+{"data": {"target": "e055d958444eafb0e490a91e98aa8185", "source": "2ae2ef21122f1796b406772e4a2691ff", "edge": "WRITES"}}
+{"data": {"target": "5159a63bf175571ef397c19d2c7cb47a", "source": "2ae2ef21122f1796b406772e4a2691ff", "edge": "WRITES"}}
+{"data": {"target": "7f767b31371e5ceee1d17897a45e3e4a", "source": "2ae2ef21122f1796b406772e4a2691ff", "edge": "WRITES"}}
+{"data": {"target": "2b181f45b6e94dc996cf4d940bb8963f", "source": "2ae2ef21122f1796b406772e4a2691ff", "edge": "WRITES"}}
+{"data": {"id": "68b988df9745e391790e3603deeb5a62", "cmd": "python3 transform/phenotype/transform.py"}}
+{"data": {"target": "68b988df9745e391790e3603deeb5a62", "source": "981503cd52ba41f16ab85fcf716b1bee", "label": "READS"}}
+{"data": {"target": "68b988df9745e391790e3603deeb5a62", "source": "799b68145e9dd93df86aeca6fe0a38e7", "label": "READS"}}
+{"data": {"target": "ea81a22e82b387771e1865c8d2c11c54", "source": "68b988df9745e391790e3603deeb5a62", "edge": "WRITES"}}
+{"data": {"target": "2fcd2596e6ed3d7ac3a76ec41e7e2862", "source": "68b988df9745e391790e3603deeb5a62", "edge": "WRITES"}}
+{"data": {"target": "7be5b042ff9a96967ffaa52c0ed40075", "source": "68b988df9745e391790e3603deeb5a62", "edge": "WRITES"}}
+{"data": {"id": "f76a4a36b2ae2c3247bc2ce162c24fa9", "cmd": "python3 transform/publication/transform.py"}}
+{"data": {"target": "f76a4a36b2ae2c3247bc2ce162c24fa9", "source": "0ac0aa7e8fac312e99cd635aeafc7395", "label": "READS"}}
+{"data": {"target": "9f94953b500cd10963ec39b08f3626fb", "source": "f76a4a36b2ae2c3247bc2ce162c24fa9", "edge": "WRITES"}}
+{"data": {"id": "8bee358dfa9621d29fb7858c9fe55271", "cmd": "python3 transform/tcga/expression.py"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "07b930da26e4a06dcf8c9a0faff57be1", "label": "READS"}}
+{"data": {"id": "15525092ad0e0598b95b874c9660bf6c", "path": "source/tcga/expression/transcript-level/TCGA_ACC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "15525092ad0e0598b95b874c9660bf6c", "label": "READS"}}
+{"data": {"id": "573d79ef0d89f082cf9cfd5074bc9c4e", "path": "source/tcga/expression/transcript-level/TCGA_BLCA_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "573d79ef0d89f082cf9cfd5074bc9c4e", "label": "READS"}}
+{"data": {"id": "2f1ac0e6b3717e611ba7d9f4deb33d3a", "path": "source/tcga/expression/transcript-level/TCGA_BRCA_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "2f1ac0e6b3717e611ba7d9f4deb33d3a", "label": "READS"}}
+{"data": {"id": "86b135d6e38bbfdeed8ed32c39bb259f", "path": "source/tcga/expression/transcript-level/TCGA_CESC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "86b135d6e38bbfdeed8ed32c39bb259f", "label": "READS"}}
+{"data": {"id": "6bfc5ade25682e5e22d40aa5dee52fc6", "path": "source/tcga/expression/transcript-level/TCGA_CHOL_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "6bfc5ade25682e5e22d40aa5dee52fc6", "label": "READS"}}
+{"data": {"id": "55c0ee1e9635d1ce2ccb6756956de3c7", "path": "source/tcga/expression/transcript-level/TCGA_COAD_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "55c0ee1e9635d1ce2ccb6756956de3c7", "label": "READS"}}
+{"data": {"id": "2cc75831492baccf7e12a41d6b7850e3", "path": "source/tcga/expression/transcript-level/TCGA_DLBC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "2cc75831492baccf7e12a41d6b7850e3", "label": "READS"}}
+{"data": {"id": "4872a6998f184dc6bce949c4fce6e00d", "path": "source/tcga/expression/transcript-level/TCGA_ESCA_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "4872a6998f184dc6bce949c4fce6e00d", "label": "READS"}}
+{"data": {"id": "7b330535d7a25cc5868e237031a8c6af", "path": "source/tcga/expression/transcript-level/TCGA_GBM_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "7b330535d7a25cc5868e237031a8c6af", "label": "READS"}}
+{"data": {"id": "6c72ca307415399cfaddd89a2c36126a", "path": "source/tcga/expression/transcript-level/TCGA_HNSC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "6c72ca307415399cfaddd89a2c36126a", "label": "READS"}}
+{"data": {"id": "747e40be0eeb9d4e9c1ba71f003358af", "path": "source/tcga/expression/transcript-level/TCGA_KICH_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "747e40be0eeb9d4e9c1ba71f003358af", "label": "READS"}}
+{"data": {"id": "e322ed409f6fadc36d32c3be6fcd8945", "path": "source/tcga/expression/transcript-level/TCGA_KIRC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "e322ed409f6fadc36d32c3be6fcd8945", "label": "READS"}}
+{"data": {"id": "ff1ac98d2d10d2db60c604db7d9901b0", "path": "source/tcga/expression/transcript-level/TCGA_KIRP_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "ff1ac98d2d10d2db60c604db7d9901b0", "label": "READS"}}
+{"data": {"id": "30cddfc0df23b3585dd8e974d929af58", "path": "source/tcga/expression/transcript-level/TCGA_LAML_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "30cddfc0df23b3585dd8e974d929af58", "label": "READS"}}
+{"data": {"id": "23a10d41d73590a4c25565da611b9c4a", "path": "source/tcga/expression/transcript-level/TCGA_LGG_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "23a10d41d73590a4c25565da611b9c4a", "label": "READS"}}
+{"data": {"id": "dae7932123d07e0b85baa5f18796ace7", "path": "source/tcga/expression/transcript-level/TCGA_LIHC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "dae7932123d07e0b85baa5f18796ace7", "label": "READS"}}
+{"data": {"id": "3ccf7e592f48e9398bf9a49d2e20effb", "path": "source/tcga/expression/transcript-level/TCGA_LUAD_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "3ccf7e592f48e9398bf9a49d2e20effb", "label": "READS"}}
+{"data": {"id": "27857a3ca41e890e9ff126179b9d6aae", "path": "source/tcga/expression/transcript-level/TCGA_LUSC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "27857a3ca41e890e9ff126179b9d6aae", "label": "READS"}}
+{"data": {"id": "5911f686ab9a38dcce33af995190fae7", "path": "source/tcga/expression/transcript-level/TCGA_MESO_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "5911f686ab9a38dcce33af995190fae7", "label": "READS"}}
+{"data": {"id": "6070e90f83213c9a32c3ca1ce78a5e4d", "path": "source/tcga/expression/transcript-level/TCGA_OV_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "6070e90f83213c9a32c3ca1ce78a5e4d", "label": "READS"}}
+{"data": {"id": "e874d14f3e53683c99f0fb95ee4bf240", "path": "source/tcga/expression/transcript-level/TCGA_PAAD_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "e874d14f3e53683c99f0fb95ee4bf240", "label": "READS"}}
+{"data": {"id": "53aa282256ef2176b36ed3e160dc6b78", "path": "source/tcga/expression/transcript-level/TCGA_PCPG_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "53aa282256ef2176b36ed3e160dc6b78", "label": "READS"}}
+{"data": {"id": "27526ef7b2035267b36c42703c5ecbaf", "path": "source/tcga/expression/transcript-level/TCGA_PRAD_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "27526ef7b2035267b36c42703c5ecbaf", "label": "READS"}}
+{"data": {"id": "cea3ed509d0a417c3262e98ca056e9e3", "path": "source/tcga/expression/transcript-level/TCGA_READ_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "cea3ed509d0a417c3262e98ca056e9e3", "label": "READS"}}
+{"data": {"id": "3d3c0551ad49946e6baf622008a0de75", "path": "source/tcga/expression/transcript-level/TCGA_SARC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "3d3c0551ad49946e6baf622008a0de75", "label": "READS"}}
+{"data": {"id": "e01f02dce54d7ce83f668784fed750be", "path": "source/tcga/expression/transcript-level/TCGA_SKCM_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "e01f02dce54d7ce83f668784fed750be", "label": "READS"}}
+{"data": {"id": "10a14a8b317a34784e5b3e62c3fa387a", "path": "source/tcga/expression/transcript-level/TCGA_STAD_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "10a14a8b317a34784e5b3e62c3fa387a", "label": "READS"}}
+{"data": {"id": "ac3b945689c0d84e0812ee56a044fcaf", "path": "source/tcga/expression/transcript-level/TCGA_TGCT_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "ac3b945689c0d84e0812ee56a044fcaf", "label": "READS"}}
+{"data": {"id": "d8a1458ae5e22ce9037177bd38797da0", "path": "source/tcga/expression/transcript-level/TCGA_THCA_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "d8a1458ae5e22ce9037177bd38797da0", "label": "READS"}}
+{"data": {"id": "4f8e026ae6a4cde7f17c679b6c58c1c0", "path": "source/tcga/expression/transcript-level/TCGA_THYM_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "4f8e026ae6a4cde7f17c679b6c58c1c0", "label": "READS"}}
+{"data": {"id": "fd8c04773f8d6d7b083e3d12710431c8", "path": "source/tcga/expression/transcript-level/TCGA_UCEC_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "fd8c04773f8d6d7b083e3d12710431c8", "label": "READS"}}
+{"data": {"id": "39d3eb04b319e37ae83b1d9fda608dea", "path": "source/tcga/expression/transcript-level/TCGA_UCS_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "39d3eb04b319e37ae83b1d9fda608dea", "label": "READS"}}
+{"data": {"id": "4ead672bc051010636f79d7afe27fd9e", "path": "source/tcga/expression/transcript-level/TCGA_UVM_tpm.tsv.gz"}}
+{"data": {"target": "8bee358dfa9621d29fb7858c9fe55271", "source": "4ead672bc051010636f79d7afe27fd9e", "label": "READS"}}
+{"data": {"target": "d52ce08b355b2a2a9bf228e11569e795", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "d6a46b9cfb1207b364ca705a0bf1f21a", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "e55eb2be59f1a637096d78610469a5ff", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "f32cb29a9e35923c346d8becb8b02997", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "9100856550e0e2be45e503cca901bd6c", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "8e58399bc17fdf7fc186ada856d3a6bc", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "09a1798534b5a3bee1ab9dcf07a1005e", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "fb9fee1d538f5a3e53eacdd7f92908bf", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4711ee769f43917f784a55f074044042", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "d537bda33d8c1ee9eb28a7cc6afa37b4", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4e990638e7dd7c3bb89ecc064fb70b53", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "a2aaac76357ebadb797f47d0e69855c8", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "7da798407b622c01ea5286323e284a92", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "17c15929ba2af4747453f9cef54e10ea", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "436abfc635655ea71f7e30dc552d562e", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "c8f46d650102d58753754c4645fee4fb", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "96336e5a7a33d619bb72963ee0119f54", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ca7ef926b3f388602c7c97446737f605", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "77b3cd6f707acba6ab8b3adf981cf2b5", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "cd4fdacbabb32456c1ed38559711cb2e", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ecf8b744ebba847b939140ad2d99f53c", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "e638638c60d88f2eadbe16d20da59f47", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "0be653aec580cfab7d8bbd7f8ea906fa", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "76173ee809d1f17620f6b91bc5aec203", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ffb98f27e2b35201ad3a68ebf2e72d5c", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "e2688b360bba99db64ca5a892df89fc2", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "14159ce41fa48fa59e9ee239c887bcf2", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "b9271d1c8f1401733ebb4ad668dfdfc2", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "1d3371b64d125bdb127144f036b7bd32", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "76ac56f59983f9375992f3526b7aa0bd", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "2b1a51119bcbb686ac72c64a38a7b44f", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "405d110c23333c8ef9ad5335f0eda33b", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4f638690f1aacc7a163455eede9dfed7", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "a0713c1270b5c8d7433c2947a8dcc9fb", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "12b37446dccd6202ad01c5829653b98a", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "10d5b99b1987a2208a84d12eb67261a0", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "779951120643a3ab33a1ee78e4796722", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ebd98af5e260c1d38a773b5c873397c9", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "fe622a99ffe26db1eb793e38e7499a2f", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "9d9eb1c1cfff96aff026d713daaa8a29", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "9f3c0f6fd402a56c06ff8691e309ebcc", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "dbfcbcc3ee4fbe02d0f6b0dbe1163c73", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "c795f3af4efe8e085845f06e30301fb9", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "bfac44ab27ba4eaaa7cd7ab97f202f28", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "0126facf60cd766d3dabba165c01741b", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "f39c2e234ba030129ddf5696abdb83ad", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4a01e390da36ee2821f4f669aee4c1d2", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "53f9a1e2be9ebf95d98a5ac5ad8f6ca5", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "b1bfdc61de815e8652e4a7694ec060ad", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "44706d063bcace394e27939da742878c", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "b2bed51362fc48bdc57adf1214bdb1d0", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ccfc89e2c885ab3b88c0b0203d8d640b", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "88a82a0c58cb8f0446bb3a8dd4bcde68", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4a8b83a64a8020a2f1e270206b52991a", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "751c9abd455b5611dc244a068a63133d", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "f6be608d604698e3c0c7f49126a43d0b", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ede67c81144eb2aafe6a0fc0c04d282b", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "435810608e87d4fc8e711636e5b66783", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "c053a7ccda2d31a19b63f451897bcaf4", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "8a585e93d318ac4bb85bf143e64f0da7", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "84758e017ed09560d00f74916ff69c12", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "e2d3d4e03791d2fc16445895c405b535", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "ab1df9ab8bedcc6f830cf14cd2479bc0", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "f7d1b093a932ff3995defba163ee291c", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "4118c8abf3181a11b851539dedf2d3ba", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"target": "0abcb1595fab9c96d58d6baccd9ed65a", "source": "8bee358dfa9621d29fb7858c9fe55271", "edge": "WRITES"}}
+{"data": {"id": "3e31de9794cc1df65cd01255bb953ed6", "cmd": "python3 transform/tcga/gistic2_cna.py"}}
+{"data": {"id": "7ed8a66d681969f38829d8a8794aafb7", "path": "source/tcga/gistic2-firehose/TCGA-ACC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "7ed8a66d681969f38829d8a8794aafb7", "label": "READS"}}
+{"data": {"id": "8a2b4eeda87a2ee0f698fe82a702bfdc", "path": "source/tcga/gistic2-firehose/TCGA-BLCA_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "8a2b4eeda87a2ee0f698fe82a702bfdc", "label": "READS"}}
+{"data": {"id": "607be046e5ebfb1ca1388386e99c51ba", "path": "source/tcga/gistic2-firehose/TCGA-BRCA_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "607be046e5ebfb1ca1388386e99c51ba", "label": "READS"}}
+{"data": {"id": "d78773d9ba5af806ebb3bf965fe0e8d8", "path": "source/tcga/gistic2-firehose/TCGA-CESC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "d78773d9ba5af806ebb3bf965fe0e8d8", "label": "READS"}}
+{"data": {"id": "6200634e2db4682f75116a221dd6a4cb", "path": "source/tcga/gistic2-firehose/TCGA-CHOL_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "6200634e2db4682f75116a221dd6a4cb", "label": "READS"}}
+{"data": {"id": "0c52a2c9b9748fd7a68d9038af1d86b4", "path": "source/tcga/gistic2-firehose/TCGA-COAD_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "0c52a2c9b9748fd7a68d9038af1d86b4", "label": "READS"}}
+{"data": {"id": "66b164445a29377e84ec72b40b3bb05e", "path": "source/tcga/gistic2-firehose/TCGA-DLBC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "66b164445a29377e84ec72b40b3bb05e", "label": "READS"}}
+{"data": {"id": "66ff2c2b20494dae3a540647ecf67a3c", "path": "source/tcga/gistic2-firehose/TCGA-ESCA_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "66ff2c2b20494dae3a540647ecf67a3c", "label": "READS"}}
+{"data": {"id": "97d958fc80ce714bf7b061bc3228fa59", "path": "source/tcga/gistic2-firehose/TCGA-GBM_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "97d958fc80ce714bf7b061bc3228fa59", "label": "READS"}}
+{"data": {"id": "c947de966e711d8e0ac96bc714bdc33e", "path": "source/tcga/gistic2-firehose/TCGA-HNSC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "c947de966e711d8e0ac96bc714bdc33e", "label": "READS"}}
+{"data": {"id": "4a503284399f0a0d27b054cdf635bcd3", "path": "source/tcga/gistic2-firehose/TCGA-KICH_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "4a503284399f0a0d27b054cdf635bcd3", "label": "READS"}}
+{"data": {"id": "b7ffa8171283901eddfc0bc809ba66e1", "path": "source/tcga/gistic2-firehose/TCGA-KIRC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "b7ffa8171283901eddfc0bc809ba66e1", "label": "READS"}}
+{"data": {"id": "1e928966db653b726d8f6068359a4302", "path": "source/tcga/gistic2-firehose/TCGA-KIRP_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "1e928966db653b726d8f6068359a4302", "label": "READS"}}
+{"data": {"id": "6f1f2ba07bfb71be2fd847b938b969a0", "path": "source/tcga/gistic2-firehose/TCGA-LAML_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "6f1f2ba07bfb71be2fd847b938b969a0", "label": "READS"}}
+{"data": {"id": "fbacee0d7e43ac76c8422d1b3dd90ebd", "path": "source/tcga/gistic2-firehose/TCGA-LGG_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "fbacee0d7e43ac76c8422d1b3dd90ebd", "label": "READS"}}
+{"data": {"id": "d5354de501bca704eec813acc62d4140", "path": "source/tcga/gistic2-firehose/TCGA-LIHC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "d5354de501bca704eec813acc62d4140", "label": "READS"}}
+{"data": {"id": "4f60ed785141741d70f0c3751a727ed2", "path": "source/tcga/gistic2-firehose/TCGA-LUAD_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "4f60ed785141741d70f0c3751a727ed2", "label": "READS"}}
+{"data": {"id": "225f1539d028af78ad8722e010b7e5bf", "path": "source/tcga/gistic2-firehose/TCGA-LUSC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "225f1539d028af78ad8722e010b7e5bf", "label": "READS"}}
+{"data": {"id": "143912a953b484686e0b330545e546d5", "path": "source/tcga/gistic2-firehose/TCGA-MESO_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "143912a953b484686e0b330545e546d5", "label": "READS"}}
+{"data": {"id": "d72f50091a59410a5b447d05e8935753", "path": "source/tcga/gistic2-firehose/TCGA-OV_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "d72f50091a59410a5b447d05e8935753", "label": "READS"}}
+{"data": {"id": "1d2c1ed10994a215b881fbabb564ae08", "path": "source/tcga/gistic2-firehose/TCGA-PAAD_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "1d2c1ed10994a215b881fbabb564ae08", "label": "READS"}}
+{"data": {"id": "090a8ec1471a7cb3b2dbaee60d082d72", "path": "source/tcga/gistic2-firehose/TCGA-PCPG_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "090a8ec1471a7cb3b2dbaee60d082d72", "label": "READS"}}
+{"data": {"id": "e99bf15c46b89e82e105be243297a458", "path": "source/tcga/gistic2-firehose/TCGA-PRAD_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "e99bf15c46b89e82e105be243297a458", "label": "READS"}}
+{"data": {"id": "80aab6946b4ae4931c920f5e4aaf4eca", "path": "source/tcga/gistic2-firehose/TCGA-READ_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "80aab6946b4ae4931c920f5e4aaf4eca", "label": "READS"}}
+{"data": {"id": "909baada36df92025e9bfe966c169d7a", "path": "source/tcga/gistic2-firehose/TCGA-SARC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "909baada36df92025e9bfe966c169d7a", "label": "READS"}}
+{"data": {"id": "0f082a803ca112c65cdfe3604324dc1f", "path": "source/tcga/gistic2-firehose/TCGA-SKCM_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "0f082a803ca112c65cdfe3604324dc1f", "label": "READS"}}
+{"data": {"id": "cd163dced803f9b3db889013f8da39bd", "path": "source/tcga/gistic2-firehose/TCGA-STAD_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "cd163dced803f9b3db889013f8da39bd", "label": "READS"}}
+{"data": {"id": "d76797e15a46463a2e59b5f1b4b61da3", "path": "source/tcga/gistic2-firehose/TCGA-TGCT_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "d76797e15a46463a2e59b5f1b4b61da3", "label": "READS"}}
+{"data": {"id": "e97b8bc38899281d97c955e487067034", "path": "source/tcga/gistic2-firehose/TCGA-THCA_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "e97b8bc38899281d97c955e487067034", "label": "READS"}}
+{"data": {"id": "9e2a6256f58aaf52924bb74bf48ae051", "path": "source/tcga/gistic2-firehose/TCGA-THYM_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "9e2a6256f58aaf52924bb74bf48ae051", "label": "READS"}}
+{"data": {"id": "232129dc573528987d63cddcef84bacd", "path": "source/tcga/gistic2-firehose/TCGA-UCEC_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "232129dc573528987d63cddcef84bacd", "label": "READS"}}
+{"data": {"id": "6bf29b78973b54e245e8fa4029415d66", "path": "source/tcga/gistic2-firehose/TCGA-UCS_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "6bf29b78973b54e245e8fa4029415d66", "label": "READS"}}
+{"data": {"id": "d010c6e51ed5d276fa2d1d7a06eb01b7", "path": "source/tcga/gistic2-firehose/TCGA-UVM_all_thresholded.by_genes.txt"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "d010c6e51ed5d276fa2d1d7a06eb01b7", "label": "READS"}}
+{"data": {"id": "1773485cc014d9057a66d80c31911cc5", "path": "outputs/gdc/Aliquot.Vertex.json.gz"}}
+{"data": {"target": "3e31de9794cc1df65cd01255bb953ed6", "source": "1773485cc014d9057a66d80c31911cc5", "label": "READS"}}
+{"data": {"target": "351b7225441a45a88dc2b89b9be94c2c", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "d99490356b48d72e62556fd7c3471cb7", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "1dc3ddcebd7185200844e8fc980a40c8", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "5bf0299eee8488abb12188abe419c5f8", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "b27e006e080d38763b179521d0b1ede9", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "c357445f5d9547c57ba6a50fb8211243", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "f4d0869d2d80e0cd5e9d6e31ec426850", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "a4052b9072c9c1e94c86715e2a043554", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "5d2bd62c3f8b55af437bddc3815e4431", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "b450e99d5a16e2c330003d63910fa19a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "711fdaa35b812b01f4dd238f44607526", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "9a016c35e68da7b1b68a9a4723c44525", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "66f420f54a0a10157efc03023c56006f", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "4abccc837d68dbd857aebb54bf74f4f0", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "e62e2271c3b99d6f4de88593d76c6237", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "c0e44c7a477d4e4e2361eef25e824585", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "485f4b470f6b20ee26250b31489c4bcf", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "9bdc0f37441834e8cef04c524b4bc6f3", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "01bdfd7abc2d18abe6b3b0bc4e329a83", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "c78085c560e44ccad95331a058a7587d", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "4467d2330a7df882c336e080883413e6", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "969bf9088cc569d37d954e4dd596383b", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "9264946d39f9887d65f70c1f0e486392", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "2264729030607eb6c4132c8c6ce05dd0", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "ebc9dfe45053b4e76ca90b7eed2a9528", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "c20499fd00bf6a4c7da6209775d94601", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "f90b4976cc11511fe47ae5f7a7ad0b42", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "eb21f1e7da8bc65e443ea74da6573b4a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "4768cb7e994a62f8cb35ed8223f5eecf", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "59b6b7e586c139c7d718b64fa277e698", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "43761100d3219f3ef0d6b6f485d2f272", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "8e4d224e1d7ab00bcba1b2b9ef03fa81", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "2d3a2d470e585f57ae4d0a1359c63295", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "114a22a5b7e9cf047bf53c04d7b74963", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "650ae5a0f213c6c1f510d783b4089eca", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "7a24c023523f05b1c9af54cf5f111630", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "1d5707b1f2c7f20a146c69134ea5c220", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "acd08c6546d5ebb8ddcd909e15241fa5", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "5e837416e77b030fb0a337c652f8b736", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "6ca1895c73593be802db1fee8ba7f5a0", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "fa86325035e9e638b88b803039e4b79a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "e80bd2342bc31dd4b47e472a86d37909", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "88fe1d8ce143d11284ed66a54a921084", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "45656c7274c67aedd12ad7dde21e77eb", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "926a2710aa6ddcaaeb0a047e607712da", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "881a082adf9e76b6986bbf6b71e0b032", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "704f2a6786730e6e82dd1250af67ac8a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "d9781a7eb978ab39ba26dfd0610b1624", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "f6e4560ececfa5c2972e631dfd2291a3", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "7079539ca1515bcc1a552cfed9668d1b", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "c4ef009182c7dbf18327b6c79b7d3737", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "1be2a4306d0384087c61f11dd035b359", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "6bead8d4d303172e13b9bc261dc8d8a8", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "13aaee5509b61d68c6788eb38b6e6991", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "4f206898eefc4cea3fa3c50ae6cac408", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "eaad9c0df4e738af57177788b4c2c0c1", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "df9b04424c458edb28d22c6965b7889c", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "be6f80931095406013d02ce8040a6ef2", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "9da2378b0ad1c2ee53e5622dca741d0a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "08dbed6cfc9edc090981c5bacd6ed4fc", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "b8c8c283e4c3e66f9c91c40c6a6e28de", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "a8cca462a301ff0263f79d6580ce801a", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "d9f2d5eea279bff925118b0e4ef7c32c", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "47d8e05bb5b536a7900f598b91fbc874", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "021586708f8702c1ab13d7fdf3b28235", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "86e2d201717bf9a7e025cd4f587ab467", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "3ba733eb0e3a17a8b6676f6486a23d3c", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"target": "961e411146c0574719f39de9e223f48d", "source": "3e31de9794cc1df65cd01255bb953ed6", "edge": "WRITES"}}
+{"data": {"id": "7934536882c15f00930025fcc214fede", "cmd": "wget https://data.broadinstitute.org/ccle/CCLE_DepMap_18q3_maf_20180718.txt -O source/ccle/CCLE_DepMap_18q3_maf_20180718.txt"}}
+{"data": {"target": "7934536882c15f00930025fcc214fede", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "ce843abcbc98fc858559718dc67a34ce", "source": "7934536882c15f00930025fcc214fede", "edge": "WRITES"}}
+{"data": {"id": "26c71f03aba0b0a51a086dcd33769a8d", "cmd": "wget https://data.broadinstitute.org/ccle/CCLE_DepMap_18q3_RNAseq_RPKM_20180718.gct -O source/ccle/CCLE_DepMap_18q3_RNAseq_RPKM_20180718.gct"}}
+{"data": {"target": "26c71f03aba0b0a51a086dcd33769a8d", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "1c4711bb30e668d5f387e1819bae99ef", "source": "26c71f03aba0b0a51a086dcd33769a8d", "edge": "WRITES"}}
+{"data": {"id": "6a8b30a7f039507d5187926bfd713c30", "cmd": "wget https://data.broadinstitute.org/ccle_legacy_data/pharmacological_profiling/CCLE_NP24.2009_Drug_data_2015.02.24.csv -O source/ccle/CCLE_NP24.2009_Drug_data_2015.02.24.csv"}}
+{"data": {"target": "6a8b30a7f039507d5187926bfd713c30", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "917f411573d5e68f9d61234e9e1bb539", "source": "6a8b30a7f039507d5187926bfd713c30", "edge": "WRITES"}}
+{"data": {"id": "939ce56c20497db992f1b9e58161b1a2", "cmd": "wget https://osf.io/brkh6/download -O source/ccle/expression/CCLE_tpm.tsv.gz"}}
+{"data": {"target": "939ce56c20497db992f1b9e58161b1a2", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "4fadc5ed3b8008b390fca93278b06b23", "source": "939ce56c20497db992f1b9e58161b1a2", "edge": "WRITES"}}
+{"data": {"id": "1bfe5654fd664355e54d01704873e071", "cmd": "wget https://depmap.org/portal/download/api/download/external?file_name=processed_portal_downloads%2Fdepmap-public-2018q3-cell-line-metadata-0bd2.2%2FDepMap-2018q3-celllines.csv -O source/ccle/DepMap-2018q3-celllines.csv"}}
+{"data": {"target": "1bfe5654fd664355e54d01704873e071", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "3434f25021354ddd60df6307ad29ea79", "source": "1bfe5654fd664355e54d01704873e071", "edge": "WRITES"}}
+{"data": {"id": "38d99edb6b198bfed776befe11b3c5e4", "cmd": "curl --verbose --progress-bar --ipv4 --connect-timeout 8 --max-time 120 --retry 128 --ftp-ssl --disable-epsv --ftp-pasv ftp://ftp.ensembl.org/pub/grch37/release-94/gff3/homo_sapiens/Homo_sapiens.GRCh37.87.chr_patch_hapl_scaff.gff3.gz --output source/ensembl/Homo_sapiens.GRCh37.87.chr_patch_hapl_scaff.gff3.gz"}}
+{"data": {"target": "38d99edb6b198bfed776befe11b3c5e4", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "24cfb0003e76c88c0df30f512fa3c148", "source": "38d99edb6b198bfed776befe11b3c5e4", "edge": "WRITES"}}
+{"data": {"id": "6c78eec6572c360195ef8856074a03bb", "cmd": "curl https://s3-us-west-2.amazonaws.com/g2p-0.11/all.json | gzip > source/g2p/all.json.gz"}}
+{"data": {"id": "1e85d27c4639f6730bb7624094413c74", "path": "source/g2p/version.txt"}}
+{"data": {"target": "6c78eec6572c360195ef8856074a03bb", "source": "1e85d27c4639f6730bb7624094413c74", "label": "READS"}}
+{"data": {"target": "3c0d06dafbb4c9c4a18abd750d1e810a", "source": "6c78eec6572c360195ef8856074a03bb", "edge": "WRITES"}}
+{"data": {"id": "9399239b2584373b6ea43efcababb912", "cmd": "wget https://depmap.org/portal/download/api/download/external?file_name=processed_portal_downloads%2Fsanger-gdsc-545e.1%2FGDSC_AUC.csv -O source/gdsc/GDSC_AUC.csv"}}
+{"data": {"target": "9399239b2584373b6ea43efcababb912", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "eef91774a6b4ef37e3a8f341b1a48d0d", "source": "9399239b2584373b6ea43efcababb912", "edge": "WRITES"}}
+{"data": {"id": "1bada0b72fb7d4b523a0b9cbea3ef49f", "cmd": "curl --verbose --progress-bar --ipv4 --connect-timeout 8 --max-time 120 --retry 128 --ftp-ssl --disable-epsv --ftp-pasv ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/json/hgnc_complete_set.json --output source/gene_enricher/hgnc_complete_set.json"}}
+{"data": {"target": "1bada0b72fb7d4b523a0b9cbea3ef49f", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "cc3abedb40a6795c34b739a6df2b140e", "source": "1bada0b72fb7d4b523a0b9cbea3ef49f", "edge": "WRITES"}}
+{"data": {"id": "0ede1080a51456e6243865d8a338068b", "cmd": "curl --verbose --progress-bar --ipv4 --connect-timeout 8 --max-time 120 --retry 128 --ftp-ssl --disable-epsv --ftp-pasv ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/idmapping/by_organism/HUMAN_9606_idmapping.dat.gz --output source/go/HUMAN_9606_idmapping.dat.gz"}}
+{"data": {"target": "0ede1080a51456e6243865d8a338068b", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "de194db0e7e5f01c29732c9f23dd603c", "source": "0ede1080a51456e6243865d8a338068b", "edge": "WRITES"}}
+{"data": {"id": "e7aa34345f5b8f9dc79e21d82e8a8cb5", "cmd": "wget http://purl.obolibrary.org/obo/go.obo -O source/go/go.obo"}}
+{"data": {"target": "e7aa34345f5b8f9dc79e21d82e8a8cb5", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "0f006ae77ea311550c6df2054096927b", "source": "e7aa34345f5b8f9dc79e21d82e8a8cb5", "edge": "WRITES"}}
+{"data": {"id": "34612a7c758c8559e8c8c6e1ab1bcda0", "cmd": "wget http://www.geneontology.org/gene-associations/goa_human.gaf.gz -O source/go/goa_human.gaf.gz"}}
+{"data": {"target": "34612a7c758c8559e8c8c6e1ab1bcda0", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "0916a032e2215fec5503ba20a627c62a", "source": "34612a7c758c8559e8c8c6e1ab1bcda0", "edge": "WRITES"}}
+{"data": {"id": "9435deb43f5c50a57a41c2d29e7c6c8f", "cmd": "wget https://storage.googleapis.com/gtex_analysis_v7/rna_seq_data/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct.gz -O source/gtex/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct"}}
+{"data": {"target": "9435deb43f5c50a57a41c2d29e7c6c8f", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "e027506deca6a62f50e316561c6cb8cb", "source": "9435deb43f5c50a57a41c2d29e7c6c8f", "edge": "WRITES"}}
+{"data": {"id": "11a58aa6be96ece75830b133dde1ebba", "cmd": "wget https://storage.googleapis.com/gtex_analysis_v7/annotations/GTEx_v7_Annotations_SampleAttributesDS.txt -O source/gtex/GTEx_v7_Annotations_SampleAttributesDS.txt"}}
+{"data": {"target": "11a58aa6be96ece75830b133dde1ebba", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "80f2b89d45843abb0a0dc39d5054530c", "source": "11a58aa6be96ece75830b133dde1ebba", "edge": "WRITES"}}
+{"data": {"id": "fd3ab78374ee02dde8b53980e846cec9", "cmd": "wget https://storage.googleapis.com/gtex_analysis_v7/annotations/GTEx_v7_Annotations_SubjectPhenotypesDS.txt -O source/gtex/GTEx_v7_Annotations_SubjectPhenotypesDS.txt"}}
+{"data": {"target": "fd3ab78374ee02dde8b53980e846cec9", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "73d9180f604c17e6c211ca1694dc9ff7", "source": "fd3ab78374ee02dde8b53980e846cec9", "edge": "WRITES"}}
+{"data": {"id": "26950a7b600df5b59cafec823be8b637", "cmd": "# unknown"}}
+{"data": {"id": "stub-md5.remote://source/mc3/mc3.v0.2.8.PUBLIC.maf.gz", "path": "remote://source/mc3/mc3.v0.2.8.PUBLIC.maf.gz"}}
+{"data": {"target": "26950a7b600df5b59cafec823be8b637", "source": "stub-md5.remote://source/mc3/mc3.v0.2.8.PUBLIC.maf.gz", "label": "READS"}}
+{"data": {"target": "639ad8f8386e98dacc22e439188aa8fa", "source": "26950a7b600df5b59cafec823be8b637", "edge": "WRITES"}}
+{"data": {"id": "728fb80bcccf172d89389330cb58a932", "cmd": "# unknown"}}
+{"data": {"id": "stub-md5.remote://source/myvariant.info/harvested_myvariantinfo.json.gz", "path": "remote://source/myvariant.info/harvested_myvariantinfo.json.gz"}}
+{"data": {"target": "728fb80bcccf172d89389330cb58a932", "source": "stub-md5.remote://source/myvariant.info/harvested_myvariantinfo.json.gz", "label": "READS"}}
+{"data": {"target": "08ec6eb40ad76b48210aa0e939ae7aa1", "source": "728fb80bcccf172d89389330cb58a932", "edge": "WRITES"}}
+{"data": {"id": "d00d3e40dd9474c6b19f8f9c8c0c1a70", "cmd": "# unknown"}}
+{"data": {"id": "stub-md5.remote://source/myvariant.info/metadata.fields.json", "path": "remote://source/myvariant.info/metadata.fields.json"}}
+{"data": {"target": "d00d3e40dd9474c6b19f8f9c8c0c1a70", "source": "stub-md5.remote://source/myvariant.info/metadata.fields.json", "label": "READS"}}
+{"data": {"target": "a9468ae548c1f99ebaeb3d25a961fddd", "source": "d00d3e40dd9474c6b19f8f9c8c0c1a70", "edge": "WRITES"}}
+{"data": {"id": "78cccee396a47029f072d3912141ace9", "cmd": "# unknown"}}
+{"data": {"id": "stub-md5.remote://source/myvariant.info/metadata.json", "path": "remote://source/myvariant.info/metadata.json"}}
+{"data": {"target": "78cccee396a47029f072d3912141ace9", "source": "stub-md5.remote://source/myvariant.info/metadata.json", "label": "READS"}}
+{"data": {"target": "e684d344d13e70a33a5605327a789360", "source": "78cccee396a47029f072d3912141ace9", "edge": "WRITES"}}
+{"data": {"id": "d98241bf18bac943e32f4789f5f25bd5", "cmd": "# unknown"}}
+{"data": {"id": "stub-md5.remote://source/myvariant.info/biothings_current_old_hg19.json.gz", "path": "remote://source/myvariant.info/biothings_current_old_hg19.json.gz"}}
+{"data": {"target": "d98241bf18bac943e32f4789f5f25bd5", "source": "stub-md5.remote://source/myvariant.info/biothings_current_old_hg19.json.gz", "label": "READS"}}
+{"data": {"target": "c390251bd07b4220eb4bf824a5240b08", "source": "d98241bf18bac943e32f4789f5f25bd5", "edge": "WRITES"}}
+{"data": {"id": "f159df1d9614142c3a85de3d791f318f", "cmd": "wget http://pfam.xfam.org/clans?output=text -O source/pfam/clans.tsv"}}
+{"data": {"target": "f159df1d9614142c3a85de3d791f318f", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "9f57d29531c058ad641ed81cbea0723d", "source": "f159df1d9614142c3a85de3d791f318f", "edge": "WRITES"}}
+{"data": {"id": "17eaa5adf579f89d5dabf9a1b49c18ba", "cmd": "python3 transform/pfam/list.py -O source/pfam/id_list.txt"}}
+{"data": {"target": "17eaa5adf579f89d5dabf9a1b49c18ba", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "54c1197d01d28013bcde897528626688", "source": "17eaa5adf579f89d5dabf9a1b49c18ba", "edge": "WRITES"}}
+{"data": {"id": "c313d65df794468dac133a5bf4abf5cf", "cmd": "python3 transform/pfam/download.py --archive ; tar xvfz source/pfam/pfam.tar.gz -C source/pfam"}}
+{"data": {"id": "5c128eba3f4c268249fa3c1a3132352f", "path": "transform/pfam/list.py"}}
+{"data": {"target": "c313d65df794468dac133a5bf4abf5cf", "source": "5c128eba3f4c268249fa3c1a3132352f", "label": "READS"}}
+{"data": {"target": "a53d9ebefc301f232e345c167e9627cf", "source": "c313d65df794468dac133a5bf4abf5cf", "edge": "WRITES"}}
+{"data": {"id": "fc830e7590af9b87a91ec5750729bf2a", "cmd": "wget https://files.osf.io/v1/resources/gqrz9/providers/osfstorage/578518706c613b01f0a8325f/?zip= -O source/tcga/expression/transcript-level/tcga-genomics.zip"}}
+{"data": {"target": "fc830e7590af9b87a91ec5750729bf2a", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"id": "6aa89c7570814d2c300a6a316b3db92b", "path": "source/tcga/expression/transcript-level/tcga-genomics.zip"}}
+{"data": {"target": "6aa89c7570814d2c300a6a316b3db92b", "source": "fc830e7590af9b87a91ec5750729bf2a", "edge": "WRITES"}}
+{"data": {"id": "563874f961cc2acc1acd2cfd79355fa0", "cmd": "unzip -j source/tcga/expression/transcript-level/tcga-genomics.zip *_tpm.tsv.gz -d source/tcga/expression/transcript-level"}}
+{"data": {"target": "563874f961cc2acc1acd2cfd79355fa0", "source": "6aa89c7570814d2c300a6a316b3db92b", "label": "READS"}}
+{"data": {"target": "15525092ad0e0598b95b874c9660bf6c", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "573d79ef0d89f082cf9cfd5074bc9c4e", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "2f1ac0e6b3717e611ba7d9f4deb33d3a", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "86b135d6e38bbfdeed8ed32c39bb259f", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "6bfc5ade25682e5e22d40aa5dee52fc6", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "55c0ee1e9635d1ce2ccb6756956de3c7", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "2cc75831492baccf7e12a41d6b7850e3", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "4872a6998f184dc6bce949c4fce6e00d", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "7b330535d7a25cc5868e237031a8c6af", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "6c72ca307415399cfaddd89a2c36126a", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "747e40be0eeb9d4e9c1ba71f003358af", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "e322ed409f6fadc36d32c3be6fcd8945", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "ff1ac98d2d10d2db60c604db7d9901b0", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "30cddfc0df23b3585dd8e974d929af58", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "23a10d41d73590a4c25565da611b9c4a", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "dae7932123d07e0b85baa5f18796ace7", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "3ccf7e592f48e9398bf9a49d2e20effb", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "27857a3ca41e890e9ff126179b9d6aae", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "5911f686ab9a38dcce33af995190fae7", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "6070e90f83213c9a32c3ca1ce78a5e4d", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "e874d14f3e53683c99f0fb95ee4bf240", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "53aa282256ef2176b36ed3e160dc6b78", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "27526ef7b2035267b36c42703c5ecbaf", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "cea3ed509d0a417c3262e98ca056e9e3", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "3d3c0551ad49946e6baf622008a0de75", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "e01f02dce54d7ce83f668784fed750be", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "10a14a8b317a34784e5b3e62c3fa387a", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "ac3b945689c0d84e0812ee56a044fcaf", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "d8a1458ae5e22ce9037177bd38797da0", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "4f8e026ae6a4cde7f17c679b6c58c1c0", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "fd8c04773f8d6d7b083e3d12710431c8", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "39d3eb04b319e37ae83b1d9fda608dea", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"target": "4ead672bc051010636f79d7afe27fd9e", "source": "563874f961cc2acc1acd2cfd79355fa0", "edge": "WRITES"}}
+{"data": {"id": "7b069f3f886eb9771c59e8b9a8abbe10", "cmd": "wget https://osf.io/7qpsg/download -O source/tcga/expression/transcript-level/TCGA_ID_MAP.csv"}}
+{"data": {"target": "7b069f3f886eb9771c59e8b9a8abbe10", "source": "6808ca805661622ad65ae014a4b2a094", "label": "READS"}}
+{"data": {"target": "07b930da26e4a06dcf8c9a0faff57be1", "source": "7b069f3f886eb9771c59e8b9a8abbe10", "edge": "WRITES"}}
