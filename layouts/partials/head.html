@@ -15,36 +15,29 @@
   {{ end }}
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/poole.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/darcula.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/theme.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/funnel.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/favicon.png">
 
-  <script src="{{ .Site.BaseURL }}js/highlight.pack.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/highlight.min.css" />
+  <script src="{{ .Site.BaseURL }}js/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- REACT INSERT START // react dependencies inserted here-->
+  <link href="/provenance/static/css/1.ad5a84e6.chunk.css" rel="stylesheet"></link>
+  <link href="/provenance/static/css/main.16b75b60.chunk.css" rel="stylesheet"></link>
+  <!-- REACT INSERT END -->
 
 </head>
 <body>
-
-  <div class="global-header">
-    <div class="global-header-container">
-      <div class="global-header-home">
-        <a href="http://bmeg.io"><h1>BMEG</h1></a>
-      </div>
-      <ul class="global-header-nav">
-          <li><a href="{{ .Site.BaseURL }}queries/">Make Queries</a></li>
-          <li><a href="{{ .Site.BaseURL }}building/">Build Graph</a></li>
-          <li><a target="_blank" href="https://github.com/bmeg/">GitHub</a></li>
-          <li><a target="_blank" href="https://gitter.im/bmeg/">Chat</a></li>
-        </ul>
-      <div class="global-header-ohsucb">
-        <a href="https://www.ohsu.edu/compbio/"><h2>OHSU Comp Bio</h2></a>
-      </div>
-    </div>
-  </div>
+  {{ partial "navbar.html" . }}
