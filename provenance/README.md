@@ -3,6 +3,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Integration with HUGO
 
+* You’ll need to have Node >= 6 on your local development machine (more)[https://facebook.github.io/create-react-app/docs/getting-started]
+* You'll need to have Facebook's `create-react-library` installed (more)[https://www.npmjs.com/package/create-react-library]
+```
+$npm install -g create-react-library
+```
+
+
 * For react development:
   * Launch `yarn start` from the `provenance` directory as usual
   * Set parameters in `provenance/public/index.html`
