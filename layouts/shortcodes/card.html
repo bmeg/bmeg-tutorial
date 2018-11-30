@@ -1,8 +1,8 @@
 <div class="col s12 m4">
   <div class="icon-block">
-    <h2 class="center brown-text"><i class="material-icons">{{.Get "icon" }}</i></h2>
+    <h2 class="center brown-text"><i class="material-icons" style="font-size: 50px" >{{.Get "icon" }}</i></h2>
     <h5 class="center">{{.Get "title" }}</h5>
-    <p class="light">{{ .Inner }}</p>
+    <p class="light">{{ .Inner | markdownify}}</p>
     <div class="card-action">
       <a href="{{.Get "action_href"}}">{{.Get "action_text"}}</a>
     </div>

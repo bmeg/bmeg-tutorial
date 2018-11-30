@@ -1,3 +1,13 @@
-<div class="parallax-container">
-  <div class="parallax" style="height:50px"><img src="{{.Get "src" }}"></div>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text">{{.Get "title" }}</h1>
+      <div class="row center">
+        <h5 class="header col white-text s12 light">{{.Get "sub_title" }}</h5>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="parallax"><img src="{{.Get "src" }}"></div>
 </div>
