@@ -2,8 +2,8 @@
 title: Provenance
 menu:
   main:
-    parent: Queries
-    weight: 4
+    parent: Building Graph
+    weight: 3
 ---
 
 # BMEG Provenance
