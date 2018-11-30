@@ -1,6 +1,10 @@
 
-<ul id="slide-out" class="sidenav sidenav-fixed">
-    <li class="logo"><a id="logo-container" href="/" class="brand-logo">BMEG</a></li>
+<ul id="slide-out" class="sidenav sidenav-fixed" style="width: 250px">
+    <nav>
+      <div class="nav-wrapper blue darken-2">
+        <a id="logo-container" href="/" class="brand-logo"><img width="125px" src="/img/bmeg-flat.png"/></a>
+      </div>
+    </nav>
     {{ $page := . }}
     {{ range $i, $menu := .Site.Menus }}
       {{ range $menu }}

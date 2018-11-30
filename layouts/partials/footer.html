@@ -1,0 +1,10 @@
+
+<footer class="page-footer blue">
+  <div class="container" {{ if or ( (not (isset .Params "sidebar")) ( .Params "sidebar")) }}style="padding-left: 350px;"{{end}} >
+    <div class="col 14">
+      <a href="https://www.ohsu.edu/compbio/">
+        <img src="{{ .Site.BaseURL }}img/ohsu-logo.png"/>
+      </a>
+    </div>
+  </div>
+</footer>
