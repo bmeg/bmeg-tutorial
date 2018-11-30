@@ -4,7 +4,7 @@
 ---
 
 
-{{% parallax src="img/fiber.jpg"%}}
+{{% parallax src="img/fiber.jpg" title="Bio Medical Evidence Graph" sub_title="A graph database for merging and analyzing connected data"%}}
 
 {{% card-container %}}
 
