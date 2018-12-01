@@ -19,18 +19,11 @@ class App extends React.Component {
   _handleCyCalled = false;
 
   componentDidMount() {
-    // we receieve \n separated json
-    const reducer = (accumulator, currentValue) => {
-      if (currentValue) {
-          accumulator.push(JSON.parse(currentValue));
-      }
-      return accumulator;
-    }
     // get data, assumed to be cytoscape friendly, parse into an array of obj
     fetch(this.props.dataset.url)
-      .then(response => response.text())
+      .then(response => response.json())
       .then(data => {
-          this.setState({ 'elements': data.split(/\r?\n/).reduce(reducer, []) })
+          this.setState({ 'elements': data })
       });
   }
 
@@ -132,15 +125,9 @@ class App extends React.Component {
         return <div/>;
     }
 
-    var columns = [];
-    if (this.state.selection.length > 0) {
-      columns = Object.keys(this.state.selection[0]).map((key, id)=>{
-        return {
-          Header: key,
-          accessor: key
-        }
-      })
-    }
+    const keys = ['_label', 'cmd', 'path'];
+    const columns = keys.map((key) => {return { Header: key, accessor: key }});
+
     return <div>
       <button onClick={this.hideSelected}>Hide Selected</button>
       <button onClick={this.showAll}>Show All</button><br/>
