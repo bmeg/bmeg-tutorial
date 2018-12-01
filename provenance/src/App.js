@@ -1,3 +1,5 @@
+/* eslint-disable anchor-is-valid */
+
 import React from 'react';
 
 import CytoscapeComponent from 'react-cytoscapejs';
@@ -27,31 +29,16 @@ class App extends React.Component {
       });
   }
 
-  // Increase border width to show nodes with hidden neighbors
-  thickenBorder(eles){
-    eles.forEach(function( ele ){
-      var defaultBorderWidth = Number(ele.css("border-width").substring(0,ele.css("border-width").length-2));
-      ele.css("border-width", defaultBorderWidth + 2);
-    });
-    return eles;
-  }
-  // Decrease border width when hidden neighbors of the nodes become visible
-  thinBorder(eles){
-    eles.forEach(function( ele ){
-      var defaultBorderWidth = Number(ele.css("border-width").substring(0,ele.css("border-width").length-2));
-      ele.css("border-width", defaultBorderWidth - 2);
-    });
-    return eles;
-  }
-
   handleCy = cy => {
     // cy setup
     if (cy === this._cy && this._handleCyCalled) {
       return;
     }
     this._cy = cy;
-    window.cy = cy;
     this._handleCyCalled = true;
+    this.layout= cy.layout(
+      {name: this.props.dataset.layout}
+    )
     cy.on('tap', 'edge', event => {
       this.setState({ selection: [event.target.data()] });
     })
@@ -76,18 +63,35 @@ class App extends React.Component {
       }
       this.setState({ 'selection': selectedEles.reduce(reducer,[]) })
     })
-
-
     this.api = cy.viewUtilities({
         neighbor: function(node){
             return node.successors() || node.outgoers();
         },
         neighborSelectTime: 1000
     });
+    this.layout.run()
     this.api.enableMarqueeZoom();
   }
 
+  //
   // button handlers
+  //
+  // Increase border width to show nodes with hidden neighbors
+  thickenBorder(eles){
+    eles.forEach(function( ele ){
+      var defaultBorderWidth = Number(ele.css("border-width").substring(0,ele.css("border-width").length-2));
+      ele.css("border-width", defaultBorderWidth + 2);
+    });
+    return eles;
+  }
+  // Decrease border width when hidden neighbors of the nodes become visible
+  thinBorder(eles){
+    eles.forEach(function( ele ){
+      var defaultBorderWidth = Number(ele.css("border-width").substring(0,ele.css("border-width").length-2));
+      ele.css("border-width", defaultBorderWidth - 2);
+    });
+    return eles;
+  }
   zoomToSelected = e => {
     this.api.disableMarqueeZoom();
     var selectedEles = this._cy.$(":selected");
@@ -113,11 +117,25 @@ class App extends React.Component {
     nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
     this.thickenBorder(nodesWithHiddenNeighbor);
   }
+  hideUnSelected = e => {
+    this.api.disableMarqueeZoom();
+    var nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
+    this.thinBorder(nodesWithHiddenNeighbor);
+    this.api.hide(this._cy.$(":unselected"));
+    nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
+    this.thickenBorder(nodesWithHiddenNeighbor);
+  }
   showAll = e => {
     this.api.disableMarqueeZoom();
     var nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
     this.thinBorder(nodesWithHiddenNeighbor);
     this.api.show(this._cy.elements());
+  }
+  redraw = e => {
+    this.layout.run();
+  }
+  help = e => {
+    window.M.toast({html: '<i>SHIFT + drag to specify region.  SHIFT + taphold to select neighbors</i>'})
   }
 
   render() {
@@ -129,20 +147,28 @@ class App extends React.Component {
     const columns = keys.map((key) => {return { Header: key, accessor: key }});
 
     return <div>
-      <button onClick={this.hideSelected}>Hide Selected</button>
-      <button onClick={this.showAll}>Show All</button><br/>
-      <button onClick={this.zoomToSelected}>Zoom To Selected</button><br/>
-      <button onClick={this.marqueeZoom}>Marquee Zoom</button><i>SHIFT + drag to specify region</i><br/>
-      <button onClick={this.highlightNeighbors}>Highlight Neighbors</button>
-      <button onClick={this.removeHighlights}>Remove Highlights</button><br/>
-
-
-      <CytoscapeComponent
-        elements={this.state.elements}
-        style={ { height:  this.props.dataset.height , width: this.props.dataset.width } }
-        layout={ {name: this.props.dataset.layout} }
-        cy={this.handleCy}
-      />
+      <nav>
+        <div className="nav-wrapper">
+          <ul className="right hide-on-med-and-down">
+            <li><a href="#/" onClick={this.hideSelected}>Hide Selected</a></li>
+            <li><a href="#/" onClick={this.hideUnSelected}>Hide Unselected</a></li>
+            <li><a href="#/" onClick={this.showAll}>Show All</a></li>
+            <li><a href="#/" onClick={this.zoomToSelected}>Zoom To Selected</a></li>
+            <li><a href="#/" onClick={this.marqueeZoom}>Marquee Zoom</a></li>
+            <li><a href="#/" onClick={this.highlightNeighbors}>Highlight Neighbors</a></li>
+            <li><a href="#/" onClick={this.removeHighlights}>Remove Highlights</a></li>
+            <li><a href="#/" onClick={this.redraw}>Re-Draw</a></li>
+            <li><a href="#/" onClick={this.help}>Help</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div>
+        <CytoscapeComponent
+          elements={this.state.elements}
+          style={ { height:  this.props.dataset.height , width: this.props.dataset.width } }
+          cy={this.handleCy}
+        />
+      </div>
       <ReactTable
         data={ this.state.selection }
         columns = { columns }
