@@ -81,7 +81,7 @@ class App extends React.Component {
         }
         return accumulator;
       }
-      this.setState({ 'selection': selectedEles.reduce(reducer,[]) })      
+      this.setState({ 'selection': selectedEles.reduce(reducer,[]) })
     })
 
 
@@ -152,7 +152,7 @@ class App extends React.Component {
 
       <CytoscapeComponent
         elements={this.state.elements}
-        style={ { height: '1000px', width: '100%' } }
+        style={ { height:  this.props.dataset.height , width: this.props.dataset.width } }
         layout={ {name: this.props.dataset.layout} }
         cy={this.handleCy}
       />
