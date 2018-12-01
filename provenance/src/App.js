@@ -45,13 +45,6 @@ class App extends React.Component {
     cy.on('tap', 'node', event => {
       this.setState({ selection: [event.target.data()] });
     })
-    cy.on('doubleTap', 'node', event => {
-      var nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
-      this.thinBorder(nodesWithHiddenNeighbor);
-      this.api.show(cy.nodes(":selected").neighborhood().union(cy.nodes(":selected").neighborhood().parent()));
-      nodesWithHiddenNeighbor = this._cy.edges(":hidden").connectedNodes(':visible');
-      this.thickenBorder(nodesWithHiddenNeighbor);
-    })
     cy.on('select', event => {
       // get the graph data behind all selected elements
       var selectedEles = this._cy.$(":selected");
@@ -65,9 +58,13 @@ class App extends React.Component {
     })
     this.api = cy.viewUtilities({
         neighbor: function(node){
-            return node.successors() || node.outgoers();
+            return node.closedNeighborhood().union(
+              node.successors()
+            ).union(
+              node.predecessors()
+            );
         },
-        neighborSelectTime: 1000
+        neighborSelectTime: 500
     });
     this.layout.run()
     this.api.enableMarqueeZoom();
@@ -132,6 +129,7 @@ class App extends React.Component {
     this.api.show(this._cy.elements());
   }
   redraw = e => {
+    this._cy.remove(":hidden")
     this.layout.run();
   }
   help = e => {
@@ -149,7 +147,7 @@ class App extends React.Component {
     return <div>
       <nav>
         <div className="nav-wrapper">
-          <ul className="right hide-on-med-and-down">
+          <ul className="hide-on-med-and-down">
             <li><a href="#/" onClick={this.hideSelected}>Hide Selected</a></li>
             <li><a href="#/" onClick={this.hideUnSelected}>Hide Unselected</a></li>
             <li><a href="#/" onClick={this.showAll}>Show All</a></li>
