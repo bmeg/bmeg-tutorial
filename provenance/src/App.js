@@ -58,6 +58,7 @@ class App extends React.Component {
     })
     this.api = cy.viewUtilities({
         neighbor: function(node){
+            // get entire 'traversal'
             return node.closedNeighborhood().union(
               node.successors()
             ).union(
@@ -99,8 +100,10 @@ class App extends React.Component {
   }
   highlightNeighbors = e => {
     this.api.disableMarqueeZoom();
-    if(this._cy.$(":selected").length > 0)
+    if(this._cy.$(":selected").length > 0){
       this.api.highlightNeighbors(this._cy.$(":selected"));
+    }
+
   }
   removeHighlights = e => {
     this.api.disableMarqueeZoom();
@@ -130,6 +133,10 @@ class App extends React.Component {
   }
   redraw = e => {
     this._cy.remove(":hidden")
+    this._cy.remove( this._cy.edges(":hidden") )
+    this.layout = this._cy.layout(
+      {name: this.props.dataset.layout}
+    )
     this.layout.run();
   }
   help = e => {
@@ -145,32 +152,76 @@ class App extends React.Component {
     const columns = keys.map((key) => {return { Header: key, accessor: key }});
 
     return <div>
+    <div>
       <nav>
         <div className="nav-wrapper">
           <ul className="hide-on-med-and-down">
-            <li><a href="#/" onClick={this.hideSelected}>Hide Selected</a></li>
-            <li><a href="#/" onClick={this.hideUnSelected}>Hide Unselected</a></li>
-            <li><a href="#/" onClick={this.showAll}>Show All</a></li>
-            <li><a href="#/" onClick={this.zoomToSelected}>Zoom To Selected</a></li>
-            <li><a href="#/" onClick={this.marqueeZoom}>Marquee Zoom</a></li>
-            <li><a href="#/" onClick={this.highlightNeighbors}>Highlight Neighbors</a></li>
-            <li><a href="#/" onClick={this.removeHighlights}>Remove Highlights</a></li>
-            <li><a href="#/" onClick={this.redraw}>Re-Draw</a></li>
-            <li><a href="#/" onClick={this.help}>Help</a></li>
+            <li><a href="#/" onClick={this.hideSelected}><i className="fas fa-eye left"></i>Hide Selected</a></li>
+            <li><a href="#/" onClick={this.hideUnSelected}><i className="fas fa-eye-slash left"></i>Hide Unselected</a></li>
+            <li><a href="#/" onClick={this.showAll}><i className="material-icons left">all_inclusive</i>Show All</a></li>
+            <li><a href="#/" onClick={this.zoomToSelected}><i className="material-icons left">zoom_in</i>Zoom To Selected</a></li>
+            <li><a href="#/" onClick={this.marqueeZoom}><i className="material-icons left">select_all</i>Marquee Zoom</a></li>
+            <li><a href="#/" onClick={this.highlightNeighbors}><i className="fas fa-highlighter left"></i>Highlight Neighbors</a></li>
+            <li><a href="#/" onClick={this.removeHighlights}>
+              <i className="far fa-highlighter left"></i>
+              Remove Highlights</a></li>
+            <li><a href="#/" onClick={this.redraw}><i className="material-icons left">refresh</i>Re-Draw</a></li>
+            <li><a href="#/" onClick={this.help}><i className="material-icons left">help</i>Help</a></li>
           </ul>
         </div>
       </nav>
+    </div>
+    
+    <div>
+      <CytoscapeComponent
+        elements={this.state.elements}
+        stylesheet={[
+          {
+            selector: 'node.unhighlighted',
+            style: {
+              opacity: 0.3
+            }
+          },
+          {
+            selector: 'edge.unhighlighted',
+            style: {
+              opacity: 0.3
+            }
+          },
+          {
+            selector: 'node[path]',
+            style: {
+              shape: 'barrel'
+            }
+          },
+          {
+            selector: 'node[cmd]',
+            style: {
+              shape: 'triangle'
+            }
+          },
+          {
+            selector: 'edge',
+            style: {
+              width: 1
+            }
+          }
+        ]}
+        style={ {
+          height:  this.props.dataset.height,
+          width: this.props.dataset.width,
+          display: 'block'
+        } }
+        cy={this.handleCy}
+      />
+    </div>
+
       <div>
-        <CytoscapeComponent
-          elements={this.state.elements}
-          style={ { height:  this.props.dataset.height , width: this.props.dataset.width } }
-          cy={this.handleCy}
+        <ReactTable
+          data={ this.state.selection }
+          columns = { columns }
         />
       </div>
-      <ReactTable
-        data={ this.state.selection }
-        columns = { columns }
-      />
     </div>;
   }
 }
