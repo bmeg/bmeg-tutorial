@@ -20,12 +20,28 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- we are not using react-materialize, rather our react app manually styles html so we coordinate with hugo static host -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="graph" data-layout="cose" data-layout="cose"  data-url="/meta/cytoscape.json"></div>
+    <p>Test page: loads public/meta/cytoscape.json </p>
+    <div
+      id="graph"
+      data-layout="breadthfirst"
+      data-height="500px"
+      data-width="100%"
+      data-url="/meta/cytoscape.json">
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -5,26 +5,20 @@ menu:
     weight: 3
 ---
 
+## BMEG-Data
 
 
-## BMEG-Data Base Copy
+ {{% card-container %}}
 
- - [20180614](http://data.bmeg.io/bmeg-data.20180614.tar.gz)
+ {{% card title="Provenance"  icon="fingerprint" action_text="more" action_href="/building/provenance" %}}
+ **Active Data Transforms**
+ As a bioinformatician, in order to explore bmeg, I need to see the place of origin or known history of bmeg's source datasets.
+ {{% /card %}}
 
 
-## Active Data Transforms
+ {{% card title="BMEG-Data Base Copy"  icon="cloud_download" %}}
+  - [Download 20180614](http://data.bmeg.io/bmeg-data.20180614.tar.gz)
+  {{% /card %}}
 
- - [CCLE](https://github.com/biostream/ccle-transform)
- - [GTEX](https://github.com/biostream/gtex-transform)
- - [PubMed](https://github.com/biostream/pubmed-transform)
- - [PFAM](https://github.com/biostream/pfam-transform)
- - [HUGO](https://github.com/biostream/hugo-transform)
- - [Ensembl](https://github.com/biostream/ensembl-transform)
- - [CTDD](https://github.com/biostream/ctdd-transform)
- - [GeneOntology](https://github.com/biostream/go-transform)
- - [GDSC](https://github.com/biostream/gdsc-transform)
- - [NCI](https://github.com/biostream/gdc-transform)
- - [Pubchem](https://github.com/biostream/pubchem-transform)
- - [MAF Files](https://github.com/biostream/variant-transform)
- - [PathwayCommons](https://github.com/biostream/pathway-commons-transform)
- - [G2P](https://github.com/biostream/g2p-transform)
+
+ {{% /card-container %}}
