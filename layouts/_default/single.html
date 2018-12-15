@@ -1,10 +1,16 @@
 {{ partial "head.html" . }}
 
 <div class="content section group">
+  {{ if or ( (not (isset .Params "sidebar")) ( .Params "sidebar")) }}
   {{ partial "sidebar.html" . }}
   <div class="main col span_8_of_12" style="padding-left: 350px;">
     {{ .Content }}
   </div>
+  {{else}}
+    {{ .Content }}
+  {{end}}
 </div>
+
+{{ partial "footer.html" .}}
 
 {{ partial "tail.html" . }}

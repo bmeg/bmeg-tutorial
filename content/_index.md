@@ -1,42 +1,44 @@
-
 ---
 
 ---
 
-
-{{% parallax src="img/fiber.jpg" title="Bio Medical Evidence Graph" sub_title="A graph database for merging and analyzing connected data"%}}
-
+{{% parallax src="img/network.jpg" title="Bio Medical Evidence Graph" sub_title="A graph database for merging and analyzing connected data"%}}
 {{% card-container %}}
 
-{{% card title="BMEG" icon="storage" %}}
-A graph database for merging and analyzing connected data
+{{% card title="Explore" icon="storage" %}}
+The BMEG is a graph database that collects data from over 20 different large scale
+resources and aggregates them into a single coherent resource. Sources include:
+
+ - [CCLE](https://portals.broadinstitute.org/ccle)
+ - [TCGA](https://cancergenome.nih.gov/)
+ - [MC3](http://synapse.org/MC3)
+ - [CTRP](https://portals.broadinstitute.org/ctrp/)
+ - [VICC](https://cancervariants.org/)
+ - [Pathway Commons](https://www.pathwaycommons.org/)
+ - [MyVariantInfo](http://myvariant.info/)
+ - [PFAM](https://pfam.xfam.org/)
+ - [GeneOntology](http://www.geneontology.org/)
 {{% /card %}}
 
-{{% card title="DREAM Challenges" icon="donut_large" %}}
-To obtain the highest quality analytical methods the BMEG team has partnered with Sage BioNetworks to organize several DREAM Challenges. Including:
-
-- SMC-DNA
-- SMC-Het
-- SMC-RNA
+{{% card title="Discover" icon="donut_large" %}}
+The graph can be explore programmatically using the GRIP API and the Python client.
 {{% /card %}}
 
-{{% card title="Connecting the Data" icon="flash_on" %}}
+{{% card title="Analyze" icon="flash_on" %}}
+Learn from the analysis tutorials that show how to use the BMEG to do:
 
-There are a huge number of data sets available, in an array of different formats. BMEG merges all of this data anywhere a connection can be made, weaving all of the separate datasets into one rich fabric.
-
-Currently in BMEG:
-
-- CCLE
-- TCGA
-- MC3
-- GDSC
-- Pubchem
-- Hugo
-
+ - Gene/Drug Sensitivity Associations
+ - Mutation linked Literature Searches
+ - Cancer Survival Plots
+ - Pathway Analysis
 {{% /card %}}
 
-{{% card title="Querying the Graph" icon="polymer" %}}
-BMEG stores data in a large property graph and provides a query language, GRIP to perform traversals through this graph and collect data along the way.
+{{% card title="Develop" icon="polymer" %}}
+The entire stack of the BMEG, is openly avalible for you to use, fork and develop on yourself.
+
+ - [The Graph Database](https://github.com/bmeg/grip)
+ - [The ETL processes](https://github.com/bmeg/bmeg-etl)
+ - The compiled data
 {{% /card %}}
 
 {{% /card-container %}}
