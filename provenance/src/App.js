@@ -151,7 +151,7 @@ class App extends React.Component {
     const keys = ['_label', 'cmd', 'path'];
     const columns = keys.map((key) => {return { Header: key, accessor: key }});
 
-    return <div>
+    return <div >
     <div>
       <nav>
         <div className="nav-wrapper">
@@ -171,7 +171,7 @@ class App extends React.Component {
         </div>
       </nav>
     </div>
-    
+
     <div>
       <CytoscapeComponent
         elements={this.state.elements}
@@ -210,18 +210,19 @@ class App extends React.Component {
         style={ {
           height:  this.props.dataset.height,
           width: this.props.dataset.width,
-          display: 'block'
+          display: 'block',
+          overflow: 'scroll'
         } }
         cy={this.handleCy}
       />
     </div>
 
-      <div>
-        <ReactTable
-          data={ this.state.selection }
-          columns = { columns }
-        />
-      </div>
+    <div>
+      <ReactTable
+        data={ this.state.selection }
+        columns = { columns }
+      />
+    </div>
     </div>;
   }
 }

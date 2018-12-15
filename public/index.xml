@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BMEG</title>
+    <link>http://localhost/</link>
+    <description>Recent content on BMEG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://localhost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building Graph</title>
+      <link>http://localhost/building/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/</guid>
+      <description> BMEG-Data fingerprint Provenance Active Data Transforms As a bioinformatician, in order to explore bmeg, I need to see the place of origin or known history of bmeg&amp;rsquo;s source datasets.
+more   
+cloud_download BMEG-Data Base Copy  Download 20180614      
+   </description>
+    </item>
+    
+    <item>
+      <title>Data Sources</title>
+      <link>http://localhost/building/dvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/dvc/</guid>
+      <description>Data Sources Summary    path publications     source/ccle/* https://www.sciencedirect.com/science/article/pii/S0092867417306517, https://www.nature.com/articles/nature11003   source/ensembl-protein/* https://academic.oup.com/database/article/doi/10.1093/database/bar009/463132   source/ensembl/* https://academic.oup.com/nar/article/46/D1/D754/4634002   source/g2p/* https://www.biorxiv.org/content/biorxiv/early/2018/07/11/366856.full.pdf   source/gdsc/* https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531057/   source/gene_enricher/* http://nar.oxfordjournals.org/content/43/W1/W589   source/go/* https://www.ncbi.nlm.nih.gov/pubmed/10802651   source/gtex/* http://science.sciencemag.org/content/348/6235/648   source/mc3/* https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30096-6   source/myvariant.info/* https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0953-9   source/pfam/* https://www.ncbi.nlm.nih.gov/pubmed/22127870   source/tcga/* https://cancergenome.nih.gov/PublishedContent/Files/pdfs/TCGA_executive_summary.pdf    Data Sources Detail    md5 path     ce843abcbc98fc858559718dc67a34ce source/ccle/CCLE_DepMap_18q3_maf_20180718.</description>
+    </item>
+    
+    <item>
+      <title>Demo (Google Auth Required)</title>
+      <link>http://localhost/building/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/demo/</guid>
+      <description>View tokens | token.txt | token.json | token.curl | signout |
+Visit GRIP to run interactive queries
+curl -H &amp;quot;OauthEmail: XXXX@YYYY.com&amp;quot; -H &amp;quot;OauthAccessToken: /SSSSSSSS&amp;quot; -H &amp;quot;OauthExpires: 1544674452&amp;quot; http://localhost  </description>
+    </item>
+    
+    <item>
+      <title>Drug Response</title>
+      <link>http://localhost/queries/drug_response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/drug_response/</guid>
+      <description>Get all CCLE samples q = O.query().V().where(gripql.eq(&amp;quot;_label&amp;quot;, &amp;quot;Biosample&amp;quot;)) q = q.where(gripql.and_(gripql.eq(&amp;quot;source&amp;quot;, &amp;quot;ccle&amp;quot;))).render({&amp;quot;id&amp;quot;:&amp;quot;_gid&amp;quot;}) all_samples = [] for row in q: all_samples.append(row.id)  Genes we&amp;rsquo;ll be looking at GENES = [&amp;quot;CDKN2A&amp;quot;, &amp;quot;PTEN&amp;quot;, &amp;quot;TP53&amp;quot;, &amp;quot;SMAD4&amp;quot;] gene_ids = {} for g in GENES: for i in O.query().V().where(gripql.eq(&amp;quot;_label&amp;quot;, &amp;quot;Gene&amp;quot;)).where(gripql.eq(&amp;quot;symbol&amp;quot;, g)): gene_ids[g] = i.gid  Scan CCLE cell lines based on mutation status mut_samples = {} norm_samples = {} for g, i in gene_ids.items(): #get CCLE samples with mutation mut_samples[g] = set(k[&#39;gid&#39;] for k in O.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>http://localhost/queries/getting_started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/getting_started/</guid>
+      <description>Usage GRIPQL is an API for making graph queries using structured data. Queries are defined using a series of step operations provided by BMEG. The python client wraps the construction of these queries in an intuitive python interface.
+Let&amp;rsquo;s go through the features currently supported in the GRIPQL python client.
+import First, import the GRIPQL client and create a connection to an existing GRIPQL API:
+import gripql conn = gripql.</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>http://localhost/queries/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/install/</guid>
+      <description> GRIP Python Client pip install &amp;quot;git+https://github.com/bmeg/grip.git#subdirectory=gripql/python&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Kaplan Meier Curves</title>
+      <link>http://localhost/queries/kaplan_meier/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/kaplan_meier/</guid>
+      <description>Make Kaplan Meier curves using TCGA data from lifelines import KaplanMeierFitter import pandas import gripql conn = gripql.Connection(&amp;quot;http://bmeg.io&amp;quot;) O = conn.graph(&amp;quot;bmeg&amp;quot;) q = O.query().V().where(gripql.eq(&amp;quot;_label&amp;quot;, &amp;quot;Individual&amp;quot;)) q = q.where(gripql.and_(gripql.eq(&amp;quot;source&amp;quot;, &amp;quot;tcga&amp;quot;), gripql.eq(&amp;quot;disease_code&amp;quot;, &amp;quot;BRCA&amp;quot;))) q = q.where(gripql.eq(&amp;quot;vital_status&amp;quot;, &amp;quot;Dead&amp;quot;)) q1 = q.where(gripql.eq(&#39;her2_status_by_ihc&#39;, &#39;Positive&#39;)).render([&amp;quot;death_days_to&amp;quot;]) q2 = q.where(gripql.eq(&#39;her2_status_by_ihc&#39;, &#39;Negative&#39;)).render([&amp;quot;death_days_to&amp;quot;]) days_a = list(int(a[0]) for a in q1) days_b = list(int(a[0]) for a in q2) kmf = KaplanMeierFitter() kmf.fit(days_a, label=&amp;quot;HER2 Positive&amp;quot;) ax = kmf.plot() kmf.fit(days_b, label=&amp;quot;HER2 Negative&amp;quot;) kmf.</description>
+    </item>
+    
+    <item>
+      <title>Matrix</title>
+      <link>http://localhost/queries/matrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/matrix/</guid>
+      <description> Using BMEG to get matrix data Many vertices in the BMEG contain complex data that can be collected and converted into matrix data.
+Download RNA-Seq for cohort:TCGA-READ import pandas import gripql conn = gripql.Connection(&amp;quot;http://bmeg.io&amp;quot;) O = conn.graph(&amp;quot;bmeg&amp;quot;) c = O.query().V().where(gripql.eq(&amp;quot;_label&amp;quot;, &amp;quot;Individual&amp;quot;)) c = c.where(gripql.and_(gripql.eq(&amp;quot;source&amp;quot;, &amp;quot;tcga&amp;quot;), gripql.eq(&amp;quot;disease_code&amp;quot;, &amp;quot;READ&amp;quot;))) c = c.in_(&amp;quot;sampleOf&amp;quot;).in_(&amp;quot;expressionFor&amp;quot;) c = c.render([&amp;quot;$.biosampleId&amp;quot;, &amp;quot;$.expressions&amp;quot;]) data = {} for row in c: data[row[0]] = row[1] samples = pandas.DataFrame(data).transpose().fillna(0.0)  </description>
+    </item>
+    
+    <item>
+      <title>Provenance</title>
+      <link>http://localhost/building/provenance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/provenance/</guid>
+      <description> BMEG Provenance </description>
+    </item>
+    
+    <item>
+      <title>Queries</title>
+      <link>http://localhost/queries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/</guid>
+      <description> Queries </description>
+    </item>
+    
+    <item>
+      <title>Schema</title>
+      <link>http://localhost/building/schema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/schema/</guid>
+      <description> Data Schema </description>
+    </item>
+    
+    <item>
+      <title>System</title>
+      <link>http://localhost/system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/system/</guid>
+      <description>BMEG System The BioMedical Evidence Graph integrates various biological data source into a single property graph to enable easy analysis. The BMEG is powered by the GRaph Integration Platform GRIP. The current installation covers data from TCGA, CCLE, CTDD, GTEX, Ensembl, PathwayCommons and contains almost 32 million vertices.</description>
+    </item>
+    
+    <item>
+      <title>Traversal</title>
+      <link>http://localhost/queries/traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/queries/traversal/</guid>
+      <description>Starting Traversal .V([ids]) Start query from Vertex
+O.query().V()  Returns all vertices in graph
+O.query().V(&amp;quot;vertex1&amp;quot;)  Returns:
+{&amp;quot;gid&amp;quot; : &amp;quot;vertex1&amp;quot;, &amp;quot;label&amp;quot;:&amp;quot;TestVertex&amp;quot;, &amp;quot;data&amp;quot;:{}}  .E() Start query from Edge
+O.query().E()  Returns all edges in graph
+Filtering .where() Filter elements using conditional statements
+O.query().V().where(gripql.eq(&amp;quot;_label&amp;quot;, &amp;quot;Gene&amp;quot;)).where(gripql.eq(&amp;quot;symbol&amp;quot;, &amp;quot;TP53&amp;quot;))  Conditions Conditions are arguments to .where() that define selection conditions
+gripql.eq(variable, value) Returns rows where variable == value
+.where(gripql.eq(&amp;quot;symbol&amp;quot;, &amp;quot;TP53&amp;quot;))  gripql.neq(variable, value) Returns rows where variable !</description>
+    </item>
+    
+    <item>
+      <title>Updates</title>
+      <link>http://localhost/updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/updates/</guid>
+      <description>December 1st, 2018  Updated Database Engine GRIP v0.3  June 14th, 2018  Updated Database engine GRIP v0.2 Updated client install instructions Updated query language instructions Released new iPython Analysis notebook examples New Schema Bulk Data download  December 5th, 2017  Data refactor and update  March 23rd 2017 Update:
+ Improving drug sensitivity viewer Fixing Javascript for non-chrome browsers  March 16th 2017  Logo Update HTML updates to front page Faster updates to move data from staging to production Added gene target link to compounds  March 10th 2017  Optimizing Drug sensitivity query widget Changed front page to be schema viewer Added CNA segments to schema and loaded data from CCLE  Feb 27th 2017  Updating Javascript packaging Added CTDD drug response data  Feb 23th 2017  Fixing mutation pie-chart viewer  Jan 29th 2017  Added drug sensitivity viewer  January 9, 2017 TCGA to Complete its Final Analysis: the PanCanAtlas</description>
+    </item>
+    
+  </channel>
+</rss>

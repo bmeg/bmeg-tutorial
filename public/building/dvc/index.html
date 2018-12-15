@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.20.7" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Data Sources &middot; BMEG</title>
+  
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://localhost/favicon.png">
+
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+  
+  <link type="text/css" rel="stylesheet" href="http://localhost/css/materialize.min.css"  media="screen,projection"/>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="http://localhost/css/highlight.min.css" />
+  <script src="http://localhost/js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  
+  <link href="http://localhost/provenance/static/css/1.f16332a3.chunk.css" rel="stylesheet"></link>
+  <link href="http://localhost/provenance/static/css/main.94fe56b7.chunk.css" rel="stylesheet"></link>
+  
+
+</head>
+<body>
+  <nav>
+<div class="nav-wrapper blue darken-2">
+  <a id="logo-container" href="http://localhost/" class="brand-logo"><img width="125px" src="http://localhost/img/bmeg-flat.png"/></a>
+  <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="http://localhost/system/">Docs</a></li>
+      <li><a target="_blank" href="https://github.com/bmeg/">GitHub</a></li>
+      <li><a target="_blank" href="https://gitter.im/bmeg/">Chat</a></li>
+  </ul>
+</div>
+</nav>
+
+
+
+<div class="content section group">
+  
+  
+<ul id="slide-out" class="sidenav sidenav-fixed" style="width: 250px">
+    <nav>
+      <div class="nav-wrapper blue darken-2">
+        <a id="logo-container" href="http://localhost/" class="brand-logo"><img width="125px" src="http://localhost/img/bmeg-flat.png"/></a>
+      </div>
+    </nav>
+    
+    
+      
+      <li>
+        <a href="http://localhost/queries/"
+           class="sidebar-nav-item "
+        >Queries</a>
+        
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/install/"
+                 class="sidebar-nav-item "
+              >Install</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/getting_started/"
+                 class="sidebar-nav-item "
+              >Getting Started</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/traversal/"
+                 class="sidebar-nav-item "
+              >Traversal</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/kaplan_meier/"
+                 class="sidebar-nav-item "
+              >Kaplan Meier Curves</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/matrix/"
+                 class="sidebar-nav-item "
+              >Matrix</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/queries/drug_response/"
+                 class="sidebar-nav-item "
+              >Drug Response</a></li>
+          </ul>
+        </li>
+        
+        
+      
+      <li>
+        <a href="http://localhost/building/"
+           class="sidebar-nav-item "
+        >Building Graph</a>
+        
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/building/schema/"
+                 class="sidebar-nav-item "
+              >Schema</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/building/dvc/"
+                 class="sidebar-nav-item  active"
+              >Data Sources</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
+              <a href="http://localhost/building/provenance/"
+                 class="sidebar-nav-item "
+              >Provenance</a></li>
+          </ul>
+        </li>
+        
+        
+      
+      <li>
+        <a href="http://localhost/system/"
+           class="sidebar-nav-item "
+        >System</a>
+        
+      
+      <li>
+        <a href="http://localhost/updates/"
+           class="sidebar-nav-item "
+        >Updates</a>
+        
+      
+    
+</ul>
+
+  <div class="main col span_8_of_12" style="padding-left: 350px;">
+    
+
+<h1 id="data-sources-summary">Data Sources Summary</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">path</th>
+<th align="left">publications</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">source/ccle/*</td>
+<td align="left"><a href="https://www.sciencedirect.com/science/article/pii/S0092867417306517">https://www.sciencedirect.com/science/article/pii/S0092867417306517</a>, <a href="https://www.nature.com/articles/nature11003">https://www.nature.com/articles/nature11003</a></td>
+</tr>
+
+<tr>
+<td align="left">source/ensembl-protein/*</td>
+<td align="left"><a href="https://academic.oup.com/database/article/doi/10.1093/database/bar009/463132">https://academic.oup.com/database/article/doi/10.1093/database/bar009/463132</a></td>
+</tr>
+
+<tr>
+<td align="left">source/ensembl/*</td>
+<td align="left"><a href="https://academic.oup.com/nar/article/46/D1/D754/4634002">https://academic.oup.com/nar/article/46/D1/D754/4634002</a></td>
+</tr>
+
+<tr>
+<td align="left">source/g2p/*</td>
+<td align="left"><a href="https://www.biorxiv.org/content/biorxiv/early/2018/07/11/366856.full.pdf">https://www.biorxiv.org/content/biorxiv/early/2018/07/11/366856.full.pdf</a></td>
+</tr>
+
+<tr>
+<td align="left">source/gdsc/*</td>
+<td align="left"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531057/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531057/</a></td>
+</tr>
+
+<tr>
+<td align="left">source/gene_enricher/*</td>
+<td align="left"><a href="http://nar.oxfordjournals.org/content/43/W1/W589">http://nar.oxfordjournals.org/content/43/W1/W589</a></td>
+</tr>
+
+<tr>
+<td align="left">source/go/*</td>
+<td align="left"><a href="https://www.ncbi.nlm.nih.gov/pubmed/10802651">https://www.ncbi.nlm.nih.gov/pubmed/10802651</a></td>
+</tr>
+
+<tr>
+<td align="left">source/gtex/*</td>
+<td align="left"><a href="http://science.sciencemag.org/content/348/6235/648">http://science.sciencemag.org/content/348/6235/648</a></td>
+</tr>
+
+<tr>
+<td align="left">source/mc3/*</td>
+<td align="left"><a href="https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30096-6">https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30096-6</a></td>
+</tr>
+
+<tr>
+<td align="left">source/myvariant.info/*</td>
+<td align="left"><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0953-9">https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0953-9</a></td>
+</tr>
+
+<tr>
+<td align="left">source/pfam/*</td>
+<td align="left"><a href="https://www.ncbi.nlm.nih.gov/pubmed/22127870">https://www.ncbi.nlm.nih.gov/pubmed/22127870</a></td>
+</tr>
+
+<tr>
+<td align="left">source/tcga/*</td>
+<td align="left"><a href="https://cancergenome.nih.gov/PublishedContent/Files/pdfs/TCGA_executive_summary.pdf">https://cancergenome.nih.gov/PublishedContent/Files/pdfs/TCGA_executive_summary.pdf</a></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="data-sources-detail">Data Sources Detail</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">md5</th>
+<th align="left">path</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">ce843abcbc98fc858559718dc67a34ce</td>
+<td align="left">source/ccle/CCLE_DepMap_18q3_maf_20180718.txt</td>
+</tr>
+
+<tr>
+<td align="left">1c4711bb30e668d5f387e1819bae99ef</td>
+<td align="left">source/ccle/CCLE_DepMap_18q3_RNAseq_RPKM_20180718.gct</td>
+</tr>
+
+<tr>
+<td align="left">917f411573d5e68f9d61234e9e1bb539</td>
+<td align="left">source/ccle/CCLE_NP24.2009_Drug_data_2015.02.24.csv</td>
+</tr>
+
+<tr>
+<td align="left">4fadc5ed3b8008b390fca93278b06b23</td>
+<td align="left">source/ccle/expression/CCLE_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">3434f25021354ddd60df6307ad29ea79</td>
+<td align="left">source/ccle/DepMap-2018q3-celllines.csv</td>
+</tr>
+
+<tr>
+<td align="left">a716f3864b3883ef8b4a29adebc29533</td>
+<td align="left">source/ensembl-protein/homo_sapiens.json</td>
+</tr>
+
+<tr>
+<td align="left">9165482e57024728ce2d81ce013c72bd</td>
+<td align="left">source/ensembl/Homo_sapiens.GRCh37.87.gff3.gz</td>
+</tr>
+
+<tr>
+<td align="left">3c0d06dafbb4c9c4a18abd750d1e810a</td>
+<td align="left">source/g2p/all.json</td>
+</tr>
+
+<tr>
+<td align="left">eef91774a6b4ef37e3a8f341b1a48d0d</td>
+<td align="left">source/gdsc/GDSC_AUC.csv</td>
+</tr>
+
+<tr>
+<td align="left">f4843dade6933b9879654417c6d93c1b</td>
+<td align="left">source/gene_enricher/non_alt_loci_set.json</td>
+</tr>
+
+<tr>
+<td align="left">604a36b03da6b9c1b4078388b4b07136</td>
+<td align="left">source/go/HUMAN_9606_idmapping.dat.gz</td>
+</tr>
+
+<tr>
+<td align="left">acc07658a609d7ea9ec99e8ec07bdbdf</td>
+<td align="left">source/go/go.obo</td>
+</tr>
+
+<tr>
+<td align="left">a141843d9fe61dee3a36be0f989cf09d</td>
+<td align="left">source/go/goa_human.gaf.gz</td>
+</tr>
+
+<tr>
+<td align="left">e027506deca6a62f50e316561c6cb8cb</td>
+<td align="left">source/gtex/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct</td>
+</tr>
+
+<tr>
+<td align="left">80f2b89d45843abb0a0dc39d5054530c</td>
+<td align="left">source/gtex/GTEx_v7_Annotations_SampleAttributesDS.txt</td>
+</tr>
+
+<tr>
+<td align="left">73d9180f604c17e6c211ca1694dc9ff7</td>
+<td align="left">source/gtex/GTEx_v7_Annotations_SubjectPhenotypesDS.txt</td>
+</tr>
+
+<tr>
+<td align="left">639ad8f8386e98dacc22e439188aa8fa</td>
+<td align="left">source/mc3/mc3.v0.2.8.PUBLIC.maf.gz</td>
+</tr>
+
+<tr>
+<td align="left">08ec6eb40ad76b48210aa0e939ae7aa1</td>
+<td align="left">source/myvariant.info/harvested_myvariantinfo.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">a9468ae548c1f99ebaeb3d25a961fddd</td>
+<td align="left">source/myvariant.info/metadata.fields.json</td>
+</tr>
+
+<tr>
+<td align="left">e684d344d13e70a33a5605327a789360</td>
+<td align="left">source/myvariant.info/metadata.json</td>
+</tr>
+
+<tr>
+<td align="left">c390251bd07b4220eb4bf824a5240b08</td>
+<td align="left">source/myvariant.info/biothings_current_old_hg19.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">9f57d29531c058ad641ed81cbea0723d</td>
+<td align="left">source/pfam/clans.tsv</td>
+</tr>
+
+<tr>
+<td align="left">54c1197d01d28013bcde897528626688</td>
+<td align="left">source/pfam/id_list.txt</td>
+</tr>
+
+<tr>
+<td align="left">a53d9ebefc301f232e345c167e9627cf</td>
+<td align="left">source/pfam/pfam.tar.gz</td>
+</tr>
+
+<tr>
+<td align="left">a1d585c173a8ba37716068ebc69cf936</td>
+<td align="left">source/tcga/expression/transcript-level/tcga-genomics.zip</td>
+</tr>
+
+<tr>
+<td align="left">15525092ad0e0598b95b874c9660bf6c</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_ACC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">573d79ef0d89f082cf9cfd5074bc9c4e</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_BLCA_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">2f1ac0e6b3717e611ba7d9f4deb33d3a</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_BRCA_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">86b135d6e38bbfdeed8ed32c39bb259f</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_CESC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">6bfc5ade25682e5e22d40aa5dee52fc6</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_CHOL_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">55c0ee1e9635d1ce2ccb6756956de3c7</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_COAD_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">2cc75831492baccf7e12a41d6b7850e3</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_DLBC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">4872a6998f184dc6bce949c4fce6e00d</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_ESCA_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">7b330535d7a25cc5868e237031a8c6af</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_GBM_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">6c72ca307415399cfaddd89a2c36126a</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_HNSC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">747e40be0eeb9d4e9c1ba71f003358af</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_KICH_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">e322ed409f6fadc36d32c3be6fcd8945</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_KIRC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">ff1ac98d2d10d2db60c604db7d9901b0</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_KIRP_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">30cddfc0df23b3585dd8e974d929af58</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_LAML_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">23a10d41d73590a4c25565da611b9c4a</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_LGG_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">dae7932123d07e0b85baa5f18796ace7</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_LIHC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">3ccf7e592f48e9398bf9a49d2e20effb</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_LUAD_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">27857a3ca41e890e9ff126179b9d6aae</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_LUSC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">5911f686ab9a38dcce33af995190fae7</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_MESO_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">6070e90f83213c9a32c3ca1ce78a5e4d</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_OV_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">e874d14f3e53683c99f0fb95ee4bf240</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_PAAD_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">53aa282256ef2176b36ed3e160dc6b78</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_PCPG_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">27526ef7b2035267b36c42703c5ecbaf</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_PRAD_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">cea3ed509d0a417c3262e98ca056e9e3</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_READ_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">3d3c0551ad49946e6baf622008a0de75</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_SARC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">e01f02dce54d7ce83f668784fed750be</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_SKCM_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">10a14a8b317a34784e5b3e62c3fa387a</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_STAD_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">ac3b945689c0d84e0812ee56a044fcaf</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_TGCT_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">d8a1458ae5e22ce9037177bd38797da0</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_THCA_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">4f8e026ae6a4cde7f17c679b6c58c1c0</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_THYM_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">fd8c04773f8d6d7b083e3d12710431c8</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_UCEC_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">39d3eb04b319e37ae83b1d9fda608dea</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_UCS_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">4ead672bc051010636f79d7afe27fd9e</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_UVM_tpm.tsv.gz</td>
+</tr>
+
+<tr>
+<td align="left">07b930da26e4a06dcf8c9a0faff57be1</td>
+<td align="left">source/tcga/expression/transcript-level/TCGA_ID_MAP.csv</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="transformation-detail">Transformation Detail</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">cmd</th>
+<th align="left">output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">python3 transform/allele/transform.py</td>
+<td align="left">outputs/allele/Allele.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">ls -l scripts/bmeg_file_manifest.txt</td>
+<td align="left">scripts/bmeg_file_manifest.txt</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ccle/drug_response.py</td>
+<td align="left">outputs/ccle/drug_response.Aliquot.Vertex.json.gz<br/>outputs/ccle/drug_response.AliquotFor.Edge.json.gz<br/>outputs/ccle/drug_response.Biosample.Vertex.json.gz<br/>outputs/ccle/drug_response.BiosampleFor.Edge.json.gz<br/>outputs/ccle/drug_response.Compound.Vertex.json.gz<br/>outputs/ccle/drug_response.InProject.Edge.json.gz<br/>outputs/ccle/drug_response.Individual.Vertex.json.gz<br/>outputs/ccle/drug_response.ParamacalogicalProfile.Vertex.json.gz<br/>outputs/ccle/drug_response.ParamacalogicalProfileIn.Edge.json.gz<br/>outputs/ccle/drug_response.Project.Vertex.json.gz<br/>outputs/ccle/drug_response.ResponseTo.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ccle/samples.py</td>
+<td align="left">outputs/ccle/Aliquot.Vertex.json.gz<br/>outputs/ccle/AliquotFor.Edge.json.gz<br/>outputs/ccle/Biosample.Vertex.json.gz<br/>outputs/ccle/BiosampleFor.Edge.json.gz<br/>outputs/ccle/InProject.Edge.json.gz<br/>outputs/ccle/Individual.Vertex.json.gz<br/>outputs/ccle/Phenotype.Vertex.json.gz<br/>outputs/ccle/PhenotypeOf.Edge.json.gz<br/>outputs/ccle/Project.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ccle/expression.py</td>
+<td align="left">outputs/ccle/Expression.Vertex.json.gz<br/>outputs/ccle/ExpressionOf.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ccle/expression_tatlow.py</td>
+<td align="left">outputs/ccle/tatlow.Aliquot.Vertex.json.gz<br/>outputs/ccle/tatlow.AliquotFor.Edge.json.gz<br/>outputs/ccle/tatlow.Biosample.Vertex.json.gz<br/>outputs/ccle/tatlow.BiosampleFor.Edge.json.gz<br/>outputs/ccle/tatlow.Expression.Vertex.json.gz<br/>outputs/ccle/tatlow.ExpressionOf.Edge.json.gz<br/>outputs/ccle/tatlow.InProject.Edge.json.gz<br/>outputs/ccle/tatlow.Individual.Vertex.json.gz<br/>outputs/ccle/tatlow.Project.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ccle/ccle_maf_transform.py</td>
+<td align="left">outputs/ccle/Allele.Vertex.json.gz<br/>outputs/ccle/AlleleCall.Edge.json.gz<br/>outputs/ccle/AlleleIn.Edge.json.gz<br/>outputs/ccle/Callset.Vertex.json.gz<br/>outputs/ccle/CallsetFor.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/compound/transform.py</td>
+<td align="left">outputs/compound/normalized.Compound.Vertex.json.gz<br/>outputs/compound/normalized.HasEnvironment.Edge.json.gz<br/>outputs/compound/normalized.ResponseTo.Edge.json.gz<br/>outputs/compound/normalized.TreatedWith.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">outputs/ensembl-protein/PFAMAlignment.Edge.json.gz<br/>outputs/ensembl-protein/Protein.Vertex.json.gz<br/>outputs/ensembl-protein/ProteinFor.Edge.json.gz<br/>outputs/ensembl-protein/ProteinStructure.Vertex.json.gz<br/>outputs/ensembl-protein/StructureFor.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ensembl/ensembl-transform.py</td>
+<td align="left">outputs/ensembl/Exon.Vertex.json.gz<br/>outputs/ensembl/ExonFor.Edge.json.gz<br/>outputs/ensembl/Gene.Vertex.json.gz<br/>outputs/ensembl/Transcript.Vertex.json.gz<br/>outputs/ensembl/TranscriptFor.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/ensembl/missing_transcripts.py</td>
+<td align="left">outputs/ensembl/missing.Transcript.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/g2p/transform.py</td>
+<td align="left">outputs/g2p/Allele.Vertex.json.gz<br/>outputs/g2p/AlleleIn.Edge.json.gz<br/>outputs/g2p/Compound.Vertex.json.gz<br/>outputs/g2p/Deadletter.Vertex.json.gz<br/>outputs/g2p/G2PAssociation.Vertex.json.gz<br/>outputs/g2p/HasAlleleFeature.Edge.json.gz<br/>outputs/g2p/HasEnvironment.Edge.json.gz<br/>outputs/g2p/HasGeneFeature.Edge.json.gz<br/>outputs/g2p/HasMinimalAlleleFeature.Edge.json.gz<br/>outputs/g2p/HasPhenotype.Edge.json.gz<br/>outputs/g2p/HasSupportingReference.Edge.json.gz<br/>outputs/g2p/MinimalAllele.Vertex.json.gz<br/>outputs/g2p/MinimalAlleleIn.Edge.json.gz<br/>outputs/g2p/Phenotype.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 -m transform.gdc.cases</td>
+<td align="left">outputs/gdc/Aliquot.Vertex.json.gz<br/>outputs/gdc/AliquotFor.Edge.json.gz<br/>outputs/gdc/Biosample.Vertex.json.gz<br/>outputs/gdc/BiosampleFor.Edge.json.gz<br/>outputs/gdc/Compound.Vertex.json.gz<br/>outputs/gdc/InProject.Edge.json.gz<br/>outputs/gdc/Individual.Vertex.json.gz<br/>outputs/gdc/TreatedWith.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/gdc/projects.py</td>
+<td align="left">outputs/gdc/Project.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/gdsc/response.py</td>
+<td align="left">outputs/gdsc/gdsc.Compound.Vertex.json.gz<br/>outputs/gdsc/gdsc.DrugResponse.Vertex.json.gz<br/>outputs/gdsc/gdsc.DrugResponseIn.Edge.json.gz<br/>outputs/gdsc/gdsc.ResponseTo.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/go/go_obo2schema.py source/go/go.obo</td>
+<td align="left">outputs/go/GeneOntologyIsA.Edge.json.gz<br/>outputs/go/GeneOntologyTerm.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/go/go_gaf2schema.py source/go/goa_human.gaf.gz source/go/HUMAN_9606_idmapping.dat.gz go</td>
+<td align="left">outputs/go/GeneOntologyAnnotation.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/gtex/samples.py</td>
+<td align="left">outputs/gtex/gtex.Aliquot.Vertex.json.gz<br/>outputs/gtex/gtex.AliquotFor.Edge.json.gz<br/>outputs/gtex/gtex.Biosample.Vertex.json.gz<br/>outputs/gtex/gtex.BiosampleFor.Edge.json.gz<br/>outputs/gtex/gtex.InProject.Edge.json.gz<br/>outputs/gtex/gtex.Individual.Vertex.json.gz<br/>outputs/gtex/gtex.Project.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/gtex/expression.py</td>
+<td align="left">outputs/gtex/gtex.Expression.Vertex.json.gz<br/>outputs/gtex/gtex.ExpressionOf.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/mc3/mc3_maf_transform.py</td>
+<td align="left">outputs/mc3/Allele.Vertex.json.gz<br/>outputs/mc3/AlleleCall.Edge.json.gz<br/>outputs/mc3/AlleleIn.Edge.json.gz<br/>outputs/mc3/Callset.Vertex.json.gz<br/>outputs/mc3/CallsetFor.Edge.json.gz<br/>outputs/mc3/Deadletter.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/pfam/transform.py</td>
+<td align="left">outputs/pfam/GeneOntologyAnnotation.Edge.json.gz<br/>outputs/pfam/PFAMClan.Vertex.json.gz<br/>outputs/pfam/PFAMClanMember.Edge.json.gz<br/>outputs/pfam/PFAMFamily.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/phenotype/transform.py</td>
+<td align="left">outputs/phenotype/normalized.HasPhenotype.Edge.json.gz<br/>outputs/phenotype/normalized.Phenotype.Vertex.json.gz<br/>outputs/phenotype/normalized.PhenotypeOf.Edge.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/publication/transform.py</td>
+<td align="left">outputs/publication/stub.Publication.Vertex.json.gz</td>
+</tr>
+
+<tr>
+<td align="left">python3 transform/tcga/expression.py</td>
+<td align="left">outputs/tcga/ACC.Expression.Vertex.json.gz<br/>outputs/tcga/ACC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/BLCA.Expression.Vertex.json.gz<br/>outputs/tcga/BLCA.ExpressionOf.Edge.json.gz<br/>outputs/tcga/BRCA.Expression.Vertex.json.gz<br/>outputs/tcga/BRCA.ExpressionOf.Edge.json.gz<br/>outputs/tcga/CESC.Expression.Vertex.json.gz<br/>outputs/tcga/CESC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/CHOL.Expression.Vertex.json.gz<br/>outputs/tcga/CHOL.ExpressionOf.Edge.json.gz<br/>outputs/tcga/COAD.Expression.Vertex.json.gz<br/>outputs/tcga/COAD.ExpressionOf.Edge.json.gz<br/>outputs/tcga/DLBC.Expression.Vertex.json.gz<br/>outputs/tcga/DLBC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/ESCA.Expression.Vertex.json.gz<br/>outputs/tcga/ESCA.ExpressionOf.Edge.json.gz<br/>outputs/tcga/GBM.Expression.Vertex.json.gz<br/>outputs/tcga/GBM.ExpressionOf.Edge.json.gz<br/>outputs/tcga/HNSC.Expression.Vertex.json.gz<br/>outputs/tcga/HNSC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/KICH.Expression.Vertex.json.gz<br/>outputs/tcga/KICH.ExpressionOf.Edge.json.gz<br/>outputs/tcga/KIRC.Expression.Vertex.json.gz<br/>outputs/tcga/KIRC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/KIRP.Expression.Vertex.json.gz<br/>outputs/tcga/KIRP.ExpressionOf.Edge.json.gz<br/>outputs/tcga/LAML.Expression.Vertex.json.gz<br/>outputs/tcga/LAML.ExpressionOf.Edge.json.gz<br/>outputs/tcga/LGG.Expression.Vertex.json.gz<br/>outputs/tcga/LGG.ExpressionOf.Edge.json.gz<br/>outputs/tcga/LIHC.Expression.Vertex.json.gz<br/>outputs/tcga/LIHC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/LUAD.Expression.Vertex.json.gz<br/>outputs/tcga/LUAD.ExpressionOf.Edge.json.gz<br/>outputs/tcga/LUSC.Expression.Vertex.json.gz<br/>outputs/tcga/LUSC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/MESO.Expression.Vertex.json.gz<br/>outputs/tcga/MESO.ExpressionOf.Edge.json.gz<br/>outputs/tcga/OV.Expression.Vertex.json.gz<br/>outputs/tcga/OV.ExpressionOf.Edge.json.gz<br/>outputs/tcga/PAAD.Expression.Vertex.json.gz<br/>outputs/tcga/PAAD.ExpressionOf.Edge.json.gz<br/>outputs/tcga/PCPG.Expression.Vertex.json.gz<br/>outputs/tcga/PCPG.ExpressionOf.Edge.json.gz<br/>outputs/tcga/PRAD.Expression.Vertex.json.gz<br/>outputs/tcga/PRAD.ExpressionOf.Edge.json.gz<br/>outputs/tcga/READ.Expression.Vertex.json.gz<br/>outputs/tcga/READ.ExpressionOf.Edge.json.gz<br/>outputs/tcga/SARC.Expression.Vertex.json.gz<br/>outputs/tcga/SARC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/SKCM.Expression.Vertex.json.gz<br/>outputs/tcga/SKCM.ExpressionOf.Edge.json.gz<br/>outputs/tcga/STAD.Expression.Vertex.json.gz<br/>outputs/tcga/STAD.ExpressionOf.Edge.json.gz<br/>outputs/tcga/TCGA.ExpressionOf.Edge.json.gz<br/>outputs/tcga/TGCT.Expression.Vertex.json.gz<br/>outputs/tcga/TGCT.ExpressionOf.Edge.json.gz<br/>outputs/tcga/THCA.Expression.Vertex.json.gz<br/>outputs/tcga/THCA.ExpressionOf.Edge.json.gz<br/>outputs/tcga/THYM.Expression.Vertex.json.gz<br/>outputs/tcga/THYM.ExpressionOf.Edge.json.gz<br/>outputs/tcga/UCEC.Expression.Vertex.json.gz<br/>outputs/tcga/UCEC.ExpressionOf.Edge.json.gz<br/>outputs/tcga/UCS.Expression.Vertex.json.gz<br/>outputs/tcga/UCS.ExpressionOf.Edge.json.gz<br/>outputs/tcga/UVM.Expression.Vertex.json.gz<br/>outputs/tcga/UVM.ExpressionOf.Edge.json.gz</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+  
+</div>
+
+
+<footer class="page-footer blue">
+  <div class="container" style="padding-left: 350px;" >
+    <div class="col 14">
+      <a href="https://www.ohsu.edu/compbio/">
+        <img src="http://localhost/img/ohsu-logo.png"/>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  
+  <script type="text/javascript" src="http://localhost/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems, {});
+
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+  </script>  
+  
+
+<link href="http://localhost/provenance/static/css/1.e038cc6e.chunk.css" rel="stylesheet"><link href="http://localhost/provenance/static/css/main.69e100c1.chunk.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script><script>!function(l){function e(e){for(var r,n,t=e[0],o=e[1],u=e[2],f=0,i=[];f<t.length;f++)n=t[f],p[n]&&i.push(p[n][0]),p[n]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var n=c[r],t=!0,o=1;o<n.length;o++){var u=n[o];0!==p[u]&&(t=!1)}t&&(c.splice(r--,1),e=f(f.s=n[0]))}return e}var n={},p={2:0},c=[];function f(e){if(n[e])return n[e].exports;var r=n[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=n,f.d=function(e,r,n){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(f.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)f.d(n,t,function(e){return r[e]}.bind(null,t));return n},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/provenance/";var r=window.webpackJsonp=window.webpackJsonp||[],t=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=t;a()}([])</script><script src="http://localhost/provenance/static/js/1.a547d211.chunk.js"></script><script src="http://localhost/provenance/static/js/main.2d0f8594.chunk.js"></script>
+  
+</body>
+</html>
+

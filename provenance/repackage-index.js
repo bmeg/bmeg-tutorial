@@ -8,6 +8,7 @@ var data = fs.readFileSync('build/index.html', "utf8")
 
 var index = cheerio.load(data);
 const scripts = index.html('script');
+const links = index.html('link[rel="stylesheet"][href*="provenance"]');
 // insert into: ../layouts/partials/tail.html
 var lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('../layouts/partials/tail.html')
@@ -20,6 +21,7 @@ lineReader.on('line', function (line) {
     lines.push(line)
     var now = new Date()
     lines.push(`<!-- inserted ${now.toISOString()} -->`);
+    lines.push(links)
     lines.push(scripts)
   }
   if (line.indexOf('REACT INSERT END') > 0 )  {

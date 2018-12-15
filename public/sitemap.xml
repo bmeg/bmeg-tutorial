@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://localhost/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/dvc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/demo/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/drug_response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/getting_started/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/install/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/kaplan_meier/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/matrix/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/provenance/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/building/schema/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/system/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost/queries/traversal/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/updates/</loc>
+  </url>
+  
+</urlset>

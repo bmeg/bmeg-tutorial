@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Buildings on BMEG</title>
+    <link>http://localhost/building/</link>
+    <description>Recent content in Buildings on BMEG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://localhost/building/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Sources</title>
+      <link>http://localhost/building/dvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/dvc/</guid>
+      <description>Data Sources Summary    path publications     source/ccle/* https://www.sciencedirect.com/science/article/pii/S0092867417306517, https://www.nature.com/articles/nature11003   source/ensembl-protein/* https://academic.oup.com/database/article/doi/10.1093/database/bar009/463132   source/ensembl/* https://academic.oup.com/nar/article/46/D1/D754/4634002   source/g2p/* https://www.biorxiv.org/content/biorxiv/early/2018/07/11/366856.full.pdf   source/gdsc/* https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531057/   source/gene_enricher/* http://nar.oxfordjournals.org/content/43/W1/W589   source/go/* https://www.ncbi.nlm.nih.gov/pubmed/10802651   source/gtex/* http://science.sciencemag.org/content/348/6235/648   source/mc3/* https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30096-6   source/myvariant.info/* https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0953-9   source/pfam/* https://www.ncbi.nlm.nih.gov/pubmed/22127870   source/tcga/* https://cancergenome.nih.gov/PublishedContent/Files/pdfs/TCGA_executive_summary.pdf    Data Sources Detail    md5 path     ce843abcbc98fc858559718dc67a34ce source/ccle/CCLE_DepMap_18q3_maf_20180718.</description>
+    </item>
+    
+    <item>
+      <title>Demo (Google Auth Required)</title>
+      <link>http://localhost/building/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/demo/</guid>
+      <description>View tokens | token.txt | token.json | token.curl | signout |
+Visit GRIP to run interactive queries
+curl -H &amp;quot;OauthEmail: XXXX@YYYY.com&amp;quot; -H &amp;quot;OauthAccessToken: /SSSSSSSS&amp;quot; -H &amp;quot;OauthExpires: 1544674452&amp;quot; http://localhost  </description>
+    </item>
+    
+    <item>
+      <title>Provenance</title>
+      <link>http://localhost/building/provenance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/provenance/</guid>
+      <description> BMEG Provenance </description>
+    </item>
+    
+    <item>
+      <title>Schema</title>
+      <link>http://localhost/building/schema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/schema/</guid>
+      <description> Data Schema </description>
+    </item>
+    
+  </channel>
+</rss>
