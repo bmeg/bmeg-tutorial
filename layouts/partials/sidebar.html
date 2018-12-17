@@ -19,7 +19,7 @@
             <li>
               <a href="{{ .URL }}"
                  class="sidebar-nav-item {{ if $page.IsMenuCurrent "main" . }} active{{end}}"
-              >{{ .Name }}</a></li>
+              >{{ .Pre }}{{ .Name }}</a></li>
           </ul>
         </li>
         {{ end }}

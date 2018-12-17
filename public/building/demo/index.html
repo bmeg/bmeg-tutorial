@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   
-  <title>Demo (Google Auth Required) &middot; BMEG</title>
+  <title>Demo &middot; BMEG</title>
   
 
   
@@ -32,12 +32,6 @@
   <link rel="stylesheet" href="http://localhost/css/highlight.min.css" />
   <script src="http://localhost/js/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  
-  <link href="http://localhost/provenance/static/css/1.f16332a3.chunk.css" rel="stylesheet"></link>
-  <link href="http://localhost/provenance/static/css/main.94fe56b7.chunk.css" rel="stylesheet"></link>
-  
 
 </head>
 <body>
@@ -155,6 +149,15 @@
         <li>
           <ul class="collapsible-header">
             <li>
+              <a href="http://localhost/building/demo-introduction/"
+                 class="sidebar-nav-item "
+              ><i class='fa fa-sign-in'></i>Demo</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <ul class="collapsible-header">
+            <li>
               <a href="http://localhost/building/provenance/"
                  class="sidebar-nav-item "
               >Provenance</a></li>
@@ -179,17 +182,22 @@
 </ul>
 
   <div class="main col span_8_of_12" style="padding-left: 350px;">
-    <p>View tokens     |
-<a href="http://localhost/_token.txt">token.txt</a>     |
-<a href="http://localhost/_token.json">token.json</a>     |
-<a href="http://localhost/_token.curl">token.curl</a>     |
-<a href="http://localhost/_signout">signout</a>     |</p>
+    <nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Tokens</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="http://localhost/_token.txt">text</a></li>
+      <li><a href="http://localhost/_token.json">json</a></li>
+      <li><a href="http://localhost/_token.curl">curl</a></li>
+      <li><a href="http://localhost/_signout">signout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<pre><code>curl -H &quot;OauthEmail: XXXX@YYYY.com&quot; -H &quot;OauthAccessToken: /SSSSSSSS&quot; -H &quot;OauthExpires: 1544674452&quot; http://localhost/api/v1/
+</code></pre>
 
 <p>Visit <a href="http://localhost/grip">GRIP</a> to run interactive queries</p>
-
-<pre><code>curl -H &quot;OauthEmail: XXXX@YYYY.com&quot; -H &quot;OauthAccessToken: /SSSSSSSS&quot; -H &quot;OauthExpires: 1544674452&quot; http://localhost
-
-</code></pre>
 
   </div>
   

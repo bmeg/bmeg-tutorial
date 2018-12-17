@@ -20,14 +20,23 @@
     </item>
     
     <item>
-      <title>Demo (Google Auth Required)</title>
+      <title>Demo</title>
+      <link>http://localhost/building/demo-introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/building/demo-introduction/</guid>
+      <description>We allow identified users to access the BMEG system:
+ We will redirect you to Google to verify identity.
+ Then, you will be granted access for interactive and API access  Access BMEG GRIP</description>
+    </item>
+    
+    <item>
+      <title>Demo</title>
       <link>http://localhost/building/demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://localhost/building/demo/</guid>
-      <description>View tokens | token.txt | token.json | token.curl | signout |
-Visit GRIP to run interactive queries
-curl -H &amp;quot;OauthEmail: XXXX@YYYY.com&amp;quot; -H &amp;quot;OauthAccessToken: /SSSSSSSS&amp;quot; -H &amp;quot;OauthExpires: 1544674452&amp;quot; http://localhost  </description>
+      <description>Tokens text json curl signout    curl -H &amp;quot;OauthEmail: XXXX@YYYY.com&amp;quot; -H &amp;quot;OauthAccessToken: /SSSSSSSS&amp;quot; -H &amp;quot;OauthExpires: 1544674452&amp;quot; http://localhost/api/v1/  Visit GRIP to run interactive queries</description>
     </item>
     
     <item>
