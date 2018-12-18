@@ -1,5 +1,6 @@
 ---
 title: Provenance
+sidebar: true
 menu:
   main:
     parent: Building Graph

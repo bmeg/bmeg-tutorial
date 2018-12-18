@@ -1,6 +1,6 @@
 ---
 title: Schema
-
+sidebar: true
 menu:
   main:
     parent: Building Graph
