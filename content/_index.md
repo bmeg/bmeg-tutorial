@@ -22,6 +22,7 @@ resources and aggregates them into a single coherent resource. Sources include:
 
 {{% card title="Discover" icon="donut_large" %}}
 The graph can be explore programmatically using the GRIP API and the Python client.
+[Credentials and API](/building/demo-introduction)
 {{% /card %}}
 
 {{% card title="Analyze" icon="flash_on" %}}

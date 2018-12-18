@@ -1,5 +1,7 @@
 ---
 title: Updates
+sidebar: true
+
 menu:
   main:
     weight: 4

@@ -1,5 +1,7 @@
 ---
 title: System
+sidebar: true
+
 menu:
   main:
     weight: 3

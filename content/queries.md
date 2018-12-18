@@ -1,5 +1,7 @@
 ---
 title: Queries
+sidebar: true
+
 menu:
   main:
     weight: 1

@@ -1,5 +1,6 @@
 ---
 title: Schema
+
 menu:
   main:
     parent: Building Graph
