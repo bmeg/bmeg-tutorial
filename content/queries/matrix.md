@@ -1,5 +1,7 @@
 ---
 title: Matrix
+sidebar: true
+
 menu:
   main:
     parent: Queries

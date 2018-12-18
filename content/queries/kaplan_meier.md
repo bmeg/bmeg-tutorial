@@ -1,5 +1,7 @@
 ---
 title: Kaplan Meier Curves
+sidebar: true
+
 menu:
   main:
     parent: Queries

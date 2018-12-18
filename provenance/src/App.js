@@ -67,8 +67,21 @@ class App extends React.Component {
         },
         neighborSelectTime: 500
     });
+
     this.layout.run()
     this.api.enableMarqueeZoom();
+
+    var selectedEles = cy.$(":selected");
+    if (selectedEles.length > 0) {
+      cy.zoom({
+        level: .40,
+        position: selectedEles[0].position()
+      });
+      this.setState({ selection: [selectedEles[0].data()] });
+    } else {
+      console.log('no selected element at startup')
+    }
+
   }
 
   //
@@ -151,7 +164,7 @@ class App extends React.Component {
     const keys = ['_label', 'cmd', 'path'];
     const columns = keys.map((key) => {return { Header: key, accessor: key }});
 
-    return <div>
+    return <div >
     <div>
       <nav>
         <div className="nav-wrapper">
@@ -171,7 +184,7 @@ class App extends React.Component {
         </div>
       </nav>
     </div>
-    
+
     <div>
       <CytoscapeComponent
         elements={this.state.elements}
@@ -210,18 +223,19 @@ class App extends React.Component {
         style={ {
           height:  this.props.dataset.height,
           width: this.props.dataset.width,
-          display: 'block'
+          display: 'block',
+          overflow: 'scroll'
         } }
         cy={this.handleCy}
       />
     </div>
 
-      <div>
-        <ReactTable
-          data={ this.state.selection }
-          columns = { columns }
-        />
-      </div>
+    <div>
+      <ReactTable
+        data={ this.state.selection }
+        columns = { columns }
+      />
+    </div>
     </div>;
   }
 }

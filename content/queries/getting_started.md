@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+sidebar: true
 menu:
   main:
     parent: Queries

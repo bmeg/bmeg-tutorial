@@ -1,5 +1,6 @@
 ---
 title: Install
+sidebar: true
 menu:
   main:
     weight: 1

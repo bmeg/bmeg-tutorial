@@ -1,5 +1,7 @@
 ---
 title: Building Graph
+sidebar: true
+
 menu:
   main:
     weight: 3

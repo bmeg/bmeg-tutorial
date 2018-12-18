@@ -1,5 +1,7 @@
 ---
 title: Traversal
+sidebar: true
+
 menu:
   main:
     parent: Queries
