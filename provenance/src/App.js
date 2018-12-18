@@ -67,8 +67,21 @@ class App extends React.Component {
         },
         neighborSelectTime: 500
     });
+
     this.layout.run()
     this.api.enableMarqueeZoom();
+
+    var selectedEles = cy.$(":selected");
+    if (selectedEles.length > 0) {
+      cy.zoom({
+        level: .40,
+        position: selectedEles[0].position()
+      });
+      this.setState({ selection: [selectedEles[0].data()] });
+    } else {
+      console.log('no selected element at startup')
+    }
+
   }
 
   //
