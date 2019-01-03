@@ -1,0 +1,72 @@
+{
+  "graph": "example-graph",
+  "vertices": [
+    {
+      "gid": "Movie",
+      "label": "Movie",
+      "data": {
+          "name": "STRING"
+        }
+    },
+    {
+      "gid": "Starship",
+      "label": "Starship",
+      "data": {
+          "length": "NUMERIC",
+          "name": "STRING"
+        }
+    },
+    {
+      "gid": "Droid",
+      "label": "Droid",
+      "data": {
+          "name": "STRING",
+          "primaryFunction": "STRING"
+        }
+    },
+    {
+      "gid": "Human",
+      "label": "Human",
+      "data": {
+          "height": "NUMERIC",
+          "homePlanet": "STRING",
+          "mass": "NUMERIC",
+          "name": "STRING"
+        }
+    }
+  ],
+  "edges": [
+    {
+      "gid": "(Human)--starship->(Starship)",
+      "label": "starship",
+      "from": "Human",
+      "to": "Starship",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Human)--friend->(Human)",
+      "label": "friend",
+      "from": "Human",
+      "to": "Human",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Human)--friend->(Droid)",
+      "label": "friend",
+      "from": "Human",
+      "to": "Droid",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Human)--appearsIn->(Movie)",
+      "label": "appearsIn",
+      "from": "Human",
+      "to": "Movie",
+      "data": {
+        }
+    }
+  ]
+}
