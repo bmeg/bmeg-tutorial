@@ -1,11 +1,5 @@
 ---
 title: Kaplan Meier Curves
-sidebar: true
-
-menu:
-  main:
-    parent: Queries
-    weight: 4
 ---
 
 # Make Kaplan Meier curves using TCGA data

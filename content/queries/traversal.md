@@ -1,11 +1,5 @@
 ---
 title: Traversal
-sidebar: true
-
-menu:
-  main:
-    parent: Queries
-    weight: 3
 ---
 
 # Starting Traversal
