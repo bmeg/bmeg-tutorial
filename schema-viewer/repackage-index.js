@@ -8,15 +8,15 @@ var data = fs.readFileSync('build/index.html', "utf8")
 
 var index = cheerio.load(data);
 const scripts = index.html('script');
-const links = index.html('link[rel="stylesheet"][href*="provenance"]');
-// insert into: ../layouts/shortcodes/provenance.html
+const links = index.html('link[rel="stylesheet"][href*="schema"]');
+// insert into: ../layouts/shortcodes/schema.html
 var lineReader = require('readline').createInterface({
-  input: require('fs').createReadStream('../layouts/shortcodes/provenance.html')
+  input: require('fs').createReadStream('../layouts/shortcodes/schema.html')
 });
 var is_comment = false;
 var lines = []
 lineReader.on('line', function (line) {
-  if (line.indexOf('PROVENANCE INSERT START') > 0 )  {
+  if (line.indexOf('SCHEMA VIEWER INSERT START') > 0 )  {
     is_comment = true;
     lines.push(line)
     var now = new Date()
@@ -24,7 +24,7 @@ lineReader.on('line', function (line) {
     lines.push(links)
     lines.push(scripts)
   }
-  if (line.indexOf('PROVENANCE INSERT END') > 0 )  {
+  if (line.indexOf('SCHEMA VIEWER INSERT END') > 0 )  {
     is_comment = false;
   }
   if (!is_comment) {
@@ -32,7 +32,7 @@ lineReader.on('line', function (line) {
   }
 });
 lineReader.on('close', function () {
-  var file = fs.createWriteStream('../layouts/shortcodes/provenance.html');
+  var file = fs.createWriteStream('../layouts/shortcodes/schema.html');
   file.on('error', function(err) { console.log(err) });
   lines.forEach(function(v) { file.write(v + '\n'); });
   file.end();

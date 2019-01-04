@@ -1,12 +1,7 @@
 ---
 title: Queries
-sidebar: true
-
-menu:
-  main:
-    weight: 1
 ---
 
-# Queries
+# Analyze
 
 ![Example image](/img/bmeg_schema.png)

@@ -1,11 +1,5 @@
 ---
 title: Drug Response
-sidebar: true
-
-menu:
-  main:
-    parent: Queries
-    weight: 5
 ---
 
 

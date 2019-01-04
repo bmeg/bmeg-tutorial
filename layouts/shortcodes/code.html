@@ -1,0 +1,20 @@
+{{ $file := .Get "file" }}
+{{ $codeLang := "" }}
+{{ $suffix := findRE "(\\.[^.]+)$" $file 1 }}
+{{ with  $suffix }}
+{{ $codeLang = (index . 0 | strings.TrimPrefix ".") }}
+{{ end }}
+{{ with .Get "codeLang" }}{{ $codeLang = . }}{{ end }}
+{{ if eq $codeLang "html"}}
+{{ $codeLang = "go-html-template" }}
+{{ end }}
+<div class="code relative">
+	{{ if ne (.Get "copy") "false" }}
+    <button class="btn-floating copy-button absolute right"  data-clipboard-target="#{{$file}}">
+      <i class="material-icons">content_copy</i>
+    </button>
+	{{end}}
+	<div class="code-copy-content nt3" id="{{$file}}">
+	  	<code class="hljs">{{ .Inner | safeHTML }}</code>
+	</div>
+</div>

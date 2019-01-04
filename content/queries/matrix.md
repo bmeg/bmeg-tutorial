@@ -1,11 +1,5 @@
 ---
 title: Matrix
-sidebar: true
-
-menu:
-  main:
-    parent: Queries
-    weight: 4
 ---
 
 # Using BMEG to get matrix data

@@ -1,14 +1,14 @@
 ---
 title: Getting Started
-sidebar: true
-menu:
-  main:
-    parent: Queries
-    weight: 2
 ---
 
+# GRIP Usage
 
-# Usage
+## Python Client
+
+```python
+pip install "git+https://github.com/bmeg/grip.git#subdirectory=gripql/python"
+```
 
 GRIPQL is an API for making graph queries using structured data. Queries are defined using a series of step operations provided by BMEG. The python client wraps the construction of these queries in an intuitive python interface.
 

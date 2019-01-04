@@ -3,7 +3,7 @@
 ---
 
 {{% card-container %}}
-{{% card title="Credentials and API" %}}
+{{% card title="Credentials and API" icon="lock_open"%}}
 We allow identified users to access the BMEG system:
 
 * We will redirect you to Google to verify identity.  
