@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("/schema.json")
+    fetch(this.props.dataset.url)
       .then(response => response.json())
       .then(data => {
         var edges = data["edges"].map(function(x){
@@ -32,7 +32,7 @@ class App extends Component {
         this.setState({elements: {"nodes": nodes, "edges": edges}, schema: data})
         console.log("Loaded the graph schema...",)
       }).catch(err => {
-        console.log("Failed to load the graph schema", err)
+        console.log("Failed to load the graph schema:", this.props.dataset.url, ":", err)
       })
   }
 
@@ -127,8 +127,8 @@ class App extends Component {
 
   render() {
     let cyStyle = {
-      height: "600px",
-      width: "85%",
+      height: this.props.dataset.height,
+      width: this.props.dataset.width,
       margin: "5px auto",
       borderStyle: "solid",
       borderColor: "#D3D3D3",
@@ -137,7 +137,7 @@ class App extends Component {
     return (
       <div>
         <div style={cyStyle} id="cy"></div>
-        <div style={{width: "85%", margin: "5px auto"}} id="reactJson">
+        <div style={{width: this.props.dataset.width, margin: "5px auto"}} id="reactJson">
           <ReactJson src={this.state.selection} name={false}  enableClipboard={false} displayDataTypes={false}/>
         </div>
       </div>

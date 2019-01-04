@@ -4,4 +4,4 @@ title: Provenance
 
 # BMEG Provenance
 
-{{% graph %}}
+{{% provenance %}}
