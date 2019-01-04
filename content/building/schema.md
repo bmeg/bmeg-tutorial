@@ -7,4 +7,6 @@ menu:
     weight: 1
 ---
 
-# Data Schema
+# BMEG Schema
+
+{{% schema %}}

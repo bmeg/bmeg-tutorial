@@ -9,4 +9,4 @@ menu:
 
 # BMEG Provenance
 
-{{% graph %}}
+{{% provenance %}}
