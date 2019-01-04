@@ -1,6 +1,5 @@
 ---
 title: Drug Response
-sidebar: false
 ---
 
 
