@@ -2,7 +2,7 @@
 title: Kaplan Meier Curves
 ---
 
-# Make Kaplan Meier curves using TCGA data
+## Make Kaplan Meier curves using TCGA data
 
 ```python
 from lifelines import KaplanMeierFitter
@@ -12,8 +12,8 @@ import gripql
 conn = gripql.Connection("http://bmeg.io")
 O = conn.graph("bmeg")
 
-q = O.query().V().where(gripql.eq("_label", "Individual"))
-q = q.where(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "BRCA")))
+q = O.query().V().hasLabel("Individual")
+q = q.has(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "BRCA")))
 q = q.where(gripql.eq("vital_status", "Dead"))
 
 q1 = q.where(gripql.eq('her2_status_by_ihc', 'Positive')).render(["death_days_to"])
