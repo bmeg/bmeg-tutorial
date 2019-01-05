@@ -2,32 +2,33 @@
 title: Drug Response
 ---
 
+## Using Cancer Cell Line Encyclopedia (CCLE) to do drug response analysis
 
-# Get all CCLE samples
+Get all CCLE samples
 ```
-q = O.query().V().where(gripql.eq("_label", "Biosample"))
-q = q.where(gripql.and_(gripql.eq("source", "ccle"))).render({"id":"_gid"})
+q = O.query().V().hasLabel("Biosample")
+q = q.has(gripql.and_(gripql.eq("source", "ccle"))).render({"id":"_gid"})
 all_samples = []
 for row in q:
     all_samples.append(row.id)
 ```
 
-# Genes we'll be looking at
+Genes we'll be looking at
 ```
 GENES = ["CDKN2A", "PTEN", "TP53", "SMAD4"]
 gene_ids = {}
 for g in GENES:
-    for i in O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", g)):
+    for i in O.query().V().hasLabel("Gene").has(gripql.eq("symbol", g)):
         gene_ids[g] = i.gid
 ```
 
-# Scan CCLE cell lines based on mutation status
+Scan CCLE cell lines based on mutation status
 ```
 mut_samples = {}
 norm_samples = {}
 for g, i in gene_ids.items():
     #get CCLE samples with mutation
-    mut_samples[g] = set(k['gid'] for k in O.query().V(i).in_("variantIn").out("variantCall").out("callSetOf").where(gripql.in_("_gid", all_samples)).render({"gid":"_gid"}))
+    mut_samples[g] = set(k['gid'] for k in O.query().V(i).in_("variantIn").out("variantCall").out("callSetOf").has(gripql.in_("_gid", all_samples)).render({"gid":"_gid"}))
 
     #get CCLE samples without mutation
     norm_samples[g] = list(set(all_samples).difference(mut_samples[g]))
@@ -36,12 +37,12 @@ for g, i in gene_ids.items():
     print "%s Negative Set: %d" % (g, len(norm_samples[g]))
 ```
 
-# Get response values for the positive set (samples with mutation) and collect AUC value by drug
+Get response values for the positive set (samples with mutation) and collect AUC value by drug
 ```
 pos_response = {}
 for g in GENES:
     pos_response[g] = {}
-    for row in O.query().V(mut_samples[g]).in_("responseFor").mark("a").out("responseTo").mark("b").select(["a", "b"]):
+    for row in O.query().V(mut_samples[g]).in_("responseFor").as("a").out("responseTo").as("b").select(["a", "b"]):
         for v in row['a']['data']['summary']:
             if v['type'] == "AUC":
                 compound = row['b']['gid']
@@ -52,13 +53,12 @@ for g in GENES:
 ```
 
 
-
-# Get response values for the negative set (samples without mutation) and collect AUC value by drug
+Get response values for the negative set (samples without mutation) and collect AUC value by drug
 ```
 neg_response = {}
 for g in GENES:
     neg_response[g] = {}
-    for row in O.query().V(norm_samples[g]).in_("responseFor").mark("a").out("responseTo").mark("b").select(["a", "b"]):
+    for row in O.query().V(norm_samples[g]).in_("responseFor").as("a").out("responseTo").as("b").select(["a", "b"]):
         for v in row['a']['data']['summary']:
             if v['type'] == "AUC":
                 compound = row['b']['gid']
@@ -68,7 +68,7 @@ for g in GENES:
                     neg_response[g][compound].append(v["value"])
 ```
 
-# Collect t-test statistics
+Collect t-test statistics
 ```
 drugs = set(itertools.chain.from_iterable( i.keys() for i in pos_response.values() ))
 out = []
@@ -88,15 +88,7 @@ for drug in drugs:
                 out.append(row)
 ```
 
-# Print data sorted by statistical value
+Print data sorted by statistical value
 ```
 pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a-statistic", "a-pvalue"]).sort_values("a-pvalue")
-```
-
-
-# Traversal direction optimization
-Note, there is a slower version of this query:
-```
-q = O.query().V(all_samples).in_("callSetOf").in_("variantCall").out("variantIn").where(gripql.eq("gene:ENSG00000141510", "_gid")).count()
-#print list(q)
 ```

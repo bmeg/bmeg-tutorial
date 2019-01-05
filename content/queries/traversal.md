@@ -28,19 +28,26 @@ O.query().E()
 Returns all edges in graph
 
 # Filtering
-## .where()
+
+## .hasLabel
+Select vertices of a particular type
+```python
+O.query().V().hasLabel("Gene")
+```
+
+## .has()
 Filter elements using conditional statements
 
 ```python
-O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", "TP53"))
+O.query().V().hasLabel("Gene").where(gripql.eq("symbol", "TP53"))
 ```
 
 ## Conditions
-Conditions are arguments to `.where()` that define selection conditions
+Conditions are arguments to `.has()` that define selection conditions
 ### gripql.eq(variable, value)
 Returns rows where variable == value
 ```python
-.where(gripql.eq("symbol", "TP53"))
+.has(gripql.eq("symbol", "TP53"))
 ```
 
 ### gripql.neq(variable, value)
@@ -132,13 +139,13 @@ Following outgoing edges. Optional argument is the edge label (or list of labels
 ## .both()
 Following all edges (both in and out). Optional argument is the edge label (or list of labels) that should be followed.
 
-## .inEdge()
+## .inE()
 Following incoming edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
 
-## .outEdge()
+## .outE()
 Following outgoing edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
 
-## .bothEdge()
+## .bothE()
 Following all edges, but return the edge as the next element. This can be used to inspect edge properties. Optional argument is the edge label (or list of labels) that should be followed. To return back to a vertex, use `.in_` or `.out`
 
 
@@ -147,12 +154,12 @@ Following all edges, but return the edge as the next element. This can be used t
 ## .aggregate()
 Return aggregate counts of field. This can be run at the graph level, without using the `.query()` method to start a traversal, ie
 ```
-O.aggregate(gripql.term("test-agg", "Person", "name"))
+O.query().hasLabel("Person").aggregate(gripql.term("test-agg", "name"))
 ```
 Where `test-agg` is the name of the aggrigation, `Person` is the vertex label type and `name` is the field.
 
 ```
-O.query().V("1").out().aggregate(gripql.histogram("traversal-agg", "Person", "age", 5))
+O.query().V("1").out().aggregate(gripql.histogram("traversal-agg", "age", 5))
 ```
 Starts on vertex `1`, goes out and then creates a histogram named `traversal-agg` across the `age` field in the `Person` vertices.
 

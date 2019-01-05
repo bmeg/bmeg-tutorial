@@ -16,8 +16,8 @@ import gripql
 conn = gripql.Connection("http://bmeg.io")
 O = conn.graph("bmeg")
 
-c = O.query().V().where(gripql.eq("_label", "Individual"))
-c = c.where(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "READ")))
+c = O.query().V().hasLabel("Individual")
+c = c.has(gripql.and_(gripql.eq("source", "tcga"), gripql.eq("disease_code", "READ")))
 c = c.in_("sampleOf").in_("expressionFor")
 c = c.render(["$.biosampleId", "$.expressions"])
 

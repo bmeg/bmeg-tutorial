@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+weight: 1
 ---
 
 # GRIP Usage
@@ -14,8 +15,6 @@ GRIPQL is an API for making graph queries using structured data. Queries are def
 
 Let's go through the features currently supported in the GRIPQL python client.
 
-## import
-
 First, import the GRIPQL client and create a connection to an existing GRIPQL API:
 
 ```python
@@ -25,12 +24,12 @@ O = conn.graph("bmeg")
 ```
 Now that we have an BMEG graph instance, we can use this to make all of our queries.
 
-## finding a vertex
+## Finding a vertex
 
 One of the first things you probably want to do is find some vertex out of all of the vertexes available in the system. In order to do this, we need to know something about the vertex we are looking for. To start, let's see if we can find a specific gene:
 
 ```python
-print list(O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", "TP53")))
+print list(O.query().V().hasLabel("Gene").has(gripql.eq("symbol", "TP53")))
 ```
 
 A couple things about this first and simplest query. We start with `O`, our GRIPQL instance connected to the BMEG, and create a new query with `.query()`. This query is now being constructed. You can chain along as many operations as you want, and nothing will actually get sent to the server until you print the results.
@@ -63,7 +62,7 @@ This represents the vertex we queried for above. All vertexes in the system will
 You can also do a `where` query with a list of items using `gripql.in_([...])` (other conditions exist, see the `Conditions` section below):
 
 ```python
-print list(O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.in_("symbol", ["TP53", "BRCA1"])).render({"gid": "_gid", "symbol":"symbol"}))
+print list(O.query().V().hasLabel("Gene").has(gripql.in_("symbol", ["TP53", "BRCA1"])).render({"gid": "_gid", "symbol":"symbol"}))
 ```
 
 This returns both Gene vertexes:
@@ -82,7 +81,7 @@ Edges in the graph are directional, so there are both incoming and outgoing edge
 Starting with gene TP53, and see what kind of other vertexes it is connected to.
 
 ```python
-O.query().V().where(gripql.eq("_label", "Gene")).where(gripql.eq("symbol", "TP53"))
+O.query().V().hasLabel("Gene").has(gripql.eq("symbol", "TP53"))
 ```
 
 Here we have introduced a couple of new steps. The first is `.out()`. This starts from wherever you are in the graph at the moment and travels out along all the outgoing edges.
