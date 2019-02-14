@@ -6,6 +6,73 @@ import {gripql} from './gripql.js'
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
 
+import d3 from 'd3';
+
+import rd3 from 'react-d3-library';
+const RD3Component = rd3.Component;
+
+class Histograph extends Component {
+
+  constructor(props) {
+     super(props);
+     this.state = {d3: ''}
+   }
+
+  componentDidMount() {
+    var node = document.createElement('div');
+
+    var width = 300,
+        height = 300,
+        n = 20;
+    var radius = Math.min(width, height) / 2;
+
+    var data = [{"letter":"q","presses":1},{"letter":"w","presses":5},{"letter":"e","presses":2}];
+
+
+    const color = d3.scale.category10();
+
+
+    var arc = d3.svg.arc()
+    	.outerRadius(radius - 10)
+    	.innerRadius(0);
+
+    var labelArc = d3.svg.arc()
+    	.outerRadius(radius - 40)
+    	.innerRadius(radius - 40);
+
+    var pie = d3.layout.pie()
+      	.value(function(d) { return d.presses; })(data);
+
+        var svg = d3.select(node)
+        	.append("svg")
+        	.attr("width", width)
+        	.attr("height", height)
+        		.append("g")
+        		.attr("transform", "translate(" + width/2 + "," + height/2 +")"); // Moving the center point. 1/2 the width and 1/2 the height
+
+            var g = svg.selectAll("arc")
+	.data(pie)
+	.enter().append("g")
+	.attr("class", "arc");
+
+  g.append("path")
+	.attr("d", arc)
+	.style("fill", function(d) { return color(d.data.letter);});
+
+
+    this.setState({d3: node});
+  }
+
+  render() {
+    return (
+      <div>
+        <RD3Component data={this.state.d3} />
+      </div>
+    )
+  }
+
+}
+
 class IndividualTable extends Component {
 
   constructor(props) {
@@ -76,10 +143,14 @@ class IndividualTable extends Component {
       }
      ]
 
-   return (<ReactTable
-   data={this.state.individuals}
-   defaultPageSize={10}
-   columns={columns}/>)
+   return (
+     <div>
+     <Histograph/>
+      <ReactTable
+         data={this.state.individuals}
+         defaultPageSize={10}
+         columns={columns}/>
+     </div>)
  }
 }
 
