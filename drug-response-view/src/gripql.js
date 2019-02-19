@@ -128,7 +128,21 @@ export var gripql = {
 	        var parsed = lines.filter(x => x.length > 0).map(JSON.parse).map(function(x) { return x["result"] })
 	        callback(parsed)
 	      })
-	    }
+	    },
+
+			call: function() {
+				return fetch(queryBase, {
+	        method: 'POST',
+	        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+	        body: JSON.stringify( {query:this.query} ),
+	      }).then(function(response) {
+	        return response.text()
+	      }).then(function(text) {
+	        var lines = text.replace(/^\s+|\s+$/g, '').split("\n")
+	        var parsed = lines.filter(x => x.length > 0).map(JSON.parse).map(function(x) { return x["result"] })
+	        return parsed
+	      })
+			}
 		}
 	},
 
