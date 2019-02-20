@@ -29,8 +29,8 @@ The Cancer Genome Atlas (TCGA) cancer genomics dataset includes over 10,000 tumo
 <a href="https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30096-6" target="_blank">paper</a>
 {{% /card %}}
 
-{{% card title="CTDD" %}}
-Cancer Therapeutics Response Portal (CTRP) catalogues response profiles of 481 compounds against 860 cancer cell lines.
+{{% card title="CTRP" %}}
+Cancer Therapeutics Response Portal (CTRP) catalogues response profiles of <a href="https://www.ncbi.nlm.nih.gov/pubmed/26482930" target="_blank">481 compounds against 860 cancer cell lines</a>.
 {{% /card %}}
 
 {{% card title="GDSC" %}}
@@ -44,7 +44,7 @@ The Ensembl project has been aggregating, processing, integrating and redistribu
 {{% /card %}}
 
 {{% card title="PFAM" %}}
-<a href="https://pfam.xfam.org/" target="_blank">PFAM</a> describes over 13,000 protein families (<a href="https://www.ncbi.nlm.nih.gov/pubmed/22127870" target="_blank">paper</a>)
+<a href="https://pfam.xfam.org/" target="_blank">PFAM</a> describes over <a href="https://www.ncbi.nlm.nih.gov/pubmed/22127870" target="_blank">13,000 protein families</a>
 {{% /card %}}
 
 {{% card title="Uniprot" %}}
@@ -63,7 +63,7 @@ Gene Ontology Consortium is a controlled vocabulary describing knowledge of gene
 {{% /card %}}
 
 {{% card title="PubMed" %}}
-Publication information from over X articles
+Publication information from almost <a href="https://www.ncbi.nlm.nih.gov/pubmed/" target="_blank">30 million articles</a>
 {{% /card %}}
 
 
