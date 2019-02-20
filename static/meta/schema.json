@@ -1,2104 +1,748 @@
 {
+  "graph": "bmeg_rc1_2",
   "vertices": [
     {
-      "gid": "",
-      "label": "Compound",
+      "gid": "Program",
+      "label": "Program",
       "data": {
-        "name": "STRING",
-        "term": "STRING",
-        "term_id": "STRING"
-      }
+          "gdc_attributes": {
+                "dbgap_accession_number": "UNKNOWN",
+                "name": "STRING",
+                "program_id": "STRING"
+              },
+          "program_id": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "Project",
       "label": "Project",
       "data": {
-        "gdc_attributes": {
-          "disease_type": [
-            "STRING"
-          ],
-          "name": "STRING",
-          "primary_site": [
-            "STRING"
-          ],
-          "program": {
-            "dbgap_accession_number": "STRING",
-            "name": "STRING",
-            "program_id": "STRING"
-          },
-          "summary": {
-            "case_count": "NUMERIC",
-            "file_count": "NUMERIC",
-            "file_size": "NUMERIC"
-          }
-        },
-        "project_id": "STRING"
-      }
+          "gdc_attributes": {
+                "dbgap_accession_number": "UNKNOWN",
+                "disease_type": [
+                      "STRING"
+                    ],
+                "name": "STRING",
+                "primary_site": [
+                      "STRING"
+                    ],
+                "summary": {
+                      "case_count": "NUMERIC",
+                      "file_count": "NUMERIC",
+                      "file_size": "NUMERIC"
+                    }
+              },
+          "project_id": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "PFAMClan",
       "label": "PFAMClan",
       "data": {
-        "accession": "STRING",
-        "description": "STRING",
-        "id": "STRING"
-      }
+          "accession": "STRING",
+          "description": "STRING",
+          "id": "STRING"
+        }
     },
     {
-      "gid": "",
-      "label": "Phenotype",
+      "gid": "Compound",
+      "label": "Compound",
       "data": {
-        "name": "STRING",
-        "term": "STRING",
-        "term_id": "STRING"
-      }
+          "name": "STRING",
+          "term": "STRING",
+          "term_id": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "MinimalAllele",
       "label": "MinimalAllele",
       "data": {
-        "chromosome": "STRING",
-        "end": "NUMERIC",
-        "genome": "STRING",
-        "name": "STRING",
-        "start": "NUMERIC",
-        "type": "STRING"
-      }
+          "chromosome": "STRING",
+          "end": "NUMERIC",
+          "genome": "STRING",
+          "name": "STRING",
+          "start": "NUMERIC",
+          "type": "STRING"
+        }
     },
     {
-      "gid": "",
-      "label": "Callset",
+      "gid": "Phenotype",
+      "label": "Phenotype",
       "data": {
-        "normal_aliquot_id": "STRING",
-        "source": "STRING",
-        "tumor_aliquot_id": "STRING"
-      }
+          "name": "STRING",
+          "term": "STRING",
+          "term_id": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "ProteinStructure",
+      "label": "ProteinStructure",
+      "data": {
+          "protein_id": "STRING"
+        }
+    },
+    {
+      "gid": "Gene",
       "label": "Gene",
       "data": {
-        "chromosome": "STRING",
-        "description": "STRING",
-        "end": "NUMERIC",
-        "gene_id": "STRING",
-        "genome": "STRING",
-        "start": "NUMERIC",
-        "strand": "STRING",
-        "symbol": "STRING"
-      }
+          "chromosome": "STRING",
+          "description": "STRING",
+          "end": "NUMERIC",
+          "gene_id": "STRING",
+          "genome": "STRING",
+          "start": "NUMERIC",
+          "strand": "STRING",
+          "symbol": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "Callset",
+      "label": "Callset",
+      "data": {
+          "normal_aliquot_id": "STRING",
+          "source": "STRING",
+          "tumor_aliquot_id": "STRING"
+        }
+    },
+    {
+      "gid": "PFAMFamily",
       "label": "PFAMFamily",
       "data": {
-        "accession": "STRING",
-        "comments": "STRING",
-        "description": "STRING",
-        "pfam_id": "STRING",
-        "type": "STRING"
-      }
+          "accession": "STRING",
+          "comments": "STRING",
+          "description": "STRING",
+          "pfam_id": "STRING",
+          "type": "STRING"
+        }
     },
     {
-      "gid": "",
-      "label": "ParamacalogicalProfile",
-      "data": {
-        "a_max": "NUMERIC",
-        "act_area": "NUMERIC",
-        "activity_data_median": [
-          "NUMERIC"
-        ],
-        "activity_sd": [
-          "NUMERIC"
-        ],
-        "ccle_cell_line_name": "STRING",
-        "compound": "STRING",
-        "doses_um": [
-          "NUMERIC"
-        ],
-        "ec50_um": "NUMERIC",
-        "fit_type": "STRING",
-        "ic50_um": "NUMERIC",
-        "num_data": "NUMERIC",
-        "primary_cell_line_name": "STRING",
-        "target": "STRING"
-      }
-    },
-    {
-      "gid": "",
-      "label": "Publication",
-      "data": {
-        "url": "STRING"
-      }
-    },
-    {
-      "gid": "",
+      "gid": "GeneOntologyTerm",
       "label": "GeneOntologyTerm",
       "data": {
-        "definition": "STRING",
-        "go_id": "STRING",
-        "name": "STRING",
-        "namespace": "STRING",
-        "synonym": [
-          "STRING"
-        ],
-        "xref": [
-          "UNKNOWN"
-        ]
-      }
+          "definition": "STRING",
+          "go_id": "STRING",
+          "name": "STRING",
+          "namespace": "STRING",
+          "synonym": [
+                "UNKNOWN"
+              ],
+          "xref": [
+                "UNKNOWN"
+              ]
+        }
     },
     {
-      "gid": "",
+      "gid": "Sample",
+      "label": "Sample",
+      "data": {
+          "ccle_attributes": {
+                "Aliases": "STRING",
+                "CCLE_Name": "STRING",
+                "COSMIC_ID": "STRING",
+                "DepMap_ID": "STRING",
+                "Gender": "STRING",
+                "Primary Disease": "STRING",
+                "Sanger ID": "STRING",
+                "Source": "STRING",
+                "Subtype Disease": "STRING"
+              },
+          "gdc_attributes": {
+                "sample_type": "STRING",
+                "submitter_id": "STRING",
+                "tumor_descriptor": "UNKNOWN"
+              },
+          "gtex_attributes": {
+                "SAMPID": "STRING",
+                "SM350NRM": "STRING",
+                "SM550NRM": "STRING",
+                "SMAFRZE": "STRING",
+                "SMALTALG": "STRING",
+                "SMATSSCR": "STRING",
+                "SMBSMMRT": "STRING",
+                "SMCENTER": "STRING",
+                "SMCGLGTH": "STRING",
+                "SMCHMPRS": "STRING",
+                "SMDPMPRT": "STRING",
+                "SME1ANTI": "STRING",
+                "SME1MMRT": "STRING",
+                "SME1MPRT": "STRING",
+                "SME1PCTS": "STRING",
+                "SME1SNSE": "STRING",
+                "SME2ANTI": "STRING",
+                "SME2MMRT": "STRING",
+                "SME2MPRT": "STRING",
+                "SME2PCTS": "STRING",
+                "SME2SNSE": "STRING",
+                "SMESTLBS": "STRING",
+                "SMEXNCRT": "STRING",
+                "SMEXPEFF": "STRING",
+                "SMGAPPCT": "STRING",
+                "SMGEBTCH": "STRING",
+                "SMGEBTCHD": "STRING",
+                "SMGEBTCHT": "STRING",
+                "SMGNSDTC": "STRING",
+                "SMGTC": "STRING",
+                "SMMAPRT": "STRING",
+                "SMMFLGTH": "STRING",
+                "SMMNCPB": "STRING",
+                "SMMNCV": "STRING",
+                "SMMPPD": "STRING",
+                "SMMPPDPR": "STRING",
+                "SMMPPDUN": "STRING",
+                "SMMPUNRT": "STRING",
+                "SMNABTCH": "STRING",
+                "SMNABTCHD": "STRING",
+                "SMNABTCHT": "STRING",
+                "SMNTERRT": "STRING",
+                "SMNTRART": "STRING",
+                "SMNTRNRT": "STRING",
+                "SMNUM5CD": "STRING",
+                "SMNUMGPS": "STRING",
+                "SMPTHNTS": "STRING",
+                "SMRDLGTH": "STRING",
+                "SMRDTTL": "STRING",
+                "SMRIN": "STRING",
+                "SMRRNANM": "STRING",
+                "SMRRNART": "STRING",
+                "SMSFLGTH": "STRING",
+                "SMSPLTRD": "STRING",
+                "SMTRSCPT": "STRING",
+                "SMTS": "STRING",
+                "SMTSD": "STRING",
+                "SMTSISCH": "STRING",
+                "SMTSPAX": "STRING",
+                "SMUBRID": "STRING",
+                "SMUNMPRT": "STRING",
+                "SMUNPDRD": "STRING",
+                "SMVQCFL": "STRING"
+              },
+          "sample_id": "STRING"
+        }
+    },
+    {
+      "gid": "Transcript",
       "label": "Transcript",
       "data": {
-        "biotype": "STRING",
-        "chromosome": "STRING",
-        "end": "NUMERIC",
-        "gene_id": "STRING",
-        "genome": "STRING",
-        "start": "NUMERIC",
-        "strand": "STRING",
-        "transcript_id": "STRING"
-      }
+          "biotype": "STRING",
+          "chromosome": "STRING",
+          "end": "NUMERIC",
+          "gene_id": "STRING",
+          "genome": "STRING",
+          "start": "NUMERIC",
+          "strand": "STRING",
+          "transcript_id": "STRING"
+        }
     },
     {
-      "gid": "",
+      "gid": "Protein",
+      "label": "Protein",
+      "data": {
+          "genome": "STRING",
+          "protein_id": "STRING",
+          "transcript_id": "STRING",
+          "uniprot_id": "STRING"
+        }
+    },
+    {
+      "gid": "Aliquot",
       "label": "Aliquot",
       "data": {
-        "aliquot_id": "STRING",
-        "gdc_attributes": {
           "aliquot_id": "STRING",
-          "analyte_type": "UNKNOWN",
-          "sample_type": "STRING",
-          "submitter_id": "STRING",
-          "tumor_descriptor": "UNKNOWN"
+          "gdc_attributes": {
+                "aliquot_id": "STRING",
+                "analyte_type": "UNKNOWN",
+                "sample_type": "STRING",
+                "submitter_id": "STRING",
+                "tumor_descriptor": "UNKNOWN"
+              }
         }
-      }
     },
     {
-      "gid": "",
+      "gid": "Case",
+      "label": "Case",
+      "data": {
+          "case_id": "STRING",
+          "ccle_attributes": {
+                "gender": "STRING"
+              },
+          "gdc_attributes": {
+                "demographic": {
+                      "age_at_index": "UNKNOWN",
+                      "cause_of_death": "UNKNOWN",
+                      "created_datetime": "STRING",
+                      "days_to_birth": "UNKNOWN",
+                      "days_to_death": "UNKNOWN",
+                      "demographic_id": "STRING",
+                      "ethnicity": "STRING",
+                      "gender": "STRING",
+                      "premature_at_birth": "UNKNOWN",
+                      "race": "STRING",
+                      "state": "STRING",
+                      "submitter_id": "STRING",
+                      "updated_datetime": "STRING",
+                      "vital_status": "UNKNOWN",
+                      "weeks_gestation_at_birth": "UNKNOWN",
+                      "year_of_birth": "NUMERIC",
+                      "year_of_death": "NUMERIC"
+                    },
+                "diagnoses": [
+                      {
+                            "age_at_diagnosis": "NUMERIC",
+                            "created_datetime": "STRING",
+                            "days_to_death": "UNKNOWN",
+                            "days_to_last_follow_up": "NUMERIC",
+                            "diagnosis_id": "STRING",
+                            "last_known_disease_status": "STRING",
+                            "morphology": "STRING",
+                            "primary_diagnosis": "STRING",
+                            "progression_or_recurrence": "STRING",
+                            "site_of_resection_or_biopsy": "STRING",
+                            "state": "STRING",
+                            "submitter_id": "STRING",
+                            "tissue_or_organ_of_origin": "STRING",
+                            "tumor_grade": "STRING",
+                            "tumor_stage": "STRING",
+                            "updated_datetime": "STRING",
+                            "vital_status": "STRING"
+                          }
+                    ],
+                "disease_type": "STRING",
+                "primary_site": "STRING",
+                "project": {
+                      "dbgap_accession_number": "STRING",
+                      "disease_type": [
+                            "STRING"
+                          ],
+                      "name": "STRING",
+                      "primary_site": [
+                            "STRING"
+                          ],
+                      "program": {
+                            "dbgap_accession_number": "STRING",
+                            "name": "STRING",
+                            "program_id": "STRING"
+                          },
+                      "project_id": "STRING",
+                      "releasable": "BOOL",
+                      "released": "BOOL",
+                      "state": "STRING"
+                    },
+                "summary": {
+                      "data_categories": [
+                            {
+                                  "data_category": "STRING",
+                                  "file_count": "NUMERIC"
+                                }
+                          ],
+                      "experimental_strategies": [
+                            {
+                                  "experimental_strategy": "STRING",
+                                  "file_count": "NUMERIC"
+                                }
+                          ],
+                      "file_count": "NUMERIC",
+                      "file_size": "NUMERIC"
+                    }
+              },
+          "gtex_attributes": {
+                "AGE": "STRING",
+                "DTHHRDY": "STRING",
+                "SEX": "STRING",
+                "SUBJID": "STRING"
+              }
+        }
+    },
+    {
+      "gid": "DrugResponse",
       "label": "DrugResponse",
       "data": {
-        "compound_name": "STRING",
-        "metric": "STRING",
-        "sample_id": "STRING",
-        "value": "NUMERIC"
-      }
-    },
-    {
-      "gid": "",
-      "label": "Biosample",
-      "data": {
-        "biosample_id": "STRING",
-        "ccle_attributes": {
-          "Aliases": "STRING",
-          "Broad_ID": "STRING",
-          "CCLE_Name": "STRING",
-          "COSMIC_ID": "STRING",
-          "Gender": "STRING",
-          "Primary Disease": "STRING",
-          "Sanger ID": "STRING",
-          "Source": "STRING",
-          "Subtype Disease": "STRING"
-        },
-        "gdc_attributes": {
-          "sample_type": "STRING",
-          "submitter_id": "STRING",
-          "tumor_descriptor": "UNKNOWN"
-        },
-        "gtex_attributes": {
-          "SAMPID": "STRING",
-          "SM350NRM": "STRING",
-          "SM550NRM": "STRING",
-          "SMAFRZE": "STRING",
-          "SMALTALG": "STRING",
-          "SMATSSCR": "STRING",
-          "SMBSMMRT": "STRING",
-          "SMCENTER": "STRING",
-          "SMCGLGTH": "STRING",
-          "SMCHMPRS": "STRING",
-          "SMDPMPRT": "STRING",
-          "SME1ANTI": "STRING",
-          "SME1MMRT": "STRING",
-          "SME1MPRT": "STRING",
-          "SME1PCTS": "STRING",
-          "SME1SNSE": "STRING",
-          "SME2ANTI": "STRING",
-          "SME2MMRT": "STRING",
-          "SME2MPRT": "STRING",
-          "SME2PCTS": "STRING",
-          "SME2SNSE": "STRING",
-          "SMESTLBS": "STRING",
-          "SMEXNCRT": "STRING",
-          "SMEXPEFF": "STRING",
-          "SMGAPPCT": "STRING",
-          "SMGEBTCH": "STRING",
-          "SMGEBTCHD": "STRING",
-          "SMGEBTCHT": "STRING",
-          "SMGNSDTC": "STRING",
-          "SMGTC": "STRING",
-          "SMMAPRT": "STRING",
-          "SMMFLGTH": "STRING",
-          "SMMNCPB": "STRING",
-          "SMMNCV": "STRING",
-          "SMMPPD": "STRING",
-          "SMMPPDPR": "STRING",
-          "SMMPPDUN": "STRING",
-          "SMMPUNRT": "STRING",
-          "SMNABTCH": "STRING",
-          "SMNABTCHD": "STRING",
-          "SMNABTCHT": "STRING",
-          "SMNTERRT": "STRING",
-          "SMNTRART": "STRING",
-          "SMNTRNRT": "STRING",
-          "SMNUM5CD": "STRING",
-          "SMNUMGPS": "STRING",
-          "SMPTHNTS": "STRING",
-          "SMRDLGTH": "STRING",
-          "SMRDTTL": "STRING",
-          "SMRIN": "STRING",
-          "SMRRNANM": "STRING",
-          "SMRRNART": "STRING",
-          "SMSFLGTH": "STRING",
-          "SMSPLTRD": "STRING",
-          "SMTRSCPT": "STRING",
-          "SMTS": "STRING",
-          "SMTSD": "STRING",
-          "SMTSISCH": "STRING",
-          "SMTSPAX": "STRING",
-          "SMUBRID": "STRING",
-          "SMUNMPRT": "STRING",
-          "SMUNPDRD": "STRING",
-          "SMVQCFL": "STRING"
-        }
-      }
-    },
-    {
-      "gid": "",
-      "label": "Exon",
-      "data": {
-        "chromosome": "STRING",
-        "end": "NUMERIC",
-        "exon_id": "STRING",
-        "genome": "STRING",
-        "start": "NUMERIC",
-        "strand": "STRING",
-        "transcript_id": "STRING"
-      }
-    },
-    {
-      "gid": "",
-      "label": "Individual",
-      "data": {
-        "ccle_attributes": {
-          "gender": "STRING"
-        },
-        "gdc_attributes": {
-          "demographic": {
-            "created_datetime": "STRING",
-            "demographic_id": "STRING",
-            "ethnicity": "STRING",
-            "gender": "STRING",
-            "race": "STRING",
-            "state": "STRING",
-            "submitter_id": "STRING",
-            "updated_datetime": "STRING",
-            "year_of_birth": "NUMERIC",
-            "year_of_death": "NUMERIC"
-          },
-          "diagnoses": [
-            {
-              "age_at_diagnosis": "NUMERIC",
-              "classification_of_tumor": "STRING",
-              "created_datetime": "STRING",
-              "days_to_last_follow_up": "UNKNOWN",
-              "days_to_last_known_disease_status": "UNKNOWN",
-              "days_to_recurrence": "UNKNOWN",
-              "diagnosis_id": "STRING",
-              "last_known_disease_status": "STRING",
-              "morphology": "STRING",
-              "primary_diagnosis": "STRING",
-              "progression_or_recurrence": "STRING",
-              "site_of_resection_or_biopsy": "STRING",
-              "state": "STRING",
-              "submitter_id": "STRING",
-              "tissue_or_organ_of_origin": "STRING",
-              "tumor_grade": "STRING",
-              "tumor_stage": "STRING",
-              "updated_datetime": "STRING",
-              "vital_status": "STRING"
-            }
-          ],
-          "disease_type": "STRING",
-          "primary_site": "STRING",
-          "project": {
-            "dbgap_accession_number": "STRING",
-            "disease_type": [
-              "STRING"
-            ],
-            "name": "STRING",
-            "primary_site": [
-              "STRING"
-            ],
-            "program": {
-              "dbgap_accession_number": "UNKNOWN",
-              "name": "STRING",
-              "program_id": "STRING"
-            },
-            "project_id": "STRING",
-            "releasable": "BOOL",
-            "released": "BOOL",
-            "state": "STRING"
-          },
-          "summary": {
-            "data_categories": [
-              {
-                "data_category": "STRING",
-                "file_count": "NUMERIC"
-              }
-            ],
-            "experimental_strategies": [
-              {
-                "experimental_strategy": "STRING",
-                "file_count": "NUMERIC"
-              }
-            ],
-            "file_count": "NUMERIC",
-            "file_size": "NUMERIC"
-          }
-        },
-        "gtex_attributes": {
-          "AGE": "STRING",
-          "DTHHRDY": "STRING",
-          "SEX": "STRING",
-          "SUBJID": "STRING"
-        },
-        "individual_id": "STRING"
-      }
-    },
-    {
-      "gid": "",
-      "label": "G2PAssociation",
-      "data": {
-        "description": "STRING",
-        "evidence_label": "STRING",
-        "oncogenic": "STRING",
-        "response_type": "STRING",
-        "source": "STRING",
-        "source_document": "STRING"
-      }
-    },
-    {
-      "gid": "",
-      "label": "CopyNumberAlteration",
-      "data": {
-        "id": "STRING",
-        "method": "STRING",
-        "source": "STRING",
-        "values": {
-          "ENSG...": "STRING"
-        }
-      }
-    },
-    {
-      "gid": "",
-      "label": "Allele",
-      "data": {
-        "alternate_bases": "STRING",
-        "annotations": {
-          "ccle": {
-            "Annotation_Transcript": "STRING",
-            "COSMIChsCnt": "STRING",
-            "Codon_Change": "STRING",
-            "ExAC_AF": "STRING",
-            "Genome_Change": "STRING",
-            "HC_AC": "STRING",
-            "Protein_Change": "STRING",
-            "RD_AC": "STRING",
-            "RNAseq_AC": "STRING",
-            "SangerRecalibWES_AC": "STRING",
-            "SangerWES_AC": "STRING",
-            "TCGAhsCnt": "STRING",
-            "WES_AC": "STRING",
-            "WGS_AC": "STRING",
-            "cDNA_Change": "STRING",
-            "isCOSMIChotspot": "STRING",
-            "isDeleterious": "STRING",
-            "isTCGAhotspot": "STRING"
-          },
-          "maf": {
-            "Center": "STRING",
-            "Chromosome": "STRING",
-            "End_Position": "STRING",
-            "Entrez_Gene_Id": "STRING",
-            "Hugo_Symbol": "STRING",
-            "NCBI_Build": "STRING",
-            "Reference_Allele": "STRING",
-            "Start_Position": "STRING",
-            "Strand": "STRING",
-            "Tumor_Sample_Barcode": "STRING",
-            "Tumor_Seq_Allele1": "STRING",
-            "Tumor_Seq_Allele2": "STRING",
-            "Variant_Classification": "STRING",
-            "Variant_Type": "STRING",
-            "dbSNP_RS": "STRING",
-            "dbSNP_Val_Status": "STRING"
-          },
-          "mc3": "UNKNOWN",
-          "myvariantinfo": {
-            "_id": "STRING",
-            "_score": "NUMERIC",
-            "cadd": {
-              "1000g": {
-                "af": "NUMERIC",
-                "afr": "NUMERIC",
-                "amr": "NUMERIC",
-                "asn": "NUMERIC",
-                "eur": "NUMERIC"
-              },
-              "_license": "STRING",
-              "alt": "STRING",
-              "anc": "STRING",
-              "annotype": "STRING",
-              "bstatistic": "NUMERIC",
-              "chmm": {
-                "bivflnk": "NUMERIC",
-                "enh": "NUMERIC",
-                "enhbiv": "NUMERIC",
-                "het": "NUMERIC",
-                "quies": "NUMERIC",
-                "reprpc": "NUMERIC",
-                "reprpcwk": "NUMERIC",
-                "tssa": "NUMERIC",
-                "tssaflnk": "NUMERIC",
-                "tssbiv": "NUMERIC",
-                "tx": "NUMERIC",
-                "txflnk": "NUMERIC",
-                "txwk": "NUMERIC",
-                "znfrpts": "NUMERIC"
-              },
-              "chrom": "NUMERIC",
-              "consdetail": "STRING",
-              "consequence": "STRING",
-              "consscore": "NUMERIC",
-              "cpg": "NUMERIC",
-              "dna": {
-                "helt": "NUMERIC",
-                "mgw": "NUMERIC",
-                "prot": "NUMERIC",
-                "roll": "NUMERIC"
-              },
-              "dst2splice": "NUMERIC",
-              "dst2spltype": "STRING",
-              "encode": {
-                "exp": "NUMERIC",
-                "h3k27ac": "NUMERIC",
-                "h3k4me1": "NUMERIC",
-                "h3k4me3": "NUMERIC",
-                "nucleo": "NUMERIC",
-                "occ": "NUMERIC",
-                "p_val": {
-                  "comb": "NUMERIC",
-                  "ctcf": "NUMERIC",
-                  "dnas": "NUMERIC",
-                  "faire": "NUMERIC",
-                  "mycp": "NUMERIC",
-                  "polii": "NUMERIC"
-                },
-                "sig": {
-                  "ctcf": "NUMERIC",
-                  "dnase": "NUMERIC",
-                  "faire": "NUMERIC",
-                  "myc": "NUMERIC",
-                  "polii": "NUMERIC"
-                }
-              },
-              "esp": {
-                "af": "NUMERIC",
-                "afr": "NUMERIC",
-                "eur": "NUMERIC"
-              },
-              "exon": "STRING",
-              "fitcons": "NUMERIC",
-              "gc": "NUMERIC",
-              "gene": {
-                "ccds_id": "STRING",
-                "cds": {
-                  "cdna_pos": "NUMERIC",
-                  "cds_pos": "NUMERIC",
-                  "rel_cdna_pos": "NUMERIC",
-                  "rel_cds_pos": "NUMERIC"
-                },
-                "feature_id": "STRING",
-                "gene_id": "STRING",
-                "genename": "STRING",
-                "prot": {
-                  "domain": "STRING",
-                  "protpos": "NUMERIC",
-                  "rel_prot_pos": "NUMERIC"
-                }
-              },
-              "gerp": {
-                "n": "NUMERIC",
-                "rs": "NUMERIC",
-                "rs_pval": "NUMERIC",
-                "s": "NUMERIC"
-              },
-              "grantham": "NUMERIC",
-              "intron": "STRING",
-              "isderived": "STRING",
-              "isknownvariant": "STRING",
-              "istv": "STRING",
-              "length": "NUMERIC",
-              "mapability": {
-                "20bp": "NUMERIC",
-                "35bp": "NUMERIC"
-              },
-              "min_dist_tse": "NUMERIC",
-              "min_dist_tss": "NUMERIC",
-              "mirsvr": {
-                "aln": "NUMERIC",
-                "e": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "motif": {
-                "dist": "NUMERIC",
-                "ecount": "NUMERIC",
-                "ehipos": "STRING",
-                "ename": "STRING",
-                "escorechng": "NUMERIC",
-                "toverlap": "NUMERIC"
-              },
-              "mutindex": "NUMERIC",
-              "naa": "STRING",
-              "oaa": "STRING",
-              "phast_cons": {
-                "mammalian": "NUMERIC",
-                "primate": "NUMERIC",
-                "vertebrate": "NUMERIC"
-              },
-              "phred": "NUMERIC",
-              "phylop": {
-                "mammalian": "NUMERIC",
-                "primate": "NUMERIC",
-                "vertebrate": "NUMERIC"
-              },
-              "polyphen": {
-                "cat": "STRING",
-                "val": "NUMERIC"
-              },
-              "pos": "NUMERIC",
-              "rawscore": "NUMERIC",
-              "ref": "STRING",
-              "scoresegdup": "NUMERIC",
-              "segway": "STRING",
-              "sift": {
-                "cat": "STRING",
-                "val": "NUMERIC"
-              },
-              "tf": {
-                "bs": "NUMERIC",
-                "bs_peaks": "NUMERIC",
-                "bs_peaks_max": "NUMERIC"
-              },
-              "type": "STRING"
-            },
-            "chrom": "STRING",
-            "clinvar": {
-              "_license": "STRING",
-              "allele_id": "NUMERIC",
-              "alt": "STRING",
-              "chrom": "STRING",
-              "cytogenic": "STRING",
-              "gene": {
-                "id": "STRING",
-                "symbol": "STRING"
-              },
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hg38": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hgvs": {
-                "coding": "STRING",
-                "genomic": [
-                  "STRING"
-                ]
-              },
-              "rcv": {
-                "accession": "STRING",
-                "clinical_significance": "STRING",
-                "conditions": {
-                  "identifiers": {
-                    "medgen": "STRING"
-                  },
-                  "name": "STRING",
-                  "synonyms": [
-                    "STRING"
-                  ]
-                },
-                "last_evaluated": "STRING",
-                "number_submitters": "NUMERIC",
-                "origin": "STRING",
-                "preferred_name": "STRING",
-                "review_status": "STRING"
-              },
-              "ref": "STRING",
-              "rsid": "STRING",
-              "type": "STRING",
-              "variant_id": "NUMERIC"
-            },
-            "cosmic": {
-              "_license": "STRING",
-              "alt": "STRING",
-              "chrom": "STRING",
-              "cosmic_id": "STRING",
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "mut_freq": "NUMERIC",
-              "mut_nt": "STRING",
-              "ref": "STRING",
-              "tumor_site": "STRING"
-            },
-            "dbnsfp": {
-              "1000gp3": {
-                "ac": "NUMERIC",
-                "af": "NUMERIC",
-                "afr_ac": "NUMERIC",
-                "afr_af": "NUMERIC",
-                "amr_ac": "NUMERIC",
-                "amr_af": "NUMERIC",
-                "eas_ac": "NUMERIC",
-                "eas_af": "NUMERIC",
-                "eur_ac": "NUMERIC",
-                "eur_af": "NUMERIC",
-                "sas_ac": "NUMERIC",
-                "sas_af": "NUMERIC"
-              },
-              "_license": "STRING",
-              "aa": {
-                "alt": "STRING",
-                "codon_degeneracy": "NUMERIC",
-                "codonpos": "NUMERIC",
-                "pos": "NUMERIC",
-                "ref": "STRING",
-                "refcodon": "STRING"
-              },
-              "alspac": {
-                "ac": "NUMERIC",
-                "af": "NUMERIC"
-              },
-              "alt": "STRING",
-              "ancestral_allele": "STRING",
-              "cds_strand": "STRING",
-              "chrom": "STRING",
-              "clinvar": {
-                "clinsig": [
-                  "NUMERIC"
-                ],
-                "golden_stars": [
-                  "NUMERIC"
-                ],
-                "rs": "STRING",
-                "trait": [
-                  "STRING"
-                ]
-              },
-              "dann": {
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "eigen": {
-                "coding_or_noncoding": "STRING",
-                "phred": "NUMERIC",
-                "raw": "NUMERIC"
-              },
-              "eigen-pc": {
-                "phred": "NUMERIC",
-                "raw": "NUMERIC",
-                "raw_rankscore": "NUMERIC"
-              },
-              "ensembl": {
-                "geneid": "STRING",
-                "proteinid": "STRING",
-                "transcriptid": "STRING"
-              },
-              "esp6500": {
-                "aa_ac": "NUMERIC",
-                "aa_af": "NUMERIC",
-                "ea_ac": "NUMERIC",
-                "ea_af": "NUMERIC"
-              },
-              "exac": {
-                "ac": "NUMERIC",
-                "adj_ac": "NUMERIC",
-                "adj_af": "NUMERIC",
-                "af": "NUMERIC",
-                "afr_ac": "NUMERIC",
-                "afr_af": "NUMERIC",
-                "amr_ac": "NUMERIC",
-                "amr_af": "NUMERIC",
-                "eas_ac": "NUMERIC",
-                "eas_af": "NUMERIC",
-                "fin_ac": "NUMERIC",
-                "fin_af": "NUMERIC",
-                "nfe_ac": "NUMERIC",
-                "nfe_af": "NUMERIC",
-                "sas_ac": "NUMERIC",
-                "sas_af": "NUMERIC"
-              },
-              "exac_nonpsych": {
-                "ac": "NUMERIC",
-                "adj_ac": "NUMERIC",
-                "adj_af": "NUMERIC",
-                "af": "NUMERIC",
-                "afr_ac": "NUMERIC",
-                "afr_af": "NUMERIC",
-                "amr_ac": "NUMERIC",
-                "amr_af": "NUMERIC",
-                "eas_ac": "NUMERIC",
-                "eas_af": "NUMERIC",
-                "fin_ac": "NUMERIC",
-                "fin_af": "NUMERIC",
-                "nfe_ac": "NUMERIC",
-                "nfe_af": "NUMERIC",
-                "sas_ac": "NUMERIC",
-                "sas_af": "NUMERIC"
-              },
-              "exac_nontcga": {
-                "ac": "NUMERIC",
-                "adj_ac": "NUMERIC",
-                "adj_af": "NUMERIC",
-                "af": "NUMERIC",
-                "afr_ac": "NUMERIC",
-                "afr_af": "NUMERIC",
-                "amr_ac": "NUMERIC",
-                "amr_af": "NUMERIC",
-                "eas_ac": "NUMERIC",
-                "eas_af": "NUMERIC",
-                "fin_ac": "NUMERIC",
-                "fin_af": "NUMERIC",
-                "nfe_ac": "NUMERIC",
-                "nfe_af": "NUMERIC",
-                "sas_ac": "NUMERIC",
-                "sas_af": "NUMERIC"
-              },
-              "fathmm": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "fathmm-mkl": {
-                "coding_group": "STRING",
-                "coding_pred": "STRING",
-                "coding_rankscore": "NUMERIC",
-                "coding_score": "NUMERIC"
-              },
-              "genename": "STRING",
-              "genocanyon": {
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "gerp++": {
-                "nr": "NUMERIC",
-                "rs": "NUMERIC",
-                "rs_rankscore": "NUMERIC"
-              },
-              "gm12878": {
-                "confidence_value": "NUMERIC",
-                "fitcons_rankscore": "NUMERIC",
-                "fitcons_score": "NUMERIC"
-              },
-              "h1-hesc": {
-                "confidence_value": "NUMERIC",
-                "fitcons_rankscore": "NUMERIC",
-                "fitcons_score": "NUMERIC"
-              },
-              "hg18": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hg38": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "huvec": {
-                "confidence_value": "NUMERIC",
-                "fitcons_rankscore": "NUMERIC",
-                "fitcons_score": "NUMERIC"
-              },
-              "integrated": {
-                "confidence_value": "NUMERIC",
-                "fitcons_rankscore": "NUMERIC",
-                "fitcons_score": "NUMERIC"
-              },
-              "interpro_domain": "STRING",
-              "lrt": {
-                "converted_rankscore": "NUMERIC",
-                "omega": "NUMERIC",
-                "pred": "STRING",
-                "score": "NUMERIC"
-              },
-              "m_cap_score": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "metalr": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "metasvm": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "mutationassessor": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "mutationtaster": {
-                "AAE": "STRING",
-                "converted_rankscore": "NUMERIC",
-                "model": "STRING",
-                "pred": "STRING",
-                "score": "NUMERIC"
-              },
-              "mutpred": {
-                "aa_change": "STRING",
-                "accession": "STRING",
-                "pred": [
-                  {
-                    "mechanism": "STRING",
-                    "p_val": "NUMERIC"
-                  }
-                ],
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "phastcons": {
-                "100way": {
-                  "vertebrate": "NUMERIC",
-                  "vertebrate_rankscore": "NUMERIC"
-                },
-                "20way": {
-                  "mammalian": "NUMERIC",
-                  "mammalian_rankscore": "NUMERIC"
-                },
-                "7way": {
-                  "vertebrate": "NUMERIC",
-                  "vertebrate_rankscore": "NUMERIC"
-                }
-              },
-              "phylo": {
-                "p100way": {
-                  "vertebrate": "NUMERIC",
-                  "vertebrate_rankscore": "NUMERIC"
-                },
-                "p20way": {
-                  "mammalian": "NUMERIC",
-                  "mammalian_rankscore": "NUMERIC"
-                },
-                "p7way": {
-                  "vertebrate": "NUMERIC",
-                  "vertebrate_rankscore": "NUMERIC"
-                }
-              },
-              "polyphen2": {
-                "hdiv": {
-                  "pred": "STRING",
-                  "rankscore": "NUMERIC",
-                  "score": "NUMERIC"
-                },
-                "hvar": {
-                  "pred": "STRING",
-                  "rankscore": "NUMERIC",
-                  "score": "NUMERIC"
-                }
-              },
-              "provean": {
-                "pred": "STRING",
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "ref": "STRING",
-              "reliability_index": "NUMERIC",
-              "revel": {
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC"
-              },
-              "rsid": "STRING",
-              "sift": {
-                "converted_rankscore": "NUMERIC",
-                "pred": "STRING",
-                "score": "NUMERIC"
-              },
-              "siphy_29way": {
-                "logodds": "NUMERIC",
-                "logodds_rankscore": "NUMERIC",
-                "pi": {
-                  "a": "NUMERIC",
-                  "c": "NUMERIC",
-                  "g": "NUMERIC",
-                  "t": "NUMERIC"
-                }
-              },
-              "twinsuk": {
-                "ac": "NUMERIC",
-                "af": "NUMERIC"
-              },
-              "uniprot": {
-                "acc": "STRING",
-                "pos": "STRING"
-              },
-              "vest3": {
-                "rankscore": "NUMERIC",
-                "score": "NUMERIC",
-                "transcriptid": "STRING",
-                "transcriptvar": "STRING"
-              }
-            },
-            "dbsnp": {
-              "_license": "STRING",
-              "allele_origin": "STRING",
-              "alleles": [
-                {
-                  "allele": "STRING"
-                }
-              ],
-              "alt": "STRING",
-              "chrom": "STRING",
-              "class": "STRING",
-              "dbsnp_build": "NUMERIC",
-              "flags": [
-                "STRING"
-              ],
-              "gene": {
-                "geneid": "STRING",
-                "symbol": "STRING"
-              },
-              "gmaf": "NUMERIC",
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "ref": "STRING",
-              "rsid": "STRING",
-              "validated": "BOOL",
-              "var_subtype": "STRING",
-              "vartype": "STRING"
-            },
-            "docm": {
-              "_license": "STRING",
-              "aa_change": "STRING",
-              "all_domains": "STRING",
-              "alt": "STRING",
-              "c_position": "STRING",
-              "chrom": "NUMERIC",
-              "default_gene_name": "STRING",
-              "deletion_substructures": "STRING",
-              "disease": "STRING",
-              "doid": "STRING",
-              "domain": "STRING",
-              "ensembl_gene_id": "STRING",
-              "genename": "STRING",
-              "genename_source": "STRING",
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "primary": "NUMERIC",
-              "pubmed_id": "UNKNOWN",
-              "ref": "STRING",
-              "source": "UNKNOWN",
-              "strand": "NUMERIC",
-              "transcript_error": "STRING",
-              "transcript_name": "STRING",
-              "transcript_source": "STRING",
-              "transcript_species": "STRING",
-              "transcript_status": "STRING",
-              "transcript_version": "STRING",
-              "trv_type": "STRING",
-              "type": "STRING",
-              "ucsc_cons": "NUMERIC",
-              "url": "UNKNOWN"
-            },
-            "evs": {
-              "_license": "STRING",
-              "allele_count": {
-                "african_american": {
-                  "A": "NUMERIC",
-                  "C": "NUMERIC",
-                  "G": "NUMERIC",
-                  "T": "NUMERIC"
-                },
-                "all": {
-                  "A": "NUMERIC",
-                  "C": "NUMERIC",
-                  "G": "NUMERIC",
-                  "T": "NUMERIC"
-                },
-                "european_american": {
-                  "A": "NUMERIC",
-                  "C": "NUMERIC",
-                  "G": "NUMERIC",
-                  "T": "NUMERIC"
-                }
-              },
-              "alt": "STRING",
-              "avg_sample_read": "NUMERIC",
-              "chimp_allele": "STRING",
-              "chrom": "NUMERIC",
-              "coding_dna_size": [
+          "act_area": "NUMERIC",
+          "activity_data_median": [
                 "NUMERIC"
               ],
-              "conservation": {
-                "gerp": "NUMERIC",
-                "phast_cons": "NUMERIC"
-              },
-              "dbsnp_version": "NUMERIC",
-              "estimated_age_kyrs": {
-                "aa": "STRING",
-                "ea": "STRING"
-              },
-              "filter_status": "STRING",
-              "function_gvs": "STRING",
-              "gene": [
-                {
-                  "accession": "STRING",
-                  "symbol": "STRING"
-                }
+          "activity_sd": [
+                "NUMERIC"
               ],
-              "genotype_count": {
-                "african_american": {
-                  "AA": "NUMERIC",
-                  "AG": "NUMERIC",
-                  "C": "NUMERIC",
-                  "CC": "NUMERIC",
-                  "CT": "NUMERIC",
-                  "GA": "NUMERIC",
-                  "GC": "NUMERIC",
-                  "GG": "NUMERIC",
-                  "TC": "NUMERIC",
-                  "TG": "NUMERIC",
-                  "TT": "NUMERIC"
-                },
-                "all_genotype": {
-                  "AA": "NUMERIC",
-                  "AG": "NUMERIC",
-                  "C": "NUMERIC",
-                  "CC": "NUMERIC",
-                  "CT": "NUMERIC",
-                  "GA": "NUMERIC",
-                  "GC": "NUMERIC",
-                  "GG": "NUMERIC",
-                  "TC": "NUMERIC",
-                  "TG": "NUMERIC",
-                  "TT": "NUMERIC"
-                },
-                "european_american": {
-                  "AA": "NUMERIC",
-                  "AG": "NUMERIC",
-                  "C": "NUMERIC",
-                  "CC": "NUMERIC",
-                  "CT": "NUMERIC",
-                  "GA": "NUMERIC",
-                  "GC": "NUMERIC",
-                  "GG": "NUMERIC",
-                  "TC": "NUMERIC",
-                  "TG": "NUMERIC",
-                  "TT": "NUMERIC"
-                }
-              },
-              "grantham_score": "NUMERIC",
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hg38": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "hgvs": [
-                {
-                  "coding": "STRING",
-                  "protein": "STRING"
-                }
+          "amax": "NUMERIC",
+          "compound_id": "STRING",
+          "doses_um": [
+                "NUMERIC"
               ],
-              "ma_fin_percent": {
-                "african_american": "NUMERIC",
-                "all": "NUMERIC",
-                "european_american": "NUMERIC"
-              },
-              "on_illumina_human_exome_chip": "STRING",
-              "polyphen2": {
-                "class": "STRING",
-                "score": "STRING"
-              },
-              "ref": "STRING",
-              "ref_base_ncbi": "STRING",
-              "rsid": "STRING"
-            },
-            "exac": {
-              "_license": "STRING",
-              "ac": {
-                "ac": "NUMERIC",
-                "ac_adj": "NUMERIC",
-                "ac_afr": "NUMERIC",
-                "ac_amr": "NUMERIC",
-                "ac_eas": "NUMERIC",
-                "ac_female": "NUMERIC",
-                "ac_fin": "NUMERIC",
-                "ac_het": "NUMERIC",
-                "ac_hom": "NUMERIC",
-                "ac_male": "NUMERIC",
-                "ac_nfe": "NUMERIC",
-                "ac_oth": "NUMERIC",
-                "ac_sas": "NUMERIC"
-              },
-              "af": "NUMERIC",
-              "alleles": "STRING",
-              "alt": "STRING",
-              "an": {
-                "an": "NUMERIC",
-                "an_adj": "NUMERIC",
-                "an_afr": "NUMERIC",
-                "an_amr": "NUMERIC",
-                "an_eas": "NUMERIC",
-                "an_female": "NUMERIC",
-                "an_fin": "NUMERIC",
-                "an_male": "NUMERIC",
-                "an_nfe": "NUMERIC",
-                "an_oth": "NUMERIC",
-                "an_sas": "NUMERIC"
-              },
-              "baseqranksum": "NUMERIC",
-              "chrom": "NUMERIC",
-              "clippingranksum": "NUMERIC",
-              "culprit": "STRING",
-              "dp": "NUMERIC",
-              "filter": "STRING",
-              "fs": "NUMERIC",
-              "het": {
-                "ac_het": "NUMERIC",
-                "het_afr": "NUMERIC",
-                "het_amr": "NUMERIC",
-                "het_eas": "NUMERIC",
-                "het_fin": "NUMERIC",
-                "het_nfe": "NUMERIC",
-                "het_oth": "NUMERIC",
-                "het_sas": "NUMERIC"
-              },
-              "hom": {
-                "ac_hom": "NUMERIC",
-                "hom_afr": "NUMERIC",
-                "hom_amr": "NUMERIC",
-                "hom_eas": "NUMERIC",
-                "hom_fin": "NUMERIC",
-                "hom_nfe": "NUMERIC",
-                "hom_oth": "NUMERIC",
-                "hom_sas": "NUMERIC"
-              },
-              "inbreedingcoeff": "NUMERIC",
-              "mq": {
-                "mq": "NUMERIC",
-                "mq0": "NUMERIC",
-                "mqranksum": "NUMERIC"
-              },
-              "multi-allelic": [
-                "STRING"
-              ],
-              "ncc": "NUMERIC",
-              "pos": "NUMERIC",
-              "qd": "NUMERIC",
-              "qual": "NUMERIC",
-              "readposranksum": "NUMERIC",
-              "ref": "STRING",
-              "type": "STRING",
-              "vqslod": "NUMERIC"
-            },
-            "exac_nontcga": {
-              "ac": {
-                "ac": "NUMERIC",
-                "ac_adj": "NUMERIC",
-                "ac_afr": "NUMERIC",
-                "ac_amr": "NUMERIC",
-                "ac_eas": "NUMERIC",
-                "ac_female": "NUMERIC",
-                "ac_fin": "NUMERIC",
-                "ac_het": "NUMERIC",
-                "ac_hom": "NUMERIC",
-                "ac_male": "NUMERIC",
-                "ac_nfe": "NUMERIC",
-                "ac_oth": "NUMERIC",
-                "ac_sas": "NUMERIC"
-              },
-              "af": "NUMERIC",
-              "alleles": "STRING",
-              "alt": "STRING",
-              "an": {
-                "an": "NUMERIC",
-                "an_adj": "NUMERIC",
-                "an_afr": "NUMERIC",
-                "an_amr": "NUMERIC",
-                "an_eas": "NUMERIC",
-                "an_female": "NUMERIC",
-                "an_fin": "NUMERIC",
-                "an_male": "NUMERIC",
-                "an_nfe": "NUMERIC",
-                "an_oth": "NUMERIC",
-                "an_sas": "NUMERIC"
-              },
-              "baseqranksum": "NUMERIC",
-              "chrom": "NUMERIC",
-              "clippingranksum": "NUMERIC",
-              "culprit": "STRING",
-              "filter": "STRING",
-              "fs": "NUMERIC",
-              "het": {
-                "het_afr": "NUMERIC",
-                "het_amr": "NUMERIC",
-                "het_eas": "NUMERIC",
-                "het_fin": "NUMERIC",
-                "het_nfe": "NUMERIC",
-                "het_oth": "NUMERIC",
-                "het_sas": "NUMERIC"
-              },
-              "hom": {
-                "hom_afr": "NUMERIC",
-                "hom_amr": "NUMERIC",
-                "hom_eas": "NUMERIC",
-                "hom_fin": "NUMERIC",
-                "hom_nfe": "NUMERIC",
-                "hom_oth": "NUMERIC",
-                "hom_sas": "NUMERIC"
-              },
-              "inbreedingcoeff": "NUMERIC",
-              "mq": {
-                "mq": "NUMERIC",
-                "mq0": "NUMERIC",
-                "mqranksum": "NUMERIC"
-              },
-              "multi-allelic": [
-                "STRING"
-              ],
-              "ncc": "NUMERIC",
-              "pos": "NUMERIC",
-              "qd": "NUMERIC",
-              "readposranksum": "NUMERIC",
-              "ref": "STRING",
-              "type": "STRING",
-              "vqslod": "NUMERIC"
-            },
-            "geno2mp": {
-              "_license": "STRING",
-              "hpo_count": "NUMERIC"
-            },
-            "gnomad_exome": {
-              "ac": {
-                "ac": "NUMERIC",
-                "ac_afr": "NUMERIC",
-                "ac_afr_female": "NUMERIC",
-                "ac_afr_male": "NUMERIC",
-                "ac_amr": "NUMERIC",
-                "ac_amr_female": "NUMERIC",
-                "ac_amr_male": "NUMERIC",
-                "ac_asj": "NUMERIC",
-                "ac_asj_female": "NUMERIC",
-                "ac_asj_male": "NUMERIC",
-                "ac_eas": "NUMERIC",
-                "ac_eas_female": "NUMERIC",
-                "ac_eas_male": "NUMERIC",
-                "ac_female": "NUMERIC",
-                "ac_fin": "NUMERIC",
-                "ac_fin_female": "NUMERIC",
-                "ac_fin_male": "NUMERIC",
-                "ac_male": "NUMERIC",
-                "ac_nfe": "NUMERIC",
-                "ac_nfe_female": "NUMERIC",
-                "ac_nfe_male": "NUMERIC",
-                "ac_oth": "NUMERIC",
-                "ac_oth_female": "NUMERIC",
-                "ac_oth_male": "NUMERIC",
-                "ac_popmax": "NUMERIC",
-                "ac_raw": "NUMERIC",
-                "ac_sas": "NUMERIC",
-                "ac_sas_female": "NUMERIC",
-                "ac_sas_male": "NUMERIC"
-              },
-              "af": {
-                "af": "NUMERIC",
-                "af_afr": "NUMERIC",
-                "af_afr_female": "NUMERIC",
-                "af_afr_male": "NUMERIC",
-                "af_amr": "NUMERIC",
-                "af_amr_female": "NUMERIC",
-                "af_amr_male": "NUMERIC",
-                "af_asj": "NUMERIC",
-                "af_asj_female": "NUMERIC",
-                "af_asj_male": "NUMERIC",
-                "af_eas": "NUMERIC",
-                "af_eas_female": "NUMERIC",
-                "af_eas_male": "NUMERIC",
-                "af_female": "NUMERIC",
-                "af_fin": "NUMERIC",
-                "af_fin_female": "NUMERIC",
-                "af_fin_male": "NUMERIC",
-                "af_male": "NUMERIC",
-                "af_nfe": "NUMERIC",
-                "af_nfe_female": "NUMERIC",
-                "af_nfe_male": "NUMERIC",
-                "af_oth": "NUMERIC",
-                "af_oth_female": "NUMERIC",
-                "af_oth_male": "NUMERIC",
-                "af_popmax": "NUMERIC",
-                "af_raw": "NUMERIC",
-                "af_sas": "NUMERIC",
-                "af_sas_female": "NUMERIC",
-                "af_sas_male": "NUMERIC"
-              },
-              "alleles": "STRING",
-              "alt": "STRING",
-              "an": {
-                "an": "NUMERIC",
-                "an_afr": "NUMERIC",
-                "an_afr_female": "NUMERIC",
-                "an_afr_male": "NUMERIC",
-                "an_amr": "NUMERIC",
-                "an_amr_female": "NUMERIC",
-                "an_amr_male": "NUMERIC",
-                "an_asj": "NUMERIC",
-                "an_asj_female": "NUMERIC",
-                "an_asj_male": "NUMERIC",
-                "an_eas": "NUMERIC",
-                "an_eas_female": "NUMERIC",
-                "an_eas_male": "NUMERIC",
-                "an_female": "NUMERIC",
-                "an_fin": "NUMERIC",
-                "an_fin_female": "NUMERIC",
-                "an_fin_male": "NUMERIC",
-                "an_male": "NUMERIC",
-                "an_nfe": "NUMERIC",
-                "an_nfe_female": "NUMERIC",
-                "an_nfe_male": "NUMERIC",
-                "an_oth": "NUMERIC",
-                "an_oth_female": "NUMERIC",
-                "an_oth_male": "NUMERIC",
-                "an_popmax": "NUMERIC",
-                "an_raw": "NUMERIC",
-                "an_sas": "NUMERIC",
-                "an_sas_female": "NUMERIC",
-                "an_sas_male": "NUMERIC"
-              },
-              "baseqranksum": "NUMERIC",
-              "chrom": "STRING",
-              "clippingranksum": "NUMERIC",
-              "filter": "STRING",
-              "fs": "NUMERIC",
-              "gc": {
-                "gc": [
-                  "NUMERIC"
-                ],
-                "gc_afr": [
-                  "NUMERIC"
-                ],
-                "gc_afr_female": [
-                  "NUMERIC"
-                ],
-                "gc_afr_male": [
-                  "NUMERIC"
-                ],
-                "gc_amr": [
-                  "NUMERIC"
-                ],
-                "gc_amr_female": [
-                  "NUMERIC"
-                ],
-                "gc_amr_male": [
-                  "NUMERIC"
-                ],
-                "gc_asj": [
-                  "NUMERIC"
-                ],
-                "gc_asj_female": [
-                  "NUMERIC"
-                ],
-                "gc_asj_male": [
-                  "NUMERIC"
-                ],
-                "gc_eas": [
-                  "NUMERIC"
-                ],
-                "gc_eas_female": [
-                  "NUMERIC"
-                ],
-                "gc_eas_male": [
-                  "NUMERIC"
-                ],
-                "gc_female": [
-                  "NUMERIC"
-                ],
-                "gc_fin": [
-                  "NUMERIC"
-                ],
-                "gc_fin_female": [
-                  "NUMERIC"
-                ],
-                "gc_fin_male": [
-                  "NUMERIC"
-                ],
-                "gc_male": [
-                  "NUMERIC"
-                ],
-                "gc_nfe": [
-                  "NUMERIC"
-                ],
-                "gc_nfe_female": [
-                  "NUMERIC"
-                ],
-                "gc_nfe_male": [
-                  "NUMERIC"
-                ],
-                "gc_oth": [
-                  "NUMERIC"
-                ],
-                "gc_oth_female": [
-                  "NUMERIC"
-                ],
-                "gc_oth_male": [
-                  "NUMERIC"
-                ],
-                "gc_raw": [
-                  "NUMERIC"
-                ],
-                "gc_sas": [
-                  "NUMERIC"
-                ],
-                "gc_sas_female": [
-                  "NUMERIC"
-                ],
-                "gc_sas_male": [
-                  "NUMERIC"
-                ]
-              },
-              "hemi": {
-                "hemi": "NUMERIC",
-                "hemi_afr": "NUMERIC",
-                "hemi_amr": "NUMERIC",
-                "hemi_asj": "NUMERIC",
-                "hemi_eas": "NUMERIC",
-                "hemi_fin": "NUMERIC",
-                "hemi_nfe": "NUMERIC",
-                "hemi_oth": "NUMERIC",
-                "hemi_raw": "NUMERIC",
-                "hemi_sas": "NUMERIC"
-              },
-              "hom": {
-                "hom": "NUMERIC",
-                "hom_afr": "NUMERIC",
-                "hom_amr": "NUMERIC",
-                "hom_asj": "NUMERIC",
-                "hom_eas": "NUMERIC",
-                "hom_female": "NUMERIC",
-                "hom_fin": "NUMERIC",
-                "hom_male": "NUMERIC",
-                "hom_nfe": "NUMERIC",
-                "hom_oth": "NUMERIC",
-                "hom_raw": "NUMERIC",
-                "hom_sas": "NUMERIC"
-              },
-              "inbreedingcoeff": "NUMERIC",
-              "mq": {
-                "mq": "NUMERIC",
-                "mqranksum": "NUMERIC"
-              },
-              "multi-allelic": [
-                "STRING"
-              ],
-              "pos": "NUMERIC",
-              "qd": "NUMERIC",
-              "readposranksum": "NUMERIC",
-              "ref": "STRING",
-              "rsid": "STRING",
-              "type": "STRING",
-              "vqslod": "NUMERIC",
-              "vqsr_culprit": "STRING"
-            },
-            "gnomad_genome": {
-              "ac": {
-                "ac": "NUMERIC",
-                "ac_afr": "NUMERIC",
-                "ac_afr_female": "NUMERIC",
-                "ac_afr_male": "NUMERIC",
-                "ac_amr": "NUMERIC",
-                "ac_amr_female": "NUMERIC",
-                "ac_amr_male": "NUMERIC",
-                "ac_asj": "NUMERIC",
-                "ac_asj_female": "NUMERIC",
-                "ac_asj_male": "NUMERIC",
-                "ac_eas": "NUMERIC",
-                "ac_eas_female": "NUMERIC",
-                "ac_eas_male": "NUMERIC",
-                "ac_female": "NUMERIC",
-                "ac_fin": "NUMERIC",
-                "ac_fin_female": "NUMERIC",
-                "ac_fin_male": "NUMERIC",
-                "ac_male": "NUMERIC",
-                "ac_nfe": "NUMERIC",
-                "ac_nfe_female": "NUMERIC",
-                "ac_nfe_male": "NUMERIC",
-                "ac_oth": "NUMERIC",
-                "ac_oth_female": "NUMERIC",
-                "ac_oth_male": "NUMERIC",
-                "ac_popmax": "NUMERIC",
-                "ac_raw": "NUMERIC"
-              },
-              "af": {
-                "af": "NUMERIC",
-                "af_afr": "NUMERIC",
-                "af_afr_female": "NUMERIC",
-                "af_afr_male": "NUMERIC",
-                "af_amr": "NUMERIC",
-                "af_amr_female": "NUMERIC",
-                "af_amr_male": "NUMERIC",
-                "af_asj": "NUMERIC",
-                "af_asj_female": "NUMERIC",
-                "af_asj_male": "NUMERIC",
-                "af_eas": "NUMERIC",
-                "af_eas_female": "NUMERIC",
-                "af_eas_male": "NUMERIC",
-                "af_female": "NUMERIC",
-                "af_fin": "NUMERIC",
-                "af_fin_female": "NUMERIC",
-                "af_fin_male": "NUMERIC",
-                "af_male": "NUMERIC",
-                "af_nfe": "NUMERIC",
-                "af_nfe_female": "NUMERIC",
-                "af_nfe_male": "NUMERIC",
-                "af_oth": "NUMERIC",
-                "af_oth_female": "NUMERIC",
-                "af_oth_male": "NUMERIC",
-                "af_popmax": "NUMERIC",
-                "af_raw": "NUMERIC"
-              },
-              "alleles": "STRING",
-              "alt": "STRING",
-              "an": {
-                "an": "NUMERIC",
-                "an_afr": "NUMERIC",
-                "an_afr_female": "NUMERIC",
-                "an_afr_male": "NUMERIC",
-                "an_amr": "NUMERIC",
-                "an_amr_female": "NUMERIC",
-                "an_amr_male": "NUMERIC",
-                "an_asj": "NUMERIC",
-                "an_asj_female": "NUMERIC",
-                "an_asj_male": "NUMERIC",
-                "an_eas": "NUMERIC",
-                "an_eas_female": "NUMERIC",
-                "an_eas_male": "NUMERIC",
-                "an_female": "NUMERIC",
-                "an_fin": "NUMERIC",
-                "an_fin_female": "NUMERIC",
-                "an_fin_male": "NUMERIC",
-                "an_male": "NUMERIC",
-                "an_nfe": "NUMERIC",
-                "an_nfe_female": "NUMERIC",
-                "an_nfe_male": "NUMERIC",
-                "an_oth": "NUMERIC",
-                "an_oth_female": "NUMERIC",
-                "an_oth_male": "NUMERIC",
-                "an_popmax": "NUMERIC",
-                "an_raw": "NUMERIC"
-              },
-              "baseqranksum": "NUMERIC",
-              "chrom": "STRING",
-              "clippingranksum": "NUMERIC",
-              "filter": "STRING",
-              "fs": "NUMERIC",
-              "gc": {
-                "gc": [
-                  "NUMERIC"
-                ],
-                "gc_afr": [
-                  "NUMERIC"
-                ],
-                "gc_afr_female": [
-                  "NUMERIC"
-                ],
-                "gc_afr_male": [
-                  "NUMERIC"
-                ],
-                "gc_amr": [
-                  "NUMERIC"
-                ],
-                "gc_amr_female": [
-                  "NUMERIC"
-                ],
-                "gc_amr_male": [
-                  "NUMERIC"
-                ],
-                "gc_asj": [
-                  "NUMERIC"
-                ],
-                "gc_asj_female": [
-                  "NUMERIC"
-                ],
-                "gc_asj_male": [
-                  "NUMERIC"
-                ],
-                "gc_eas": [
-                  "NUMERIC"
-                ],
-                "gc_eas_female": [
-                  "NUMERIC"
-                ],
-                "gc_eas_male": [
-                  "NUMERIC"
-                ],
-                "gc_female": [
-                  "NUMERIC"
-                ],
-                "gc_fin": [
-                  "NUMERIC"
-                ],
-                "gc_fin_female": [
-                  "NUMERIC"
-                ],
-                "gc_fin_male": [
-                  "NUMERIC"
-                ],
-                "gc_male": [
-                  "NUMERIC"
-                ],
-                "gc_nfe": [
-                  "NUMERIC"
-                ],
-                "gc_nfe_female": [
-                  "NUMERIC"
-                ],
-                "gc_nfe_male": [
-                  "NUMERIC"
-                ],
-                "gc_oth": [
-                  "NUMERIC"
-                ],
-                "gc_oth_female": [
-                  "NUMERIC"
-                ],
-                "gc_oth_male": [
-                  "NUMERIC"
-                ],
-                "gc_raw": [
-                  "NUMERIC"
-                ]
-              },
-              "hemi": {
-                "hemi": "NUMERIC",
-                "hemi_afr": "NUMERIC",
-                "hemi_amr": "NUMERIC",
-                "hemi_asj": "NUMERIC",
-                "hemi_eas": "NUMERIC",
-                "hemi_fin": "NUMERIC",
-                "hemi_nfe": "NUMERIC",
-                "hemi_oth": "NUMERIC",
-                "hemi_raw": "NUMERIC"
-              },
-              "hom": {
-                "hom": "NUMERIC",
-                "hom_afr": "NUMERIC",
-                "hom_amr": "NUMERIC",
-                "hom_asj": "NUMERIC",
-                "hom_eas": "NUMERIC",
-                "hom_female": "NUMERIC",
-                "hom_fin": "NUMERIC",
-                "hom_male": "NUMERIC",
-                "hom_nfe": "NUMERIC",
-                "hom_oth": "NUMERIC",
-                "hom_raw": "NUMERIC"
-              },
-              "inbreedingcoeff": "NUMERIC",
-              "mq": {
-                "mq": "NUMERIC",
-                "mqranksum": "NUMERIC"
-              },
-              "multi-allelic": [
-                "STRING"
-              ],
-              "pos": "NUMERIC",
-              "qd": "NUMERIC",
-              "readposranksum": "NUMERIC",
-              "ref": "STRING",
-              "rsid": "STRING",
-              "type": "STRING",
-              "vqslod": "NUMERIC",
-              "vqsr_culprit": "STRING"
-            },
-            "hg19": {
-              "end": "NUMERIC",
-              "start": "NUMERIC"
-            },
-            "mutdb": {
-              "_license": "STRING",
-              "alt": "STRING",
-              "chrom": "STRING",
-              "cosmic_id": "STRING",
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "mutpred_score": "NUMERIC",
-              "ref": "STRING",
-              "rsid": "UNKNOWN",
-              "strand": "STRING",
-              "uniprot_id": "STRING"
-            },
-            "observed": "BOOL",
-            "snpeff": {
-              "_license": "STRING",
-              "ann": {
-                "cdna": {
-                  "length": "STRING",
-                  "position": "STRING"
-                },
-                "cds": {
-                  "length": "STRING",
-                  "position": "STRING"
-                },
-                "distance_to_feature": "STRING",
-                "effect": "STRING",
-                "feature_id": "STRING",
-                "feature_type": "STRING",
-                "gene_id": "STRING",
-                "genename": "STRING",
-                "hgvs_c": "STRING",
-                "hgvs_p": "STRING",
-                "protein": {
-                  "length": "STRING",
-                  "position": "STRING"
-                },
-                "putative_impact": "STRING",
-                "rank": "STRING",
-                "total": "STRING",
-                "transcript_biotype": "STRING"
-              },
-              "lof": {
-                "gene_id": "STRING",
-                "genename": "STRING",
-                "number_of_transcripts_in_gene": "STRING",
-                "percent_of_transcripts_affected": "STRING"
-              },
-              "nmd": {
-                "gene_id": "STRING",
-                "genename": "STRING",
-                "number_of_transcripts_in_gene": "STRING",
-                "percent_of_transcripts_affected": "STRING"
-              }
-            },
-            "vcf": {
-              "alt": "STRING",
-              "position": "STRING",
-              "ref": "STRING"
-            },
-            "wellderly": {
-              "_license": "STRING",
-              "allele_aa": "STRING",
-              "alleles": [
-                {
-                  "allele": "STRING",
-                  "freq": "NUMERIC"
-                }
-              ],
-              "alt": "STRING",
-              "chrom": "STRING",
-              "coding_impact": "STRING",
-              "gene": "STRING",
-              "genotypes": [
-                {
-                  "count": "NUMERIC",
-                  "freq": "NUMERIC",
-                  "genotype": "STRING"
-                }
-              ],
-              "hg19": {
-                "end": "NUMERIC",
-                "start": "NUMERIC"
-              },
-              "original_aa": "STRING",
-              "pos": "NUMERIC",
-              "protein_pos": "STRING",
-              "ref": "STRING",
-              "vartype": "STRING"
-            }
-          }
-        },
-        "chromosome": "STRING",
-        "end": "NUMERIC",
-        "genome": "STRING",
-        "reference_bases": "STRING",
-        "start": "NUMERIC"
-      }
+          "ec50": "NUMERIC",
+          "fit_type": "STRING",
+          "ic50": "NUMERIC",
+          "num_data": "NUMERIC",
+          "sample_id": "STRING",
+          "source": "STRING"
+        }
     },
     {
-      "gid": "",
-      "label": "Expression",
+      "gid": "Exon",
+      "label": "Exon",
       "data": {
-        "id": "STRING",
-        "method": "STRING",
-        "metric": "STRING",
-        "source": "STRING",
-        "values": {
-          "ENSG...": "NUMERIC",
-          "ENST...": "NUMERIC"
+          "chromosome": "STRING",
+          "end": "NUMERIC",
+          "exon_id": "STRING",
+          "genome": "STRING",
+          "start": "NUMERIC",
+          "strand": "STRING",
+          "transcript_id": [
+                "STRING"
+              ]
         }
-      }
+    },
+    {
+      "gid": "G2PAssociation",
+      "label": "G2PAssociation",
+      "data": {
+          "description": "STRING",
+          "evidence_label": "STRING",
+          "oncogenic": "STRING",
+          "response_type": "STRING",
+          "source": "STRING",
+          "source_document": "STRING"
+        }
+    },
+    {
+      "gid": "Allele",
+      "label": "Allele",
+      "data": {
+          "alternate_bases": "STRING",
+          "chromosome": "STRING",
+          "dbSNP_RS": "STRING",
+          "effect": "STRING",
+          "end": "NUMERIC",
+          "ensembl_transcript": "STRING",
+          "genome": "STRING",
+          "hugo_symbol": "STRING",
+          "reference_bases": "STRING",
+          "start": "NUMERIC",
+          "strand": "STRING",
+          "type": "STRING"
+        }
+    },
+    {
+      "gid": "CopyNumberAlteration",
+      "label": "CopyNumberAlteration",
+      "data": {
+          "id": "STRING",
+          "method": "STRING",
+          "source": "STRING",
+          "values": {
+                "ENSG...": "STRING"
+              }
+        }
+    },
+      {
+      "gid": "GeneExpression",
+      "label": "GeneExpression",
+      "data": {
+          "id": "STRING",
+          "method": "STRING",
+          "metric": "STRING",
+          "source": "STRING",
+          "values": {
+                "ENSG...": "STRING"
+              }
+        }
+    },
+    {
+      "gid": "Publication",
+      "label": "Publication",
+      "data": {
+          "abstract": "STRING",
+          "author": [
+                "STRING"
+              ],
+          "citation": [
+                "UNKNOWN"
+              ],
+          "date": "STRING",
+          "text": "STRING",
+          "title": "STRING",
+          "url": "STRING"
+        }
+    },
+    {
+      "gid": "TranscriptExpression",
+      "label": "TranscriptExpression",
+      "data": {
+          "id": "STRING",
+          "method": "STRING",
+          "metric": "STRING",
+          "source": "STRING",
+          "values": {
+                "ENST...": "NUMERIC"
+              }
+        }
     }
   ],
   "edges": [
     {
-      "gid": "",
-      "label": "HasEnvironment",
-      "from": "G2PAssociation",
-      "to": "Compound",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "HasMinimalAlleleFeature",
-      "from": "G2PAssociation",
-      "to": "MinimalAllele",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "HasAlleleFeature",
-      "from": "G2PAssociation",
-      "to": "Allele",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "CallsetFor",
-      "from": "Callset",
-      "to": "Aliquot",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "MinimalAlleleIn",
-      "from": "MinimalAllele",
-      "to": "Gene",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "InProject",
-      "from": "Individual",
-      "to": "Project",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "DrugResponseIn",
-      "from": "DrugResponse",
-      "to": "Aliquot",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "ExpressionOf",
-      "from": "Expression",
-      "to": "Aliquot",
-      "data": {}
-    },
-    {
-      "gid": "",
+      "gid": "(G2PAssociation)--HasGeneFeature->(Gene)",
       "label": "HasGeneFeature",
       "from": "G2PAssociation",
       "to": "Gene",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(Project)--InProgram->(Program)",
+      "label": "InProgram",
+      "from": "Project",
+      "to": "Program",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Case)--TreatedWith->(Compound)",
+      "label": "TreatedWith",
+      "from": "Case",
+      "to": "Compound",
+      "data": {
+        }
+    },
+    {
+      "gid": "(G2PAssociation)--HasMinimalAlleleFeature->(MinimalAllele)",
+      "label": "HasMinimalAlleleFeature",
+      "from": "G2PAssociation",
+      "to": "MinimalAllele",
+      "data": {
+        }
+    },
+    {
+      "gid": "(MinimalAllele)--MinimalAlleleIn->(Gene)",
+      "label": "MinimalAlleleIn",
+      "from": "MinimalAllele",
+      "to": "Gene",
+      "data": {
+        }
+    },
+    {
+      "gid": "(G2PAssociation)--HasEnvironment->(Compound)",
+      "label": "HasEnvironment",
+      "from": "G2PAssociation",
+      "to": "Compound",
+      "data": {
+        }
+    },
+    {
+      "gid": "(CopyNumberAlteration)--CopyNumberAlterationOf->(Aliquot)",
       "label": "CopyNumberAlterationOf",
       "from": "CopyNumberAlteration",
       "to": "Aliquot",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "ResponseTo",
-      "from": "DrugResponse",
-      "to": "Compound",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "ResponseTo",
-      "from": "ParamacalogicalProfile",
-      "to": "Compound",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "GeneOntologyAnnotation",
-      "from": "GeneOntologyTerm",
-      "to": "Gene",
       "data": {
-        "evidence": "STRING",
-        "references": [
-          "STRING"
-        ],
-        "title": "STRING"
-      }
+        }
     },
     {
-      "gid": "",
-      "label": "GeneOntologyAnnotation",
-      "from": "GeneOntologyTerm",
-      "to": "PFAMFamily",
-      "data": {
-        "evidence": "STRING",
-        "references": [
-          "STRING"
-        ],
-        "title": "STRING"
-      }
-    },
-    {
-      "gid": "",
-      "label": "TreatedWith",
-      "from": "Individual",
-      "to": "Compound",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "GeneOntologyIsA",
-      "from": "GeneOntologyTerm",
-      "to": "GeneOntologyTerm",
-      "data": {}
-    },
-    {
-      "gid": "",
+      "gid": "(Aliquot)--PhenotypeOf->(Phenotype)",
       "label": "PhenotypeOf",
       "from": "Aliquot",
       "to": "Phenotype",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
-      "label": "BiosampleFor",
-      "from": "Biosample",
-      "to": "Individual",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "ParamacalogicalProfileIn",
-      "from": "ParamacalogicalProfile",
-      "to": "Aliquot",
-      "data": {}
-    },
-    {
-      "gid": "",
-      "label": "TranscriptFor",
-      "from": "Transcript",
-      "to": "Gene",
-      "data": {}
-    },
-    {
-      "gid": "",
+      "gid": "(PFAMClan)--PFAMClanMember->(PFAMFamily)",
       "label": "PFAMClanMember",
       "from": "PFAMClan",
       "to": "PFAMFamily",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(Case)--InProject->(Project)",
+      "label": "InProject",
+      "from": "Case",
+      "to": "Project",
+      "data": {
+        }
+    },
+    {
+      "gid": "(GeneOntologyTerm)--GeneOntologyIsA->(GeneOntologyTerm)",
+      "label": "GeneOntologyIsA",
+      "from": "GeneOntologyTerm",
+      "to": "GeneOntologyTerm",
+      "data": {
+        }
+    },
+    {
+      "gid": "(GeneExpression)--GeneExpressionOf->(Aliquot)",
+      "label": "GeneExpressionOf",
+      "from": "GeneExpression",
+      "to": "Aliquot",
+      "data": {
+        }
+    },
+    {
+      "gid": "(G2PAssociation)--HasAlleleFeature->(Allele)",
+      "label": "HasAlleleFeature",
+      "from": "G2PAssociation",
+      "to": "Allele",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Sample)--SampleFor->(Case)",
+      "label": "SampleFor",
+      "from": "Sample",
+      "to": "Case",
+      "data": {
+        }
+    },
+    {
+      "gid": "(G2PAssociation)--HasSupportingReference->(Publication)",
       "label": "HasSupportingReference",
       "from": "G2PAssociation",
       "to": "Publication",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(TranscriptExpression)--TranscriptExpressionOf->(Aliquot)",
+      "label": "TranscriptExpressionOf",
+      "from": "TranscriptExpression",
+      "to": "Aliquot",
+      "data": {
+        }
+    },
+    {
+      "gid": "(GeneOntologyTerm)--GeneOntologyAnnotation->(PFAMFamily)",
+      "label": "GeneOntologyAnnotation",
+      "from": "GeneOntologyTerm",
+      "to": "PFAMFamily",
+      "data": {
+          "evidence": "STRING",
+          "references": [
+                "STRING"
+              ],
+          "title": "STRING"
+        }
+    },
+    {
+      "gid": "(GeneOntologyTerm)--GeneOntologyAnnotation->(Gene)",
+      "label": "GeneOntologyAnnotation",
+      "from": "GeneOntologyTerm",
+      "to": "Gene",
+      "data": {
+          "evidence": "STRING",
+          "references": [
+                "STRING"
+              ],
+          "title": "STRING"
+        }
+    },
+    {
+      "gid": "(Transcript)--TranscriptFor->(Gene)",
+      "label": "TranscriptFor",
+      "from": "Transcript",
+      "to": "Gene",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Protein)--ProteinFor->(Transcript)",
+      "label": "ProteinFor",
+      "from": "Protein",
+      "to": "Transcript",
+      "data": {
+        }
+    },
+    {
+      "gid": "(DrugResponse)--ResponseIn->(Aliquot)",
+      "label": "ResponseIn",
+      "from": "DrugResponse",
+      "to": "Aliquot",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Protein)--PFAMAlignment->(PFAMFamily)",
+      "label": "PFAMAlignment",
+      "from": "Protein",
+      "to": "PFAMFamily",
+      "data": {
+          "end": "NUMERIC",
+          "start": "NUMERIC"
+        }
+    },
+    {
+      "gid": "(Callset)--CallsetFor->(Aliquot)",
+      "label": "CallsetFor",
+      "from": "Callset",
+      "to": "Aliquot",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Aliquot)--AliquotFor->(Sample)",
       "label": "AliquotFor",
       "from": "Aliquot",
-      "to": "Biosample",
-      "data": {}
+      "to": "Sample",
+      "data": {
+        }
     },
     {
-      "gid": "",
-      "label": "ExonFor",
-      "from": "Exon",
-      "to": "Transcript",
-      "data": {}
+      "gid": "(ProteinStructure)--StructureFor->(Protein)",
+      "label": "StructureFor",
+      "from": "ProteinStructure",
+      "to": "Protein",
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(DrugResponse)--ResponseTo->(Compound)",
+      "label": "ResponseTo",
+      "from": "DrugResponse",
+      "to": "Compound",
+      "data": {
+        }
+    },
+    {
+      "gid": "(G2PAssociation)--HasPhenotype->(Phenotype)",
       "label": "HasPhenotype",
       "from": "G2PAssociation",
       "to": "Phenotype",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(Exon)--ExonFor->(Transcript)",
+      "label": "ExonFor",
+      "from": "Exon",
+      "to": "Transcript",
+      "data": {
+        }
+    },
+    {
+      "gid": "(Allele)--AlleleIn->(Gene)",
       "label": "AlleleIn",
       "from": "Allele",
       "to": "Gene",
-      "data": {}
+      "data": {
+        }
     },
     {
-      "gid": "",
+      "gid": "(Callset)--AlleleCall->(Allele)",
       "label": "AlleleCall",
-      "from": "Allele",
-      "to": "Callset",
+      "from": "Callset",
+      "to": "Allele",
       "data": {
-        "info": {
-          "COSMIChsCnt": "STRING",
-          "Codon_Change": "STRING",
-          "ExAC_AF": "STRING",
-          "FILTER": "STRING",
-          "HC_AC": "STRING",
-          "Match_Norm_Seq_Allele1": "STRING",
-          "Match_Norm_Seq_Allele2": "STRING",
-          "Protein_Change": "STRING",
-          "RD_AC": "STRING",
-          "RNAseq_AC": "STRING",
-          "SangerRecalibWES_AC": "STRING",
-          "SangerWES_AC": "STRING",
-          "TCGAhsCnt": "STRING",
-          "Tumor_Seq_Allele1": "STRING",
-          "Tumor_Seq_Allele2": "STRING",
-          "WES_AC": "STRING",
-          "WGS_AC": "STRING",
-          "cDNA_Change": "STRING",
-          "call_methods": [
-            "STRING"
-          ],
-          "isCOSMIChotspot": "STRING",
-          "isDeleterious": "STRING",
-          "isTCGAhotspot": "STRING",
-          "n_alt_count": "STRING",
-          "n_depth": "STRING",
-          "n_ref_count": "STRING",
-          "t_alt_count": "STRING",
-          "t_depth": "STRING",
-          "t_ref_count": "STRING"
+          "alt": "STRING",
+          "ensembl_gene": "STRING",
+          "ensembl_transcript": "STRING",
+          "filter": "STRING",
+          "methods": [
+                "STRING"
+              ],
+          "n_alt_count": "NUMERIC",
+          "n_depth": "NUMERIC",
+          "n_ref_count": "NUMERIC",
+          "ref": "STRING",
+          "t_alt_count": "NUMERIC",
+          "t_depth": "NUMERIC",
+          "t_ref_count": "NUMERIC"
         }
-      }
     }
   ]
 }
