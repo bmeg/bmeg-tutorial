@@ -2,7 +2,13 @@
 title: Demo
 ---
 
-# Interactive queries
+# Test queries
 
 
-{{< code file="curl-example">}}curl {{% tokens %}} {{%api_url%}}api/v1/graph{{< /code >}}
+## curl
+<nobr>
+  {{< code file="curl-example">}}{{% curl-token%}}{{< /code >}}
+<nobr>
+
+## python
+{{< code file="python-example">}}{{% json-token %}}{{< /code >}}

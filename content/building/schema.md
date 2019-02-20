@@ -1,5 +1,5 @@
 ---
-title: Schema
+title: Graph Schema
 ---
 
 # BMEG Schema
