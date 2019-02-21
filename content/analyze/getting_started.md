@@ -24,4 +24,5 @@ We allow identified users to access the BMEG system:
 {{< code file="curl-example">}}{{% curl %}}{{< /code >}}
 
 ### python
+{{% bash %}}
 {{< code file="python-example">}}{{% python %}}{{< /code >}}
