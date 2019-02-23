@@ -18,6 +18,12 @@ class DrugCurve extends Component {
        };
     }
 
+    componentWillReceiveProps(nextProps) {
+      this.setState({
+          caseResponses: nextProps.caseResponses
+      })
+    }
+
     render() {
       var lines = []
       for (var c in this.state.caseResponses) {
@@ -32,8 +38,9 @@ class DrugCurve extends Component {
       }
       return (
         <VictoryChart
-               width={800}
-               height={600}
+               width={600}
+               height={400}
+               animate={{ duration: 1000 }}
              >
                {lines}
         </VictoryChart>
@@ -50,7 +57,6 @@ class DrugCaseTable extends Component {
        error: null,
        isLoaded: false,
        project: props.project,
-       cases: [],
        compounds: [],
        responseData: {},
        chartData: [],
@@ -64,25 +70,16 @@ class DrugCaseTable extends Component {
   }
 
   getProjectDrugs(project) {
-    var compoundQuery = gripql.query(GRAPH).V(project).in_("InProject").in_("SampleFor").in_("AliquotFor").in_("ResponseIn").out("ResponseTo").distinct("$._gid").render("$._gid").call()
-    var caseQuery = gripql.query(GRAPH).V(project).in_("InProject").call()
-
-    Promise.all([compoundQuery,caseQuery]).then( ([compoundRes, caseRes]) => {
+    gripql.query(GRAPH).V(project).in_("InProject").in_("SampleFor").in_("AliquotFor").in_("ResponseIn").out("ResponseTo").distinct("$._gid").render("$._gid").call().then( compoundRes => {
       var compounds = []
       for (var i = 0; i < compoundRes.length; i++) {
         compounds.push( compoundRes[i].render )
       }
-      var cases = []
-      for (var i = 0; i < caseRes.length; i++) {
-        cases.push( caseRes[i].vertex )
-      }
       var curCompound = compounds[0];
-
-      this.getResponseData(curCompound).then( x=> {
+      this.getResponseData(curCompound, project).then( x=> {
         this.setState({
           isLoaded: true,
           project: project,
-          cases: cases,
           compounds:compounds,
           responseData:x,
           curCases: this.state.curCases,
@@ -106,8 +103,12 @@ class DrugCaseTable extends Component {
     }
   }
 
-  getResponseData(compound) {
-    return gripql.query(GRAPH).V(compound).in_("ResponseTo").as_("response").out("ResponseIn").out("AliquotFor").out("SampleFor").as_("case").select(["case", "response"]).call().then( x => {
+  getResponseData(compound, project) {
+    var q = gripql.query(GRAPH).V(compound).in_("ResponseTo").as_("response").out("ResponseIn")
+    q = q.out("AliquotFor").out("SampleFor").as_("case")
+    q = q.out("InProject").has(gripql.eq("_gid", project))
+    q = q.select(["case", "response"])
+    return q.call().then( x => {
       var out = {};
       for (var i = 0; i < x.length; i++) {
         var response = x[i].selections.selections.response.vertex.data;
@@ -122,7 +123,6 @@ class DrugCaseTable extends Component {
     this.setState({
       isLoaded:this.state.isLoaded,
       projects:this.state.projects,
-      cases:this.state.cases,
       compounds:this.state.compounds,
       curCompound:event.target.value,
       curCases:[],
@@ -145,7 +145,6 @@ class DrugCaseTable extends Component {
     this.setState({
       isLoaded:this.state.isLoaded,
       projects:this.state.projects,
-      cases:this.state.cases,
       compounds:this.state.compounds,
       curCompound:this.state.curCompound,
       curCases:curCases,
@@ -167,8 +166,8 @@ class DrugCaseTable extends Component {
 
        <div style={{'gridColumn':"1"}}>
        <Input type="select" multiple label="Cases" onChange={this.onCaseChange}>
-       {this.state.cases.map( k => (
-         <option key={k.gid} type='checkbox' value={k.gid}>{k.gid}</option>
+       {Object.keys(this.state.responseData).map( k => (
+         <option key={k} type='checkbox' value={k}>{k}</option>
        ))}
        </Input>
        </div>
