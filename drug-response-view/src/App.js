@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Input, Checkbox, Preloader} from 'react-materialize'
+import {Row, Input, Checkbox, Preloader, Modal, Button} from 'react-materialize'
 
 import {
   VictoryChart, VictoryLine,
@@ -37,6 +37,7 @@ class DrugCurve extends Component {
         lines.push( <VictoryLine key={c} data={lineData} /> )
       }
       return (
+        <div>
         <VictoryChart
                width={600}
                height={400}
@@ -44,9 +45,20 @@ class DrugCurve extends Component {
              >
                {lines}
         </VictoryChart>
+        </div>
       );
     }
 
+}
+
+class CaseVariantSelector extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (<div>Selecting Samples by Variant</div>)
+  }
 }
 
 class DrugCaseTable extends Component {
@@ -165,6 +177,11 @@ class DrugCaseTable extends Component {
        </div>
 
        <div style={{'gridColumn':"1"}}>
+       <Modal
+        header='Modal Header'
+        trigger={<Button>Select by Mutation</Button>}>
+          <CaseVariantSelector/>
+      </Modal>
        <Input type="select" multiple label="Cases" onChange={this.onCaseChange}>
        {Object.keys(this.state.responseData).map( k => (
          <option key={k} type='checkbox' value={k}>{k}</option>
