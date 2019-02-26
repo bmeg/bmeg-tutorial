@@ -32,7 +32,7 @@ resources and aggregates them into a single coherent resource. Sources include:
  - Cancer Survival Plots
  - Pathway Analysis
 
-The graph can be explore programmatically using the GRIP API and the Python client. [Credentials and API](/building/demo-introduction)
+The graph can be explore programmatically using the GRIP API and the Python client. [Credentials and API](/analyze/getting_started)
 
 The entire stack of the BMEG, is openly avalible for you to use, fork and develop on yourself.
 
