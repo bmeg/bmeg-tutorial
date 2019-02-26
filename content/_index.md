@@ -6,7 +6,7 @@
 {{% card-container %}}
 
 {{% card title="Explore" icon="storage"
-    action_href="/explore" action_text="sources"
+    action_href="/explore/data" action_text="sources"
 %}}
 **Discover** The BMEG is a graph database that collects data from over 20 different large scale
 resources and aggregates them into a single coherent resource. Sources include:
