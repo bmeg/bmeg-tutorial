@@ -4,14 +4,14 @@ title: Queries
 
 # Analyze the graph
 
-### [Getting Started](/queries/getting_started/)
+### [Getting Started](/analyze/getting_started/)
 How to install and use the python client.
 
-### [Graph Schema](/building/schema)
+### [Graph Schema](/explore/schema/)
 How the data in the graph is organized.
 
-### [Traversal](/queries/traversal/)
+### [Traversal](https://docs.bmeg.io/grip/docs/queries/operations/)
 How to query data across the graph.
 
-### [Analysis Examples](/queries/analysis/)
+### [Analysis Examples](/analyze/examples)
 Example analysis using the BMEG graph.

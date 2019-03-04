@@ -6,7 +6,7 @@
 {{% card-container %}}
 
 {{% card title="Explore" icon="storage"
-    action_href="/explore" action_text="sources"
+    action_href="/explore/data" action_text="sources"
 %}}
 **Discover** The BMEG is a graph database that collects data from over 20 different large scale
 resources and aggregates them into a single coherent resource. Sources include:
@@ -32,7 +32,7 @@ resources and aggregates them into a single coherent resource. Sources include:
  - Cancer Survival Plots
  - Pathway Analysis
 
-The graph can be explore programmatically using the GRIP API and the Python client. [Credentials and API](/building/demo-introduction)
+The graph can be explore programmatically using the GRIP API and the Python client. [Credentials and API](/analyze/getting_started)
 
 The entire stack of the BMEG, is openly avalible for you to use, fork and develop on yourself.
 
