@@ -1,0 +1,37 @@
+{{ partial "head.html" . }}
+
+<div class="row">
+<div class="col m3 l2 offset-xl-1">
+  <div class="toc-wrapper">
+  <ul class="section table-of-contents">
+  {{ range .Pages.ByWeight }}
+      {{ if not .Draft }}
+      <li><a href="#{{.Title}}">{{.Title}}</a></li>
+      {{ end }}
+  {{ end }}
+  </ul>
+  </div>
+</div>
+
+<div class="col s12 m9 l10">
+{{ range .Pages.ByWeight }}
+    {{ if not .Draft }}
+    <div id="{{.LinkTitle}}" class="section scrollspy">
+        <h1>{{.Title}}</h1>
+        {{.Content}}
+    </div>
+    {{ end }}
+{{ end }}
+</div>
+</div>
+<script>
+  var options = {};
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.scrollspy');
+    var instances = M.ScrollSpy.init(elems, options);
+  });
+</script>
+
+{{ partial "footer.html" .}}
+
+{{ partial "tail.html" . }}
