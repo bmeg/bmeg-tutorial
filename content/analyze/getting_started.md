@@ -19,4 +19,4 @@ We allow identified users to access the BMEG system:
 * We will redirect you to Google to verify identity.  
 * Then you will be granted access for interactive and API access
 
-<a href="analyze/access" >Authenticate with google.<i class="material-icons">lock</i></a>
+<a href="/analyze/access" >Authenticate with google.<i class="material-icons">lock</i></a>
