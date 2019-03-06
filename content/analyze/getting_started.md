@@ -12,17 +12,11 @@ GRIPQL is an API for making graph queries using structured data. Queries are def
 <a href="https://docs.bmeg.io/grip/docs/queries/getting_started/" target="_blank" >Find out more about installing the python client <i class="material-icons">open_in_new</i></a>
 
 
-## Test queries
+## Authentication
 
 We allow identified users to access the BMEG system:
 
 * We will redirect you to Google to verify identity.  
-* Then, you will be granted access for interactive and API access
+* Then you will be granted access for interactive and API access
 
-
-### curl
-{{< code file="curl-example">}}{{% curl %}}{{< /code >}}
-
-### python
-{{% bash %}}
-{{< code file="python-example">}}{{% python %}}{{< /code >}}
+<a href="analyze/access" >Authenticate with google.<i class="material-icons">lock</i></a>
