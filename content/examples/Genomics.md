@@ -14,7 +14,7 @@ tldr: Build a rolling average of mutations for a given gene region
 import matplotlib.pyplot as plt
 import pandas
 import gripql
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
 
@@ -25,7 +25,7 @@ O = conn.graph("bmeg_rc1_2")
 loc = list( O.query().V().hasLabel("Gene").has(gripql.eq("symbol", "BRCA1")).render(["$.start", "$.end"]) )[0]
 ```
 
-    [INFO]	2019-03-05 10:40:46,821	1 results received in 0 seconds
+    [INFO]	2019-03-11 15:57:14,808	1 results received in 1 seconds
 
 
 
@@ -38,7 +38,7 @@ for v in res.brac1_pos.buckets:
     counts[ v['key'] - loc[0] ] = v['value']
 ```
 
-    [INFO]	2019-03-05 10:40:51,743	1 results received in 4 seconds
+    [INFO]	2019-03-11 15:57:16,372	1 results received in 1 seconds
 
 
 
@@ -54,7 +54,7 @@ s.rolling(500).sum().plot()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x11e6e10f0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x115d41390>
 
 
 
