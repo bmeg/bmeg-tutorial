@@ -9,7 +9,7 @@ title: Getting Started
 
 GRIPQL is an API for making graph queries using structured data. Queries are defined using a series of step operations provided by BMEG. The python client wraps the construction of these queries in an intuitive python interface.
 
-<a href="https://docs.bmeg.io/grip/docs/queries/getting_started/" target="_blank" >Find out more about installing the python client <i class="material-icons">open_in_new</i></a>
+<a href="https://bmeg.github.io/grip/docs/queries/getting_started/" target="_blank" >Find out more about installing the python client <i class="material-icons">open_in_new</i></a>
 
 
 ## Test queries
