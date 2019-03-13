@@ -15,9 +15,11 @@ tldr: Find the number of mutations per gene for TCGA cohort
 ```python
 import pandas
 import gripql
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
+
+Select all the tumor samples in the TCGA KIRC cohort, and aggregate across the `ensembl_gene` field.
 
 
 ```python
@@ -34,8 +36,10 @@ for i in res[0]['geneCount']['buckets']:
 
 ```
 
-    [INFO]	2019-03-01 17:22:30,156	1 results received in 6 seconds
+    [INFO]	2019-03-11 16:14:14,703	1 results received in 2 seconds
 
+
+Create a Pandas.Series with the output and find all the genes with 20 or more mutations
 
 
 ```python
@@ -53,7 +57,7 @@ for e,g in O.query().V(goi).render(["$._gid" ,"$.symbol"]):
     print(e,g)
 ```
 
-    [INFO]	2019-03-04 14:52:32,121	10 results received in 0 seconds
+    [INFO]	2019-03-11 16:18:28,689	10 results received in 0 seconds
 
 
     ENSG00000007174 DNAH9

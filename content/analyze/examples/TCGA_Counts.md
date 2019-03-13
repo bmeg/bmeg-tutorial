@@ -13,7 +13,7 @@ tldr: Use aggregation methods to count number of samples in a program
 
 ```python
 import gripql
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
 
@@ -27,7 +27,7 @@ for row in q.execute()[0]["project_count"]["buckets"]:
     print("%s\t%s" % (row["key"], row["value"]))
 ```
 
-    [INFO]	2019-03-04 14:58:56,556	1 results received in 0 seconds
+    [INFO]	2019-03-11 16:13:02,635	1 results received in 0 seconds
 
 
     Program:DepMap	38
@@ -37,10 +37,10 @@ for row in q.execute()[0]["project_count"]["buckets"]:
     Program:GDSC	27
     Program:CCLE	26
     Program:TARGET	6
-    Program:NCICCR	1
-    Program:CTSP	1
-    Program:FM	1
     Program:VAREPOP	1
+    Program:NCICCR	1
+    Program:FM	1
+    Program:CTSP	1
 
 
 ## Count number of Samples per Program
@@ -53,7 +53,7 @@ for row in q.execute()[0]["sample_count"]["buckets"]:
     print("%s\t%s" % (row["key"], row["value"]))
 ```
 
-    [INFO]	2019-03-04 14:59:26,374	1 results received in 5 seconds
+    [INFO]	2019-03-11 16:13:09,049	1 results received in 3 seconds
 
 
     Program:FM	18004

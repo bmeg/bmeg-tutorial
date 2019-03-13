@@ -14,9 +14,11 @@ tldr: Build a histogram from the copy number alteration values for genes in a TC
 import matplotlib.pyplot as plt
 import numpy as np
 import gripql
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
+
+Get Ensembl Gene ids for genes of interest
 
 
 ```python
@@ -27,9 +29,9 @@ for g in GENES:
         gene_ids[g] = i.gid
 ```
 
-    [INFO]	2019-02-20 16:54:18,146	1 results received in 0 seconds
-    [INFO]	2019-02-20 16:54:18,277	1 results received in 0 seconds
-    [INFO]	2019-02-20 16:54:18,408	1 results received in 0 seconds
+    [INFO]	2019-03-11 15:50:32,116	1 results received in 0 seconds
+    [INFO]	2019-03-11 15:50:32,355	1 results received in 0 seconds
+    [INFO]	2019-03-11 15:50:32,599	1 results received in 0 seconds
 
 
 
@@ -46,6 +48,8 @@ gene_ids
 
 
 
+For each gene of interest, obtain the copy number alteration values and aggregate them by gene.
+
 
 ```python
 q = O.query().V("Project:TCGA-PRAD").in_("InProject").in_("SampleFor").in_("AliquotFor")
@@ -55,14 +59,29 @@ q = q.aggregate(
 )
 
 res = list(q)
-print(res)
+for r in res[0]:
+    for b in res[0][r]['buckets']:
+        print("%s\t%s:%s" % (r, b['key'], b['value']))
 ```
 
-    [INFO]	2019-02-20 16:54:23,109	1 results received in 4 seconds
+    [INFO]	2019-03-11 16:22:24,556	1 results received in 5 seconds
 
 
-    [<AttrDict({'ENSG00000139687': {'buckets': [{'key': '0', 'value': 269}, {'key': '-1', 'value': 139}, {'key': '-2', 'value': 81}, {'key': '1', 'value': 3}]}, 'ENSG00000141510': {'buckets': [{'key': '0', 'value': 329}, {'key': '-1', 'value': 126}, {'key': '-2', 'value': 37}]}, 'ENSG00000171862': {'buckets': [{'key': '0', 'value': 327}, {'key': '-2', 'value': 95}, {'key': '-1', 'value': 64}, {'key': '1', 'value': 5}, {'key': '2', 'value': 1}]}})>]
+    ENSG00000139687	0:269
+    ENSG00000139687	-1:139
+    ENSG00000139687	-2:81
+    ENSG00000139687	1:3
+    ENSG00000141510	0:329
+    ENSG00000141510	-1:126
+    ENSG00000141510	-2:37
+    ENSG00000171862	0:327
+    ENSG00000171862	-2:95
+    ENSG00000171862	-1:64
+    ENSG00000171862	1:5
+    ENSG00000171862	2:1
 
+
+Create a barchart showing the counts of copy number altered samples in the cohort.
 
 
 ```python
@@ -82,7 +101,7 @@ plt.bar(val, count, width=0.35)
 
 
 
-![png](CNA_Histogram_files/CNA_Histogram_5_1.png)
+![png](CNA_Histogram_files/CNA_Histogram_8_1.png)
 
 
 
