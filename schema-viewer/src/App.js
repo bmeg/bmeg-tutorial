@@ -16,7 +16,7 @@ class App extends Component {
         var edges = data["edges"].map(function(x){
           return {
             "data": {
-              "id": x["label"] + x["from"] + x["to"], 
+              "id": x["gid"], 
               "label": x["label"], 
               "source": x["from"], 
               "target": x["to"]
@@ -26,7 +26,7 @@ class App extends Component {
         })
 
         var nodes = data["vertices"].map(function(x){
-          return {"data": {"id": x["label"]}}
+          return {"data": {"id": x["gid"]}}
         })
           
         this.setState({elements: {"nodes": nodes, "edges": edges}, schema: data})
@@ -102,20 +102,20 @@ class App extends Component {
     );
 
     cy.on('tap', 'edge', event => {
-      var targetLabel = event.target.data().label
+      var targetEdge = event.target.data().id
       var data = {}
       for (var i = 0; i < this.state.schema.edges.length; i++) {
-        if (this.state.schema.edges[i].label === targetLabel) {
+        if (this.state.schema.edges[i].gid === targetEdge) {
           data = this.state.schema.edges[i]
         }
       }
       this.setState({ selection: data });
     })
     cy.on('tap', 'node', event => {
-      var targetLabel = event.target.data().id
+      var targetVertex = event.target.data().id
       var data = {}
       for (var i = 0; i < this.state.schema.vertices.length; i++) {
-        if (this.state.schema.vertices[i].label === targetLabel) {
+        if (this.state.schema.vertices[i].gid === targetVertex) {
           data = this.state.schema.vertices[i]
         }
       }
