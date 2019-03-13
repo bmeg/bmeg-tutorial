@@ -37,7 +37,7 @@ from networkx.drawing.nx_agraph import graphviz_layout
 
 
 ```python
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 ```
 
 Print avalible graphs
@@ -47,7 +47,7 @@ Print avalible graphs
 print(conn.listGraphs())
 ```
 
-    ['bmeg_test', 'bmeg_rc1', 'pc10', 'bmeg_rc1_2', 'bmeg_test__schema__', 'bmeg_rc1__schema__', 'pc10__schema__', 'bmeg_rc1_2__schema__']
+    ['bmeg_rc1_2', 'bmeg_rc1_2__schema__']
 
 
 

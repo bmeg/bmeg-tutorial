@@ -13,7 +13,7 @@ tldr: Look up an allele
 
 ```python
 import gripql
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
 

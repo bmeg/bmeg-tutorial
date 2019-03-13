@@ -17,20 +17,24 @@ import gripql
 import itertools
 import scipy.stats as stats
 
-conn = gripql.Connection("http://grip.compbio.ohsu.edu")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
 O = conn.graph("bmeg_rc1_2")
 ```
 
+Find all of the aliquots in the [CTRP](https://portals.broadinstitute.org/ctrp/) experiment
+
 
 ```python
-q = O.query().V("Program:CCLE").in_("InProgram").in_("InProject").in_("SampleFor").in_("AliquotFor")
+q = O.query().V("Program:CTRP").in_("InProgram").in_("InProject").in_("SampleFor").in_("AliquotFor").distinct("_gid")
 all_aliquots = []
 for row in q:
     all_aliquots.append(row.gid)
 ```
 
-    [INFO]	2019-02-20 16:57:22,605	504 results received in 0 seconds
+    [INFO]	2019-03-11 16:27:26,999	841 results received in 0 seconds
 
+
+For the genes of interest, get Ensembl gene ids, from the HUGO symbols
 
 
 ```python
@@ -45,10 +49,10 @@ for g in GENES:
         gene_ids[g] = i.gid
 ```
 
-    [INFO]	2019-02-20 16:57:22,750	1 results received in 0 seconds
-    [INFO]	2019-02-20 16:57:22,883	1 results received in 0 seconds
-    [INFO]	2019-02-20 16:57:23,014	1 results received in 0 seconds
-    [INFO]	2019-02-20 16:57:23,145	1 results received in 0 seconds
+    [INFO]	2019-03-11 16:27:27,225	1 results received in 0 seconds
+    [INFO]	2019-03-11 16:27:27,399	1 results received in 0 seconds
+    [INFO]	2019-03-11 16:27:27,576	1 results received in 0 seconds
+    [INFO]	2019-03-11 16:27:27,752	1 results received in 0 seconds
 
 
 
@@ -65,6 +69,8 @@ gene_ids
      'SMAD4': 'ENSG00000141646'}
 
 
+
+For each of the genes, find the set of samples that have a mutation in that gene
 
 
 ```python
@@ -87,17 +93,17 @@ for i in gene_ids.values():
 
 ```
 
-    [INFO]	2019-02-20 16:57:29,279	673 results received in 6 seconds
+    [INFO]	2019-03-11 16:27:48,969	1,198 results received in 21 seconds
 
 
-    ENSG00000147889 Positive Set: 69
-    ENSG00000147889 Negative Set: 435
-    ENSG00000171862 Positive Set: 76
-    ENSG00000171862 Negative Set: 428
-    ENSG00000141510 Positive Set: 357
-    ENSG00000141510 Negative Set: 147
-    ENSG00000141646 Positive Set: 39
-    ENSG00000141646 Negative Set: 465
+    ENSG00000147889 Positive Set: 99
+    ENSG00000147889 Negative Set: 742
+    ENSG00000171862 Positive Set: 120
+    ENSG00000171862 Negative Set: 721
+    ENSG00000141510 Positive Set: 597
+    ENSG00000141510 Negative Set: 244
+    ENSG00000141646 Positive Set: 69
+    ENSG00000141646 Negative Set: 772
 
 
 
@@ -116,10 +122,10 @@ for g in gene_ids.values():
    
 ```
 
-    [INFO]	2019-02-20 16:57:44,006	30,074 results received in 14 seconds
-    [INFO]	2019-02-20 16:57:59,881	32,137 results received in 15 seconds
-    [INFO]	2019-02-20 16:59:07,251	146,042 results received in 67 seconds
-    [INFO]	2019-02-20 16:59:15,939	17,933 results received in 8 seconds
+    [INFO]	2019-03-11 16:28:07,266	45,065 results received in 18 seconds
+    [INFO]	2019-03-11 16:28:28,027	52,559 results received in 20 seconds
+    [INFO]	2019-03-11 16:30:08,716	261,093 results received in 100 seconds
+    [INFO]	2019-03-11 16:30:19,911	30,334 results received in 11 seconds
 
 
 
@@ -138,10 +144,10 @@ for g in gene_ids.values():
    
 ```
 
-    [INFO]	2019-02-20 17:00:35,445	169,815 results received in 79 seconds
-    [INFO]	2019-02-20 17:01:55,601	167,752 results received in 80 seconds
-    [INFO]	2019-02-20 17:02:20,688	53,847 results received in 25 seconds
-    [INFO]	2019-02-20 17:03:44,473	181,956 results received in 83 seconds
+    [INFO]	2019-03-11 16:32:24,361	321,190 results received in 124 seconds
+    [INFO]	2019-03-11 16:34:41,644	313,696 results received in 137 seconds
+    [INFO]	2019-03-11 16:35:22,911	105,162 results received in 41 seconds
+    [INFO]	2019-03-11 16:37:35,496	335,921 results received in 132 seconds
 
 
 
@@ -166,7 +172,7 @@ for drug in drugs:
 
 
 ```python
-pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a-statistic", "a-pvalue"]).sort_values("a-pvalue")
+pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a-statistic", "a-pvalue"]).sort_values("a-pvalue").head(30)
 ```
 
 
@@ -200,557 +206,277 @@ pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a
   </thead>
   <tbody>
     <tr>
-      <th>574</th>
-      <td>Compound:CID10127622</td>
-      <td>ENSG00000141510</td>
-      <td>12.882003</td>
-      <td>1.245427e-36</td>
-      <td>184.807516</td>
-      <td>2.327147e-41</td>
-    </tr>
-    <tr>
-      <th>769</th>
+      <th>1038</th>
       <td>Compound:CID11433190</td>
       <td>ENSG00000141510</td>
-      <td>9.700591</td>
-      <td>1.811754e-17</td>
-      <td>152.563635</td>
-      <td>3.455239e-30</td>
+      <td>13.047139</td>
+      <td>5.317522e-31</td>
+      <td>259.778790</td>
+      <td>1.184247e-50</td>
     </tr>
     <tr>
-      <th>573</th>
+      <th>1845</th>
       <td>Compound:CID10127622</td>
       <td>ENSG00000171862</td>
-      <td>10.166484</td>
-      <td>2.334855e-23</td>
-      <td>89.182738</td>
-      <td>5.377786e-21</td>
+      <td>14.762042</td>
+      <td>7.981893e-47</td>
+      <td>179.304787</td>
+      <td>1.641445e-40</td>
     </tr>
     <tr>
-      <th>62</th>
-      <td>Compound:CID11717001</td>
+      <th>1846</th>
+      <td>Compound:CID10127622</td>
       <td>ENSG00000141510</td>
-      <td>5.298232</td>
-      <td>4.338974e-07</td>
-      <td>43.765050</td>
-      <td>1.113371e-10</td>
+      <td>10.688355</td>
+      <td>2.465168e-26</td>
+      <td>127.405960</td>
+      <td>2.358116e-29</td>
     </tr>
     <tr>
-      <th>468</th>
-      <td>Compound:CHEMBL401930</td>
-      <td>ENSG00000171862</td>
-      <td>6.515571</td>
-      <td>1.631341e-09</td>
-      <td>28.139904</td>
-      <td>1.837929e-07</td>
-    </tr>
-    <tr>
-      <th>1817</th>
+      <th>1338</th>
       <td>Compound:CID24978538</td>
-      <td>ENSG00000147889</td>
-      <td>5.279545</td>
-      <td>1.610209e-07</td>
-      <td>27.066078</td>
-      <td>2.054418e-07</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>Compound:CID11626560</td>
       <td>ENSG00000141510</td>
-      <td>5.032685</td>
-      <td>7.502575e-07</td>
-      <td>27.348135</td>
-      <td>2.143673e-07</td>
+      <td>7.740424</td>
+      <td>1.240948e-14</td>
+      <td>63.907146</td>
+      <td>1.483366e-15</td>
     </tr>
     <tr>
-      <th>1061</th>
-      <td>Compound:CID44462760</td>
-      <td>ENSG00000141510</td>
-      <td>3.849080</td>
-      <td>2.647069e-04</td>
-      <td>27.806434</td>
-      <td>3.247028e-07</td>
-    </tr>
-    <tr>
-      <th>1843</th>
-      <td>Compound:CID31703</td>
-      <td>ENSG00000141510</td>
-      <td>4.941254</td>
-      <td>1.150275e-06</td>
-      <td>26.332060</td>
-      <td>3.554195e-07</td>
-    </tr>
-    <tr>
-      <th>969</th>
-      <td>Compound:CID6505803</td>
-      <td>ENSG00000141510</td>
-      <td>4.334796</td>
-      <td>1.730668e-05</td>
-      <td>21.030566</td>
-      <td>4.963309e-06</td>
-    </tr>
-    <tr>
-      <th>1037</th>
-      <td>Compound:CID10231331</td>
-      <td>ENSG00000141510</td>
-      <td>4.056189</td>
-      <td>7.455309e-05</td>
-      <td>20.084720</td>
-      <td>9.490546e-06</td>
-    </tr>
-    <tr>
-      <th>936</th>
-      <td>Compound:CID9825149</td>
-      <td>ENSG00000171862</td>
-      <td>4.423001</td>
-      <td>2.592948e-05</td>
-      <td>19.472324</td>
-      <td>1.300546e-05</td>
-    </tr>
-    <tr>
-      <th>988</th>
-      <td>Compound:CID12003241</td>
-      <td>ENSG00000171862</td>
-      <td>4.634551</td>
-      <td>1.056798e-05</td>
-      <td>18.377951</td>
-      <td>2.229591e-05</td>
-    </tr>
-    <tr>
-      <th>1208</th>
-      <td>Compound:CID16038120</td>
-      <td>ENSG00000171862</td>
-      <td>4.632148</td>
-      <td>1.098644e-05</td>
-      <td>17.667399</td>
-      <td>3.210572e-05</td>
-    </tr>
-    <tr>
-      <th>568</th>
-      <td>Compound:CID16722836</td>
-      <td>ENSG00000147889</td>
-      <td>3.999909</td>
-      <td>1.361742e-04</td>
-      <td>17.400366</td>
-      <td>3.665959e-05</td>
-    </tr>
-    <tr>
-      <th>445</th>
-      <td>Compound:CID24180719</td>
-      <td>ENSG00000141510</td>
-      <td>3.289858</td>
-      <td>1.264154e-03</td>
-      <td>17.277036</td>
-      <td>3.908621e-05</td>
-    </tr>
-    <tr>
-      <th>1634</th>
-      <td>Compound:CID5284616</td>
-      <td>ENSG00000147889</td>
-      <td>4.136021</td>
-      <td>5.410692e-05</td>
-      <td>15.882512</td>
-      <td>7.299370e-05</td>
-    </tr>
-    <tr>
-      <th>767</th>
-      <td>Compound:CID11433190</td>
-      <td>ENSG00000147889</td>
-      <td>5.887768</td>
-      <td>2.600025e-08</td>
-      <td>16.003428</td>
-      <td>7.449141e-05</td>
-    </tr>
-    <tr>
-      <th>881</th>
-      <td>Compound:CID25161177</td>
-      <td>ENSG00000141510</td>
-      <td>3.596193</td>
-      <td>5.261183e-04</td>
-      <td>15.937116</td>
-      <td>8.973606e-05</td>
-    </tr>
-    <tr>
-      <th>875</th>
-      <td>Compound:CID451668</td>
-      <td>ENSG00000147889</td>
-      <td>4.910433</td>
-      <td>1.418176e-06</td>
-      <td>14.795144</td>
-      <td>1.257099e-04</td>
-    </tr>
-    <tr>
-      <th>216</th>
-      <td>Compound:NO_ONTOLOGY~JQ-1</td>
-      <td>ENSG00000147889</td>
-      <td>4.536002</td>
-      <td>1.575195e-05</td>
-      <td>14.836807</td>
-      <td>1.350707e-04</td>
-    </tr>
-    <tr>
-      <th>1391</th>
-      <td>Compound:CID24970400</td>
-      <td>ENSG00000147889</td>
-      <td>3.352078</td>
-      <td>1.226150e-03</td>
-      <td>14.640780</td>
-      <td>1.492116e-04</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>Compound:CID9903786</td>
-      <td>ENSG00000147889</td>
-      <td>4.685372</td>
-      <td>8.225341e-06</td>
-      <td>14.517238</td>
-      <td>1.592260e-04</td>
-    </tr>
-    <tr>
-      <th>765</th>
+      <th>1510</th>
       <td>Compound:CID11609586</td>
       <td>ENSG00000141510</td>
-      <td>3.396303</td>
-      <td>7.682307e-04</td>
-      <td>14.232278</td>
-      <td>1.731396e-04</td>
+      <td>6.241976</td>
+      <td>8.088568e-10</td>
+      <td>52.314159</td>
+      <td>7.472634e-13</td>
     </tr>
     <tr>
-      <th>1819</th>
-      <td>Compound:CID24978538</td>
-      <td>ENSG00000141510</td>
-      <td>3.682249</td>
-      <td>2.370057e-04</td>
-      <td>14.028056</td>
-      <td>1.823775e-04</td>
-    </tr>
-    <tr>
-      <th>1036</th>
-      <td>Compound:CID10231331</td>
+      <th>693</th>
+      <td>Compound:CHEMBL401930</td>
       <td>ENSG00000171862</td>
-      <td>4.344480</td>
-      <td>3.055481e-05</td>
-      <td>14.177140</td>
-      <td>1.892935e-04</td>
+      <td>8.302645</td>
+      <td>2.440095e-14</td>
+      <td>49.757986</td>
+      <td>3.862614e-12</td>
+    </tr>
+    <tr>
+      <th>1336</th>
+      <td>Compound:CID24978538</td>
+      <td>ENSG00000147889</td>
+      <td>6.527219</td>
+      <td>9.533273e-11</td>
+      <td>40.010125</td>
+      <td>2.659870e-10</td>
+    </tr>
+    <tr>
+      <th>558</th>
+      <td>Compound:CID31703</td>
+      <td>ENSG00000141510</td>
+      <td>5.785938</td>
+      <td>1.071401e-08</td>
+      <td>39.482605</td>
+      <td>4.256624e-10</td>
+    </tr>
+    <tr>
+      <th>1339</th>
+      <td>Compound:CID24978538</td>
+      <td>ENSG00000141646</td>
+      <td>6.429776</td>
+      <td>2.146093e-10</td>
+      <td>34.934173</td>
+      <td>3.547833e-09</td>
+    </tr>
+    <tr>
+      <th>549</th>
+      <td>Compound:CID9825149</td>
+      <td>ENSG00000171862</td>
+      <td>5.932992</td>
+      <td>1.955910e-08</td>
+      <td>33.090768</td>
+      <td>1.266485e-08</td>
+    </tr>
+    <tr>
+      <th>1901</th>
+      <td>Compound:CID12003241</td>
+      <td>ENSG00000171862</td>
+      <td>6.056617</td>
+      <td>9.415681e-09</td>
+      <td>31.770410</td>
+      <td>2.396710e-08</td>
+    </tr>
+    <tr>
+      <th>917</th>
+      <td>Compound:CID16038120</td>
+      <td>ENSG00000171862</td>
+      <td>6.327688</td>
+      <td>2.345613e-09</td>
+      <td>28.930932</td>
+      <td>9.928930e-08</td>
+    </tr>
+    <tr>
+      <th>709</th>
+      <td>Compound:CHEMBL1091644</td>
+      <td>ENSG00000171862</td>
+      <td>7.158885</td>
+      <td>1.212246e-11</td>
+      <td>27.669131</td>
+      <td>1.856315e-07</td>
+    </tr>
+    <tr>
+      <th>1450</th>
+      <td>Compound:CID11626560</td>
+      <td>ENSG00000141510</td>
+      <td>4.969099</td>
+      <td>8.227653e-07</td>
+      <td>25.591613</td>
+      <td>4.718561e-07</td>
     </tr>
     <tr>
       <th>494</th>
+      <td>Compound:CID44462760</td>
+      <td>ENSG00000141510</td>
+      <td>3.845680</td>
+      <td>1.844618e-04</td>
+      <td>25.876791</td>
+      <td>5.647977e-07</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>Compound:CID11717001</td>
+      <td>ENSG00000141510</td>
+      <td>4.286482</td>
+      <td>2.411596e-05</td>
+      <td>24.598161</td>
+      <td>8.679683e-07</td>
+    </tr>
+    <tr>
+      <th>1656</th>
+      <td>Compound:CID16722836</td>
+      <td>ENSG00000147889</td>
+      <td>4.586444</td>
+      <td>1.142000e-05</td>
+      <td>24.162761</td>
+      <td>1.078975e-06</td>
+    </tr>
+    <tr>
+      <th>1101</th>
+      <td>Compound:CID10231331</td>
+      <td>ENSG00000171862</td>
+      <td>5.831482</td>
+      <td>2.502220e-08</td>
+      <td>23.939656</td>
+      <td>1.200220e-06</td>
+    </tr>
+    <tr>
+      <th>1073</th>
       <td>Compound:CID24785538</td>
       <td>ENSG00000171862</td>
-      <td>4.798919</td>
-      <td>4.312851e-06</td>
-      <td>13.946084</td>
-      <td>2.133912e-04</td>
+      <td>6.561520</td>
+      <td>3.916417e-10</td>
+      <td>23.661479</td>
+      <td>1.385508e-06</td>
     </tr>
     <tr>
-      <th>1687</th>
+      <th>293</th>
       <td>Compound:CID5328940</td>
       <td>ENSG00000171862</td>
-      <td>3.724283</td>
-      <td>3.296095e-04</td>
-      <td>13.660248</td>
-      <td>2.475528e-04</td>
+      <td>4.952539</td>
+      <td>1.930155e-06</td>
+      <td>23.299296</td>
+      <td>1.668798e-06</td>
     </tr>
     <tr>
-      <th>1671</th>
+      <th>1965</th>
+      <td>Compound:CID11707110</td>
+      <td>ENSG00000171862</td>
+      <td>6.957522</td>
+      <td>1.812686e-10</td>
+      <td>23.331620</td>
+      <td>1.950337e-06</td>
+    </tr>
+    <tr>
+      <th>1473</th>
+      <td>Compound:CID176870</td>
+      <td>ENSG00000171862</td>
+      <td>5.251573</td>
+      <td>2.702363e-07</td>
+      <td>19.892882</td>
+      <td>8.791931e-06</td>
+    </tr>
+    <tr>
+      <th>1781</th>
       <td>Compound:CID10184653</td>
       <td>ENSG00000171862</td>
-      <td>4.506876</td>
-      <td>1.785473e-05</td>
-      <td>13.376562</td>
-      <td>2.899453e-04</td>
+      <td>4.889542</td>
+      <td>2.639552e-06</td>
+      <td>18.957445</td>
+      <td>1.534211e-05</td>
     </tr>
     <tr>
-      <th>152</th>
-      <td>Compound:CID15953870</td>
+      <th>949</th>
+      <td>Compound:CID9915743</td>
+      <td>ENSG00000171862</td>
+      <td>4.919408</td>
+      <td>1.938827e-06</td>
+      <td>17.633489</td>
+      <td>2.977588e-05</td>
+    </tr>
+    <tr>
+      <th>1244</th>
+      <td>Compound:CID451668</td>
       <td>ENSG00000147889</td>
-      <td>3.853358</td>
-      <td>2.172215e-04</td>
-      <td>13.253834</td>
-      <td>3.050655e-04</td>
+      <td>5.080006</td>
+      <td>5.546808e-07</td>
+      <td>16.400735</td>
+      <td>5.290745e-05</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>1844</th>
+      <td>Compound:CID10127622</td>
+      <td>ENSG00000147889</td>
+      <td>-4.226107</td>
+      <td>2.518708e-05</td>
+      <td>16.273715</td>
+      <td>5.526157e-05</td>
     </tr>
     <tr>
-      <th>263</th>
-      <td>Compound:CID104741</td>
-      <td>ENSG00000141646</td>
-      <td>-0.025208</td>
-      <td>9.803894e-01</td>
-      <td>0.000527</td>
-      <td>9.817308e-01</td>
-    </tr>
-    <tr>
-      <th>593</th>
-      <td>Compound:CID44153236</td>
+      <th>1134</th>
+      <td>Compound:CID6253</td>
       <td>ENSG00000141510</td>
-      <td>-0.022522</td>
-      <td>9.823373e-01</td>
-      <td>0.000515</td>
-      <td>9.820021e-01</td>
+      <td>3.863943</td>
+      <td>1.304145e-04</td>
+      <td>16.169516</td>
+      <td>6.347135e-05</td>
     </tr>
     <tr>
-      <th>976</th>
-      <td>Compound:CID753704</td>
+      <th>1657</th>
+      <td>Compound:CID16722836</td>
       <td>ENSG00000171862</td>
-      <td>0.019000</td>
-      <td>9.848849e-01</td>
-      <td>0.000466</td>
-      <td>9.827954e-01</td>
-    </tr>
-    <tr>
-      <th>1440</th>
-      <td>Compound:NO_ONTOLOGY~BRD-K50799972</td>
-      <td>ENSG00000171862</td>
-      <td>-0.022128</td>
-      <td>9.823916e-01</td>
-      <td>0.000449</td>
-      <td>9.831119e-01</td>
-    </tr>
-    <tr>
-      <th>1870</th>
-      <td>Compound:CID6917907</td>
-      <td>ENSG00000171862</td>
-      <td>-0.019673</td>
-      <td>9.843444e-01</td>
-      <td>0.000391</td>
-      <td>9.842274e-01</td>
-    </tr>
-    <tr>
-      <th>746</th>
-      <td>Compound:CID2729026</td>
-      <td>ENSG00000141646</td>
-      <td>-0.017164</td>
-      <td>9.863881e-01</td>
-      <td>0.000391</td>
-      <td>9.842310e-01</td>
-    </tr>
-    <tr>
-      <th>1724</th>
-      <td>Compound:CID9813758</td>
-      <td>ENSG00000141646</td>
-      <td>0.023271</td>
-      <td>9.815269e-01</td>
-      <td>0.000368</td>
-      <td>9.846942e-01</td>
-    </tr>
-    <tr>
-      <th>1012</th>
-      <td>Compound:CID159324</td>
-      <td>ENSG00000171862</td>
-      <td>0.017702</td>
-      <td>9.859012e-01</td>
-      <td>0.000362</td>
-      <td>9.848300e-01</td>
-    </tr>
-    <tr>
-      <th>330</th>
-      <td>Compound:CID46881063</td>
-      <td>ENSG00000141646</td>
-      <td>-0.013607</td>
-      <td>9.895265e-01</td>
-      <td>0.000353</td>
-      <td>9.851108e-01</td>
-    </tr>
-    <tr>
-      <th>1025</th>
-      <td>Compound:NO_ONTOLOGY~CIL55</td>
-      <td>ENSG00000141510</td>
-      <td>0.016883</td>
-      <td>9.865703e-01</td>
-      <td>0.000274</td>
-      <td>9.868151e-01</td>
-    </tr>
-    <tr>
-      <th>380</th>
-      <td>Compound:CID579114</td>
-      <td>ENSG00000171862</td>
-      <td>-0.014674</td>
-      <td>9.883263e-01</td>
-      <td>0.000253</td>
-      <td>9.873082e-01</td>
+      <td>4.043392</td>
+      <td>8.329122e-05</td>
+      <td>16.168543</td>
+      <td>6.356201e-05</td>
     </tr>
     <tr>
       <th>1350</th>
-      <td>Compound:CID72199292</td>
-      <td>ENSG00000141646</td>
-      <td>0.013329</td>
-      <td>9.894519e-01</td>
-      <td>0.000249</td>
-      <td>9.874124e-01</td>
-    </tr>
-    <tr>
-      <th>1135</th>
-      <td>Compound:CID446155</td>
-      <td>ENSG00000147889</td>
-      <td>-0.015256</td>
-      <td>9.878624e-01</td>
-      <td>0.000245</td>
-      <td>9.875175e-01</td>
-    </tr>
-    <tr>
-      <th>1825</th>
-      <td>Compound:CID44607531</td>
-      <td>ENSG00000147889</td>
-      <td>-0.013057</td>
-      <td>9.896183e-01</td>
-      <td>0.000243</td>
-      <td>9.875749e-01</td>
-    </tr>
-    <tr>
-      <th>1575</th>
-      <td>Compound:CID16741245</td>
-      <td>ENSG00000147889</td>
-      <td>0.015907</td>
-      <td>9.873437e-01</td>
-      <td>0.000241</td>
-      <td>9.876212e-01</td>
-    </tr>
-    <tr>
-      <th>802</th>
-      <td>Compound:NO_ONTOLOGY~BRD-A02303741</td>
-      <td>ENSG00000141646</td>
-      <td>0.018543</td>
-      <td>9.852809e-01</td>
-      <td>0.000229</td>
-      <td>9.879303e-01</td>
-    </tr>
-    <tr>
-      <th>850</th>
-      <td>Compound:NO_ONTOLOGY~BRD-K55116708</td>
-      <td>ENSG00000141646</td>
-      <td>0.016203</td>
-      <td>9.871452e-01</td>
-      <td>0.000214</td>
-      <td>9.883333e-01</td>
-    </tr>
-    <tr>
-      <th>742</th>
-      <td>Compound:CID123631</td>
-      <td>ENSG00000141646</td>
-      <td>0.017328</td>
-      <td>9.862423e-01</td>
-      <td>0.000205</td>
-      <td>9.885847e-01</td>
-    </tr>
-    <tr>
-      <th>1144</th>
-      <td>Compound:CHEMBL560895</td>
-      <td>ENSG00000171862</td>
-      <td>0.012277</td>
-      <td>9.902289e-01</td>
-      <td>0.000145</td>
-      <td>9.903886e-01</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>Compound:NO_ONTOLOGY~BRD-K13185470</td>
-      <td>ENSG00000171862</td>
-      <td>0.013220</td>
-      <td>9.895113e-01</td>
-      <td>0.000101</td>
-      <td>9.919973e-01</td>
-    </tr>
-    <tr>
-      <th>1958</th>
-      <td>Compound:CID9868037</td>
-      <td>ENSG00000171862</td>
-      <td>0.008969</td>
-      <td>9.928662e-01</td>
-      <td>0.000084</td>
-      <td>9.926813e-01</td>
-    </tr>
-    <tr>
-      <th>661</th>
-      <td>Compound:NO_ONTOLOGY~NPC-26</td>
+      <td>Compound:CID24180719</td>
       <td>ENSG00000141510</td>
-      <td>0.008456</td>
-      <td>9.932614e-01</td>
-      <td>0.000073</td>
-      <td>9.932054e-01</td>
+      <td>3.209481</td>
+      <td>1.473440e-03</td>
+      <td>14.775437</td>
+      <td>1.308989e-04</td>
     </tr>
     <tr>
-      <th>277</th>
-      <td>Compound:CID11626927</td>
-      <td>ENSG00000171862</td>
-      <td>0.005134</td>
-      <td>9.959158e-01</td>
-      <td>0.000030</td>
-      <td>9.956463e-01</td>
-    </tr>
-    <tr>
-      <th>1355</th>
-      <td>Compound:CID462382</td>
-      <td>ENSG00000147889</td>
-      <td>0.005403</td>
-      <td>9.957119e-01</td>
-      <td>0.000026</td>
-      <td>9.959135e-01</td>
-    </tr>
-    <tr>
-      <th>1392</th>
-      <td>Compound:CID24970400</td>
-      <td>ENSG00000171862</td>
-      <td>-0.004458</td>
-      <td>9.964520e-01</td>
-      <td>0.000021</td>
-      <td>9.963606e-01</td>
-    </tr>
-    <tr>
-      <th>1164</th>
-      <td>Compound:CID49846579</td>
-      <td>ENSG00000171862</td>
-      <td>0.004761</td>
-      <td>9.962129e-01</td>
-      <td>0.000016</td>
-      <td>9.967788e-01</td>
-    </tr>
-    <tr>
-      <th>987</th>
-      <td>Compound:CID12003241</td>
-      <td>ENSG00000147889</td>
-      <td>-0.003325</td>
-      <td>9.973544e-01</td>
-      <td>0.000010</td>
-      <td>9.974286e-01</td>
-    </tr>
-    <tr>
-      <th>448</th>
-      <td>Compound:NO_ONTOLOGY~BRD-K03911514</td>
-      <td>ENSG00000171862</td>
-      <td>-0.003166</td>
-      <td>9.974846e-01</td>
-      <td>0.000009</td>
-      <td>9.976415e-01</td>
-    </tr>
-    <tr>
-      <th>157</th>
-      <td>Compound:CHEMBL3120215</td>
-      <td>ENSG00000171862</td>
-      <td>-0.001394</td>
-      <td>9.988901e-01</td>
-      <td>0.000001</td>
-      <td>9.990587e-01</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>Compound:NO_ONTOLOGY~methylstat</td>
-      <td>ENSG00000171862</td>
-      <td>-0.001249</td>
-      <td>9.990066e-01</td>
-      <td>0.000001</td>
-      <td>9.991234e-01</td>
+      <th>1062</th>
+      <td>Compound:CID6505803</td>
+      <td>ENSG00000141510</td>
+      <td>3.573446</td>
+      <td>3.677986e-04</td>
+      <td>14.626433</td>
+      <td>1.345047e-04</td>
     </tr>
   </tbody>
 </table>
-<p>1977 rows × 6 columns</p>
 </div>
 
 
