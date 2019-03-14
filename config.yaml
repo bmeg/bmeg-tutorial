@@ -4,5 +4,5 @@ languageCode: en-us
 title: BMEG
 googleAnalytics: UA-133347876-2
 params:
-  defaultGraphName: bmeg_test
+  defaultGraphName: bmeg_rc1_2
   secureAPI: true
