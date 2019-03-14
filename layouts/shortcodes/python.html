@@ -8,6 +8,6 @@ g.listIndices()<br/>
 <span id="python-example" >
 from gripql.graph import Graph<br/>
 g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}')<br/>
-g.listIndices()<br/>
+g.listLabels()<br/>
 </span>
 {{end}}
