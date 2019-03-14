@@ -4,11 +4,14 @@ title: Getting Started
 
 # GRIP Usage
 
-## Test queries
+### Install python client
+{{< code >}}pip install gripql{{< /code >}}
 
-### curl
+### Make a query using curl
 {{< code file="curl-example">}}{{% curl %}}{{< /code >}}
 
-### python
+### Create credential file
 {{% bash %}}
+
+### Python Example
 {{< code file="python-example">}}{{% python %}}{{< /code >}}
