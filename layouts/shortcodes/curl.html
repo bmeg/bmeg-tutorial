@@ -1,0 +1,7 @@
+{{if .Site.Params.secureAPI}}
+  <nobr>
+    curl <span id="_token.curl" w3-include-html="/_token.curl" ></span>{{- .Site.BaseURL | safeHTML -}}api/v1/graph
+  </nobr>
+{{else}}
+  <span>curl&nbsp;{{- .Site.BaseURL | safeHTML -}}api/v1/graph</span>
+{{end}}

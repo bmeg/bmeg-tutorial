@@ -1,0 +1,8 @@
+<nobr> echo '<span id="_token.json" w3-include-html="/_token.json" ></span>'  >  /tmp/bmeg_credentials.json </nobr>
+<span id="python-example" >
+cat << EOF | python
+from gripql.graph import Graph
+g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}', credential_file='/tmp/bmeg_credentials.json')
+g.listIndices()
+EOF
+</span>

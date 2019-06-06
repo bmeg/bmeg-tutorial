@@ -8,10 +8,10 @@
 {{ if eq $codeLang "html"}}
 {{ $codeLang = "go-html-template" }}
 {{ end }}
-<div class="code relative">
+<div class="code relative" >
 	{{ if ne (.Get "copy") "false" }}
-    <button class="btn-floating copy-button absolute right"  data-clipboard-target="#{{$file}}">
-      <i class="material-icons">content_copy</i>
+    <button class="btn-floating copy-button absolute right" data-clipboard-target="#{{$file}}">
+      <i class="material-icons" >content_copy</i>
     </button>
 	{{end}}
 	<div class="code-copy-content nt3" id="{{$file}}">

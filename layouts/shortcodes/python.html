@@ -1,0 +1,13 @@
+{{if .Site.Params.secureAPI}}
+<span id="python-example" >
+from gripql.graph import Graph<br/>
+g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}', credential_file='/tmp/bmeg_credentials.json')<br/>
+g.listIndices()<br/>
+</span>
+{{else}}
+<span id="python-example" >
+from gripql.graph import Graph<br/>
+g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}')<br/>
+g.listLabels()<br/>
+</span>
+{{end}}
