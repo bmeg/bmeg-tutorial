@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Row, Input, Checkbox, Preloader, Modal, Button} from 'react-materialize'
+import {Row, Input, Checkbox, Preloader, Modal, Button, Autocomplete} from 'react-materialize'
+
+import _ from 'underscore';
 
 import {
   VictoryChart, VictoryLine,
@@ -54,10 +56,39 @@ class DrugCurve extends Component {
 class CaseVariantSelector extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      project: props.project,
+      completeData: {}
+    };
+    this.onChange = this.onChange.bind(this)
+    this.updateAutoComplete = _.debounce(this.updateAutoComplete.bind(this), 3000)
+  }
+
+  updateAutoComplete(name) {
+    gripql.query(GRAPH).V().hasLabel("Gene").has(gripql.eq("symbol", name)).call().then( x => {
+      var out = {};
+      for (var i = 0; i < x.length; i++) {
+        out[ x[i].vertex.data.symbol ] = null; //x[i].vertex.gid;
+      }
+      console.log(this)
+      this.setState({
+        project: this.state.project,
+        completeData: out
+      })
+    })
+  }
+
+  onChange(name) {
+    this.updateAutoComplete(name)
   }
 
   render() {
-    return (<div>Selecting Samples by Variant</div>)
+    return (<div><Autocomplete title="Gene"
+      data={
+        this.state.completeData
+      }
+      onChange={x => this.onChange(x.target.value)}
+    /></div>)
   }
 }
 
@@ -247,6 +278,9 @@ class App extends Component {
           <option key={k} value={this.state.projects[k]}>{this.state.projects[k]}</option>
         ))}
         </Input>
+        </Row>
+        <Row>
+        <CaseVariantSelector project={this.state.curProject}/>
         </Row>
         <DrugCaseTable project={this.state.curProject}/>
         </div>
