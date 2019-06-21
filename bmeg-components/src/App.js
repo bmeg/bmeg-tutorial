@@ -1,17 +1,33 @@
 import React from 'react';
 import './App.css';
 
-import Facet from './Facet.js';
+import {Facet} from './Facet2.js';
 
-import { createStore } from "redux";
-
+import {gripql} from "./gripql.js"
 
 function App() {
-  const store = createStore(null);
+
+  var query = function(q) {
+    return q.V().hasLabel("Case").has(gripql.eq("experiments", "exp:TCGA-BRCA")).out("samples")
+  }
+  var config = {
+    name: "Name",
+    getData: query,
+    graph: "test-data",
+    facets:[
+      {
+        "mode" : "list",
+        field: "sample_type"
+      },{
+        mode: "histogram",
+        field: "initial_weight"
+      }
+    ]
+  }
 
   return (
     <div>
-      <Facet store={store}/>
+      <Facet config={config}/>
     </div>
   );
 }
