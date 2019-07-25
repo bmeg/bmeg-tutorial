@@ -11,15 +11,17 @@
 **Discover** The BMEG is a graph database that collects data from over 20 different large scale
 resources and aggregates them into a single coherent resource. Sources include:
 
- - [CCLE](https://portals.broadinstitute.org/ccle)
- - [TCGA](https://cancergenome.nih.gov/)
- - [MC3](http://synapse.org/MC3)
- - [CTRP](https://portals.broadinstitute.org/ctrp/)
- - [VICC](https://cancervariants.org/)
- - [Pathway Commons](https://www.pathwaycommons.org/)
- - [MyVariantInfo](http://myvariant.info/)
+ - [The Cancer Genome Atlas (TCGA)](https://cancergenome.nih.gov/)
+ - [TCGA Unified Ensemble "MC3" Call Set](http://synapse.org/MC3)
+ - [Genotype-Tissue Expression (GTEx)](https://gtexportal.org/home/)
+ - [Cancer Cell Line Encyclopedia (CCLE)](https://portals.broadinstitute.org/ccle)
+ - [Cancer Therapeutics Response Portal (CTRP)](https://portals.broadinstitute.org/ctrp/)
+ - [Genomics of Drug Sensitivity in Cancer (GDSC)](https://www.cancerrxgene.org/)
+ - [VICC G2P meta-knowledgebase](https://search.cancervariants.org/)
+ - [Ensembl GRCh37](https://grch37.ensembl.org/index.html)
  - [PFAM](https://pfam.xfam.org/)
- - [GeneOntology](http://www.geneontology.org/)
+ - [Gene Ontology](http://www.geneontology.org/)
+ 
 {{% /card %}}
 
 {{% card title="Analyze" icon="polymer"
