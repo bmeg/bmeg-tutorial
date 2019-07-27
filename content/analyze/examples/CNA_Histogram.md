@@ -14,8 +14,8 @@ tldr: Build a histogram from the copy number alteration values for genes in a TC
 import matplotlib.pyplot as plt
 import numpy as np
 import gripql
-conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
-O = conn.graph("bmeg_rc1_2")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
+O = conn.graph("bmeg_rc2")
 ```
 
 Get Ensembl Gene ids for genes of interest
@@ -29,9 +29,9 @@ for g in GENES:
         gene_ids[g] = i.gid
 ```
 
-    [INFO]	2019-03-11 15:50:32,116	1 results received in 0 seconds
-    [INFO]	2019-03-11 15:50:32,355	1 results received in 0 seconds
-    [INFO]	2019-03-11 15:50:32,599	1 results received in 0 seconds
+    [INFO]	2019-07-26 18:24:02,481	1 results received in 0 seconds
+    [INFO]	2019-07-26 18:24:02,616	1 results received in 0 seconds
+    [INFO]	2019-07-26 18:24:02,741	1 results received in 0 seconds
 
 
 
@@ -52,8 +52,8 @@ For each gene of interest, obtain the copy number alteration values and aggregat
 
 
 ```python
-q = O.query().V("Project:TCGA-PRAD").in_("InProject").in_("SampleFor").in_("AliquotFor")
-q = q.has(gripql.eq("$.gdc_attributes.sample_type", 'Primary Tumor')).in_("CopyNumberAlterationOf")
+q = O.query().V("Project:TCGA-PRAD").out("cases").out("samples").out("aliquots")
+q = q.has(gripql.eq("$.gdc_attributes.sample_type", 'Primary Tumor')).out("copy_number_alterations")
 q = q.aggregate(
     list( gripql.term( g, "values.%s" % (g), 5) for g in gene_ids.values() )
 )
@@ -64,7 +64,7 @@ for r in res[0]:
         print("%s\t%s:%s" % (r, b['key'], b['value']))
 ```
 
-    [INFO]	2019-03-11 16:22:24,556	1 results received in 5 seconds
+    [INFO]	2019-07-26 18:24:06,428	1 results received in 3 seconds
 
 
     ENSG00000139687	0:269
@@ -103,8 +103,3 @@ plt.bar(val, count, width=0.35)
 
 ![png](CNA_Histogram_files/CNA_Histogram_8_1.png)
 
-
-
-```python
-
-```
