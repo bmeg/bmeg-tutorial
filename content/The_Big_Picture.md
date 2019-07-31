@@ -24,7 +24,7 @@ A growing number of data sources have been loaded onto BMEG. And BMEG will conti
 
 ### Code Rundown
 1. Import libraries
-2. connect to BMEG
+2. Connect to BMEG
 3. Filter data
 4. Save data 
 
