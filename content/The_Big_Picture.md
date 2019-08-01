@@ -17,25 +17,10 @@ A growing number of data sources have been loaded onto BMEG. And BMEG will conti
 
 
 ### Code Example (A brief explanation of how analysis is done) using BMEG
-1.  Data is accessed from the BMEG server
-2. Data is grabbed (pulled)
-3. Data is filtered so only wanted data can use used
-4. Data is saved to Excel on a computer
+1. Connect to BMEG server 
+2. Query data from a particular data source (eg. Cancer Cell Line Encyclopedia or CCLE)
+3. Filter for data property of interest (eg. data on drug name, what it was tested on (cell line data), and what effect it had)
+4. Save data properties locally (common formats include .tsv and .csv)
 
-### Code Rundown
-1. Import libraries
-2. Connect to BMEG
-3. Filter data
-4. Save data 
 
  O.query is where we get data  
->**For Example:**
->
->* I can access  all the data from the CCLE source
->
->* To filter the data, I'll only keep info about drug name,
-what it was tested on (cell line data), and what effect it had
->
->*  When I am ready to save files, I do formatting. Files can be saved in these two formats:
-**.tsv** = Tab Separated Values (a preferred format because of its compatibility with excel) or
-**.csv** = Comma Separated Values
