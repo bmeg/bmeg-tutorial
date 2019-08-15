@@ -37,7 +37,7 @@ from networkx.drawing.nx_agraph import graphviz_layout
 
 
 ```python
-conn = gripql.Connection("https://bmeg.io/api", credential_file="/tmp/bmeg_credentials.json")
+conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
 ```
 
 Print avalible graphs
@@ -47,19 +47,19 @@ Print avalible graphs
 print(conn.listGraphs())
 ```
 
-    ['bmeg_rc1_2', 'bmeg_rc1_2__schema__']
+    ['bmeg_rc1_2', 'bmeg_rc1_3', 'bmeg_rc1_3__schema__', 'bmeg_rc2', 'bmeg_rc1_2__schema__', 'bmeg_rc2__schema__']
 
 
 
 ```python
-O = conn.graph("bmeg_rc1_2")
+O = conn.graph("bmeg_rc2")
 ```
 
 Get the schema graph
 
 
 ```python
-schema = conn.getSchema("bmeg_rc1_2")
+schema = conn.getSchema("bmeg_rc2")
 ```
 
 Start build graph using [NetworkX](https://networkx.github.io/)
@@ -89,8 +89,3 @@ nx.draw(g, pos, ax=ax, with_labels=True)
 
 ![png](SchemaGraph_files/SchemaGraph_14_0.png)
 
-
-
-```python
-
-```
