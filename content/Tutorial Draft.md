@@ -72,7 +72,8 @@ Each of the libraries listed below have different functionalities that ultimatel
 >To know whether or not you have all the libraries installed, you can follow three quick steps: open python, type ```import (the library name)```, and wait for an error message.
 >→ I opened Python in my shell
 >
->![](https://lh4.googleusercontent.com/DnGngSYykHn3xjaEe_mJsNJKTbS2zkyDYvtlbpqbD68jRokn-zYzeqSTuXcb2kYCKaHA70HqTX71bpQ2bKs3TcaMcjsKNZffSOAVvXD5szkkEqHQmwCSIp0c6EJO2HOWcjaXke8y) > 
+>![](https://lh4.googleusercontent.com/DnGngSYykHn3xjaEe_mJsNJKTbS2zkyDYvtlbpqbD68jRokn-zYzeqSTuXcb2kYCKaHA70HqTX71bpQ2bKs3TcaMcjsKNZffSOAVvXD5szkkEqHQmwCSIp0c6EJO2HOWcjaXke8y) 
+> 
 >→ Typed in ``import (module name)``
 >If your terminal doesn’t bring out an error message, it means that you have that library. In the picture below, you can see that when I enter ```import json```, I don’t get any error message, meaning that I have json installed.
 >
