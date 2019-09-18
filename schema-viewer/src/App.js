@@ -1,48 +1,120 @@
 import cytoscape from "cytoscape";
 import React, { Component } from 'react';
 import ReactJson from 'react-json-view';
+import _ from "underscore";
 import './App.css';
 
 class App extends Component {
 
-  state = {
-    selection: {},
+  constructor(props) {
+    super(props);
+    this.state = {
+      selection: {},
+      error: "",
+      graph: "",
+      graphs: [],
+      elements: {
+        nodess: [],
+        edges: [],
+      },
+      cyElements: null
+    }
+
+    this.handleSelect = this.handleSelect.bind(this);
+    this.schemaQuery = this.schemaQuery.bind(this);
+    this.listGraphs = this.listGraphs.bind(this);
+    this.build = this.build.bind(this);
+  }
+
+  listGraphs() {
+    console.log("listing graphs...")
+    fetch( "/v1/graph", {
+      method: "GET",
+    }).then(function(response) {
+      if (!response.ok) {
+        var err = "GET " + response.url + " " + response.status + " " + 
+            response.statusText
+        this.setState({error: err})
+        console.log("ERROR:", err)
+      }
+      return response.json()
+    }.bind(this)).then(function(json) {
+      var graphs = json['graphs'].filter(function(g) {
+					return g.endsWith("__schema__")
+			}).map(x => x.replace("__schema__", ""))
+      console.log("found graphs:", graphs)
+      this.setState({graphs: graphs})
+    }.bind(this)).catch(err => {
+      console.log("ERROR:", err)
+      err = "No graphs found"
+      this.setState({error: err});
+    })
+  }
+
+  schemaQuery(graph) {
+    console.log("Getting the schema for graph: ", graph)
+    fetch( "/v1/graph/" + graph + "/schema", {
+      method: "GET",
+    }).then(function(response) {
+      if (!response.ok) {
+        var err = "GET " + response.url + " " + response.status + " " + 
+            response.statusText
+        this.setState({error: err})
+        console.log("ERROR:", err)
+      }
+      return response.json()
+    }.bind(this)).then(function(json) {
+      var edges = json["edges"].map(function(x){
+        return {
+          "data": {
+            "id": x["gid"], 
+            "label": x["label"], 
+            "source": x["from"], 
+            "target": x["to"]
+          }, 
+          "classes": "autorotate"
+        }
+      })
+      var nodes = json["vertices"].map(function(x){
+        return {"data": {"id": x["gid"]}}
+      })
+      this.setState({elements: {"nodes": nodes, "edges": edges}, schema: json})
+    }.bind(this)).catch(err => {
+      err = "Failed to load the schema: " + err
+      this.setState({error: err})
+      console.log("ERROR:", err)
+    })
+    console.log("Loaded the schema for graph: ", graph)
+  }
+
+  // handle graph selections
+  handleSelect(event) {
+    console.log("selected graph:", event.target.value)
+    this.setState({graph: event.target.value, error: "", selection: {}});
+    this.schemaQuery(event.target.value);
   }
 
   componentDidMount() {
-    fetch(this.props.dataset.url)
-      .then(response => response.json())
-      .then(data => {
-        var edges = data["edges"].map(function(x){
-          return {
-            "data": {
-              "id": x["gid"], 
-              "label": x["label"], 
-              "source": x["from"], 
-              "target": x["to"]
-            }, 
-            "classes": "autorotate"
-          }
-        })
-
-        var nodes = data["vertices"].map(function(x){
-          return {"data": {"id": x["gid"]}}
-        })
-          
-        this.setState({elements: {"nodes": nodes, "edges": edges}, schema: data})
-        console.log("Loaded the graph schema...",)
-      }).catch(err => {
-        console.log("Failed to load the graph schema:", this.props.dataset.url, ":", err)
-      })
+    this.listGraphs();
+  	this.build();
   }
 
   componentDidUpdate() {
-    if (!this.state.loaded) {
-  	  this.build();
-    }
+  	this.build();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true
   }
 
   build() {
+    if (_.isEqual(this.state.graph, "")) {
+      return
+    }
+    if (_.isEqual(this.state.elements, this.state.cyElements)) {
+      return
+    }
+
     console.log("Cytoscape.js is rendering the graph...");
 
     var cy = cytoscape(
@@ -122,10 +194,15 @@ class App extends Component {
       this.setState({ selection: data });
     })
     this.cy = cy;
-    this.setState({ loaded: true });
+    this.setState({ cyElements: this.state.elements });
   }
 
   render() {
+    let selectStyle = {width: "15%", height: "2em", fontSize: "1.25em", 
+                       margin: "10px auto", display: "block"}
+    let optionItems = this.state.graphs.map(
+      (graph) => <option key={graph}>{graph}</option>
+    )
     let cyStyle = {
       height: this.props.dataset.height,
       width: this.props.dataset.width,
@@ -136,6 +213,15 @@ class App extends Component {
     };
     return (
       <div>
+        <div id="selectGraph">
+          <select style={selectStyle} value={this.state.graph} onChange={this.handleSelect}>
+            <option value="" disabled>Select Graph</option>
+            {optionItems}
+          </select>
+        </div>
+        <div id="errorMessage">
+          <h4 style={{color: "red", textAlign: "center"}}>ERROR: {this.state.error}</h4>
+        </div>
         <div style={cyStyle} id="cy"></div>
         <div style={{width: this.props.dataset.width, margin: "5px auto"}} id="reactJson">
           <ReactJson src={this.state.selection} name={false}  enableClipboard={false} displayDataTypes={false}/>
