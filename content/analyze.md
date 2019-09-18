@@ -1,5 +1,5 @@
 ---
-title: Queries
+title: Analyze
 ---
 
 # Analyze the graph
@@ -10,7 +10,7 @@ How to install and use the python client.
 ### [Graph Schema](/explore/schema/)
 How the data in the graph is organized.
 
-### [Traversal](https://docs.bmeg.io/grip/docs/queries/operations/)
+### [Traversal](https://bmeg.github.io/grip/docs/queries/operations/)
 How to query data across the graph.
 
 ### [Analysis Examples](/analyze/examples)

@@ -7,7 +7,7 @@ title: Data Sources
 
 The BMEG is an expanding resource of interconnected data. Sources include: 
 
-{{% card-container %}}
+{{% card-container width="100%" %}}
 
 {{% card title="TCGA" %}}
 [The Cancer Genome Atlas (TCGA)](https://cancergenome.nih.gov/) profiles the DNA, RNA, protein, and epigenetic levels of over 10,000 individuals across 33 cancer types.
