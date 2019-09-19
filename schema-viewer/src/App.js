@@ -199,6 +199,17 @@ class App extends Component {
       for (var i = 0; i < this.state.schema.vertices.length; i++) {
         if (this.state.schema.vertices[i].gid === targetVertex) {
           data = this.state.schema.vertices[i]
+          // add some custom logic
+          if (_.isEqual(data.label, "GeneExpression")) {
+            data.data.values = {"ENSG00000004059": "STRING",
+                                "...": "STRING"}
+          } else if (_.isEqual(data.label, "TranscriptExpression")) {
+            data.data.values = {"ENST00000000233": "STRING",
+                                "...": "STRING"}
+          } else if (_.isEqual(data.label, "CopyNumberAlteration")) {
+            data.data.values = {"ENSG00000004059": "STRING",
+                                "...": "STRING"}
+          }
         }
       }
       this.setState({ selection: data })
