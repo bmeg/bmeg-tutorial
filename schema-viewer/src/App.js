@@ -7,7 +7,7 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
-    super(props);    
+    super(props)   
     this.state = {
       selection: {},
       error: "",
@@ -20,10 +20,10 @@ class App extends Component {
       cyElements: null
     }
 
-    this.handleSelect = this.handleSelect.bind(this);
-    this.schemaQuery = this.schemaQuery.bind(this);
-    this.listGraphs = this.listGraphs.bind(this);
-    this.build = this.build.bind(this);
+    this.handleSelect = this.handleSelect.bind(this)
+    this.schemaQuery = this.schemaQuery.bind(this)
+    this.listGraphs = this.listGraphs.bind(this)
+    this.build = this.build.bind(this)
   }
 
   listGraphs() {
@@ -53,7 +53,7 @@ class App extends Component {
       console.log("ERROR:", err)
       err = "ERROR: No graphs found"
       console.log(err)
-      this.setState({error: err});
+      this.setState({error: err})
     })
   }
 
@@ -86,7 +86,8 @@ class App extends Component {
       })
       this.setState({elements: {"nodes": nodes, "edges": edges}, schema: json})
     }.bind(this)).catch(err => {
-      err = "ERROR: Failed to load the schema: " + err
+      console.log("ERROR:", err)
+      err = "ERROR: Failed to load the schema"
       console.log(err)
       this.setState({error: err})
     })
@@ -96,17 +97,20 @@ class App extends Component {
   // handle graph selections
   handleSelect(event) {
     console.log("selected graph:", event.target.value)
-    this.setState({graph: event.target.value, error: "", selection: {}});
-    this.schemaQuery(event.target.value);
+    this.setState({graph: event.target.value, error: "", selection: {}})
+    this.schemaQuery(event.target.value)
   }
 
   componentDidMount() {
-    this.listGraphs();
-  	this.build();
+    this.listGraphs()
+    if (!_.isEqual(this.state.graph, "")) {
+      this.schemaQuery(this.state.graph)
+    }
+  	this.build()
   }
 
   componentDidUpdate() {
-  	this.build();
+  	this.build()
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -121,7 +125,7 @@ class App extends Component {
       return
     }
 
-    console.log("Cytoscape.js is rendering the graph...");
+    console.log("Cytoscape.js is rendering the graph...")
 
     var cy = cytoscape(
       {
@@ -177,7 +181,7 @@ class App extends Component {
           name: "cose"
         }
       }
-    );
+    )
 
     cy.on('tap', 'edge', event => {
       var targetEdge = event.target.data().id
@@ -187,7 +191,7 @@ class App extends Component {
           data = this.state.schema.edges[i]
         }
       }
-      this.setState({ selection: data });
+      this.setState({ selection: data })
     })
     cy.on('tap', 'node', event => {
       var targetVertex = event.target.data().id
@@ -197,10 +201,10 @@ class App extends Component {
           data = this.state.schema.vertices[i]
         }
       }
-      this.setState({ selection: data });
+      this.setState({ selection: data })
     })
-    this.cy = cy;
-    this.setState({ cyElements: this.state.elements });
+    this.cy = cy
+    this.setState({ cyElements: this.state.elements })
   }
 
   render() {
@@ -216,7 +220,7 @@ class App extends Component {
       borderStyle: "solid",
       borderColor: "#D3D3D3",
       borderWidth: "thin"
-    };
+    }
     return (
       <div>
         <div id="selectGraph">
@@ -233,8 +237,8 @@ class App extends Component {
           <ReactJson src={this.state.selection} name={false}  enableClipboard={false} displayDataTypes={false}/>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
