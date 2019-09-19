@@ -7,11 +7,11 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
-    super(props);
+    super(props);    
     this.state = {
       selection: {},
       error: "",
-      graph: "",
+      graph: props.dataset.defaultgraph || "",
       graphs: [],
       elements: {
         nodess: [],
@@ -32,10 +32,10 @@ class App extends Component {
       method: "GET",
     }).then(function(response) {
       if (!response.ok) {
-        var err = "GET " + response.url + " " + response.status + " " + 
+        var err = "ERROR: GET " + response.url + " " + response.status + " " + 
             response.statusText
+        console.log(err)
         this.setState({error: err})
-        console.log("ERROR:", err)
       }
       return response.json()
     }.bind(this)).then(function(json) {
@@ -43,10 +43,16 @@ class App extends Component {
 					return g.endsWith("__schema__")
 			}).map(x => x.replace("__schema__", ""))
       console.log("found graphs:", graphs)
-      this.setState({graphs: graphs})
+      if (graphs.includes(this.state.graph)) {
+        this.setState({graphs: graphs})
+      } else {
+        console.log("default graph", this.state.graph, "not found")
+        this.setState({graphs: graphs, graph: ""})
+      }
     }.bind(this)).catch(err => {
       console.log("ERROR:", err)
-      err = "No graphs found"
+      err = "ERROR: No graphs found"
+      console.log(err)
       this.setState({error: err});
     })
   }
@@ -57,10 +63,10 @@ class App extends Component {
       method: "GET",
     }).then(function(response) {
       if (!response.ok) {
-        var err = "GET " + response.url + " " + response.status + " " + 
+        var err = "ERROR: GET " + response.url + " " + response.status + " " + 
             response.statusText
+        console.log(err)
         this.setState({error: err})
-        console.log("ERROR:", err)
       }
       return response.json()
     }.bind(this)).then(function(json) {
@@ -80,9 +86,9 @@ class App extends Component {
       })
       this.setState({elements: {"nodes": nodes, "edges": edges}, schema: json})
     }.bind(this)).catch(err => {
-      err = "Failed to load the schema: " + err
+      err = "ERROR: Failed to load the schema: " + err
+      console.log(err)
       this.setState({error: err})
-      console.log("ERROR:", err)
     })
     console.log("Loaded the schema for graph: ", graph)
   }
@@ -220,7 +226,7 @@ class App extends Component {
           </select>
         </div>
         <div id="errorMessage">
-          <h4 style={{color: "red", textAlign: "center"}}>ERROR: {this.state.error}</h4>
+          <h4 style={{color: "red", textAlign: "center"}}>{this.state.error}</h4>
         </div>
         <div style={cyStyle} id="cy"></div>
         <div style={{width: this.props.dataset.width, margin: "5px auto"}} id="reactJson">
