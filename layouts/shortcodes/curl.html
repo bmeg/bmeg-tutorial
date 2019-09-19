@@ -1,7 +1,7 @@
 {{if .Site.Params.secureAPI}}
   <nobr>
-    curl <span id="_token.curl" w3-include-html="/_token.curl" ></span>{{- .Site.BaseURL | safeHTML -}}api/v1/graph
+    curl <span id="_token.curl" w3-include-html="/_token.curl" ></span>{{- .Site.BaseURL | safeHTML -}}grip/v1/graph/{{- .Site.Params.defaultGraphName | safeHTML -}}/labels
   </nobr>
 {{else}}
-  <span>curl&nbsp;{{- .Site.BaseURL | safeHTML -}}api/v1/graph</span>
+  <span>curl&nbsp;{{- .Site.BaseURL | safeHTML -}}grip/v1/graph/{{- .Site.Params.defaultGraphName | safeHTML -}}/labels</span>
 {{end}}
