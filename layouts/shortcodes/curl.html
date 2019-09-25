@@ -1,6 +1,6 @@
 {{if .Site.Params.secureAPI}}
   <nobr>
-    curl -X POST -d '{"query": [{"v": []}, {"limit": 5}]}' <span id="_token.curl" w3-include-html="/_token.curl" ></span>{{- .Site.BaseURL | safeHTML -}}grip/v1/graph/{{- .Site.Params.defaultGraphName | safeHTML -}}/query
+    curl -X POST -d '{"query": [{"v": []}, {"limit": 5}]}' <span id="_token.curl" w3-include-html="/_token.curl" ></span> {{- .Site.BaseURL | safeHTML -}}grip/v1/graph/{{- .Site.Params.defaultGraphName | safeHTML -}}/query
   </nobr>
 {{else}}
   <nobr>
