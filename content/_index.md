@@ -21,7 +21,7 @@ resources and aggregates them into a single coherent resource. Sources include:
 {{% /card %}}
 
 {{% card title="Analyze" icon="polymer"
-    action_href="/analyze" action_text="get started"
+    action_href="/analyze/getting_started" action_text="get started"
 %}}
 **Learn** from the analysis tutorials that show how to use the BMEG to do:
 
