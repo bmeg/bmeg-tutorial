@@ -1,0 +1,8 @@
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .row .col.m4 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
+}

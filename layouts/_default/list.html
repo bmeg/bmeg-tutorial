@@ -5,7 +5,7 @@
   <div class="toc-wrapper">
   <ul class="section table-of-contents">
   {{ range .Pages.ByWeight }}
-      {{ if not .Draft }}
+      {{ if and (.Title) (not .Draft) }}
       <li><a href="#{{.Title}}">{{.Title}}</a></li>
       {{ end }}
   {{ end }}
@@ -15,7 +15,7 @@
 
 <div class="col s12 m9 l10">
 {{ range .Pages.ByWeight }}
-    {{ if not .Draft }}
+    {{ if and (.Title) (not .Draft) }}
     <div id="{{.LinkTitle}}" class="section scrollspy">
         <h1>{{.Title}}</h1>
         {{.Content}}
@@ -24,7 +24,7 @@
 {{ end }}
 </div>
 </div>
-<button class="material-scrolltop" type="button"></button>
+<button class="material-scrolltop" type="button" style="position: sticky; margin: 0 95%"></button>
 <script>
   var options = {};
   document.addEventListener('DOMContentLoaded', function() {

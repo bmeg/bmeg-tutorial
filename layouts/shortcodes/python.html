@@ -1,13 +1,15 @@
 {{if .Site.Params.secureAPI}}
 <span id="python-example" >
 from gripql.graph import Graph<br/>
-g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}', credential_file='/tmp/bmeg_credentials.json')<br/>
-g.listIndices()<br/>
+g = Graph(url='{{- .Site.BaseURL | safeHTML -}}grip', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}', credential_file='~/bmeg_credentials.json')<br/>
+res = g.query().V().limit(5).execute()<br/>
+print(res)<br/>
 </span>
 {{else}}
 <span id="python-example" >
 from gripql.graph import Graph<br/>
-g = Graph(url='{{- .Site.BaseURL | safeHTML -}}api', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}')<br/>
-g.listLabels()<br/>
+g = Graph(url='{{- .Site.BaseURL | safeHTML -}}grip', graph='{{- .Site.Params.defaultGraphName | safeHTML -}}')<br/>
+res = g.query().V().limit(5).execute()<br/>
+print(res)<br/>
 </span>
 {{end}}
