@@ -1,204 +1,174 @@
-import cytoscape from "cytoscape";
-import React, { Component } from 'react';
-import ReactJson from 'react-json-view';
-import _ from "underscore";
-import './App.css';
+import React from 'react'
+import ReactJson from 'react-json-view'
+import cytoscape from "cytoscape"
+import _ from "underscore"
+import './App.css'
 
-class App extends Component {
+function App({ defaultGraph, height, width }) {
+  console.log("deafult graph:", defaultGraph, "height:", height, "width:", width)
 
-  constructor(props) {
-    super(props)   
-    this.state = {
-      selection: {},
-      error: "",
-      graph: props.dataset.defaultgraph || "",
-      graphs: [],
-      elements: {
-        nodess: [],
-        edges: [],
-      },
-      cyElements: null
-    }
+  const [selection, setSelection] = React.useState({})
+  const [error, setError] = React.useState("")
+  const [graph, setGraph] = React.useState(defaultGraph)
+  const [graphs, setGraphs] = React.useState([])
+  const [schema, setSchema] = React.useState({graph: "", nodes: [], edges: []})
 
-    this.handleSelect = this.handleSelect.bind(this)
-    this.schemaQuery = this.schemaQuery.bind(this)
-    this.listGraphs = this.listGraphs.bind(this)
-    this.build = this.build.bind(this)
-  }
-
-  listGraphs() {
+  // list graphs
+  React.useEffect(() => {
     console.log("listing graphs...")
-    fetch( "/v1/graph", {
-      method: "GET",
-    }).then(function(response) {
+    fetch( ":8201/v1/graph", {method: "GET"}).then((response) => {
       if (!response.ok) {
         var err = "ERROR: GET " + response.url + " " + response.status + " " + 
             response.statusText
         console.log(err)
-        this.setState({error: err})
+        setError(err)
       }
       return response.json()
-    }.bind(this)).then(function(json) {
+    }).then((json) => {
       var graphs = json['graphs'].filter(function(g) {
-					return g.endsWith("__schema__")
+				return g.endsWith("__schema__")
 			}).map(x => x.replace("__schema__", ""))
       console.log("found graphs:", graphs)
-      if (graphs.includes(this.state.graph)) {
-        this.setState({graphs: graphs})
-      } else {
-        console.log("default graph", this.state.graph, "not found")
-        this.setState({graphs: graphs, graph: ""})
+      setGraphs(graphs)
+      if (!_.isEqual(graph, "") && !graphs.includes(graph)) {        
+        console.log("default graph", graph, "not found")
+        setGraph("")
       }
-    }.bind(this)).catch(err => {
-      console.log("ERROR:", err)
+    }).catch((err) => {
       err = "ERROR: No graphs found"
       console.log(err)
-      this.setState({error: err})
+      setError(err)
     })
-  }
+  }, [])
 
-  schemaQuery(graph) {
+  // get schema
+  React.useEffect(() => {
+    if (_.isEqual(graph, "")) {
+      return
+    }
     console.log("Getting the schema for graph: ", graph)
     fetch( "/v1/graph/" + graph + "/schema", {
       method: "GET",
-    }).then(function(response) {
+    }).then((response) => {
       if (!response.ok) {
         var err = "ERROR: GET " + response.url + " " + response.status + " " + 
             response.statusText
         console.log(err)
-        this.setState({error: err})
+        setError(err)
       }
       return response.json()
-    }.bind(this)).then(function(json) {
-      var edges = json["edges"].map(function(x){
-        return {
-          "data": {
-            "id": x["gid"], 
-            "label": x["label"], 
-            "source": x["from"], 
-            "target": x["to"]
-          }, 
-          "classes": "autorotate"
-        }
-      })
-      var nodes = json["vertices"].map(function(x){
-        return {"data": {"id": x["gid"]}}
-      })
-      this.setState({elements: {"nodes": nodes, "edges": edges}, schema: json})
-    }.bind(this)).catch(err => {
+    }).then((json) => {
+      setSchema(json)
+    }).catch(err => {
       console.log("ERROR:", err)
       err = "ERROR: Failed to load the schema"
       console.log(err)
-      this.setState({error: err})
+      setError(err)
     })
     console.log("Loaded the schema for graph: ", graph)
-  }
+  }, [graph])
 
-  // handle graph selections
-  handleSelect(event) {
-    console.log("selected graph:", event.target.value)
-    this.setState({graph: event.target.value, error: "", selection: {}})
-    this.schemaQuery(event.target.value)
-  }
-
-  componentDidMount() {
-    this.listGraphs()
-    if (!_.isEqual(this.state.graph, "")) {
-      this.schemaQuery(this.state.graph)
-    }
-  	this.build()
-  }
-
-  componentDidUpdate() {
-  	this.build()
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return true
-  }
-
-  build() {
-    if (_.isEqual(this.state.graph, "")) {
-      return
-    }
-    if (_.isEqual(this.state.elements, this.state.cyElements)) {
+  // render cytoscape
+  React.useEffect(() => { 
+    if (_.isEqual(graph, "")) {
       return
     }
 
     console.log("Cytoscape.js is rendering the graph...")
 
-    var cy = cytoscape(
-      {
-        container: document.getElementById("cy"),
-
-        boxSelectionEnabled: false,
-        autounselectify: false,
-
-        minZoom: 0.1,
-        maxZoom: 10,
-
-        elements: this.state.elements,
-
-        style: cytoscape.stylesheet()
-          .selector("node")
-          .css({
-            "height": 80,
-            "width": 80,
-            "background-fit": "cover",
-            'background-color': "#bcbcbc",
-            "border-color": "#bcbcbc",
-            "font-size": "14px",
-            "border-width": 3,
-            "border-opacity": 1,
-            "text-valign": "center",
-            "label": "data(id)"
-          })
-          .selector("node:selected")
-          .css({
-            'background-color': "#4286f4",
-            "border-color": "#4286f4",
-          })
-          .selector("edge")
-          .css({
-            "width": 6,
-            "target-arrow-shape": "triangle",
-            "line-color": "#ffaaaa",
-            "target-arrow-color": "#ffaaaa",
-            "curve-style": "bezier",
-            "label": "data(label)"
-          })
-          .selector("edge:selected")
-          .css({
-            "line-color": "#4286f4",
-            "target-arrow-color": "#4286f4",
-          })
-          .selector(".autorotate")
-          .css({
-            "edge-text-rotation": "autorotate"
-          }),
-
-        layout: {
-          name: "cose"
-        }
+    var edges = schema["edges"].map(function(x) {
+      return {
+        "data": {
+          "id": x["gid"], 
+          "label": x["label"], 
+          "source": x["from"], 
+          "target": x["to"]
+        }, 
+        "classes": "autorotate"
       }
-    )
+    })
+    var nodes = schema["vertices"].map(function(x) {
+      return {"data": {"id": x["gid"]}}
+    })
+
+    if (_.isEqual(nodes, []) || _.isEqual(edges, [])) {
+      var err = "ERROR: Selected graph contains no nodes and/or edges"
+      console.log(err)
+      setError(err)
+      return
+    }
+
+    var cy = cytoscape({
+      container: document.getElementById("cy"),
+      
+      boxSelectionEnabled: false,
+      autounselectify: false,
+
+      minZoom: 0.1,
+      maxZoom: 10,
+
+      elements: {"nodes": nodes, "edges": edges},
+
+      style: cytoscape.stylesheet()
+        .selector("node")
+        .css({
+          "height": 80,
+          "width": 80,
+          "background-fit": "cover",
+          'background-color': "#bcbcbc",
+          "border-color": "#bcbcbc",
+          "font-size": "14px",
+          "border-width": 3,
+          "border-opacity": 1,
+          "text-valign": "center",
+          "label": "data(id)"
+        })
+        .selector("node:selected")
+        .css({
+          'background-color': "#4286f4",
+          "border-color": "#4286f4",
+        })
+        .selector("edge")
+        .css({
+          "width": 6,
+          "target-arrow-shape": "triangle",
+          "line-color": "#ffaaaa",
+          "target-arrow-color": "#ffaaaa",
+          "curve-style": "bezier",
+          "label": "data(label)"
+        })
+        .selector("edge:selected")
+        .css({
+          "line-color": "#4286f4",
+          "target-arrow-color": "#4286f4",
+        })
+        .selector(".autorotate")
+        .css({
+          "edge-text-rotation": "autorotate"
+        }),
+
+      layout: {
+        name: "cose"
+      }
+    })
 
     cy.on('tap', 'edge', event => {
       var targetEdge = event.target.data().id
       var data = {}
-      for (var i = 0; i < this.state.schema.edges.length; i++) {
-        if (this.state.schema.edges[i].gid === targetEdge) {
-          data = this.state.schema.edges[i]
+      for (var i = 0; i < schema.edges.length; i++) {
+        if (schema.edges[i].gid === targetEdge) {
+          data = schema.edges[i]
         }
       }
-      this.setState({ selection: data })
+      setSelection(data)
     })
+
     cy.on('tap', 'node', event => {
       var targetVertex = event.target.data().id
       var data = {}
-      for (var i = 0; i < this.state.schema.vertices.length; i++) {
-        if (this.state.schema.vertices[i].gid === targetVertex) {
-          data = this.state.schema.vertices[i]
+      for (var i = 0; i < schema.vertices.length; i++) {
+        if (schema.vertices[i].gid === targetVertex) {
+          data = schema.vertices[i]
           // add some custom logic
           if (_.isEqual(data.label, "GeneExpression")) {
             data.data.values = {"ENSG00000004059": "STRING",
@@ -212,44 +182,52 @@ class App extends Component {
           }
         }
       }
-      this.setState({ selection: data })
+      setSelection(data)
     })
-    this.cy = cy
-    this.setState({ cyElements: this.state.elements })
+
+  }, [schema])
+
+  const handleFormSelect = (event) => {
+    console.log("selected graph:", event.target.value)
+    setGraph(event.target.value)
+    setSelection({})
   }
 
-  render() {
-    let selectStyle = {width: "15%", height: "2em", fontSize: "1.25em", 
+  const selectStyle = {width: "15%", height: "2em", fontSize: "1.25em", 
                        margin: "10px auto", display: "block"}
-    let optionItems = this.state.graphs.map(
-      (graph) => <option key={graph}>{graph}</option>
-    )
-    let cyStyle = {
-      height: this.props.dataset.height,
-      width: this.props.dataset.width,
+
+  const optionItems = React.useMemo(() => {
+    return graphs.map((graph) => <option key={graph}>{graph}</option>)
+  }, [graphs])
+
+  const cyStyle = React.useMemo(() => {
+    return { 
+      height: height,
+      width: width,
       margin: "5px auto",
       borderStyle: "solid",
       borderColor: "#D3D3D3",
       borderWidth: "thin"
     }
-    return (
-      <div>
-        <div id="selectGraph">
-          <select style={selectStyle} value={this.state.graph} onChange={this.handleSelect}>
-            <option value="" disabled>Select Graph</option>
-            {optionItems}
-          </select>
-        </div>
-        <div id="errorMessage">
-          <h4 style={{color: "red", textAlign: "center"}}>{this.state.error}</h4>
-        </div>
-        <div style={cyStyle} id="cy"></div>
-        <div style={{width: this.props.dataset.width, margin: "5px auto"}} id="reactJson">
-          <ReactJson src={this.state.selection} name={false}  enableClipboard={false} displayDataTypes={false}/>
-        </div>
+  }, [height, width])
+
+  return (
+    <div>
+      <div id="selectGraph">
+        <select style={selectStyle} value={graph} onChange={handleFormSelect}>
+          <option value="" disabled>Select Graph</option>
+          {optionItems}
+        </select>
       </div>
-    )
-  }
+      <div id="errorMessage">
+        <h4 style={{color: "red", textAlign: "center"}}>{error}</h4>
+      </div>
+      <div style={cyStyle} id="cy"></div>
+      <div style={{width: width, margin: "5px auto"}} id="reactJson">
+        <ReactJson src={selection} name={false}  enableClipboard={false} displayDataTypes={false}/>
+      </div>
+    </div>
+  )
 }
 
 export default App

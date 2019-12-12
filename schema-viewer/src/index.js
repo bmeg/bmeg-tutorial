@@ -10,8 +10,7 @@ function run() {
   if (schema) {
     // get parameters set by caller on element data-* attributes
     const dataset = schema.dataset;
-    console.log("schema", schema);
-    ReactDOM.render(<App dataset={dataset}/>, schema);
+    ReactDOM.render(<App defaultGraph={dataset.defaultgraph} height={dataset.height} width={dataset.width}/>, schema);
   }
 }
 
