@@ -3,11 +3,12 @@ title: Expression Data
 weight: 70
 authors:
 - kellrott
+- adamstruck
 tags:
 - tcga
 - gene expression
 created_at: 2018-05-09
-updated_at: 2018-05-09
+updated_at: 2020-01-14
 tldr: Build a pandas matrix of expression data
 ---
 
@@ -16,14 +17,14 @@ import seaborn as sns
 import pandas
 import gripql
 conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
-O = conn.graph("bmeg_rc2")
+G = conn.graph("rc5")
 ```
 
 Download gene expression values from TCGA-READ cohort and build matrix with submitter id as label
 
 
 ```python
-c = O.query().V("Project:TCGA-READ").out("cases").out("samples").as_("sample")
+c = G.query().V("Project:TCGA-READ").out("cases").out("samples").as_("sample")
 c = c.out("aliquots").out("gene_expressions").as_("exp")
 c = c.render( ["$sample._data.gdc_attributes.submitter_id", "$exp._data.values"])
 
@@ -32,7 +33,7 @@ for row in c.execute(stream=True):
     data[row[0]] = row[1]
 ```
 
-    [INFO]	2019-07-26 18:25:17,143	177 results received in 34 seconds
+    [INFO]	2020-01-14 14:06:01,252	177 results received in 35 seconds
 
 
 Take the data we downloaded and turn it into a Pandas data frame
@@ -79,44 +80,44 @@ samples.iloc[:5,:5]
   </thead>
   <tbody>
     <tr>
-      <th>TCGA-AG-3883-01A</th>
-      <td>56.417170</td>
-      <td>0.532873</td>
-      <td>25.468040</td>
-      <td>1.398758</td>
-      <td>2.519876</td>
+      <td>TCGA-G5-6233-01A</td>
+      <td>30.212803</td>
+      <td>0.063489</td>
+      <td>87.317567</td>
+      <td>6.237288</td>
+      <td>5.518520</td>
     </tr>
     <tr>
-      <th>TCGA-DC-6158-01A</th>
-      <td>213.685187</td>
-      <td>1.031829</td>
-      <td>151.992725</td>
-      <td>7.119824</td>
-      <td>8.481721</td>
+      <td>TCGA-AG-4021-01A</td>
+      <td>80.356975</td>
+      <td>3.621759</td>
+      <td>48.649980</td>
+      <td>8.770929</td>
+      <td>8.975365</td>
     </tr>
     <tr>
-      <th>TCGA-EI-6507-01A</th>
-      <td>25.749271</td>
-      <td>0.000000</td>
-      <td>40.100776</td>
-      <td>7.127823</td>
-      <td>6.484232</td>
+      <td>TCGA-EI-6514-01A</td>
+      <td>142.160017</td>
+      <td>2.460405</td>
+      <td>82.308962</td>
+      <td>4.144567</td>
+      <td>3.251904</td>
     </tr>
     <tr>
-      <th>TCGA-AF-3913-01A</th>
-      <td>254.599210</td>
-      <td>4.348810</td>
-      <td>119.589229</td>
-      <td>4.213013</td>
-      <td>7.268218</td>
+      <td>TCGA-AG-3725-01A</td>
+      <td>81.611032</td>
+      <td>4.730710</td>
+      <td>56.783610</td>
+      <td>4.896992</td>
+      <td>4.208633</td>
     </tr>
     <tr>
-      <th>TCGA-EI-6883-01A</th>
-      <td>75.138424</td>
-      <td>0.406882</td>
-      <td>95.234971</td>
-      <td>5.180626</td>
-      <td>3.090609</td>
+      <td>TCGA-AG-3725-11A</td>
+      <td>78.390851</td>
+      <td>1.037580</td>
+      <td>51.193885</td>
+      <td>6.455982</td>
+      <td>2.212233</td>
     </tr>
   </tbody>
 </table>
@@ -151,10 +152,15 @@ sns.kdeplot(samples['ENSG00000000003'], color="g")
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fd0990397b8>
+    <matplotlib.axes._subplots.AxesSubplot at 0x11ceef450>
 
 
 
 
 ![png](Expression_files/Expression_10_1.png)
 
+
+
+```python
+
+```
