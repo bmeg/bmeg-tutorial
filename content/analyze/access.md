@@ -4,9 +4,7 @@ weight: 0
 ---
 
 # Access
-
-### Create your credentials file
-{{% bash %}}
+{{% create_creds %}}
 
 ### Query Examples
 #### _curl_
@@ -14,7 +12,7 @@ weight: 0
 
 #### _Python_
 ##### Install the client
-{{< code >}}pip install gripql{{< /code >}}
+{{< code file="pip-example">}}pip install gripql{{< /code >}}
 
 ##### Example code
 {{< code file="python-example">}}{{% python %}}{{< /code >}}

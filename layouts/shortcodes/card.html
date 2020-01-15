@@ -5,7 +5,7 @@
       <span class="card-title">{{.Get "title" }}</span>
       <p class="light">{{ .Inner | markdownify}}</p>
       </br>
-      {{if .Get "action_href" }} <div class="card-action"> <a href="{{.Get "action_href"}}">{{.Get "action_text"}}</a> </div> {{end}}
+      {{if .Get "action_href" }}<div class="card-action"> <a href="{{.Get "action_href"}}">{{.Get "action_text"}}</a> </div> {{end}}
     </div>
   </div>
 </div>
