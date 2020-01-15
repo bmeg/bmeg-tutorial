@@ -8,3 +8,4 @@ RC5 includes several fixes including:
 
  - Fixing GTEX sample edges
  - Fixing edges connecting publications in DGIGB
+ - Fixing uniprot id linking
