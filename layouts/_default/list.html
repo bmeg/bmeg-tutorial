@@ -4,23 +4,43 @@
 <div class="col m3 l2 offset-xl-1">
   <div class="toc-wrapper">
   <ul class="section table-of-contents">
-  {{ range .Pages.ByWeight }}
+  {{ if .Params.DateSort }}
+    {{ range .Pages.ByDate.Reverse }}
+      {{ if and (.Title) (not .Draft) }}
+      <li><a href="#{{.Title}}">{{.Date.Format  "Jan 02, 2006"}} : {{.Title}}</a></li>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ range .Pages.ByWeight }}
       {{ if and (.Title) (not .Draft) }}
       <li><a href="#{{.Title}}">{{.Title}}</a></li>
       {{ end }}
+    {{ end }}
   {{ end }}
   </ul>
   </div>
 </div>
 
 <div class="col s12 m9 l10">
-{{ range .Pages.ByWeight }}
+{{ if .Params.DateSort }}
+  {{ range .Pages.ByDate.Reverse }}
+    {{ if and (.Title) (not .Draft) }}
+    <div id="{{.LinkTitle}}" class="section scrollspy">
+        <h1>{{.Title}}</h1>
+        <h5>{{.Date.Format  "Jan 02, 2006"}}</h5>
+        {{.Content}}
+    </div>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ range .Pages.ByWeight }}
     {{ if and (.Title) (not .Draft) }}
     <div id="{{.LinkTitle}}" class="section scrollspy">
         <h1>{{.Title}}</h1>
         {{.Content}}
     </div>
     {{ end }}
+  {{ end }}
 {{ end }}
 </div>
 </div>
