@@ -4,12 +4,13 @@ path: TCGA
 weight: 60
 authors:
 - kellrott
+- adamstruck
 tags:
 - tcga
 - mutations
 - mc3
 created_at: 2018-05-09
-updated_at: 2018-05-09
+updated_at: 2020-01-14
 tldr: Find the number of mutations per gene for TCGA cohort
 ---
 Find the number of mutations per gene for TCGA cohort
@@ -19,14 +20,14 @@ Find the number of mutations per gene for TCGA cohort
 import pandas
 import gripql
 conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
-O = conn.graph("bmeg_rc2")
+G = conn.graph("rc5")
 ```
 
 Select all the tumor samples in the TCGA KIRC cohort, and aggregate across the `ensembl_gene` field.
 
 
 ```python
-q = O.query().V("Project:TCGA-KIRC")
+q = G.query().V("Project:TCGA-KIRC")
 q = q.out("cases").out("samples").has(gripql.eq("gdc_attributes.sample_type", "Primary Tumor"))
 q = q.out("aliquots").out("somatic_callsets").outE("alleles")
 q = q.has(gripql.contains("methods", "MUTECT"))
@@ -39,7 +40,7 @@ for i in res[0]['geneCount']['buckets']:
 
 ```
 
-    [INFO]	2019-07-24 17:37:39,468	1 results received in 1 seconds
+    [INFO]	2020-01-14 14:20:35,273	1 results received in 1 seconds
 
 
 Create a Pandas.Series with the output and find all the genes with 20 or more mutations
@@ -56,11 +57,11 @@ goi = list(countDF.index[countDF >= 20])
 
 
 ```python
-for e,g in O.query().V(goi).render(["$._gid" ,"$.symbol"]):
+for e,g in G.query().V(goi).render(["$._gid" ,"$.symbol"]):
     print("%s (%s) = %d" % (e,g, countDF[e]))
 ```
 
-    [INFO]	2019-07-24 17:37:39,515	10 results received in 0 seconds
+    [INFO]	2020-01-14 14:20:42,933	10 results received in 0 seconds
 
 
     ENSG00000007174 (DNAH9) = 22
@@ -74,3 +75,8 @@ for e,g in O.query().V(goi).render(["$._gid" ,"$.symbol"]):
     ENSG00000181555 (SETD2) = 34
     ENSG00000198793 (MTOR) = 34
 
+
+
+```python
+
+```

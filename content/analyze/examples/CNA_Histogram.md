@@ -2,11 +2,12 @@
 title: CNA Histogram
 authors:
 - kellrott
+- adamstruck
 tags:
 - ccle
 - drug response
 created_at: 2018-05-09
-updated_at: 2018-05-09
+updated_at: 2020-01-14
 tldr: Build a histogram from the copy number alteration values for genes in a TCGA cohort
 ---
 
@@ -15,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import gripql
 conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
-O = conn.graph("bmeg_rc2")
+G = conn.graph("rc5")
 ```
 
 Get Ensembl Gene ids for genes of interest
@@ -25,13 +26,13 @@ Get Ensembl Gene ids for genes of interest
 GENES = ["PTEN", "TP53", "RB1"]
 gene_ids = {}
 for g in GENES:
-    for i in O.query().V().hasLabel("Gene").has(gripql.eq("symbol", g)):
+    for i in G.query().V().hasLabel("Gene").has(gripql.eq("symbol", g)):
         gene_ids[g] = i.gid
 ```
 
-    [INFO]	2019-07-26 18:24:02,481	1 results received in 0 seconds
-    [INFO]	2019-07-26 18:24:02,616	1 results received in 0 seconds
-    [INFO]	2019-07-26 18:24:02,741	1 results received in 0 seconds
+    [INFO]	2020-01-14 13:44:13,074	1 results received in 0 seconds
+    [INFO]	2020-01-14 13:44:13,241	1 results received in 0 seconds
+    [INFO]	2020-01-14 13:44:13,426	1 results received in 0 seconds
 
 
 
@@ -52,7 +53,7 @@ For each gene of interest, obtain the copy number alteration values and aggregat
 
 
 ```python
-q = O.query().V("Project:TCGA-PRAD").out("cases").out("samples").out("aliquots")
+q = G.query().V("Project:TCGA-PRAD").out("cases").out("samples").out("aliquots")
 q = q.has(gripql.eq("$.gdc_attributes.sample_type", 'Primary Tumor')).out("copy_number_alterations")
 q = q.aggregate(
     list( gripql.term( g, "values.%s" % (g), 5) for g in gene_ids.values() )
@@ -64,7 +65,7 @@ for r in res[0]:
         print("%s\t%s:%s" % (r, b['key'], b['value']))
 ```
 
-    [INFO]	2019-07-26 18:24:06,428	1 results received in 3 seconds
+    [INFO]	2020-01-14 13:44:23,255	1 results received in 3 seconds
 
 
     ENSG00000139687	0:269
@@ -103,3 +104,8 @@ plt.bar(val, count, width=0.35)
 
 ![png](CNA_Histogram_files/CNA_Histogram_8_1.png)
 
+
+
+```python
+
+```

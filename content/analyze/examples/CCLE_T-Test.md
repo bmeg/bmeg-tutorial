@@ -3,11 +3,12 @@ title: Drug Response
 path: CCLE/t-test
 authors:
 - kellrott
+- adamstruck
 tags:
 - ccle
 - drug response
 created_at: 2018-05-09
-updated_at: 2018-05-09
+updated_at: 2020-01-14
 tldr: Identify drug response seperation for CCLE cohorts defined by gene mutation
 ---
 
@@ -18,20 +19,21 @@ import itertools
 import scipy.stats as stats
 
 conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
-O = conn.graph("bmeg_rc2")
+G = conn.graph("rc5")
 ```
 
 Find all of the samples in the [CTRP](https://portals.broadinstitute.org/ctrp/) Breast Cancer experiment
 
 
 ```python
-q = O.query().V("Project:CTRP_Breast_Cancer").out("cases").distinct("_gid")
+q = G.query().V("Program:CTRP").out("projects").out("cases").\
+    has(gripql.eq("cellline_attributes.Primary Disease", "Breast Cancer")).distinct()
 all_cases = []
 for row in q:
     all_cases.append(row.gid)
 ```
 
-    [INFO]	2019-07-26 20:29:14,278	40 results received in 0 seconds
+    [INFO]	2020-01-14 13:36:52,216	40 results received in 0 seconds
 
 
 For the genes of interest, get Ensembl gene ids, from the HUGO symbols
@@ -44,11 +46,11 @@ GENES = ["PTEN", "TP53"]
 
 ```python
 gene_ids = {}
-for i in O.query().V().hasLabel("Gene").has(gripql.within("symbol", GENES)):
+for i in G.query().V().hasLabel("Gene").has(gripql.within("symbol", GENES)):
     gene_ids[i.data.symbol] = i.gid
 ```
 
-    [INFO]	2019-07-26 20:29:14,423	2 results received in 0 seconds
+    [INFO]	2020-01-14 13:36:56,003	2 results received in 0 seconds
 
 
 The CTRP doesn't have direct mutation calling, but rather they used the same cell lines as the CCLE, and we can use the mutation calls from that project. So use the `same_as` edge to identify the cases from CCLE that are the same as the ones in CTRP. Then use the mutations from those samples.
@@ -61,7 +63,7 @@ gene_ids
 
 
 
-    {'PTEN': 'ENSG00000171862', 'TP53': 'ENSG00000141510'}
+    {'TP53': 'ENSG00000141510', 'PTEN': 'ENSG00000171862'}
 
 
 
@@ -72,7 +74,7 @@ For each of the genes, find the set of samples that have a mutation in that gene
 mut_cases = {}
 norm_cases = {}
 
-q = O.query().V(all_cases).as_("ctrp").out("same_as").has(gripql.eq("project_id", "Project:CCLE_Breast_Cancer"))
+q = G.query().V(all_cases).as_("ctrp").out("same_as").has(gripql.eq("project_id", "Project:CCLE"))
 q = q.out("samples").out("aliquots").out("somatic_callsets")
 q = q.outE("alleles").has(gripql.within("ensembl_gene", list(gene_ids.values())))
 q = q.render({"case" : "$ctrp._gid", "gene" : "$._data.ensembl_gene"})
@@ -89,13 +91,13 @@ for i in gene_ids.values():
 
 ```
 
-    [INFO]	2019-07-26 20:29:14,690	43 results received in 0 seconds
+    [INFO]	2020-01-14 13:39:36,629	43 results received in 0 seconds
 
 
-    ENSG00000171862 Positive Set: 9
-    ENSG00000171862 Negative Set: 31
     ENSG00000141510 Positive Set: 29
     ENSG00000141510 Negative Set: 11
+    ENSG00000171862 Positive Set: 9
+    ENSG00000171862 Negative Set: 31
 
 
 
@@ -103,11 +105,11 @@ for i in gene_ids.values():
 pos_response = {}
 for g in gene_ids.values():
     pos_response[g] = {}
-    q = O.query().V(list(mut_cases[g])).as_("a").out("samples").out("aliquots")
+    q = G.query().V(list(mut_cases[g])).as_("a").out("samples").out("aliquots")
     q = q.out("drug_response").as_("a").out("compounds").as_("b")
     q = q.select(["a", "b"])    
     for row in q:
-        v = row['a']['data']['auc']
+        v = row['a']['data']['aac']
         compound = row['b']['gid']
         if compound not in pos_response[g]:
             pos_response[g][compound] = [ v ]
@@ -116,8 +118,8 @@ for g in gene_ids.values():
    
 ```
 
-    [INFO]	2019-07-26 20:29:16,035	3,592 results received in 1 seconds
-    [INFO]	2019-07-26 20:29:19,540	12,224 results received in 3 seconds
+    [INFO]	2020-01-14 13:39:55,140	12,224 results received in 3 seconds
+    [INFO]	2020-01-14 13:39:56,594	3,999 results received in 1 seconds
 
 
 
@@ -125,11 +127,11 @@ for g in gene_ids.values():
 neg_response = {}
 for g in gene_ids.values():
     neg_response[g] = {}
-    q = O.query().V(list(norm_cases[g])).as_("a").out("samples").out("aliquots")
+    q = G.query().V(list(norm_cases[g])).as_("a").out("samples").out("aliquots")
     q = q.out("drug_response").as_("a").out("compounds").as_("b")
     q = q.select(["a", "b"])    
     for row in q:
-        v = row['a']['data']['auc']
+        v = row['a']['data']['aac']
         compound = row['b']['gid']
         if compound not in neg_response[g]:
             neg_response[g][compound] = [ v ]
@@ -138,8 +140,8 @@ for g in gene_ids.values():
    
 ```
 
-    [INFO]	2019-07-26 20:29:23,489	13,250 results received in 3 seconds
-    [INFO]	2019-07-26 20:29:25,137	4,618 results received in 1 seconds
+    [INFO]	2020-01-14 13:39:59,162	5,025 results received in 1 seconds
+    [INFO]	2020-01-14 13:40:03,457	13,250 results received in 4 seconds
 
 
 
@@ -198,94 +200,94 @@ pandas.DataFrame(out, columns=["drug", "mutation", "t-statistic", "t-pvalue", "a
   </thead>
   <tbody>
     <tr>
-      <th>369</th>
+      <td>277</td>
+      <td>Compound:CID216345</td>
+      <td>ENSG00000141510</td>
+      <td>-4.425335</td>
+      <td>0.000366</td>
+      <td>23.811104</td>
+      <td>0.000019</td>
+    </tr>
+    <tr>
+      <td>593</td>
+      <td>Compound:CID16736978</td>
+      <td>ENSG00000141510</td>
+      <td>-3.177435</td>
+      <td>0.006779</td>
+      <td>12.249536</td>
+      <td>0.001356</td>
+    </tr>
+    <tr>
+      <td>214</td>
       <td>Compound:CID9967941</td>
       <td>ENSG00000141510</td>
-      <td>4.098840</td>
-      <td>0.000438</td>
-      <td>12.705330</td>
-      <td>0.001136</td>
+      <td>-3.114875</td>
+      <td>0.006419</td>
+      <td>11.046079</td>
+      <td>0.002136</td>
     </tr>
     <tr>
-      <th>136</th>
-      <td>Compound:CID11433190</td>
+      <td>31</td>
+      <td>Compound:CID9549297</td>
       <td>ENSG00000141510</td>
-      <td>2.941631</td>
-      <td>0.011004</td>
-      <td>12.336689</td>
-      <td>0.001189</td>
+      <td>-2.573574</td>
+      <td>0.021992</td>
+      <td>10.077463</td>
+      <td>0.003071</td>
     </tr>
     <tr>
-      <th>315</th>
+      <td>480</td>
       <td>Compound:CID56949517</td>
       <td>ENSG00000171862</td>
-      <td>-2.611946</td>
-      <td>0.041333</td>
-      <td>13.650130</td>
-      <td>0.001197</td>
+      <td>2.235155</td>
+      <td>0.069114</td>
+      <td>10.480699</td>
+      <td>0.003638</td>
     </tr>
     <tr>
-      <th>191</th>
-      <td>Compound:CID11152667</td>
+      <td>808</td>
+      <td>Compound:CID5472285</td>
       <td>ENSG00000141510</td>
-      <td>-3.003887</td>
-      <td>0.008382</td>
-      <td>9.205017</td>
-      <td>0.004602</td>
+      <td>-2.711139</td>
+      <td>0.015176</td>
+      <td>9.369077</td>
+      <td>0.004037</td>
     </tr>
     <tr>
-      <th>41</th>
-      <td>Compound:NO_ONTOLOGY~BRD-K97651142</td>
+      <td>566</td>
+      <td>Compound:NO_ONTOLOGY:CID9809715</td>
       <td>ENSG00000141510</td>
-      <td>2.556805</td>
-      <td>0.023745</td>
-      <td>8.381266</td>
-      <td>0.006489</td>
+      <td>-2.492241</td>
+      <td>0.026354</td>
+      <td>8.810857</td>
+      <td>0.005631</td>
     </tr>
     <tr>
-      <th>44</th>
+      <td>237</td>
+      <td>Compound:CID451668</td>
+      <td>ENSG00000171862</td>
+      <td>2.030714</td>
+      <td>0.051533</td>
+      <td>7.157550</td>
+      <td>0.008627</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>Compound:CID54686904</td>
+      <td>ENSG00000171862</td>
+      <td>2.241852</td>
+      <td>0.067998</td>
+      <td>8.668157</td>
+      <td>0.009525</td>
+    </tr>
+    <tr>
+      <td>656</td>
       <td>Compound:CID11609586</td>
       <td>ENSG00000171862</td>
-      <td>-1.952776</td>
-      <td>0.068235</td>
-      <td>7.382291</td>
-      <td>0.008403</td>
-    </tr>
-    <tr>
-      <th>649</th>
-      <td>Compound:CID52947560</td>
-      <td>ENSG00000141510</td>
-      <td>2.319721</td>
-      <td>0.036225</td>
-      <td>7.511026</td>
-      <td>0.009386</td>
-    </tr>
-    <tr>
-      <th>682</th>
-      <td>Compound:CID46943432</td>
-      <td>ENSG00000171862</td>
-      <td>-2.160075</td>
-      <td>0.055895</td>
-      <td>7.443883</td>
-      <td>0.009680</td>
-    </tr>
-    <tr>
-      <th>538</th>
-      <td>Compound:CID5566</td>
-      <td>ENSG00000141510</td>
-      <td>1.736441</td>
-      <td>0.118978</td>
-      <td>7.362028</td>
-      <td>0.010777</td>
-    </tr>
-    <tr>
-      <th>377</th>
-      <td>Compound:CID31703</td>
-      <td>ENSG00000171862</td>
-      <td>-2.835380</td>
-      <td>0.009463</td>
-      <td>6.628285</td>
-      <td>0.012186</td>
+      <td>1.948182</td>
+      <td>0.066221</td>
+      <td>6.818910</td>
+      <td>0.011089</td>
     </tr>
   </tbody>
 </table>

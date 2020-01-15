@@ -1,8 +1,12 @@
-baseURL: https://bmegio.ohsu.edu/
+baseURL: https://bmeg.io
 canonifyURLs: true
 languageCode: en-us
 title: BMEG
 googleAnalytics: UA-133347876-2
 params:
-  defaultGraphName: bmeg_rc3
+  defaultGraphName: rc5
   secureAPI: true
+# needed for hugo >= 0.60.0
+# default markdown handler became goldmark
+markup:
+  defaultMarkdownHandler: blackFriday

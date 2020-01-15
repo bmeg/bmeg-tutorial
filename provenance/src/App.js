@@ -1,5 +1,3 @@
-/* eslint-disable anchor-is-valid */
-
 import React from 'react';
 
 import CytoscapeComponent from 'react-cytoscapejs';

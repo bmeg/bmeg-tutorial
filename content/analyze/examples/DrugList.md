@@ -3,135 +3,87 @@ title: Get compound Information
 draft: True
 authors:
 - kellrott
+- adamstruck
 tags:
 - ccle
 - drug response
 created_at: 2018-05-09
-updated_at: 2018-05-09
+updated_at: 2020-01-14
 tldr: Get info about CCLE drug response experiments
 ---
 
 ```python
+import json
 import gripql
-conn = gripql.Connection("https://bmegio.ohsu.edu/api", credential_file="bmeg_credentials.json")
-O = conn.graph("bmeg_rc2")
+
+conn = gripql.Connection("https://bmeg.io/api", credential_file="bmeg_credentials.json")
+G = conn.graph("rc5")
 ```
 
 
 ```python
-print( list(O.query().V().hasLabel("Sample").limit(5) ))
+responses = G.query().V("Program:CCLE").out("projects").out("cases").out("samples").\
+    out("aliquots").as_("aliquot").\
+    out("drug_response").as_("resp").\
+    out("compounds").as_("compound").\
+    render({"aliquot_id": "$aliquot._gid",
+            "compound_id": "$compound._gid",
+            "compound": "$compound._data",
+            "drug_response_id": "$resp._gid", 
+            "drug_response": "$resp._data"}).\
+    execute()
 ```
 
-    [INFO]	2019-07-26 18:24:25,627	5 results received in 0 seconds
-
-
-    [<AttrDict({'gid': 'Sample:CCLE:ACH-000511', 'label': 'Sample', 'data': {'project_id': 'Project:CCLE_Lung_Cancer', 'sample_id': 'ACH-000511', 'submitter_id': 'CALU1_LUNG'}})>, <AttrDict({'gid': 'Sample:CCLE:ACH-001306', 'label': 'Sample', 'data': {'project_id': 'Project:CCLE_Thyroid_Cancer', 'sample_id': 'ACH-001306', 'submitter_id': '8305C_THYROID'}})>, <AttrDict({'gid': 'Sample:CCLE:ACH-000046', 'label': 'Sample', 'data': {'project_id': 'Project:CCLE_Kidney_Cancer', 'sample_id': 'ACH-000046', 'submitter_id': 'ACHN_KIDNEY'}})>, <AttrDict({'gid': 'Sample:CCLE:ACH-001041', 'label': 'Sample', 'data': {'project_id': 'Project:CCLE_Lung_Cancer', 'sample_id': 'ACH-001041', 'submitter_id': 'COLO699_LUNG'}})>, <AttrDict({'gid': 'Sample:CCLE:ACH-001039', 'label': 'Sample', 'data': {'project_id': 'Project:CCLE_Colon/Colorectal_Cancer', 'sample_id': 'ACH-001039', 'submitter_id': 'COLO205_LARGE_INTESTINE'}})>]
+    [INFO]	2020-01-14 14:00:13,305	11,670 results received in 4 seconds
 
 
 
 ```python
-aliquots = list(O.query().V("Program:CCLE").out("projects").out("cases").out("samples").out("aliquots").render("$._gid"))
+
 ```
 
-    [INFO]	2019-07-26 18:24:27,023	16,521 results received in 1 seconds
+
+
+
+    <AttrDict({'approved_countries': [], 'chebi_id': 'CHEBI:91338', 'chembl_id': 'CHEMBL509032', 'id_source': 'PUBCHEM', 'inchi': 'InChI=1S/C30H40ClN7O3S/c1-21(2)42(39,40)28-8-6-5-7-26(28)33-29-24(31)20-32-30(35-29)34-25-10-9-23(19-27(25)41-4)37-13-11-22(12-14-37)38-17-15-36(3)16-18-38/h5-10,19-22H,11-18H2,1-4H3,(H2,32,33,34,35)', 'inchi_key': 'QQWUGDVOUVUTOY-UHFFFAOYSA-N', 'project_id': 'Project:Reference', 'pubchem_id': 'CID16038120', 'source_url': 'http://mychem.info/v1/query?q=pubchem.cid:"16038120"&fields=chebi.id,chebi.inchi,chebi.inchi_key,chebi.name,chembl.molecule_chembl_id,chembl.pref_name,chembl.inchi,chembl.inchi_key,chembl.molecule_synonyms,chembl.usan_stem_definition,pubchem.cid,pubchem.inchi,pubchem.inchi_key,drugbank.id,drugbank.inchi,drugbank.inchi_key,drugbank.products.approved,drugbank.products.country,drugbank.taxonomy.class,drugbank.taxonomy.direct-parent,drugbank.taxonomy.kingdom,drugbank.taxonomy.subclass,drugbank.taxonomy.superclass,drugbank.taxonomy.description&size=1', 'submitter_id': 'CHEMBL509032', 'synonym': '16038120'})>
+
 
 
 
 ```python
-q = O.query().V().hasLabel("Sample").where(aql.eq("datasetId", "ccle")).mark("s")\
-.in_("responseFor").mark("r").out("responseTo").mark("d")\
-.render(["$s._gid", "$r.summary", "$d._gid"]).limit(10)
-for row in q:
-    print(row)
+c = set()
+a = set()
+for resp in responses:
+    c.add(resp.compound_id)
+    a.add(resp.aliquot_id)
+    
+print("# compounds:",len(c))
+print("# cell lines:",len(a))
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-4-1c1f88e51aea> in <module>
-    ----> 1 q = O.query().V().hasLabel("Sample").where(aql.eq("datasetId", "ccle")).mark("s")\
-          2 .in_("responseFor").mark("r").out("responseTo").mark("d")\
-          3 .render(["$s._gid", "$r.summary", "$d._gid"]).limit(10)
-          4 for row in q:
-          5     print(row)
-
-
-    AttributeError: 'Query' object has no attribute 'where'
+    # compounds: 24
+    # cell lines: 504
 
 
 
 ```python
-q = O.query().V().where(aql.eq("_label", "Biosample")).where(aql.eq("datasetId", "ccle")).mark("s")\
-.in_("responseFor").mark("r").outEdge("responseTo").distinct("_to").render(["_to"])
-for row in q:
-    print row
+print(json.dumps(responses[1].compound.to_dict(), indent=2))
 ```
 
+    {
+      "approved_countries": [],
+      "chebi_id": "CHEBI:91338",
+      "chembl_id": "CHEMBL509032",
+      "id_source": "PUBCHEM",
+      "inchi": "InChI=1S/C30H40ClN7O3S/c1-21(2)42(39,40)28-8-6-5-7-26(28)33-29-24(31)20-32-30(35-29)34-25-10-9-23(19-27(25)41-4)37-13-11-22(12-14-37)38-17-15-36(3)16-18-38/h5-10,19-22H,11-18H2,1-4H3,(H2,32,33,34,35)",
+      "inchi_key": "QQWUGDVOUVUTOY-UHFFFAOYSA-N",
+      "project_id": "Project:Reference",
+      "pubchem_id": "CID16038120",
+      "source_url": "http://mychem.info/v1/query?q=pubchem.cid:\"16038120\"&fields=chebi.id,chebi.inchi,chebi.inchi_key,chebi.name,chembl.molecule_chembl_id,chembl.pref_name,chembl.inchi,chembl.inchi_key,chembl.molecule_synonyms,chembl.usan_stem_definition,pubchem.cid,pubchem.inchi,pubchem.inchi_key,drugbank.id,drugbank.inchi,drugbank.inchi_key,drugbank.products.approved,drugbank.products.country,drugbank.taxonomy.class,drugbank.taxonomy.direct-parent,drugbank.taxonomy.kingdom,drugbank.taxonomy.subclass,drugbank.taxonomy.superclass,drugbank.taxonomy.description&size=1",
+      "submitter_id": "CHEMBL509032",
+      "synonym": "16038120"
+    }
 
-```python
-q = O.query().V().where(aql.eq("_label", "ResponseCurve")).outEdge("responseTo").distinct("_to").render(["_to"])
-for row in q:
-    print row
-```
-
-
-```python
-print list(O.query().V().where(aql.eq("_label", "ResponseCurve")).outEdge("responseTo").distinct("_to").render(["_to"]).count())
-
-```
-
-
-```python
-print list(O.query().V().where(aql.eq("_label", "G2PAssociation")).outEdge("environmentFor").distinct("_to").render(["_to"]))
-
-```
-
-
-```python
-print list(O.query().V().where(aql.eq("_label", "G2PAssociation")).outEdge().limit(100).render(["_label"]))
-```
-
-
-```python
-print list(O.query().V().where(aql.eq("$.label", "Individual")).outEdge("drugTherapyFrom").distinct("$.to").render(["$.to"]))
-```
-
-
-```python
-q = O.query().V().where(aql.eq("_label", "Compound"))
-for i in q:
-    print i
-```
-
-
-```python
-q = O.query().V("compound:UNKNOWN:oxaliplatin").inEdge().distinct("_label").render(["_label"])
-print list(q)
-```
-
-
-```python
-q =  O.query().V("compound:UNKNOWN:oxaliplatin").inEdge("sameAs")
-print list(q)
-```
-
-
-```python
-print list(O.query().V("compound:UNKNOWN:BRD-M14820059"))
-```
-
-
-```python
-q = O.query().V().where(aql.eq("_label", "ResponseCurve")).aggregate(aql.term("test", "ResponseCurve", "source"))
-print list(q)
-```
-
-
-```python
-print O.aggregate(aql.term("test", "ResponseCurve", "responseType"))
-```
 
 
 ```python
